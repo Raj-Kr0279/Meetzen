@@ -1,0 +1,12 @@
+.cards__line{
+    position: relative;
+}
+.cards__line::before {
+    content: "";
+    height: 12px;
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    background: black;
+    bottom: 100%;
+}

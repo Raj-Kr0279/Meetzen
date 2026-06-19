@@ -1,0 +1,17 @@
+.text__content{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.chat_left::-webkit-scrollbar{
+   background: transparent;
+}
+
+.chat__area::-webkit-scrollbar {
+    width: 6px;
+    height: 100%;
+    background: transparent;
+}

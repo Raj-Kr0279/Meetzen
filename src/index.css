@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@layer base{
+@font-face {
+  font-family: sfpro;
+  src: url(./Assets/fonts/SFpro/SFPRODISPLAYREGULAR.OTF);
+}
+html {
+  font-family: "Inter";
+}
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 100%;
+  background: #EAEBF0;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  /* Customize the scrollbar thumb */
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #49556D;
+  /* Customize the scrollbar thumb */
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #DAE0E6;
+}
+span{
+  display: inline-block;
+}
+textarea{
+resize: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+:disabled {
+  cursor: default;
+  opacity: .5;
+}
+.otp__wrapper input:focus-within{
+outline: 1px solid #49556D; 
+}
+.otp__wrapper > div {
+  width: 100%;
+  justify-content: center;
+}
+
+.lang__cards input[type = "radio"]{
+  opacity: 0;
+}
+
+.select-wrapper option{
+font-size: 0.875rem;
+color: #49556D;
+line-height: 1.4;
+font-weight: 400;
+}
+.custom-stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  width: 30px; /* Set the width of your custom image */
+  height: auto; /* Adjust the height as needed */
+  margin: 0 10px; /* Adjust the margin as needed */
+}
+
+/* Add styling for the active step */
+.step.active {
+  font-weight: bold;
+  color: #007bff; /* Change the color to your desired active step color */
+}
+.slider{
+  appearance: auto;
+}
+
+.ql-container{
+  max-height: 87%;
+}
+.ql-toolbar.ql-snow{
+  width: 100%;
+  font-family: 'Inter' !important;
+}
+.ql-container.ql-snow, .ql-toolbar.ql-snow{
+  border: none !important;
+}
+
+@media screen and (max-height: 512px){
+body {
+    overflow-y: auto;
+}
+
+}
+
+@media only screen and (min-width: 280px){
+  html,body{
+    font-size: 13px;
+  }
+}
+
+
+@media only screen and (min-width: 1600px){
+  html,body{
+    font-size: 16px;
+  }
+  }
+
+@media only screen and (min-width: 2200px){
+  html,body{
+    font-size: 24px;
+  }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+

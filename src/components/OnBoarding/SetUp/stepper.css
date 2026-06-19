@@ -1,0 +1,25 @@
+.step-item {
+    @apply relative flex flex-col justify-center items-center;
+  }
+  .step-item:not(:first-child):before {
+    @apply content-[''] absolute w-[21em] translate-x-0 -translate-y-full h-[.5rem] right-2/4 top-[36.33%] ;
+    background: url(../../../Assets/divider.png) no-repeat center center/cover
+  }
+  .step {
+    @apply w-16 h-16 text-heading border-2 flex items-center justify-center z-10 relative bg-white rounded-full font-semibold text-dark;
+  }
+  .active .step {
+    @apply border-theme-color border-2 text-theme-color;
+  }
+  .complete .step {
+    @apply bg-theme-color text-white border-transparent;
+  }
+  .complete p {
+    @apply text-white;
+  }
+  .complete:not(:first-child):before,
+  .active:not(:first-child):before {
+    @apply content-[''] absolute bg-center bg-no-repeat w-[21em] translate-x-0 -translate-y-full h-[.5rem] right-2/4 top-[36.33%];
+    background: url(../../../Assets/dividerComplete.png)  no-repeat center center/cover
+
+  }

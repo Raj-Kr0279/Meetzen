@@ -1,0 +1,16 @@
+
+.schedule_cal_list .react-datepicker__time-name {
+font-size: 11px;
+}
+.schedule_cal_list .react-datepicker__month{
+    gap: 4px;
+}
+.react-datepicker__day-names{
+    padding-inline: 6px;
+}
+
+
+/* members css  */
+.member__cards__wrp::-webkit-scrollbar, .minutes__wrp::-webkit-scrollbar{
+display: none;
+}

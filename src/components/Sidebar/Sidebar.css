@@ -1,0 +1,22 @@
+
+
+.links .link {
+    
+    display: flex;
+    gap: .5rem;
+    padding-block: .75rem;
+    padding-inline: 1rem;
+    align-items: center;
+}
+.link svg, .link span{
+    color: #CBE6F8;
+    font-family: Inter;
+    font-size: 0.938rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.link:hover{
+    background: #0078C2;
+    color: white;
+}

@@ -1,0 +1,91 @@
+import React, { useState } from 'react'
+import { AiOutlineCalendar, AiOutlineClockCircle, AiOutlineSearch } from 'react-icons/ai'
+import { MdArrowBackIosNew } from 'react-icons/md'
+import { RiMapPin2Line } from 'react-icons/ri'
+import { useNavigate } from 'react-router-dom'
+import Agenda from './Agenda/Agenda'
+import Members from './Members'
+import Minutes from './Minutes'
+import ImportantDocuments from './ImportantDocuments'
+import Requests from './Requests'
+
+const MeetingWorkspace = () => {
+    const [currentTab, setCurrentTab] = useState("agenda")
+    const [attendance, setAttendance] = useState(false)
+    const [isPresent, setIsPresent] = useState(false);
+const handlePresent = ()=> {
+    setAttendance(false);
+    setIsPresent(true);
+}
+const handleAttendance = ()=> {
+    setIsPresent(false);
+    setAttendance(true);
+}
+    const navigate = useNavigate()
+    return (
+        <>
+            {/* top navigation  */}
+            <div className="flex pt-2 md:pt-3 pb-2 px-4 w-full justify-between items-center border-b">
+                <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/dashboard")}>
+                    <MdArrowBackIosNew className=' text-largeX font-normal' />
+                    <span className=' text-lg font-medium'>Back</span>
+                </div>
+                <div className='relative hidden md:block'>
+                    <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
+                    <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
+                </div>
+
+            </div>
+            <p className='text-dark absolute top-2 md:top-2.5 left-1/2 -translate-x-1/2 text-[16px] md:text-mediumSubheading font-semibold'>Meeting WorkSpace</p>
+
+            <div className="grid md:grid-cols-2 px-4 mt-4 md:px-10">
+                <div>
+                    <p className='text-theme-color font-normal leading-none pb-1 text-[10px] md:text-paragraph'>BOARD COMMITTEE</p>
+                    <h1 className='text-[16px] md:text-extraLarge leading-none font-semibold text-dark pb-3'>132nd Meeting of Board Committee</h1>
+                    <div className="flex items-center py-3 md:p-0 gap-4">
+                        <div className="flex flex-col md:flex-row">
+                        <p className='flex items-center gap-1 text-theme-color text-[12px] md:text-paragraph font-semibold'><AiOutlineCalendar className='text-theme-color' />24/05/23</p>
+                        <p className='flex items-center gap-1 text-theme-color text-[12px] md:text-paragraph font-semibold'><AiOutlineClockCircle className='text-theme-color' />9:00 AM - 11:00 AM</p>
+                        </div>
+                        <p className='flex items-center gap-1 text-theme-color text-[12px] md:text-paragraph font-semibold'><RiMapPin2Line className='text-theme-color' />Online Conference</p>
+                    </div>
+                </div>
+                <div className=' md:justify-self-end'>
+                    <div className="flex flex-wrap items-center gap-2">
+                        <button className='text-theme-color font-medium py-1.5 px-2.5 border border-theme-color rounded-md' onClick={() => navigate("/board-book")}>View Board book</button>
+                        <div className="relative">
+                            <button className='text-theme-color font-medium py-1.5 px-2.5 border border-theme-color rounded-md' onClick={handleAttendance}>Attendance</button>
+                            {attendance && <div className="absolute whitespace-nowrap flex flex-col left-0 top-full mt-1 bg-white shadow-attendance rounded-sm">
+                                <span className='text-prof py-1.5 px-3 hover:bg-hover-bg transition-all cursor-pointer text-paragraph font-normal border-b'>Preset</span>
+                                <span className='text-prof py-1.5 px-3 hover:bg-hover-bg transition-all cursor-pointer text-paragraph font-normal border-b'>Leave of Absence</span>
+                                <span className='text-prof py-1.5 px-3 hover:bg-hover-bg transition-all cursor-pointer text-paragraph font-normal' onClick={handlePresent}>Present Via VC</span>
+                            </div>}
+                            {isPresent && <div className="absolute p-4 whitespace-nowrap flex flex-col -left-[150%] top-[150%] mt-1 bg-white shadow-attendance rounded-md">
+                                <textarea name="" id="" cols="30" className='border rounded-md' rows="5"/>
+                                <button className='bg-theme-color text-white rounded-md px-8 py-2 mt-4 text-paragraph font-medium' onClick={()=>setIsPresent(false)}>Lorem Ipsumn</button>
+                                </div>}
+                        </div>
+                        <button className='rounded-md basis-full md:basis-[unset] py-3 font-medium text-white mt-2 md:mt-0 md:py-1.5 px-2.5 bg-theme-color border border-theme-color' onClick={()=> navigate("/join-call")}>Join VC Call</button>
+                    </div>
+                    <p className='text-textGray text-paragraph underline text-end pt-4 font-medium'>Continue from last left</p>
+                </div>
+            </div>
+
+            <div className="flex flex-col items-center w-full mt-6 mb-4 ">
+                <ul className='flex gap-8 md:gap-1 w-full overflow-x-auto md:w-auto whitespace-nowrap'>
+                    <li onClick={() => setCurrentTab("agenda")} className={`p-3 ${currentTab === "agenda" ? "bg-theme-color text-white" : ""} cursor-pointer  rounded-[8px_8px_0px_0px]`}>Agenda</li>
+                    <li onClick={() => setCurrentTab("members")} className={`p-3 ${currentTab === "members" ? "bg-theme-color text-white" : ""} cursor-pointer  rounded-[8px_8px_0px_0px]`}>Members (20)</li>
+                    <li onClick={() => setCurrentTab("minutes")} className={`p-3 ${currentTab === "minutes" ? "bg-theme-color text-white" : ""} cursor-pointer  rounded-[8px_8px_0px_0px]`}>Minutes</li>
+                    <li onClick={() => setCurrentTab("documents")} className={`p-3 ${currentTab === "documents" ? "bg-theme-color text-white" : ""} cursor-pointer  rounded-[8px_8px_0px_0px]`}>Documents</li>
+                    <li onClick={() => setCurrentTab("requests")} className={`p-3 ${currentTab === "requests" ? "bg-theme-color text-white" : ""} cursor-pointer  rounded-[8px_8px_0px_0px]`}>Request</li>
+                </ul>
+
+                <div className="bg-hover-bg md:p-4 w-[95%] h-[70dvh] overflow-y-scroll pt-12 flex justify-center rounded-xl">
+                    {currentTab === "agenda" ? <Agenda /> : currentTab === "members" ? <Members /> : currentTab === "minutes" ? <Minutes /> : currentTab === "documents" ? <ImportantDocuments /> : currentTab === "requests" ? <Requests /> : null}
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default MeetingWorkspace
