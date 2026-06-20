@@ -15,8 +15,9 @@ const ReviewProfile = ({ next, prev }) => {
 
   return (
     <>
-      <div className="grid w-full grid-cols-1 tab:grid-cols-2 mb-12 place-items-center">
-        <div className='my-6 tab:my-0'>
+    <div className="w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 w-2/3 place-items-center mx-auto pt-20">
+        <div className='my-6 self-start tab:my-0'>
           <label
             htmlFor="profile_pic"
             className="w-[110px] tab:w-[300px] overflow-hidden inline-block h-[110px] tab:h-[300px] relative cursor-pointer"
@@ -107,6 +108,7 @@ const ReviewProfile = ({ next, prev }) => {
             )} */}
           </div>
         </form>
+      </div>
       </div>
 
 

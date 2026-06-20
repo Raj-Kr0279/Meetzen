@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import CompanyRegistration from './components/OnBoarding/CompanyRegistration/CompanyRegistration';
 import Login from './components/OnBoarding/Login/Login'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import SwitchCompany from './components/OnBoarding/SwitchCompany.jsx/SwitchCompany';
 import ForgotPassword from './components/OnBoarding/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/OnBoarding/ResetPassword/ResetPassword';
@@ -38,13 +38,19 @@ import SubmitFeedback from './components/MyMeeting/SubmitFeedback';
 import ViewDraftDocument from './components/DraftMinutes/ViewDraftDocument';
 import PdfAgenda from './components/MyMeeting/Agenda/PdfAgenda';
 import { DataProvider } from './components/Context/DataContext';
+import Agenda from './components/MyMeeting/Agenda/Agenda';
+import Members from './components/MyMeeting/Members';
+import Minutes from './components/MyMeeting/Minutes';
+import MyDocuments from './components/Resources/MyDocuments';
+import Requests from './components/MyMeeting/Requests';
+import ImportantDocuments from './components/MyMeeting/ImportantDocuments';
 
 function App() {
   return (
     <>
-         <DataProvider>
-      <BrowserRouter>
-      {/* <DataProvider> */}
+      <DataProvider>
+        <BrowserRouter>
+          {/* <DataProvider> */}
 
           <Routes>
             <Route path="/" element={<CompanyRegistration />} />
@@ -58,7 +64,14 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/my-meeting" element={<MyMeeting />} />
             <Route path="/meeting-schedules" element={<MeetingScheduleList />} />
-            <Route path="/meeting-workspace" element={<MeetingWorkspace />} />
+            <Route path="/meeting-workspace" element={<MeetingWorkspace />}>
+              <Route index element={<Navigate to="agenda" />} />
+              <Route path="agenda" element={<Agenda />} />
+              <Route path="members" element={<Members />} />
+              <Route path="minutes" element={<Minutes />} />
+              <Route path="documents" element={<ImportantDocuments />} />
+              <Route path="requests" element={<Requests />} />
+            </Route>
             <Route path="/agenda-pdf" element={<PdfAgenda />} />
             <Route path="/join-call" element={<JoinCall />} />
             <Route path="/board-book" element={<BoardBook />} />
@@ -83,12 +96,12 @@ function App() {
             <Route path="/support" element={<HelpAndSupport />} />
             <Route path="/view-member-profile" element={<ProfileLayout />} />
             {/* <Route path="/dashboard" element={<FingerPrintLogin />} /> */}
-            </Routes>
-        
-        {/* </DataProvider> */}
+          </Routes>
+
+          {/* </DataProvider> */}
         </BrowserRouter>
-        </DataProvider>
-      </>
+      </DataProvider>
+    </>
   );
 }
 
