@@ -9,8 +9,7 @@ import { getDatasetAtEvent } from 'react-chartjs-2'
 import { DataContext } from '../Context/DataContext'
 
 const TopHeader = ({ setIsFilterModal, isFiltersModal, isNotificationsModal, setIsNotificationsModal, isProfileModal, setIsProfileModal, isSidebarOpen, setIsSidebarOpen }) => {
-    const { sidemenu, isMobile, setSidemenu } = useContext(DataContext)
-    console.log(isFiltersModal, "header")
+    const { sidemenu, isMobile, setSidemenu } = useContext(DataContext);
     const navigate = useNavigate()
     // useEffect(()=>{
     //     isMobile && setSidemenu(true)

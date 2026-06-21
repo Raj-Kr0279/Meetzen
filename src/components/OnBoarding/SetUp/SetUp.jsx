@@ -62,7 +62,7 @@ const SetUp = () => {
         onClick={() => {
           if (currentStep === steps.length) {
             setComplete(true);
-            navigate("/dashboard"); // You should have access to navigate from React Router here.
+            navigate("/home"); // You should have access to navigate from React Router here.
           } else {
             setCurrentStep((prev) => prev + 1);
           }

@@ -6,19 +6,20 @@ import {
 } from "react-icons/ai";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { RiMapPin2Line } from "react-icons/ri";
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate, useParams } from "react-router-dom";
 import Agenda from "./Agenda/Agenda";
 import Members from "./Members";
 import Minutes from "./Minutes";
 import ImportantDocuments from "./ImportantDocuments";
 import Requests from "./Requests";
 
-const MeetingWorkspace = () => {
+const MeetingDetails = () => {
   const [currentTab, setCurrentTab] = useState("agenda");
   const [attendance, setAttendance] = useState(false);
   const [isPresent, setIsPresent] = useState(false);
   const navLinks = ["agenda", "members", "minutes", "documents", "requests"];
   const activeStyles = `bg-theme-color text-white`;
+  const {id} = useParams()
   const handlePresent = () => {
     setAttendance(false);
     setIsPresent(true);
@@ -145,7 +146,7 @@ const MeetingWorkspace = () => {
         <div className="flex gap-8 md:gap-1 w-full overflow-x-auto md:w-auto whitespace-nowrap">
           {navLinks.map((link, key) => (
             <NavLink
-              to={`/meeting-workspace/${link}`}
+              to={`/home/meeting-details/${id}/${link}`}
               key={link}
               className={({ isActive }) =>
                 `cursor-pointer  rounded-[8px_8px_0px_0px] p-3 ${
@@ -166,4 +167,4 @@ const MeetingWorkspace = () => {
   );
 };
 
-export default MeetingWorkspace;
+export default MeetingDetails;

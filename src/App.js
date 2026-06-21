@@ -11,13 +11,13 @@ import OtpVerify from './components/OnBoarding/OtpVefify/OtpVerify';
 import FingerPrintLogin from './components/OnBoarding/FingerPrintLogin/FingerPrintLogin';
 import SetUp from './components/OnBoarding/SetUp/SetUp';
 import Dashboard from './components/Dashboard/Dashboard';
-import MyMeeting from './components/MyMeeting/MyMeeting';
+// import MyMeeting from './components/MyMeeting/MyMeeting';
 import EditProfile from './components/EditProfile/EditProfile';
 import ChangePassword from './components/ChangePassword/ChangePassword';
 import Notifications from './components/Notifications/Notifications';
 import Chats from './components/Chats/Chats';
 import MeetingScheduleList from './components/MyMeeting/MeetingScheduleList';
-import MeetingWorkspace from './components/MyMeeting/MeetingWorkspace';
+// import MeetingWorkspace from './components/MyMeeting/MeetingWorkspace';
 import CircularResolution from './components/CircularResolution/CircularResolution';
 import DraftMinutes from './components/DraftMinutes/DraftMinutes';
 import FinalMinutes from './components/FinalMinutes/FinalMinutes';
@@ -44,6 +44,9 @@ import Minutes from './components/MyMeeting/Minutes';
 import MyDocuments from './components/Resources/MyDocuments';
 import Requests from './components/MyMeeting/Requests';
 import ImportantDocuments from './components/MyMeeting/ImportantDocuments';
+import HomeLayout from './components/Dashboard/HomeLayout';
+import MyMeetingsList from './components/MyMeeting/MyMeetingsList';
+import MeetingDetails from './components/MyMeeting/MeetingWorkspace';
 
 function App() {
   return (
@@ -61,17 +64,30 @@ function App() {
             <Route path="/otp-verify" element={<OtpVerify />} />
             <Route path="/fingerprint-login" element={<FingerPrintLogin />} />
             <Route path="/set-up" element={<SetUp />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/my-meeting" element={<MyMeeting />} />
-            <Route path="/meeting-schedules" element={<MeetingScheduleList />} />
-            <Route path="/meeting-workspace" element={<MeetingWorkspace />}>
-              <Route index element={<Navigate to="agenda" />} />
-              <Route path="agenda" element={<Agenda />} />
-              <Route path="members" element={<Members />} />
-              <Route path="minutes" element={<Minutes />} />
-              <Route path="documents" element={<ImportantDocuments />} />
-              <Route path="requests" element={<Requests />} />
+            <Route path='home' element={<HomeLayout />}>
+              <Route index element={<Navigate to="dashboard" />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="my-meetings-list" element={<MyMeetingsList />} />
+              <Route path="meeting-details/:id" element={<MeetingDetails />}>
+                <Route index element={<Navigate to="agenda" />} />
+                <Route path="agenda" element={<Agenda />} />
+                <Route path="members" element={<Members />} />
+                <Route path="minutes" element={<Minutes />} />
+                <Route path="documents" element={<ImportantDocuments />} />
+                <Route path="requests" element={<Requests />} />
+              </Route>
+              <Route path="circular-resolution" element={<CircularResolution />} />
+              <Route path="draft-minutes" element={<DraftMinutes />} />
+              <Route path="final-minutes" element={<FinalMinutes />} />
+              <Route path="resources" element={<Resources />} />
+              <Route path="board-evaluation" element={<BoardEvaluation />} />
+              <Route path="search-report" element={<SearchReport />} />
+              <Route path="about" element={<AboutCompany />} />
+              <Route path="disclosure" element={<Disclosure />} />
+              <Route path="support" element={<HelpAndSupport />} />
             </Route>
+            <Route path="/meeting-schedules" element={<MeetingScheduleList />} />
+
             <Route path="/agenda-pdf" element={<PdfAgenda />} />
             <Route path="/join-call" element={<JoinCall />} />
             <Route path="/board-book" element={<BoardBook />} />
@@ -80,20 +96,12 @@ function App() {
             <Route path="/change-password" element={<ChangePassword />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/chats" element={<Chats />} />
-            <Route path="/circular-resolution" element={<CircularResolution />} />
+
             <Route path="/view-results" element={<ViewResults />} />
-            <Route path="/draft-minutes" element={<DraftMinutes />} />
-            <Route path="/final-minutes" element={<FinalMinutes />} />
             <Route path="/compare-documents" element={<CompareDocuments />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/board-evaluation" element={<BoardEvaluation />} />
             <Route path="/final-meeting-minutes" element={<FinalMeetingMinutes />} />
             <Route path="/submit-feedback" element={<SubmitFeedback />} />
             <Route path="/view-draft-document" element={<ViewDraftDocument />} />
-            <Route path="/search-report" element={<SearchReport />} />
-            <Route path="/about" element={<AboutCompany />} />
-            <Route path="/disclosure" element={<Disclosure />} />
-            <Route path="/support" element={<HelpAndSupport />} />
             <Route path="/view-member-profile" element={<ProfileLayout />} />
             {/* <Route path="/dashboard" element={<FingerPrintLogin />} /> */}
           </Routes>
