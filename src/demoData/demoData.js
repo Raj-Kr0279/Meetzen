@@ -1,0 +1,305 @@
+/*
+  Demo data for dummy API / mock responses.
+  Use: import { demoData } from "../demoData/demoData";
+*/
+
+export const demoData = {
+    profile: {
+        company: {
+            id: "cmp_niit_001",
+            name: "NIIT Technologies Pvt. Ltd.",
+            legalName: "NIIT Technologies Pvt. Ltd.",
+            timezone: "Asia/Kolkata",
+            address: {
+                line1: "Plot No. 3, IT Park",
+                line2: "Phase 2",
+                city: "Gurugram",
+                state: "Haryana",
+                country: "India",
+                postalCode: "122018",
+            },
+        },
+        user: {
+            id: "usr_0007",
+            fullName: "Kumar Reddy",
+            role: "Company Secretary",
+            email: "kumar.reddy@niit.example",
+            phone: "+91-98765-43210",
+            avatar: "profileDummy.png",
+        },
+    },
+
+    meetings: [
+        {
+            id: "meet_132_001",
+            type: "Board Committee",
+            committeeName: "132nd Meeting of Board Committee",
+            meetingNo: 132,
+            committeeCode: "board_meetig",
+            status: "upcoming",
+            startAt: "2023-05-24T09:00:00+05:30",
+            endAt: "2023-05-24T11:00:00+05:30",
+            location: {
+                label: "Park Street",
+                mapQuery: "Park Street, Kolkata",
+            },
+            membersAccepted: 27,
+            membersTotal: 50,
+        },
+        {
+            id: "meet_133_002",
+            type: "Board Committee",
+            committeeName: "133rd Meeting of Board Committee",
+            meetingNo: 133,
+            committeeCode: "board_meetig",
+            status: "recent",
+            startAt: "2023-04-18T14:30:00+05:30",
+            endAt: "2023-04-18T16:00:00+05:30",
+            location: {
+                label: "MG Road",
+                mapQuery: "MG Road, Bengaluru",
+            },
+            membersAccepted: 34,
+            membersTotal: 60,
+        },
+        {
+            id: "meet_201_003",
+            type: "Audit",
+            committeeName: "201st Audit Committee Meeting",
+            meetingNo: 201,
+            committeeCode: "audit",
+            status: "upcoming",
+            startAt: "2023-06-02T10:00:00+05:30",
+            endAt: "2023-06-02T12:00:00+05:30",
+            location: {
+                label: "Banjara Hills",
+                mapQuery: "Banjara Hills, Hyderabad",
+            },
+            membersAccepted: 22,
+            membersTotal: 40,
+        },
+    ],
+
+    notifications: [
+        {
+            id: "noti_001",
+            title: "80th Meeting of Board Committee",
+            message:
+                "Agenda has been circulated. Please review the documents before the meeting date.",
+            category: "meeting",
+            createdAt: "2023-07-23T17:45:00+05:30",
+            read: false,
+        },
+        {
+            id: "noti_002",
+            title: "Draft Minutes Ready for Review",
+            message:
+                "Draft minutes for the 201st Audit Committee are available. Comments close in 2 days.",
+            category: "minutes",
+            createdAt: "2023-07-21T11:20:00+05:30",
+            read: false,
+        },
+        {
+            id: "noti_003",
+            title: "Resolution by Circulation",
+            message:
+                "Voting window opened for Resolution RC-2023-014. Submit your response before 5:00 PM.",
+            category: "resolution",
+            createdAt: "2023-07-20T09:10:00+05:30",
+            read: true,
+        },
+    ],
+
+    chats: [
+        {
+            id: "chat_001",
+            participants: [
+                { id: "usr_0007", name: "Kumar Reddy" },
+                { id: "usr_0103", name: "Brenda White" },
+            ],
+            lastMessage: {
+                by: "usr_0103",
+                text: "Please share any updates on the agenda annexure.",
+                time: "12:00",
+            },
+            messages: [
+                {
+                    id: "msg_001",
+                    by: "usr_0103",
+                    text: "Please share any updates on the agenda annexure.",
+                    time: "11:55",
+                },
+                {
+                    id: "msg_002",
+                    by: "usr_0007",
+                    text: "Will send by EOD. Meanwhile, check the latest draft minutes draft.",
+                    time: "11:58",
+                },
+            ],
+        },
+        {
+            id: "chat_002",
+            participants: [
+                { id: "usr_0007", name: "Kumar Reddy" },
+                { id: "usr_0201", name: "Ayesha Khan" },
+            ],
+            lastMessage: {
+                by: "usr_0201",
+                text: "Can we finalize the quorum confirmation list?",
+                time: "14:10",
+            },
+            messages: [
+                {
+                    id: "msg_003",
+                    by: "usr_0201",
+                    text: "Can we finalize the quorum confirmation list?",
+                    time: "14:10",
+                },
+                {
+                    id: "msg_004",
+                    by: "usr_0007",
+                    text: "Yes—upload it under Documents > Annexures.",
+                    time: "14:12",
+                },
+            ],
+        },
+        {
+            id: "chat_003",
+            participants: [
+                { id: "usr_0007", name: "Kumar Reddy" },
+                { id: "usr_0309", name: "Rohit Mehra" },
+            ],
+            lastMessage: {
+                by: "usr_0309",
+                text: "Received. I’ll review the circular resolution draft.",
+                time: "09:40",
+            },
+            messages: [
+                {
+                    id: "msg_005",
+                    by: "usr_0309",
+                    text: "Received. I’ll review the circular resolution draft.",
+                    time: "09:40",
+                },
+                {
+                    id: "msg_006",
+                    by: "usr_0007",
+                    text: "Thanks! Please submit your notes before tomorrow noon.",
+                    time: "09:42",
+                },
+            ],
+        },
+    ],
+
+    draftMinutes: [
+        {
+            id: "draft_001",
+            committee: "AUDIT COMMITTEE",
+            documentTitle: "Stakeholders Relationship Committee - Draft Minutes",
+            status: "approved",
+            createdAt: "2023-04-03T09:45:00+05:30",
+            meetingRefId: "meet_201_003",
+            editor: "Kumar Reddy",
+            actions: {
+                canEdit: true,
+                canSubmit: true,
+            },
+        },
+        {
+            id: "draft_002",
+            committee: "BOARD COMMITTEE",
+            documentTitle: "Board Committee - Draft Minutes (Annexure A & B)",
+            status: "pending",
+            createdAt: "2023-04-11T15:10:00+05:30",
+            meetingRefId: "meet_132_001",
+            editor: "Ayesha Khan",
+            actions: {
+                canEdit: true,
+                canSubmit: true,
+            },
+        },
+        {
+            id: "draft_003",
+            committee: "SRC",
+            documentTitle: "SRC Minutes Draft: Compliance Review",
+            status: "approved",
+            createdAt: "2023-03-28T11:05:00+05:30",
+            meetingRefId: "meet_133_002",
+            editor: "Rohit Mehra",
+            actions: {
+                canEdit: false,
+                canSubmit: false,
+            },
+        },
+    ],
+
+    finalMinutes: [
+        {
+            id: "final_001",
+            committee: "AUDIT COMMITTEE",
+            documentName: "Document Name - Final Minutes (Audit Committee)",
+            meetingRefId: "meet_201_003",
+            dateTime: "2023-04-03T09:45:00+05:30",
+            version: "v1",
+        },
+        {
+            id: "final_002",
+            committee: "BOARD COMMITTEE",
+            documentName: "Document Name - Final Minutes (Board Committee)",
+            meetingRefId: "meet_132_001",
+            dateTime: "2023-04-22T13:20:00+05:30",
+            version: "v2",
+        },
+        {
+            id: "final_003",
+            committee: "SRC",
+            documentName: "Document Name - Final Minutes (SRC)",
+            meetingRefId: "meet_133_002",
+            dateTime: "2023-04-30T10:05:00+05:30",
+            version: "v1",
+        },
+    ],
+
+    boardEvaluations: [
+        {
+            id: "eval_001",
+            committee: "AUDIT COMMITTEE",
+            documentName: "Stakeholders Relationship Committee",
+            evaluationFor: "MR. RAMCHARAN DAS (Managing Director)",
+            dueDate: "2023-06-20",
+            questionsAttempted: 4,
+            questionsTotal: 5,
+            marksObtained: 4,
+            marksTotal: 5,
+            status: "pending",
+            pendingDaysLeft: 15,
+        },
+        {
+            id: "eval_002",
+            committee: "BOARD COMMITTEE",
+            documentName: "Nomination and Remuneration Committee",
+            evaluationFor: "MS. PRIYA NAIR (Independent Director)",
+            dueDate: "2023-06-25",
+            questionsAttempted: 5,
+            questionsTotal: 5,
+            marksObtained: 5,
+            marksTotal: 5,
+            status: "submitted",
+            pendingDaysLeft: 0,
+        },
+        {
+            id: "eval_003",
+            committee: "SRC",
+            documentName: "Audit Committee",
+            evaluationFor: "MR. VIKRAM SINGH (Chief Compliance Officer)",
+            dueDate: "2023-06-30",
+            questionsAttempted: 2,
+            questionsTotal: 5,
+            marksObtained: 2,
+            marksTotal: 5,
+            status: "pending",
+            pendingDaysLeft: 20,
+        },
+    ],
+};
+

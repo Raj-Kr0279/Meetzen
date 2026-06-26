@@ -3,6 +3,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import { MdArrowBackIosNew } from 'react-icons/md'
 import DatePicker from 'react-modern-calendar-datepicker'
 import { useNavigate } from 'react-router-dom'
+import PageHeading from '../PageHeading'
 
 const SearchReport = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -10,19 +11,9 @@ const SearchReport = () => {
     const navigate = useNavigate()
     return (
         <>
-            <div className="flex fixed z-20 bg-white top-0 py-2 px-4 w-full justify-between items-center border-b">
-                <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/dashboard")}>
-                    <MdArrowBackIosNew className=' text-largeX font-normal' />
-                    <span className=' text-lg font-medium'>Back</span>
-                </div>
-                <div className='relative'>
-                    <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
-                    <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
-                </div>
-            </div>
-            <p className='text-dark fixed top-2 z-30 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Search Reports</p>
+            <PageHeading label="Search Reports"/>
 
-            <div className='w-full px-10 mt-[70px] twok:mt-[120px] '>
+            <div className='w-full px-10'>
                 <form >
                     <div className="grid md:grid-cols-4 mb-6 gap-x-6 whitespace-nowrap">
                     <div className="flex flex-col gap-2">

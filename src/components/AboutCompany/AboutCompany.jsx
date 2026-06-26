@@ -6,6 +6,7 @@ import News from './News'
 import CompanyStructure from './CompanyStructure'
 import NewPage from '../OnBoarding/Login/Login'
 import CommitteeComposition from './CommitteeComposition'
+import PageHeading from '../PageHeading'
 
 const AboutCompany = () => {
     const navigate = useNavigate()
@@ -18,19 +19,9 @@ const AboutCompany = () => {
 
     return (
         <>
-            <div className="flex fixed z-20 bg-white top-0 py-2 px-4 w-full justify-between items-center border-b">
-                <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/dashboard")}>
-                    <MdArrowBackIosNew className=' text-largeX font-normal' />
-                    <span className=' text-lg font-medium'>Back</span>
-                </div>
-                <div className='relative'>
-                    <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
-                    <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
-                </div>
-            </div>
-            <p className='text-dark fixed z-30 top-4 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>About Company</p>
+        <PageHeading label="About Company"/>
             <div className="px-10 w-full">
-                <div className='w-full px-10 mt-[70px] min-h-screen bg-hover-bg'>
+                <div className='w-full px-10 min-h-screen bg-hover-bg'>
                     <div className="flex highlight_switcher pt-10 justify-between items-center">
                         <div className='font-semibold flex items-center border-borderInput text-paragraph px-0 overflow-hidden border rounded-md h-12 place-items-center'>
                             <div className='font-semibold whitespace-nowrap flex items-center border-borderInput text-paragraph px-0 overflow-hidden border rounded-md h-12 place-items-center'>

@@ -2,25 +2,13 @@ import React from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { MdArrowBackIosNew } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
+import PageHeading from '../PageHeading'
 
 const CompareDocuments = () => {
     const navigate = useNavigate()
     return (
         <>
-            <div className="flex bg-white fixed top-0 pt-4 pb-2 px-4 w-full justify-between items-center border-b">
-                <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/dashboard")}>
-                    <MdArrowBackIosNew className=' text-largeX font-normal' />
-                    <span className=' text-lg font-medium'>Back</span>
-                </div>
-                <div className='relative'>
-                    <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
-                    <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
-                </div>
-
-            </div>
-            <p className='text-dark fixed top-4 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Compare Documents</p>
-
-
+            <PageHeading label="Compare Documents"/>
             <div className="flex flex-col px-10">
                 <div className="grid grid-cols-2 place-items-center shrink-0 grow-0 fixed bg-white w-full top-[52px]">
                     <h1 className=' text-compareHead font-semibold text-mediumSubheading pt-6 pb-4'>Draft Minutes</h1>

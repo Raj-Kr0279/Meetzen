@@ -27,7 +27,7 @@ const TopHeader = ({ setIsFilterModal, isFiltersModal, isNotificationsModal, set
                 <div className="sidebar__toggle block md:hidden mr-auto" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                     <FiMenu className='text-large' />
                 </div>
-                <div className="chat__action md:border md:border-theme-color rounded-lg p-2 font-medium cursor-pointer flex gap-2 items-center" onClick={() => navigate("/chats")}>
+                <div className="chat__action md:border md:border-theme-color rounded-lg p-2 font-medium cursor-pointer flex gap-2 items-center" onClick={() => navigate("/home/chat")}>
                     <FiMessageSquare className='text-large' />
                     <span className="text-medium hidden md:inline-block">Chat</span>
                     <span className='rounded-full bg-dark text-white text-smallSubheading items-center justify-center font-semibold w-6 h-6 hidden md:flex'>5</span>

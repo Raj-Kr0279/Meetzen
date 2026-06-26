@@ -15,15 +15,15 @@ import Dashboard from './components/Dashboard/Dashboard';
 import EditProfile from './components/EditProfile/EditProfile';
 import ChangePassword from './components/ChangePassword/ChangePassword';
 import Notifications from './components/Notifications/Notifications';
-import Chats from './components/Chats/Chats';
+import Chat from './components/Chats/Chat';
 import MeetingScheduleList from './components/MyMeeting/MeetingScheduleList';
 // import MeetingWorkspace from './components/MyMeeting/MeetingWorkspace';
 import CircularResolution from './components/CircularResolution/CircularResolution';
 import DraftMinutes from './components/DraftMinutes/DraftMinutes';
-import FinalMinutes from './components/FinalMinutes/FinalMinutes';
+import FinalMinutesList from './components/FinalMinutes/FinalMinutesList';
 import Resources from './components/Resources/Resources';
-import BoardEvaluation from './components/Evaluations/BoardEvaluation';
-import FinalMeetingMinutes from './components/Evaluations/FinalMeetingMinutes';
+import BoardEvaluationList from './components/Evaluations/BoardEvaluationList';
+import BoardEvaluationDetails from './components/Evaluations/BoardEvaluationDetails';
 import SearchReport from './components/SearchReport/SearchReport';
 import AboutCompany from './components/AboutCompany/AboutCompany';
 import HelpAndSupport from './components/HelpAndSupport/HelpAndSupport';
@@ -35,7 +35,6 @@ import ResolutionDoc from './components/CircularResolution/ResolutionDoc';
 import JoinCall from './components/MyMeeting/JoinCall';
 import ProfileLayout from './components/MyMeeting/ProfileDetails/ProfileLayout';
 import SubmitFeedback from './components/MyMeeting/SubmitFeedback';
-import ViewDraftDocument from './components/DraftMinutes/ViewDraftDocument';
 import PdfAgenda from './components/MyMeeting/Agenda/PdfAgenda';
 import { DataProvider } from './components/Context/DataContext';
 import Agenda from './components/MyMeeting/Agenda/Agenda';
@@ -47,6 +46,8 @@ import ImportantDocuments from './components/MyMeeting/ImportantDocuments';
 import HomeLayout from './components/Dashboard/HomeLayout';
 import MyMeetingsList from './components/MyMeeting/MyMeetingsList';
 import MeetingDetails from './components/MyMeeting/MeetingWorkspace';
+import EditDraftDocument from './components/DraftMinutes/EditDraftDocument';
+import ViewFinalMinute from './components/FinalMinutes/ViewFinalMinute';
 
 function App() {
   return (
@@ -69,7 +70,7 @@ function App() {
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="my-meetings-list" element={<MyMeetingsList />} />
               <Route path="meeting-details/:id" element={<MeetingDetails />}>
-                <Route index element={<Navigate to="agenda" />} />
+                <Route index element={<Navigate to="agenda" replace/>} />
                 <Route path="agenda" element={<Agenda />} />
                 <Route path="members" element={<Members />} />
                 <Route path="minutes" element={<Minutes />} />
@@ -78,30 +79,31 @@ function App() {
               </Route>
               <Route path="circular-resolution" element={<CircularResolution />} />
               <Route path="draft-minutes" element={<DraftMinutes />} />
-              <Route path="final-minutes" element={<FinalMinutes />} />
+              <Route path="edit-draft-document/:id" element={<EditDraftDocument />} />
+              <Route path="compare-documents/:id" element={<CompareDocuments />} />
+              <Route path="final-minutes-list" element={<FinalMinutesList />} />
+              <Route path="final-minute-details/:id" element={<ViewFinalMinute />} />
+              <Route path="board-evaluation-details/:id" element={<BoardEvaluationDetails />} />
               <Route path="resources" element={<Resources />} />
-              <Route path="board-evaluation" element={<BoardEvaluation />} />
+              <Route path="board-evaluation-list" element={<BoardEvaluationList />} />
               <Route path="search-report" element={<SearchReport />} />
               <Route path="about" element={<AboutCompany />} />
               <Route path="disclosure" element={<Disclosure />} />
+              <Route path="join-call" element={<JoinCall />} />
+              <Route path="agenda-pdf" element={<PdfAgenda />} />
+              <Route path="board-book" element={<BoardBook />} />
+              <Route path="resolution-document" element={<ResolutionDoc />} />
+              <Route path="meeting-schedules" element={<MeetingScheduleList />} />
               <Route path="support" element={<HelpAndSupport />} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="chat" element={<Chat />} />
             </Route>
-            <Route path="/meeting-schedules" element={<MeetingScheduleList />} />
 
-            <Route path="/agenda-pdf" element={<PdfAgenda />} />
-            <Route path="/join-call" element={<JoinCall />} />
-            <Route path="/board-book" element={<BoardBook />} />
-            <Route path="/resolution-document" element={<ResolutionDoc />} />
             <Route path="/edit-profile" element={<EditProfile />} />
             <Route path="/change-password" element={<ChangePassword />} />
-            <Route path="/notifications" element={<Notifications />} />
-            <Route path="/chats" element={<Chats />} />
 
             <Route path="/view-results" element={<ViewResults />} />
-            <Route path="/compare-documents" element={<CompareDocuments />} />
-            <Route path="/final-meeting-minutes" element={<FinalMeetingMinutes />} />
             <Route path="/submit-feedback" element={<SubmitFeedback />} />
-            <Route path="/view-draft-document" element={<ViewDraftDocument />} />
             <Route path="/view-member-profile" element={<ProfileLayout />} />
             {/* <Route path="/dashboard" element={<FingerPrintLogin />} /> */}
           </Routes>

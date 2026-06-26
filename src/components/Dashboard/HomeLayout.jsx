@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Sidebar from "../Sidebar/Sidebar";
 import TopHeader from "./TopHeader";
 import FilterModal from "./FilterModal";
@@ -20,8 +20,8 @@ const HomeLayout = () => {
   const [isNotificationsModal, setIsNotificationsModal] = useState(false);
   const [isProfileModal, setIsProfileModal] = useState(false);
   const [isMeetingModal, setIsMeetingModal] = useState(false);
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  useEffect(() => {}, [window.location.pathname]);
   return (
     <>
       {console.log(isSidebarOpen, "checking")}
@@ -41,18 +41,16 @@ const HomeLayout = () => {
       <div className="w-full flex h-screen overflow-x-hidden">
         <Sidebar isSidebarOpen={isSidebarOpen} />
         <div className="grow-1 w-full relative">
-          {window.location.pathname == "/home/dashboard" && (
-            <TopHeader
-              isSidebarOpen={isSidebarOpen}
-              setIsSidebarOpen={setIsSidebarOpen}
-              isFiltersModal={isFiltersModal}
-              setIsFilterModal={setIsFilterModal}
-              isNotificationsModal={isNotificationsModal}
-              setIsNotificationsModal={setIsNotificationsModal}
-              isProfileModal={isProfileModal}
-              setIsProfileModal={setIsProfileModal}
-            />
-          )}
+          <TopHeader
+            isSidebarOpen={isSidebarOpen}
+            setIsSidebarOpen={setIsSidebarOpen}
+            isFiltersModal={isFiltersModal}
+            setIsFilterModal={setIsFilterModal}
+            isNotificationsModal={isNotificationsModal}
+            setIsNotificationsModal={setIsNotificationsModal}
+            isProfileModal={isProfileModal}
+            setIsProfileModal={setIsProfileModal}
+          />
           {isNotificationsModal && (
             <NotificationModal
               isNotificationsModal={isNotificationsModal}

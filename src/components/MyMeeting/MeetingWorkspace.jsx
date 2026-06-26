@@ -12,6 +12,7 @@ import Members from "./Members";
 import Minutes from "./Minutes";
 import ImportantDocuments from "./ImportantDocuments";
 import Requests from "./Requests";
+import PageHeading from "../PageHeading";
 
 const MeetingDetails = () => {
   const [currentTab, setCurrentTab] = useState("agenda");
@@ -19,7 +20,7 @@ const MeetingDetails = () => {
   const [isPresent, setIsPresent] = useState(false);
   const navLinks = ["agenda", "members", "minutes", "documents", "requests"];
   const activeStyles = `bg-theme-color text-white`;
-  const {id} = useParams()
+  const { id } = useParams();
   const handlePresent = () => {
     setAttendance(false);
     setIsPresent(true);
@@ -31,31 +32,8 @@ const MeetingDetails = () => {
   const navigate = useNavigate();
   return (
     <>
-      {/* top navigation  */}
-      <div className="flex pt-2 md:pt-3 pb-2 px-4 w-full justify-between items-center border-b">
-        <div
-          className="flex items-center font-semibold text-theme-color cursor-pointer"
-          onClick={() => navigate("/dashboard")}
-        >
-          <MdArrowBackIosNew className=" text-largeX font-normal" />
-          <span className=" text-lg font-medium">Back</span>
-        </div>
-        <div className="relative hidden md:block">
-          <AiOutlineSearch className="absolute text-placeholder top-1/2 left-2 -translate-y-1/2" />
-          <input
-            className="text-placeholder border border-topSearch rounded-md py-1.5 px-8"
-            placeholder="Search"
-            type="text"
-            name="search"
-            id="search"
-          />
-        </div>
-      </div>
-      <p className="text-dark absolute top-2 md:top-2.5 left-1/2 -translate-x-1/2 text-[16px] md:text-mediumSubheading font-semibold">
-        Meeting WorkSpace
-      </p>
-
-      <div className="grid md:grid-cols-2 px-4 mt-4 md:px-10">
+      <PageHeading label="Meeting WorkSpace" />
+      <div className="grid md:grid-cols-2 px-4 md:px-10">
         <div>
           <p className="text-theme-color font-normal leading-none pb-1 text-[10px] md:text-paragraph">
             BOARD COMMITTEE
@@ -84,7 +62,7 @@ const MeetingDetails = () => {
           <div className="flex flex-wrap items-center gap-2">
             <button
               className="text-theme-color font-medium py-1.5 px-2.5 border border-theme-color rounded-md"
-              onClick={() => navigate("/board-book")}
+              onClick={() => navigate("/home/board-book")}
             >
               View Board book
             </button>
@@ -131,7 +109,7 @@ const MeetingDetails = () => {
             </div>
             <button
               className="rounded-md basis-full md:basis-[unset] py-3 font-medium text-white mt-2 md:mt-0 md:py-1.5 px-2.5 bg-theme-color border border-theme-color"
-              onClick={() => navigate("/join-call")}
+              onClick={() => navigate("/home/join-call")}
             >
               Join VC Call
             </button>
@@ -160,7 +138,7 @@ const MeetingDetails = () => {
         </div>
 
         <div className="bg-hover-bg md:p-4 w-[95%] h-[70dvh] overflow-y-scroll pt-12 flex justify-center rounded-xl">
-          <Outlet/>
+          <Outlet />
         </div>
       </div>
     </>

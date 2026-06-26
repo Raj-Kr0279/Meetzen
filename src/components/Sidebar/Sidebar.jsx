@@ -20,17 +20,33 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
   const [isSidebar, setSidebar] = useState(false);
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const navLinks = [
-    "dashboard",
-    "my-meetings-list",
-    "circular-resolution",
-    "draft-minutes",
-    "final-minutes",
-    "resources",
-    "board-evaluation",
-    "search-report",
-    "about",
-    "disclosure",
-    "support",
+    {
+      label: "dashboard",
+      link: "dashboard",
+      icon: <MdOutlineDashboardCustomize />,
+    },
+    { label: "my-meetings-list", link: "my-meetings-list", icon: <FiUsers /> },
+    {
+      label: "circular-resolution",
+      link: "circular-resolution",
+      icon: <MdOutlineModeEditOutline />,
+    },
+    { label: "draft-minutes", link: "draft-minutes", icon: <AiOutlineFile /> },
+    { label: "final-minutes", link: "final-minutes-list", icon: <AiOutlineFile /> },
+    { label: "resources", link: "resources", icon: <FaRegFolderOpen /> },
+    {
+      label: "board-evaluation",
+      link: "board-evaluation-list",
+      icon: <MdOutlineMarkChatRead />,
+    },
+    {
+      label: "search-report",
+      link: "search-report",
+      icon: <AiOutlineSearch />,
+    },
+    { label: "about", link: "about", icon: <FaCity /> },
+    { label: "disclosure", link: "disclosure", icon: <FiFileText /> },
+    { label: "support", link: "support", icon: <BiSupport /> },
   ];
 
   return (
@@ -45,10 +61,20 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
             LOGO
           </div>
           <div className="links flex flex-col">
-            {navLinks.map((link, key)=> <NavLink to={`/home/${link}`} key={link} className={({isActive})=> `link ${isActive ? 'bg-blue-700 text-white' : ''}`}>
-              <MdOutlineDashboardCustomize />
-              <span>{link}</span>
-            </NavLink>)}
+            {navLinks.map((link) => (
+              <NavLink
+                to={`/home/${link.link}`}
+                key={link.label}
+                className={({ isActive }) =>
+                  `link ${
+                    isActive ? "bg-blue-700 text-white" : "hover:bg-blue-700/50"
+                  }`
+                }
+              >
+                {link.icon}
+                <span>{link.label}</span>
+              </NavLink>
+            ))}
           </div>
         </div>
         <div className="mt-auto procs__logo__img">
