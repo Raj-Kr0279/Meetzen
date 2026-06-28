@@ -21,32 +21,32 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const navLinks = [
     {
-      label: "dashboard",
+      label: "Dashboard",
       link: "dashboard",
       icon: <MdOutlineDashboardCustomize />,
     },
-    { label: "my-meetings-list", link: "my-meetings-list", icon: <FiUsers /> },
+    { label: "My-meetings-list", link: "my-meetings-list", icon: <FiUsers /> },
     {
-      label: "circular-resolution",
-      link: "circular-resolution",
+      label: "Circular-resolutions",
+      link: "circular-resolutions",
       icon: <MdOutlineModeEditOutline />,
     },
-    { label: "draft-minutes", link: "draft-minutes", icon: <AiOutlineFile /> },
-    { label: "final-minutes", link: "final-minutes-list", icon: <AiOutlineFile /> },
-    { label: "resources", link: "resources", icon: <FaRegFolderOpen /> },
+    { label: "Draft-minutes", link: "draft-minutes", icon: <AiOutlineFile /> },
+    { label: "Final-minutes", link: "final-minutes-list", icon: <AiOutlineFile /> },
+    { label: "Resources", link: "resources", icon: <FaRegFolderOpen /> },
     {
-      label: "board-evaluation",
+      label: "Board-evaluation",
       link: "board-evaluation-list",
       icon: <MdOutlineMarkChatRead />,
     },
     {
-      label: "search-report",
+      label: "Search-report",
       link: "search-report",
       icon: <AiOutlineSearch />,
     },
-    { label: "about", link: "about", icon: <FaCity /> },
-    { label: "disclosure", link: "disclosure", icon: <FiFileText /> },
-    { label: "support", link: "support", icon: <BiSupport /> },
+    { label: "About", link: "about", icon: <FaCity /> },
+    { label: "Disclosure", link: "disclosure", icon: <FiFileText /> },
+    { label: "Support", link: "support", icon: <BiSupport /> },
   ];
 
   return (

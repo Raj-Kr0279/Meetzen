@@ -10,9 +10,10 @@ import { MdOutlineMessage } from "react-icons/md";
 import DatePicker from "react-modern-calendar-datepicker";
 import { useState } from "react";
 import prof from "../../Assets/profileDummy.png";
-import dash from "../../Assets/Icon placeholder.svg";
+
 import "./Dashboard.css";
 import { demoData } from "../../demoData/demoData";
+import ActionablesSummary from "./ActionablesSummary";
 
 const Dashboard = () => {
   const [isChat, setIsChat] = useState(false);
@@ -155,42 +156,7 @@ const Dashboard = () => {
             ))}
           </div>
         </div>
-
-        <div className="w-full md:p-4 my-6 md:my-0 card">
-          <h1 className="text-dark text-heading font-semibold pb-2">
-            My Actionable
-          </h1>
-          <div className="grid-cols-2 md:grid-cols-4 grid gap-2">
-            <div className="flex flex-col items-center text-center px-2 py-4 rounded-xl bg-actionableLightOrange">
-              <FiEdit className="text-heading text-white w-[52px] h-[52px] rounded-full p-2 bg-actionableOrange" />
-              <span className="text-dark text-smallCaption tracking-[1px] pt-2 font-medium pb-2">
-                Draft Minutes
-              </span>
-              <h1 className="text-dark text-heading font-bold mt-auto">9</h1>
-            </div>
-            <div className="flex flex-col items-center text-center px-2 py-4 rounded-xl bg-actionableLightGreen">
-              <MdOutlineMessage className="text-heading text-white w-[52px] h-[52px] rounded-full p-2 bg-success" />
-              <span className="text-dark text-smallCaption tracking-[1px] pt-2 font-medium pb-2">
-                Board Evaluation
-              </span>
-              <h1 className="text-dark text-heading font-bold mt-auto">5</h1>
-            </div>
-            <div className="flex flex-col items-center text-center px-2 py-4 rounded-xl bg-actionableLightPurple">
-              <img src={dash} alt="" />
-              <span className="text-dark text-smallCaption tracking-[1px] pt-2 font-medium pb-2">
-                Resolution By Circulation
-              </span>
-              <h1 className="text-dark text-heading font-bold mt-auto">12</h1>
-            </div>
-            <div className="flex flex-col items-center text-center px-2 py-4 rounded-xl bg-actionableLightYellow">
-              <FiFile className="text-heading text-white w-[52px] h-[52px] rounded-full p-2 bg-actionableYellow" />
-              <span className="text-dark text-smallCaption tracking-[1px] pt-2 font-medium pb-2">
-                Final Minutes
-              </span>
-              <h1 className="text-dark text-heading font-bold mt-auto">4</h1>
-            </div>
-          </div>
-        </div>
+        <ActionablesSummary />
       </div>
       <div className="flex flex-col gap-4 w-full">
         {/* date picker  */}
@@ -272,7 +238,7 @@ const Dashboard = () => {
               className="underline cursor-pointer text-theme-color font-semibold"
               onClick={() => {
                 if (isChat) {
-                  navigate("/home/chats");
+                  navigate("/home/chat");
                 } else {
                   navigate("/home/notifications");
                 }
@@ -282,8 +248,8 @@ const Dashboard = () => {
             </span>
           </div>
           <div className="flex flex-col overflow-scroll grow-1 chat__wrapper">
-            {!isChat ? 
-                Array.from({ length: 4 }, (_, index) => (
+            {!isChat
+              ? Array.from({ length: 4 }, (_, index) => (
                   <div key={index} className="pt-4 grow-1 noti__wrapper">
                     <div className="flex flex-col mb-2 break-words bg-hover-bg border-l-4 p-2 border-theme-color">
                       <h1 className="text-dark text-base font-semibold">

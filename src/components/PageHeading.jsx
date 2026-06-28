@@ -12,7 +12,7 @@ const PageHeading = ({label}) => {
           <span className=' text-lg font-medium'>Back</span>
         </div>
       </div>
-   <p className='text-dark py-8 text-mediumSubheading text-center font-semibold'>{label}</p>
+   {/* <p className='text-dark py-8 text-mediumSubheading text-center font-semibold'>{label}</p> */}
     </>
   )
 }

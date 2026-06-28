@@ -17,8 +17,6 @@ import ChangePassword from './components/ChangePassword/ChangePassword';
 import Notifications from './components/Notifications/Notifications';
 import Chat from './components/Chats/Chat';
 import MeetingScheduleList from './components/MyMeeting/MeetingScheduleList';
-// import MeetingWorkspace from './components/MyMeeting/MeetingWorkspace';
-import CircularResolution from './components/CircularResolution/CircularResolution';
 import DraftMinutes from './components/DraftMinutes/DraftMinutes';
 import FinalMinutesList from './components/FinalMinutes/FinalMinutesList';
 import Resources from './components/Resources/Resources';
@@ -28,7 +26,6 @@ import SearchReport from './components/SearchReport/SearchReport';
 import AboutCompany from './components/AboutCompany/AboutCompany';
 import HelpAndSupport from './components/HelpAndSupport/HelpAndSupport';
 import Disclosure from './components/Disclosure/Disclosure';
-import ViewResults from './components/CircularResolution/ViewResults';
 import BoardBook from './components/MyMeeting/BoardBook';
 import CompareDocuments from './components/FinalMinutes/CompareDocuments';
 import ResolutionDoc from './components/CircularResolution/ResolutionDoc';
@@ -48,6 +45,8 @@ import MyMeetingsList from './components/MyMeeting/MyMeetingsList';
 import MeetingDetails from './components/MyMeeting/MeetingWorkspace';
 import EditDraftDocument from './components/DraftMinutes/EditDraftDocument';
 import ViewFinalMinute from './components/FinalMinutes/ViewFinalMinute';
+import CircularResolutionResult from './components/CircularResolution/CircularResolutionResult';
+import CircularResolutionList from './components/CircularResolution/CircularResolutionList';
 
 function App() {
   return (
@@ -77,7 +76,8 @@ function App() {
                 <Route path="documents" element={<ImportantDocuments />} />
                 <Route path="requests" element={<Requests />} />
               </Route>
-              <Route path="circular-resolution" element={<CircularResolution />} />
+              <Route path="circular-resolutions" element={<CircularResolutionList />} />
+            <Route path="circular-resolution-result/:id" element={<CircularResolutionResult />} />
               <Route path="draft-minutes" element={<DraftMinutes />} />
               <Route path="edit-draft-document/:id" element={<EditDraftDocument />} />
               <Route path="compare-documents/:id" element={<CompareDocuments />} />
@@ -102,7 +102,6 @@ function App() {
             <Route path="/edit-profile" element={<EditProfile />} />
             <Route path="/change-password" element={<ChangePassword />} />
 
-            <Route path="/view-results" element={<ViewResults />} />
             <Route path="/submit-feedback" element={<SubmitFeedback />} />
             <Route path="/view-member-profile" element={<ProfileLayout />} />
             {/* <Route path="/dashboard" element={<FingerPrintLogin />} /> */}

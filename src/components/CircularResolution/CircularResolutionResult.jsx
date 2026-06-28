@@ -7,8 +7,9 @@ import prof from '../../Assets/profileDummy.png'
 import { useNavigate } from 'react-router-dom'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
+import PageHeading from '../PageHeading'
 
-const ViewResults = () => {
+const CircularResolutionResult = () => {
     const data = {
         labels: ['Ascent', 'Dissent', 'Abstain', 'Vote'],
         datasets: [
@@ -39,18 +40,8 @@ const ViewResults = () => {
     const navigate = useNavigate()
     return (
         <>
-               <div className="flex fixed bg-white top-0 py-2 px-4 w-full justify-between items-center border-b">
-                <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/circular-resolution")}>
-                    <MdArrowBackIosNew className=' text-largeX font-normal' />
-                    <span className=' text-lg font-medium'>Back</span>
-                </div>
-                <div className='relative'>
-                    <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
-                    <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
-                </div>
-            </div>
-            <p className='text-dark fixed top-2 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>View Results</p>
-            <div className="w-full mt-[60px] bg-white p-8 min-h-screen">
+              <PageHeading/>
+            <div className="w-full bg-white p-8 min-h-screen">
                 <div className="min-h-[70vh] w-full bg-white border border-gray-200  rounded-md">
                     <div className='py-2 px-4 border-b bg-hover-bg'>
                         <h1 className="text-dark font-semibold text-large">Results</h1>
@@ -278,4 +269,4 @@ const ViewResults = () => {
     )
 }
 
-export default ViewResults
+export default CircularResolutionResult
