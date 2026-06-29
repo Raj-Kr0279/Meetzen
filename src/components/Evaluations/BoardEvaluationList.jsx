@@ -93,7 +93,7 @@ const BoardEvaluationList = () => {
                     {evals.pendingDaysLeft}
                   </span>
                   <button
-                    className="py-2 px-6 text-paragraph font-medium bg-theme-color text-white rounded-[4px]"
+                    className="py-2 px-6 text-paragraph font-medium bg-meetzen-primary text-white rounded-[4px]"
                     onClick={() =>
                       navigate(`/home/board-evaluation-details/${evals.id}`)
                     }

@@ -233,7 +233,7 @@ const CircularResolutionResult = () => {
                     <h1 className='text-dark font-semibold text-mediumSubheading pl-4'>Results</h1>
                     <div className='flex items-center justify-between gap-3'>
                         <div className="flex gap-4 items-center">
-                            <div className='bg-theme-color w-8 h-8 rounded-full'></div>
+                            <div className='bg-meetzen-primary w-8 h-8 rounded-full'></div>
                             <p className='text-placeholder font-medium text-paragraph justify-self-start whitespace-nowrap'>No of director who have given Assent</p>
                         </div>
                         <p className='text-theme-color font-extrabold bg-themeLightBlue shrink-0 w-8 h-6 rounded-sm flex item-center justify-center'>6</p>

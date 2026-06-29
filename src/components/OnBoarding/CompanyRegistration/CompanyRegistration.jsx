@@ -14,8 +14,6 @@ const CompanyRegistration = () => {
   }
   return (
     <div className="grid-cols-1 md:grid-cols-2 grid w-full h-screen">
-      <LeftColumn />
-      <RightColumn>
         <form action="" onSubmit={handleSubmit} className="w-full">
           <div className="flex flex-col gap-2 pb-16">
             <label
@@ -36,15 +34,13 @@ const CompanyRegistration = () => {
             />
             {inputError && <div className='flex gap-2 items-center text-smallCaption text-error'><AiOutlineWarning className='text-smallCaption' /><span className=''>Please enter a valid code</span></div>}
           </div>
-          <button onClick={() => navigate('/login')} disabled={false} className="bg-theme-color py-3 w-full text-white rounded-md">
+          <button onClick={() => navigate('/login')} disabled={false} className="bg-meetzen-primary py-3 w-full text-white rounded-md">
             Continue
           </button>
 
           <div className='flex justify-center border-b border-theme-color w-max mx-auto pt-6 items-center'><img src={swap} alt="" /><span className="inline-block font-medium text-center leading-tight text-theme-color text-smallSubheading cursor-pointer" onClick={() => navigate("/switch-company")}>Switch Company</span>
           </div>
         </form>
-
-      </RightColumn>
 
       {/*Tooltip component */}
       <Tooltip

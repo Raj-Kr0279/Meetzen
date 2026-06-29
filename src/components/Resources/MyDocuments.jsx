@@ -125,7 +125,7 @@ const MyDocuments = () => {
                                 </div>
                             )
                             }
-                            <button className="bg-theme-color w-full text-white py-3 rounded-md px-8 mt-2" onClick={() => setSuccessModal(true)}>Okay</button>
+                            <button className="bg-meetzen-primary w-full text-white py-3 rounded-md px-8 mt-2" onClick={() => setSuccessModal(true)}>Okay</button>
 
                         </div> : ""}
                     </div>

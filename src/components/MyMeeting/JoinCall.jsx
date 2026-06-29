@@ -37,7 +37,7 @@ const JoinCall = () => {
                     <div className=''>
                         <h1 className=' text-extraLarge pb-1.5 font-semibold text-dark'>132nd Meeting of Audit Committee</h1>
                         <p className='text-light text-paragraph font-normal'>Lorem ipsum dolor sit amet consectetur. Donec laoreet molestie semper sed urna.</p>
-                        <button className='bg-theme-color w- mt-10 text-white text-mediumCaption py-4 px-20 rounded-sm'>Join Call</button>
+                        <button className='bg-meetzen-primary w- mt-10 text-white text-mediumCaption py-4 px-20 rounded-sm'>Join Call</button>
                     </div>
                 </div>
             </div>

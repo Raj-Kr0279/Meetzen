@@ -36,7 +36,7 @@ const SubmitPopup = ({ modal, setModal, isSaveDraft, setSaveDraft }) => {
                 <h3 className='text-prof font-medium text-mediumSubheading'>Saved Draft Minutes</h3>
                 <p className='text-dark text-medium font-normal'>Your draft minutes are saved successfully. Tap on “Continue” to submit to the company secretary.</p>
                 <div className="grid mt-2 grid-cols-2 gap-2">
-                    <button className='text-white rounded-sm border border-white bg-theme-color font-medium py-2 px-4' onClick={()=>setModal(false)}>Save</button>
+                    <button className='text-white rounded-sm border border-white bg-meetzen-primary font-medium py-2 px-4' onClick={()=>setModal(false)}>Save</button>
                     <button className='text-theme-color rounded-sm bg-white border border-theme-color text-paragraph font-medium py-2 px-4' onClick={handleContinue}>Continue</button>
                 </div>
             </div>
@@ -45,14 +45,14 @@ const SubmitPopup = ({ modal, setModal, isSaveDraft, setSaveDraft }) => {
                     <div className="flex flex-col gap-2">
                         <h3 className='text-prof font-medium text-mediumSubheading'>Submit Draft Minutes</h3>
                         <p className='text-dark text-medium font-normal'>Your are about to share this draft minute with the company secretary. Provide your comments for the final submission.</p>
-                        <button className='bg-theme-color mt-3 text-white py-2 px-6 w-full rounded-md' onClick={handleAddComment}>Add Comments</button>
+                        <button className='bg-meetzen-primary mt-3 text-white py-2 px-6 w-full rounded-md' onClick={handleAddComment}>Add Comments</button>
                     </div>
                     :
                     isComment ?
                         <>
                             <div className="flex flex-col gap-2">
                                 <textarea name="" id="" cols="30" rows="6" className='border border-borderInput rounded-md p-4' placeholder='Enter comments here...'></textarea>
-                                <button className='bg-theme-color mt-3 text-white py-2 px-6 w-full rounded-md' onClick={handleSubmit}>Submit</button>
+                                <button className='bg-meetzen-primary mt-3 text-white py-2 px-6 w-full rounded-md' onClick={handleSubmit}>Submit</button>
                             </div>
                         </>
                         :
@@ -61,7 +61,7 @@ const SubmitPopup = ({ modal, setModal, isSaveDraft, setSaveDraft }) => {
                                 <img src={done} alt="" className=' w-14 h-14 py-2' />
                                 <h3 className='text-prof font-medium text-mediumSubheading'>Draft Minutes Submitted</h3>
                                 <p className='text-dark text-medium font-normal'>Your draft minutes has been successfully submitted.</p>
-                                <button className='bg-theme-color mt-3 text-white py-2 px-6 w-full rounded-md' onClick={handleSubmitted}>Okay</button>
+                                <button className='bg-meetzen-primary mt-3 text-white py-2 px-6 w-full rounded-md' onClick={handleSubmitted}>Okay</button>
                             </div>
                             :
                             null

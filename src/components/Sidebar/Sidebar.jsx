@@ -7,7 +7,7 @@ import {
 } from "react-icons/md";
 import { FiFileText, FiUsers } from "react-icons/fi";
 import "./Sidebar.css";
-import proCS from "../../Assets/proCSLogo.svg";
+import meetzen from "../../Assets/meetzen.png";
 import { AiOutlineFile, AiOutlineSearch } from "react-icons/ai";
 import { RiFileEditLine } from "react-icons/ri";
 import { BiSupport } from "react-icons/bi";
@@ -53,12 +53,13 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
     <div
       className={`w-[223px] absolute ${
         isSidebarOpen || !isMobile ? "translate-x-0" : "-translate-x-full"
-      } min-h-screen transition-all  md:static z-50 twok:w-[350px] bg-dark text-white grow-0 shrink-0 sidebar`}
+      } min-h-screen transition-all  md:static z-50 twok:w-[350p] grow-0 shrink-0 sidebar`}
     >
       <div className="flex flex-col h-full">
         <div className="main__sidenav">
-          <div className="logo py-10 font-semibold text-headingxl text-center">
-            LOGO
+          <div className="logo py-10 font-semibold text-center flex items-center justify-center flex-col">
+           <img src={meetzen} alt="" className="w-20" />
+           <h1 className="text-meetzen-textSecondary text-4xl ps-2">MEET<span className="text-meetzen-secondary">ZEN</span></h1> 
           </div>
           <div className="links flex flex-col">
             {navLinks.map((link) => (
@@ -66,19 +67,20 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                 to={`/home/${link.link}`}
                 key={link.label}
                 className={({ isActive }) =>
-                  `link ${
-                    isActive ? "bg-blue-700 text-white" : "hover:bg-blue-700/50"
+                  `link  ${ 
+                    isActive ? "bg-meetzen-primary text-white " : "hover:bg-meetzen-primary/50"
                   }`
                 }
               >
                 {link.icon}
-                <span>{link.label}</span>
+                <span className="">{link.label}</span>
               </NavLink>
             ))}
           </div>
         </div>
-        <div className="mt-auto procs__logo__img">
-          <img src={proCS} alt="" />
+        <div className="mt-auto flex items-end gap-2 m-4">
+          <img src={meetzen} alt="" className="w-12" />
+          <span className="text-meetzen-textSecondary">Meetzen LLC</span>
         </div>
       </div>
     </div>

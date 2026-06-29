@@ -1,6 +1,6 @@
 const FooterText = () => {
-    return  <span>
-          www.pro-cs.in | contact@pro-cs.in | ProCS - Digital Board Meeting
-        </span>
+    return  <p className="text-center mt-auto">
+          www.meetzen.in | contact@meetzen.in | MeetZen - Digital Board Meeting
+        </p>
 }
 export default FooterText

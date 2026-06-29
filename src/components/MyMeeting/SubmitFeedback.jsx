@@ -207,7 +207,7 @@ const SubmitFeedback = () => {
                        pending...
                     </AccordionBody>
                 </Accordion>
-                <button className="text-white self-center mt-6 bg-theme-color font-medium py-2.5 px-32 rounded-sm">Submit</button>
+                <button className="text-white self-center mt-6 bg-meetzen-primary font-medium py-2.5 px-32 rounded-sm">Submit</button>
             </div>
 
             <Tooltip

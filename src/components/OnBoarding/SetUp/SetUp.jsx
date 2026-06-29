@@ -58,7 +58,7 @@ const SetUp = () => {
       </div>
 
       <button
-        className="bg-theme-color absolute tab:bottom-12 w-[40vw] tracking-widest font-semibold px-6 left-1/2 -translate-x-1/2 rounded-lg text-white py-4"
+        className="bg-meetzen-primary absolute tab:bottom-12 w-[40vw] tracking-widest font-semibold px-6 left-1/2 -translate-x-1/2 rounded-lg text-white py-4"
         onClick={() => {
           if (currentStep === steps.length) {
             setComplete(true);

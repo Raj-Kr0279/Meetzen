@@ -15,7 +15,7 @@ const Minutes = () => {
           </div>
           <div className="flex items-center gap-4 ">
             <span className='flex items-center text-action font-medium p-0.5 bg-actionBg'><BsClock/>Pending 15 days left</span>
-            <button className={`text-white bg-theme-color py-2 px-4 font-medium text-paragraph rounded-sm`} onClick={()=>navigate("/submit-feedback")}>Submit Feedback</button></div>
+            <button className={`text-white bg-meetzen-primary py-2 px-4 font-medium text-paragraph rounded-sm`} onClick={()=>navigate("/submit-feedback")}>Submit Feedback</button></div>
         </div>
     ))
   return (

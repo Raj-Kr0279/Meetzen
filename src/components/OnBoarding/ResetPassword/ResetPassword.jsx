@@ -137,7 +137,7 @@ const ResetPassword = () => {
                             </>
                         )}
                     </div>
-                    <button onClick={() => navigate("/")} disabled={false} className="bg-theme-color font-semibold tracking-widest py-3 mt-12 w-full text-white rounded-md">
+                    <button onClick={() => navigate("/")} disabled={false} className="bg-meetzen-primary font-semibold tracking-widest py-3 mt-12 w-full text-white rounded-md">
                         Change Password
                     </button>
                 </form>

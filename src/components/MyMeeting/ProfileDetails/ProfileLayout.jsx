@@ -29,10 +29,10 @@ const ProfileLayout = () => {
 
                 <div className="flex mt-[70px] grow gap-6">
                     <div className='flex flex-col whitespace-nowrap'>
-                        <p className={`${selectedOption === "profile" ? "bg-theme-color text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("profile")}>Personal Details</p>
-                        <p className={`${selectedOption === "structure" ? "bg-theme-color text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("structure")}>Company Structure</p>
-                        <p className={`${selectedOption === "news" ? "bg-theme-color text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("news")}>News Updates</p>
-                        <p className={`${selectedOption === "about" ? "bg-theme-color text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("about")}>About Company</p>
+                        <p className={`${selectedOption === "profile" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("profile")}>Personal Details</p>
+                        <p className={`${selectedOption === "structure" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("structure")}>Company Structure</p>
+                        <p className={`${selectedOption === "news" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("news")}>News Updates</p>
+                        <p className={`${selectedOption === "about" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("about")}>About Company</p>
                     </div>
                     <div className="grow w-full bg-hover-bg p-6">
                         {

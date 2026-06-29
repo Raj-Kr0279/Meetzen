@@ -49,7 +49,7 @@ const OtpVerify = () => {
                             }}
                         />
                     </div>
-                    <button onClick={() => navigate("/reset-password")} disabled={false} className="bg-theme-color mt-16 py-3 w-full text-white rounded-md">
+                    <button onClick={() => navigate("/reset-password")} disabled={false} className="bg-meetzen-primary mt-16 py-3 w-full text-white rounded-md">
             Send OTP
           </button>
                 </form>

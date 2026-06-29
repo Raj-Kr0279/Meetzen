@@ -19,8 +19,8 @@ const MemberCompanyStructure = () => {
     <>
       <div className='font-semibold flex items-center text-paragraph px-0 overflow-hidden rounded-md h-12 place-items-center'>
         <div className='font-semibold flex items-center text-paragraph px-0 overflow-hidden whitespace-nowrap border rounded-md h-12 place-items-center'>
-          <span className={`w-full flex items-center px-4 justify-center h-full border-r ${selectedFilter === 'composition' ? 'bg-theme-color text-white' : 'bg-white text-theme-color'}`} onClick={() => handleFilterSelection('composition')}>Committee Composition</span>
-          <span className={`w-full flex items-center justify-center h-full px-4 border-r ${selectedFilter === 'structure' ? 'bg-theme-color text-white' : 'bg-white text-theme-color'}`} onClick={() => handleFilterSelection('structure')}>Company Structure</span>
+          <span className={`w-full flex items-center px-4 justify-center h-full border-r ${selectedFilter === 'composition' ? 'bg-meetzen-primary text-white' : 'bg-white text-theme-color'}`} onClick={() => handleFilterSelection('composition')}>Committee Composition</span>
+          <span className={`w-full flex items-center justify-center h-full px-4 border-r ${selectedFilter === 'structure' ? 'bg-meetzen-primary text-white' : 'bg-white text-theme-color'}`} onClick={() => handleFilterSelection('structure')}>Company Structure</span>
         </div>
       </div>
 

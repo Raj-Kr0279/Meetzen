@@ -30,7 +30,7 @@ const Chat = () => {
                     </div>
                     <span className='text-light leading-[1.2] text-smallSubheading text__content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa repellat suscipit optio ex, voluptates quos nihil sunt consequuntur voluptate?</span>
                 </div>
-                <div className="absolute right-2 bottom-0 w-4 h-4 rounded-full text-small bg-theme-color flex items-center justify-center text-white">2</div>
+                <div className="absolute right-2 bottom-0 w-4 h-4 rounded-full text-small bg-meetzen-primary flex items-center justify-center text-white">2</div>
             </div>
         </div>
     ));
@@ -44,7 +44,7 @@ const Chat = () => {
                 <div className='border-r basis-[300px] twok:basis-[450px] shrink-0 pr-2'>
                     <div className='flex items-center pt-4 pb-2 justify-between'>
                         <h1 className='text-dark font-semibold text-mediumHeading'>Chat</h1>
-                        <button className="bg-theme-color text-smallSubheading text-white px-4 py-2 font-medium rounded-md flex items-center gap-2" onClick={()=>setAddMemberModal(!addMemberModal)}>Add<AiOutlinePlus className=" text-mediumSubheading" /></button>
+                        <button className="bg-meetzen-primary text-smallSubheading text-white px-4 py-2 font-medium rounded-md flex items-center gap-2" onClick={()=>setAddMemberModal(!addMemberModal)}>Add<AiOutlinePlus className=" text-mediumSubheading" /></button>
 
                     </div>
                     <div className='relative my-3'>
@@ -84,7 +84,7 @@ const Chat = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-theme-color text-white font-normal text-paragraph p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-meetzen-primary text-white font-normal text-paragraph p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-smallSubheading text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
                             </div>
                         </div>
@@ -104,7 +104,7 @@ const Chat = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-theme-color text-white font-normal text-paragraph p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-meetzen-primary text-white font-normal text-paragraph p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-smallSubheading text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
                             </div>
                         </div>

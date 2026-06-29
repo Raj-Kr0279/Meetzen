@@ -43,7 +43,7 @@ const CreateGroupModal = ({ modal, setGrpModal }) => {
                 <div className="contacts__wrap grow-1 gap-4 flex flex-col overflow-y-auto">
                     {contact}
                 </div>
-                <button className="bg-theme-color text-white font-medium rounded-md text-paragraph py-4 w-full px-8">Create Group</button>
+                <button className="bg-meetzen-primary text-white font-medium rounded-md text-paragraph py-4 w-full px-8">Create Group</button>
             </div>
         </>
     )

@@ -49,7 +49,7 @@ const PdfAgenda = () => {
 
                 <div className="flex gap-4 h-[80dvh] overscroll-y-auto w-full grow-1">
 {  !isChat &&                  <div className="w-56 shrink-0">
-                        <h3 className='text-white bg-theme-color py-2 px-4 w-full'>Index</h3>
+                        <h3 className='text-white bg-meetzen-primary py-2 px-4 w-full'>Index</h3>
                         <ul className="flex flex-col gap-2 pt-2">
                             <li className='text-paragraph list-none text-dark font-semibold'>Section 1
                                 <ul>
@@ -93,7 +93,7 @@ const PdfAgenda = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-theme-color text-white font-normal text-smallSubheading p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-meetzen-primary text-white font-normal text-smallSubheading p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-smallSubheading text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
                             </div>
                         </div>
@@ -113,7 +113,7 @@ const PdfAgenda = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-theme-color text-white font-normal text-smallSubheading p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-meetzen-primary text-white font-normal text-smallSubheading p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-smallSubheading text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
                             </div>
                         </div>

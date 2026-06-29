@@ -117,7 +117,7 @@ const ChangePassword = () => {
                     <input type="checkbox" className='' name="" id="" style={{appearance: 'revert'}} />
                     <span>I agree to the privacy policy & Terms of Service </span>
                 </div>
-                <button onClick={() => navigate("/")} disabled={false} className="bg-theme-color font-medium tracking-widest py-4 w-full text-white rounded-md">
+                <button onClick={() => navigate("/")} disabled={false} className="bg-meetzen-primary font-medium tracking-widest py-4 w-full text-white rounded-md">
                     Change Password
                 </button>
             </form>

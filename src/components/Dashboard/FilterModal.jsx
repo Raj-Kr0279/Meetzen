@@ -14,7 +14,7 @@ const FilterModal = ({setIsFilterModal, isFiltersModal}) => {
             <div className="flex items-center pb-8 gap-4">
                 <h1 className=' text-dark pr-6 text-[1.8rem] font-bold'>Filters</h1>
                 <div className='flex items-center mobile:max-md:bg-red-500 gap-2'>
-                    <buttons className="p-[6px_12px] cursor-pointer border-2 border-theme-color text-white bg-theme-color rounded-md">Apply Filter</buttons>
+                    <buttons className="p-[6px_12px] cursor-pointer border-2 border-theme-color text-white bg-meetzen-primary rounded-md">Apply Filter</buttons>
                     <buttons className="p-[6px_12px] cursor-pointer text-theme-color bg-white border-theme-color border-2 rounded-md">Clear all</buttons>
                 </div>
             </div>

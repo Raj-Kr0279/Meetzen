@@ -56,7 +56,7 @@ const SearchReport = () => {
                             <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
                             <input className='text-placeholder w-full border text-smallSubheading border-topSearch rounded-sm py-2 px-8' placeholder='Advanced Search using filter' type="text" name="search" id="search" />
                         </div>
-                        <button className="text-white  bg-theme-color py-2 px-8 rounded-sm text-paragraph font-medium">Search</button>
+                        <button className="text-white  bg-meetzen-primary py-2 px-8 rounded-sm text-paragraph font-medium">Search</button>
                     </div>
                     </div>
                 </form>

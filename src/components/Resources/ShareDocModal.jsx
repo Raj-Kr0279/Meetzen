@@ -35,7 +35,7 @@ const ShareDocModal = ({ modal, setModal }) => {
                 <div className="contacts__wrap border-t grow-1 border-borderInput gap-4 flex flex-col overflow-y-auto">
                     {contact}
                 </div>
-                <button className="bg-theme-color w-full text-white py-3 rounded-md px-8 " onClick={() => setModal(false)}>Done</button>
+                <button className="bg-meetzen-primary w-full text-white py-3 rounded-md px-8 " onClick={() => setModal(false)}>Done</button>
             </div>
         </>
     )

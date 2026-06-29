@@ -82,7 +82,7 @@ const FinalMinutesList = () => {
             View Document
           </button>
           <button
-            className="text-white bg-theme-color text-paragraph font-medium rounded-[4px] py-2 px-3"
+            className="text-white bg-meetzen-primary text-paragraph font-medium rounded-[4px] py-2 px-3"
             onClick={() => navigate("/compare-documents")}
           >
             Compare with Draft Minutes

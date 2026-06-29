@@ -22,7 +22,7 @@ const EditDraftDocument = () => {
 
                     <div className="flex gap-4 items-center">
                         <button  className='text-theme-color bg-white border border-theme-color text-paragraph font-medium py-2.5 px-16'>Save</button>
-                        <button onClick={()=>navigate("/home/draft-minutes")} className='text-white border border-white bg-theme-color font-medium py-2.5 px-16'>Submit</button>
+                        <button onClick={()=>navigate("/home/draft-minutes")} className='text-white border border-white bg-meetzen-primary font-medium py-2.5 px-16'>Submit</button>
                     </div>
                 </div>
             <ReactQuill className='grow border-none overflow-y-auto' theme="snow" value={value} onChange={setValue} />

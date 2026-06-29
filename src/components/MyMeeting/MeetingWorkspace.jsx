@@ -19,7 +19,7 @@ const MeetingDetails = () => {
   const [attendance, setAttendance] = useState(false);
   const [isPresent, setIsPresent] = useState(false);
   const navLinks = ["agenda", "members", "minutes", "documents", "requests"];
-  const activeStyles = `bg-theme-color text-white`;
+  const activeStyles = `bg-meetzen-primary text-white`;
   const { id } = useParams();
   const handlePresent = () => {
     setAttendance(false);
@@ -99,7 +99,7 @@ const MeetingDetails = () => {
                     rows="5"
                   />
                   <button
-                    className="bg-theme-color text-white rounded-md px-8 py-2 mt-4 text-paragraph font-medium"
+                    className="bg-meetzen-primary text-white rounded-md px-8 py-2 mt-4 text-paragraph font-medium"
                     onClick={() => setIsPresent(false)}
                   >
                     Lorem Ipsumn
@@ -108,7 +108,7 @@ const MeetingDetails = () => {
               )}
             </div>
             <button
-              className="rounded-md basis-full md:basis-[unset] py-3 font-medium text-white mt-2 md:mt-0 md:py-1.5 px-2.5 bg-theme-color border border-theme-color"
+              className="rounded-md basis-full md:basis-[unset] py-3 font-medium text-white mt-2 md:mt-0 md:py-1.5 px-2.5 bg-meetzen-primary border border-theme-color"
               onClick={() => navigate("/home/join-call")}
             >
               Join VC Call
@@ -128,7 +128,7 @@ const MeetingDetails = () => {
               key={link}
               className={({ isActive }) =>
                 `cursor-pointer  rounded-[8px_8px_0px_0px] p-3 ${
-                  isActive && "bg-theme-color text-white"
+                  isActive && "bg-meetzen-primary text-white"
                 }`
               }
             >

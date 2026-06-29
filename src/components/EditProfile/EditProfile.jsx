@@ -51,7 +51,7 @@ const EditProfile = () => {
             </span>
           </div>
           <div className="buttons flex flex-col gap-4 w-9/12">
-            <button className="bg-theme-color text-white py-3 px-4 rounded-md flex items-center gap-2 justify-center text-smallSubheading font-normal">
+            <button className="bg-meetzen-primary text-white py-3 px-4 rounded-md flex items-center gap-2 justify-center text-smallSubheading font-normal">
               <MdOutlineImage />
               Change Picture
             </button>
@@ -183,7 +183,7 @@ const EditProfile = () => {
 
             <button
               type="submit"
-              className="w-full mt-6 py-4 px-8 rounded-lg bg-theme-color text-white"
+              className="w-full mt-6 py-4 px-8 rounded-lg bg-meetzen-primary text-white"
             >
               Save Changes
             </button>

@@ -160,7 +160,7 @@ const Dashboard = () => {
       </div>
       <div className="flex flex-col gap-4 w-full">
         {/* date picker  */}
-        <div className="date__picker py-2 overflow-hidden border rounded-lg card">
+        {/* <div className="date__picker py-2 overflow-hidden border rounded-lg card">
           <DatePicker
             selected={startDate}
             formatWeekDay={(day) => day.substr(0, 1)}
@@ -209,7 +209,7 @@ const Dashboard = () => {
             )}
             inline
           />
-        </div>
+        </div> */}
         <div className="notifications border rounded-lg p-4 card flex-col flex bg-white h-[50vh]">
           <div className="flex highlight_switcher whitespace-nowrap mb-3 justify-between items-center">
             <div className="font-semibold flex items-center text-paragraph px-0 overflow-hidden border rounded-md h-12">

@@ -25,9 +25,9 @@ const HelpAndSupport = () => {
 
 <div className="flex w-full gap-4 px-10">
   <div className="sidemenu shrink-0 grow-0">
-    <p className={`${selectedOption === "contact" ? "bg-theme-color text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph`} onClick={()=>setSelectedOption("contact")}>Contact Details</p>
-    <p className={`${selectedOption === "manual" ? "bg-theme-color text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph`} onClick={()=>setSelectedOption("manual")}>Director Manuals</p>
-    <p className={`${selectedOption === "video" ? "bg-theme-color text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph`} onClick={()=>setSelectedOption("video")}>Video Manuals</p>
+    <p className={`${selectedOption === "contact" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph`} onClick={()=>setSelectedOption("contact")}>Contact Details</p>
+    <p className={`${selectedOption === "manual" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph`} onClick={()=>setSelectedOption("manual")}>Director Manuals</p>
+    <p className={`${selectedOption === "video" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph`} onClick={()=>setSelectedOption("video")}>Video Manuals</p>
   </div>
 
   <div className="mainmenu grow-1">

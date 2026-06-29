@@ -47,6 +47,7 @@ import EditDraftDocument from './components/DraftMinutes/EditDraftDocument';
 import ViewFinalMinute from './components/FinalMinutes/ViewFinalMinute';
 import CircularResolutionResult from './components/CircularResolution/CircularResolutionResult';
 import CircularResolutionList from './components/CircularResolution/CircularResolutionList';
+import OnBoardingLayout from './components/OnBoarding/ForgotPassword/OnBoardingLayout';
 
 function App() {
   return (
@@ -56,20 +57,25 @@ function App() {
           {/* <DataProvider> */}
 
           <Routes>
-            <Route path="/" element={<CompanyRegistration />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/switch-company" element={<SwitchCompany />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
-            <Route path="/otp-verify" element={<OtpVerify />} />
-            <Route path="/fingerprint-login" element={<FingerPrintLogin />} />
-            <Route path="/set-up" element={<SetUp />} />
+            <Route path="/" element={<OnBoardingLayout />} >
+              <Route index element={<Navigate to="company-registration" />} />
+              <Route path="company-registration" element={<CompanyRegistration />} />
+              <Route path="login" element={<Login />} />
+              <Route path="switch-company" element={<SwitchCompany />} />
+              <Route path="forgot-password" element={<ForgotPassword />} />
+              <Route path="reset-password" element={<ResetPassword />} />
+              <Route path="otp-verify" element={<OtpVerify />} />
+              <Route path="fingerprint-login" element={<FingerPrintLogin />} />
+              <Route path="set-up" element={<SetUp />} />
+              <Route path="edit-profile" element={<EditProfile />} />
+              <Route path="change-password" element={<ChangePassword />} />
+            </Route >
             <Route path='home' element={<HomeLayout />}>
               <Route index element={<Navigate to="dashboard" />} />
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="my-meetings-list" element={<MyMeetingsList />} />
               <Route path="meeting-details/:id" element={<MeetingDetails />}>
-                <Route index element={<Navigate to="agenda" replace/>} />
+                <Route index element={<Navigate to="agenda" replace />} />
                 <Route path="agenda" element={<Agenda />} />
                 <Route path="members" element={<Members />} />
                 <Route path="minutes" element={<Minutes />} />
@@ -77,7 +83,7 @@ function App() {
                 <Route path="requests" element={<Requests />} />
               </Route>
               <Route path="circular-resolutions" element={<CircularResolutionList />} />
-            <Route path="circular-resolution-result/:id" element={<CircularResolutionResult />} />
+              <Route path="circular-resolution-result/:id" element={<CircularResolutionResult />} />
               <Route path="draft-minutes" element={<DraftMinutes />} />
               <Route path="edit-draft-document/:id" element={<EditDraftDocument />} />
               <Route path="compare-documents/:id" element={<CompareDocuments />} />
@@ -95,12 +101,11 @@ function App() {
               <Route path="resolution-document" element={<ResolutionDoc />} />
               <Route path="meeting-schedules" element={<MeetingScheduleList />} />
               <Route path="support" element={<HelpAndSupport />} />
-            <Route path="notifications" element={<Notifications />} />
-            <Route path="chat" element={<Chat />} />
+              <Route path="notifications" element={<Notifications />} />
+              <Route path="chat" element={<Chat />} />
             </Route>
 
-            <Route path="/edit-profile" element={<EditProfile />} />
-            <Route path="/change-password" element={<ChangePassword />} />
+
 
             <Route path="/submit-feedback" element={<SubmitFeedback />} />
             <Route path="/view-member-profile" element={<ProfileLayout />} />

@@ -82,7 +82,7 @@ const DraftMinutes = () => {
             Save
           </button>
           <button
-            className="text-white mt-4 bg-theme-color text-paragraph font-semibold rounded-[4px] py-1.5 px-6"
+            className="text-white mt-4 bg-meetzen-primary text-paragraph font-semibold rounded-[4px] py-1.5 px-6"
             onClick={() => setSubmitDraftModal(true)}
           >
             Submit

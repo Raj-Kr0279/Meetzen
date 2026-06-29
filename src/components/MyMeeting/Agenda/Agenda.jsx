@@ -11,7 +11,7 @@ const Agenda = () => {
         <div className='bg-white rounded-md w-full p-4'>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full place-items-center">
                     <div className="flex items-center gap-3 justify-self-start">
-                        <div className='bg-theme-color rounded-md text-large flex items-center justify-center w-10 h-10 text-white'>1</div>
+                        <div className='bg-meetzen-primary rounded-md text-large flex items-center justify-center w-10 h-10 text-white'>1</div>
                         <div>
                             <p className='text-paragraph text-theme-color font-medium'>CR/Audit/001/Fy2023-2024</p>
                             <h1 className='text-dark text-large leading-none font-semibold'>Record of Attendance (2)</h1>
@@ -44,7 +44,7 @@ const Agenda = () => {
         <div className='bg-white rounded-md w-full p-4'>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full place-items-center">
                     <div className="flex items-center gap-3 justify-self-start">
-                        <div className='bg-theme-color rounded-md text-large flex items-center justify-center w-10 h-10 text-white'>2</div>
+                        <div className='bg-meetzen-primary rounded-md text-large flex items-center justify-center w-10 h-10 text-white'>2</div>
                         <div>
                             <p className='text-paragraph text-theme-color font-medium'>CR/Audit/001/Fy2023-2024</p>
                             <h1 className='text-dark text-large leading-none font-semibold'>Financials (4)</h1>

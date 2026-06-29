@@ -14,9 +14,7 @@ const ForgotPassword = () => {
     e.preventDefault()
   }
   return (
-    <div className="grid-cols-1 tab:grid-cols-2 grid w-full h-screen">
-      <LeftColumn />
-      <RightColumn>
+   <>
         <h1 className='text-heading leading-none text-center text-dark font-semibold'>Forgot Password</h1>
         <p className="mt-4 mb-12 text-center text-light leading-snug text-paragraph font-medium break-words">Enter your email address for the verification process. We will send a 6 digits code to your email.</p>
         <form action="" onSubmit={handleSubmit} className="w-full">
@@ -39,14 +37,11 @@ const ForgotPassword = () => {
           </div>
          
 
-          <button onClick={() => navigate("/otp-verify")} disabled={false} className="bg-theme-color py-3 w-full text-white rounded-md">
+          <button onClick={() => navigate("/otp-verify")} disabled={false} className="bg-meetzen-primary py-3 w-full text-white rounded-md">
             Send OTP
           </button>
         </form>
-
-      </RightColumn>
-
-    </div>
+        </>
   )
 }
 

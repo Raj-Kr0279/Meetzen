@@ -9,8 +9,6 @@
     align-items: center;
 }
 .link svg, .link span{
-    color: #CBE6F8;
-    font-family: Inter;
     font-size: 0.938rem;
     font-style: normal;
     font-weight: 500;

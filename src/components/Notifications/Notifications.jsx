@@ -36,7 +36,7 @@ const Notifications = () => {
 
                 <div className="h-[80vh] overflow-y-scroll w-full">
                     <div className='rounded-lg border-transparent border overflow-hidden'>
-                        <div className="bg-theme-color w-full text-white py-2 text-heading font-semibold px-4">Recent</div>
+                        <div className="bg-meetzen-primary w-full text-white py-2 text-heading font-semibold px-4">Recent</div>
                         <div className="flex flex-col w-full mt-2">
                             <div className='px-8 py-6 bg-hover-bg'>
                                 <p className='text-theme-color font-normal text-paragraph'>BOARD COMMITTEE</p>
@@ -59,7 +59,7 @@ const Notifications = () => {
                         </div>
                     </div>
                     <div className='rounded-lg border-transparent border overflow-hidden'>
-                        <div className="bg-theme-color w-full text-white py-2 text-heading font-semibold px-4">Past</div>
+                        <div className="bg-meetzen-primary w-full text-white py-2 text-heading font-semibold px-4">Past</div>
                         <div className="flex flex-col w-full mt-2">
                             <div className='px-8 py-6 bg-hover-bg'>
                                 <p className='text-theme-color font-normal text-paragraph'>BOARD COMMITTEE</p>

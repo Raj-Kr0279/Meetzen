@@ -190,7 +190,7 @@ const CircularResolutionList = () => {
                 </span>
                 {voteByResolutionId[resolutions.id] === "" ? (
                   <button
-                    className="text-white mt-4 bg-theme-color text-paragraph font-medium rounded-[4px] py-2 px-6"
+                    className="text-white mt-4 bg-meetzen-primary text-paragraph font-medium rounded-[4px] py-2 px-6"
                     onClick={(e) => {
                       e.stopPropagation();
                       navigate(
@@ -202,7 +202,7 @@ const CircularResolutionList = () => {
                   </button>
                 ) : (
                   <button
-                    className="text-white mt-4 bg-theme-color text-paragraph font-medium rounded-[4px] py-2 px-6"
+                    className="text-white mt-4 bg-meetzen-primary text-paragraph font-medium rounded-[4px] py-2 px-6"
                     onClick={(e) => {
                       e.stopPropagation();
                       alert("submitted");

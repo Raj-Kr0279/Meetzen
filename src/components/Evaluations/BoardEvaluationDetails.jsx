@@ -285,7 +285,7 @@ const BoardEvaluationDetails = () => {
         </Accordion>
       </div>
       <button
-        className="py-4 mt-8 px-6 text-paragraph flex mx-auto self-start font-medium bg-theme-color text-white rounded-[4px]"
+        className="py-4 mt-8 px-6 text-paragraph flex mx-auto self-start font-medium bg-meetzen-primary text-white rounded-[4px]"
         onClick={() => navigate(`/home/board-evaluation-list`)}
       >
         Submit Feedback

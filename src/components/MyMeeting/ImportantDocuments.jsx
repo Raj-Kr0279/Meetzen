@@ -143,7 +143,7 @@ const ImportantDocuments = () => {
                                     </div>
                                 )
                                 }
-                               <button className="bg-theme-color w-full text-white py-3 rounded-md px-8" onClick={()=>setSuccessModal(true)}>Upload</button>
+                               <button className="bg-meetzen-primary w-full text-white py-3 rounded-md px-8" onClick={()=>setSuccessModal(true)}>Upload</button>
                             </div> : ""}
                         </div>
                     </div>
