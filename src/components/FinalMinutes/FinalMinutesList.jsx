@@ -9,13 +9,13 @@ import { formatDateTime } from "../../utils/dateFormatter";
 
 const FinalMinutesList = () => {
   const navigate = useNavigate();
-  
+
   return (
     <>
       <PageHeading label="Final Minutes" />
       <div className="w-full px-10 flex flex-col ">
         {/* filters and search section  */}
-        <div className=" bg-hover-bg px-4 py-2  flex justify-between rounded-md mt-6 mb-4 items-center">
+        <div className=" bg-hover-bg px-4 py-2  flex justify-between rounded-md mb-4 items-center">
           <h1 className="text-dark font-semibold text-large">
             All Final Minutes
           </h1>
@@ -55,41 +55,47 @@ const FinalMinutesList = () => {
           </div>
         </div>
 
-        <div className="h-[70dvh] mt-4 w-full border-borderInput border rounded-md overflow-y-scroll">
-          {demoData.finalMinutes.map((final)=>
-             <div
-      key={final.id}
-      className="flex hover:bg-hover-bg justify-between items-center p-4 border-b"
-    >
-      <div>
-        <p className=" text-pargraph text-theme-color leading-none font-normal">
-         {final.committee}
-        </p>
-        <h1 className="text-dark leading-none pt-2 pb-1.5  font-semibold text-large">
-          {final.documentName}
-        </h1>
-        <p className="text-paragraph font-medium text-light">
-          Date & Time:{" "}
-          <span className="text-theme-color tracking-wide text-mediumCaption font-semibold pl-1">
-            {formatDateTime(final.dateTime)}
-          </span>
-        </p>
-      </div>
-      <div className="flex items-end">
-        <div className="flex items-center justify-end gap-4">
-          <button onClick={()=>navigate(`/home/final-minute-details/${final.id}`)} className="flex items-center justify-end gap-1 text-theme-color font-medium underline cursor-pointer">
-            <AiOutlineEye />
-            View Document
-          </button>
-          <button
-            className="text-white bg-meetzen-primary text-paragraph font-medium rounded-[4px] py-2 px-3"
-            onClick={() => navigate("/compare-documents")}
-          >
-            Compare with Draft Minutes
-          </button>
-        </div>
-      </div>
-    </div>)}
+        <div className="h-[70dvh] mt-4 w-full  border border-gray-300 rounded-md overflow-y-scroll">
+          {demoData.finalMinutes.map((final) => (
+            <div
+              key={final.id}
+              className="flex hover:bg-hover-bg justify-between items-center p-4 border-b border-b-gray-300"
+            >
+              <div>
+                <p className=" text-pargraph text-theme-color leading-none font-normal">
+                  {final.committee}
+                </p>
+                <h1 className="text-dark leading-none pt-2 pb-1.5  font-semibold text-large">
+                  {final.documentName}
+                </h1>
+                <p className="text-paragraph font-medium text-light">
+                  Date & Time:{" "}
+                  <span className="text-theme-color tracking-wide text-mediumCaption font-semibold pl-1">
+                    {formatDateTime(final.dateTime)}
+                  </span>
+                </p>
+              </div>
+              <div className="flex items-end">
+                <div className="flex items-center justify-end gap-4">
+                  <button
+                    onClick={() =>
+                      navigate(`/home/final-minute-details/${final.id}`)
+                    }
+                    className="flex items-center justify-end gap-1 text-theme-color font-medium underline cursor-pointer"
+                  >
+                    <AiOutlineEye />
+                    View Document
+                  </button>
+                  <button
+                    className="text-white bg-meetzen-primary text-paragraph font-medium rounded-[4px] py-2 px-3"
+                    onClick={() => navigate("/compare-documents")}
+                  >
+                    Compare with Draft Minutes
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </>

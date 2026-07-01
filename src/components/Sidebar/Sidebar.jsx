@@ -53,11 +53,11 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
     <div
       className={`w-[223px] absolute ${
         isSidebarOpen || !isMobile ? "translate-x-0" : "-translate-x-full"
-      } min-h-screen transition-all  md:static z-50 twok:w-[350p] grow-0 shrink-0 sidebar`}
+      } transition-all  md:static z-50 twok:w-[350p] grow-0 shrink-0 sidebar`}
     >
       <div className="flex flex-col h-full">
         <div className="main__sidenav">
-          <div className="logo py-10 font-semibold text-center flex items-center justify-center flex-col">
+          <div className="logo py-10 font-moirai font-semibold text-center flex items-center justify-center flex-col">
            <img src={meetzen} alt="" className="w-20" />
            <h1 className="text-meetzen-textSecondary text-4xl ps-2">MEET<span className="text-meetzen-secondary">ZEN</span></h1> 
           </div>
@@ -67,8 +67,8 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                 to={`/home/${link.link}`}
                 key={link.label}
                 className={({ isActive }) =>
-                  `link  ${ 
-                    isActive ? "bg-meetzen-primary text-white " : "hover:bg-meetzen-primary/50"
+                  `link rounded-tr-lg rounded-br-lg ${ 
+                    isActive ? "bg-meetzen-primary text-white " : "hover:bg-meetzen-primary/50 hover:text-white text-meetzen-textPrimary"
                   }`
                 }
               >

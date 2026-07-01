@@ -7,11 +7,11 @@ import {
 } from "react-icons/ai";
 import { FiEdit, FiFile, FiUsers } from "react-icons/fi";
 import { MdOutlineMessage } from "react-icons/md";
-import DatePicker from "react-modern-calendar-datepicker";
+// import DatePicker from "react-modern-calendar-datepicker";
 import { useState } from "react";
 import prof from "../../Assets/profileDummy.png";
 
-import "./Dashboard.css";
+// import "./Dashboard.css";
 import { demoData } from "../../demoData/demoData";
 import ActionablesSummary from "./ActionablesSummary";
 
@@ -34,17 +34,17 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="grid dash__wrapper px-4 md:px-10 py-4 grid-cols-1 md:grid-cols-[1.5fr_1fr] pb-20 gap-8">
+    <div className="grid dash__wrapper px-4 md:px-10 grid-cols-1 md:grid-cols-[1.5fr_1fr] pb-20 gap-8">
       <div className="flex flex-col w-full">
-        <div className="highlight__wrp md:min-h-[480px] overflow-hidden md:border w-full rounded-xl md:p-4 card">
+        <div className="highlight__wrp md:min-h-[480px] overflow-hidden border border-gray-300 w-full rounded-xl md:p-4 card">
           <div className="flex highlight_switcher justify-between items-center">
-            <div className="font-semibold flex items-center text-paragraph px-0 overflow-hidden border rounded-md whitespace-nowrap h-12 place-items-center">
-              <span className="text-success bg-greenLight w-full flex items-center justify-center h-full border-r px-4">
+            <div className="font-semibold flex items-center text-base px-0 overflow-hidden border border-gray-300 rounded-md whitespace-nowrap h-12 place-items-center">
+              <p className="text-success bg-meetzen-greenLight w-full flex items-center justify-center h-full px-4">
                 Upcoming(2)
-              </span>
-              <span className="text-light w-full flex items-center justify-center h-full px-4">
+              </p>
+              <p className="text-light w-full flex items-center justify-center h-full px-4">
                 Recent
-              </span>
+              </p>
             </div>
             <span
               onClick={() => navigate("/home/my-meetings-list")}
@@ -56,15 +56,15 @@ const Dashboard = () => {
           <div className="highlights__content_wrp max-h-[395px] overflow-y-scroll flex md:flex-col gap-2 mt-6">
             <Link
               to={`/home/meeting-details/0`}
-              className="inner__card bg-greenSelection px-4 py-3 rounded-xl border border-success"
+              className="inner__card bg-meetzen-greenSelection px-4 py-3 rounded-xl border border-meetzen-success"
             >
-              <p className="text-smallSubheading font-medium text-theme-color uppercase leading-[1.1] pb-1">
+              <p className="text-smallSubheading font-medium text-meetzen-primary uppercase leading-[1.1] pb-1">
                 Board Committee
               </p>
-              <h3 className="text-dark text-mediumCaption font-semibold pb-1">
+              <h3 className="text-meetzen-dark text-lg font-semibold pb-1">
                 132nd Meeting of Board Committee
               </h3>
-              <div className="flex text-datetime gap-4 text-smallSubheading font-medium leading-snug pb-2">
+              <div className="flex text-meetzen-datetime gap-4 text-smallSubheading font-medium leading-snug pb-2">
                 <div className="flex items-center gap-1">
                   <AiOutlineCalendar />
                   <span>24/05/23</span>
@@ -107,12 +107,12 @@ const Dashboard = () => {
               <Link
                 to={`/home/meeting-details/${index}`}
                 key={index}
-                className="inner__card bg-greenLight p-4 rounded-xl border border-success"
+                className="inner__card bg-meetzen-greenLight p-4 rounded-xl border border-meetzen-success"
               >
                 <p className="text-smallSubheading font-medium text-theme-color uppercase leading-[1.1] pb-1">
                   Board Committee
                 </p>
-                <h3 className="text-dark text-mediumCaption font-semibold pb-1">
+                <h3 className="text-dark text-lg font-semibold pb-1">
                   132nd Meeting of Board Committee
                 </h3>
                 <div className="flex text-datetime gap-4 text-smallSubheading font-medium leading-snug pb-2">
@@ -189,7 +189,7 @@ const Dashboard = () => {
                   {<AiOutlineLeft />}
                 </button>
 
-                <span className=" text-large text-dark font-semibold text-left w-full pl-6">
+                <span className=" text-2xl text-dark font-semibold text-left w-full pl-6">
                   {monthDate.toLocaleString("en-US", {
                     month: "long",
                     year: "numeric",
@@ -210,11 +210,11 @@ const Dashboard = () => {
             inline
           />
         </div> */}
-        <div className="notifications border rounded-lg p-4 card flex-col flex bg-white h-[50vh]">
+        <div className="notifications border border-gray-300 rounded-lg p-4 card flex-col flex bg-white h-[50vh]">
           <div className="flex highlight_switcher whitespace-nowrap mb-3 justify-between items-center">
-            <div className="font-semibold flex items-center text-paragraph px-0 overflow-hidden border rounded-md h-12">
-              <span
-                className={`w-full flex items-center justify-center h-full border-r px-4 ${
+            <div className="font-semibold flex items-center text-base px-0 overflow-hidden border border-gray-300 rounded-md h-12">
+              <p
+                className={`w-full flex items-center justify-center h-full px-4 ${
                   isChat
                     ? "bg-white text-dark"
                     : "bg-lightBlueBg text-theme-color"
@@ -222,9 +222,9 @@ const Dashboard = () => {
                 onClick={() => setIsChat(false)}
               >
                 Notifications (2)
-              </span>
-              <span
-                className={`w-full flex items-center justify-center h-full border-r px-4 ${
+              </p>
+              <p
+                className={`w-full flex items-center justify-center h-full px-4 ${
                   !isChat
                     ? "bg-white text-dark"
                     : "bg-lightBlueBg text-theme-color"
@@ -232,7 +232,7 @@ const Dashboard = () => {
                 onClick={() => setIsChat(true)}
               >
                 Chats (4)
-              </span>
+              </p>
             </div>
             <span
               className="underline cursor-pointer text-theme-color font-semibold"

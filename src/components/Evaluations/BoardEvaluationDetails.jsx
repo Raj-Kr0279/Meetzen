@@ -4,12 +4,6 @@ import { FaFile } from "react-icons/fa";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
-import {
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-  Slider,
-} from "@material-tailwind/react";
 import { BiBarChartAlt2 } from "react-icons/bi";
 import { BsTriangleFill } from "react-icons/bs";
 import strategy from "../../Assets/strategy_FILL0_wght300_GRAD0_opsz24.svg";
@@ -45,18 +39,18 @@ const BoardEvaluationDetails = () => {
             <p className=" text-pargraph text-theme-color leading-none font-normal pb-2">
               Director Evaluation | Board of Directors
             </p>
-            <h1 className="text-dark font-semibold text-large">
+            <h1 className="text-dark font-semibold text-2xl">
               All Evaluations
             </h1>
-            <p className="text-paragraph font-medium text-light">
+            <p className="text-base font-medium text-light">
               Evaluation for:{" "}
-              <span className="text-theme-color text-mediumCaption font-semibold pl-1">
+              <span className="text-theme-color text-lg font-semibold pl-1">
                 MR. RAMCHARAN DAS
               </span>
             </p>
-            <p className="text-paragraph font-medium text-light">
+            <p className="text-base font-medium text-light">
               Financial Year:{" "}
-              <span className="text-theme-color text-mediumCaption font-semibold pl-1">
+              <span className="text-theme-color text-lg font-semibold pl-1">
                 2023
               </span>
             </p>
@@ -67,18 +61,18 @@ const BoardEvaluationDetails = () => {
           </div>
         </div>
 <div>
-        <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
+        {/* <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
           <AccordionHeader onClick={() => handleOpen(1)}>
             <div className="flex items-center gap-1">
-              <BiBarChartAlt2 className="text-theme-color text-large" />
-              <h1 className="text-theme-color font-semibold text-large">
+              <BiBarChartAlt2 className="text-theme-color text-2xl" />
+              <h1 className="text-theme-color font-semibold text-2xl">
                 Leadership
               </h1>
             </div>
           </AccordionHeader>
           <AccordionBody>
             <div className="mb-4">
-              <p className="text-dark font-normal text-paragraph break-words">
+              <p className="text-dark font-normal text-base break-words">
                 1.{" "}
                 <span>
                   Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
@@ -125,7 +119,7 @@ const BoardEvaluationDetails = () => {
             </div>
 
             <div className="mb-4">
-              <p className="text-dark font-normal text-paragraph break-words">
+              <p className="text-dark font-normal text-base break-words">
                 2.{" "}
                 <span>
                   Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
@@ -176,14 +170,14 @@ const BoardEvaluationDetails = () => {
           <AccordionHeader onClick={() => handleOpen(2)}>
             <div className="flex items-center gap-1">
               <img src={strategy} alt="" />
-              <h1 className="text-theme-color font-semibold text-large">
+              <h1 className="text-theme-color font-semibold text-2xl">
                 Strategy Formulation
               </h1>
             </div>
           </AccordionHeader>
           <AccordionBody>
             <div className="mb-4">
-              <p className="text-dark font-normal text-paragraph break-words">
+              <p className="text-dark font-normal text-base break-words">
                 1.{" "}
                 <span>
                   Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
@@ -230,7 +224,7 @@ const BoardEvaluationDetails = () => {
             </div>
 
             <div className="mb-4">
-              <p className="text-dark font-normal text-paragraph break-words">
+              <p className="text-dark font-normal text-base break-words">
                 2.{" "}
                 <span>
                   Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
@@ -282,10 +276,10 @@ const BoardEvaluationDetails = () => {
             Another heading
           </AccordionHeader>
           <AccordionBody>pending...</AccordionBody>
-        </Accordion>
+        </Accordion> */}
       </div>
       <button
-        className="py-4 mt-8 px-6 text-paragraph flex mx-auto self-start font-medium bg-meetzen-primary text-white rounded-[4px]"
+        className="py-4 mt-8 px-6 text-base flex mx-auto self-start font-medium bg-meetzen-primary text-white rounded-[4px]"
         onClick={() => navigate(`/home/board-evaluation-list`)}
       >
         Submit Feedback

@@ -16,7 +16,7 @@ const ProfileLayout = () => {
                 {/* top navigation  */}
                 <div className="flex fixed bg-white z-10 pt-4 pb-2 px-4 w-full justify-between items-center">
                     <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/dashboard")}>
-                        <MdArrowBackIosNew className=' text-largeX font-normal' />
+                        <MdArrowBackIosNew className=' text-2xlX font-normal' />
                         <span className=' text-lg font-medium'>Back</span>
                     </div>
                     <div className='relative'>
@@ -29,10 +29,10 @@ const ProfileLayout = () => {
 
                 <div className="flex mt-[70px] grow gap-6">
                     <div className='flex flex-col whitespace-nowrap'>
-                        <p className={`${selectedOption === "profile" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("profile")}>Personal Details</p>
-                        <p className={`${selectedOption === "structure" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("structure")}>Company Structure</p>
-                        <p className={`${selectedOption === "news" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("news")}>News Updates</p>
-                        <p className={`${selectedOption === "about" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph cursor-pointer`} onClick={() => setSelectedOption("about")}>About Company</p>
+                        <p className={`${selectedOption === "profile" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("profile")}>Personal Details</p>
+                        <p className={`${selectedOption === "structure" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("structure")}>Company Structure</p>
+                        <p className={`${selectedOption === "news" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("news")}>News Updates</p>
+                        <p className={`${selectedOption === "about" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("about")}>About Company</p>
                     </div>
                     <div className="grow w-full bg-hover-bg p-6">
                         {

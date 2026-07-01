@@ -3,13 +3,7 @@ import { AiOutlineMinus, AiOutlineSearch } from 'react-icons/ai'
 import { FaFile } from 'react-icons/fa'
 import { MdArrowBackIosNew } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
-import { Tooltip } from 'react-tooltip'
-import {
-    Accordion,
-    AccordionHeader,
-    AccordionBody,
-    Slider,
-} from "@material-tailwind/react";
+import { Tooltip } from 'react-tooltip';
 import { BiBarChartAlt2 } from 'react-icons/bi'
 import { BsTriangleFill } from 'react-icons/bs'
 import strategy  from '../../Assets/strategy_FILL0_wght300_GRAD0_opsz24.svg'
@@ -35,7 +29,7 @@ const SubmitFeedback = () => {
         <>
             <div className="flex fixed bg-white top-0 py-2 px-4 w-full justify-between items-center border-b">
                 <div className='flex items-center font-semibold text-theme-color' onClick={() => navigate("/dashboard")}>
-                    <MdArrowBackIosNew className=' text-largeX font-normal' />
+                    <MdArrowBackIosNew className=' text-2xlX font-normal' />
                     <span className=' text-lg font-medium'>Back</span>
                 </div>
                 <div className='relative'>
@@ -52,23 +46,23 @@ const SubmitFeedback = () => {
 
                 <div className=' bg-hover-bg px-4 py-4  flex justify-between rounded-md mt-6 mb-4 items-center'>
                     <div className="">
-                        <h1 className='text-dark font-semibold text-large pb-1.5'>132nd Meeting of Board Committee</h1>
-                        <p className='text-theme-color text-mediumCaption font-semibold'>Document Name</p>
-                        <p className='text-paragraph font-medium text-light' >Date & Time: <span className='text-theme-color text-mediumCaption font-semibold pl-1'>20/06/23 07:20 PM</span></p>
+                        <h1 className='text-dark font-semibold text-2xl pb-1.5'>132nd Meeting of Board Committee</h1>
+                        <p className='text-theme-color text-lg font-semibold'>Document Name</p>
+                        <p className='text-base font-medium text-light' >Date & Time: <span className='text-theme-color text-lg font-semibold pl-1'>20/06/23 07:20 PM</span></p>
                     </div>
                 </div>
 
 
-                <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
+                {/* <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
                     <AccordionHeader onClick={() => handleOpen(1)}>
                         <div className="flex items-center gap-1">
-                            <BiBarChartAlt2 className='text-theme-color text-large' />
-                            <h1 className="text-theme-color font-semibold text-large">Leadership</h1>
+                            <BiBarChartAlt2 className='text-theme-color text-2xl' />
+                            <h1 className="text-theme-color font-semibold text-2xl">Leadership</h1>
                         </div>
                     </AccordionHeader>
                     <AccordionBody>
                         <div className='mb-4'>
-                            <p className='text-dark font-normal text-paragraph break-words'>
+                            <p className='text-dark font-normal text-base break-words'>
                                 1. <span>Neque, faucibus fames at et rhoncus pellentesque. Scelerisque commodo nunc tellus, elit semper tempus. Tristique ac tincidunt velit netus ipsum rutrum id ut.</span>
                             </p>
                             <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
@@ -98,7 +92,7 @@ const SubmitFeedback = () => {
                         </div>
 
                         <div className='mb-4'>
-                            <p className='text-dark font-normal text-paragraph break-words'>
+                            <p className='text-dark font-normal text-base break-words'>
                                 2. <span>Neque, faucibus fames at et rhoncus pellentesque. Scelerisque commodo nunc tellus, elit semper tempus. Tristique ac tincidunt velit netus ipsum rutrum id ut.</span>
                             </p>
                             <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
@@ -133,12 +127,12 @@ const SubmitFeedback = () => {
                     <AccordionHeader onClick={() => handleOpen(2)}>
                     <div className="flex items-center gap-1">
                             <img src={strategy} alt="" />
-                            <h1 className="text-theme-color font-semibold text-large">Strategy Formulation</h1>
+                            <h1 className="text-theme-color font-semibold text-2xl">Strategy Formulation</h1>
                         </div>
                     </AccordionHeader>
                     <AccordionBody>
                         <div className='mb-4'>
-                            <p className='text-dark font-normal text-paragraph break-words'>
+                            <p className='text-dark font-normal text-base break-words'>
                                 1. <span>Neque, faucibus fames at et rhoncus pellentesque. Scelerisque commodo nunc tellus, elit semper tempus. Tristique ac tincidunt velit netus ipsum rutrum id ut.</span>
                             </p>
                             <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
@@ -168,7 +162,7 @@ const SubmitFeedback = () => {
                         </div>
 
                         <div className='mb-4'>
-                            <p className='text-dark font-normal text-paragraph break-words'>
+                            <p className='text-dark font-normal text-base break-words'>
                                 2. <span>Neque, faucibus fames at et rhoncus pellentesque. Scelerisque commodo nunc tellus, elit semper tempus. Tristique ac tincidunt velit netus ipsum rutrum id ut.</span>
                             </p>
                             <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
@@ -206,7 +200,7 @@ const SubmitFeedback = () => {
                     <AccordionBody>
                        pending...
                     </AccordionBody>
-                </Accordion>
+                </Accordion> */}
                 <button className="text-white self-center mt-6 bg-meetzen-primary font-medium py-2.5 px-32 rounded-sm">Submit</button>
             </div>
 

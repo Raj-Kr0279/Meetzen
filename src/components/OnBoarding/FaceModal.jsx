@@ -8,7 +8,7 @@ const FaceModal = () => {
             <div className="absolute text-white bg-modal z-20 w-40 h-40 rounded-xl flex flex-col gap-4 justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 {/* <img src={faceid} alt="" /> */}
                 <img src={facesucc} alt="" />
-                <p className='font-medium font-sfpro text-paragraph'>Face ID</p>
+                <p className='font-medium font-sfpro text-base'>Face ID</p>
             </div>
         </div>
     )

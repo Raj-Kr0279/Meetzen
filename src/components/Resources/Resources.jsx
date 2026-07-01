@@ -22,8 +22,8 @@ const Resources = () => {
 
         <div className=" bg-hover-bg px-4 py-2  flex justify-between rounded-md mb-4 items-center">
           <div className="flex highlight_switcher justify-between items-center">
-            <div className="font-semibold flex items-center border-borderInput text-paragraph px-0 overflow-hidden border rounded-md h-10 place-items-center">
-              <div className="font-semibold whitespace-nowrap flex items-center border-borderInput text-paragraph px-0 overflow-hidden border rounded-md h-10 place-items-center">
+            <div className="font-semibold flex items-center border-borderInput text-base px-0 overflow-hidden border rounded-md h-10 place-items-center">
+              <div className="font-semibold whitespace-nowrap flex items-center border-borderInput text-base px-0 overflow-hidden border rounded-md h-10 place-items-center">
                 <span
                   className={`w-full flex items-center px-4 justify-center h-full border-r ${
                     selectedFilter === "my_docs"
@@ -50,12 +50,12 @@ const Resources = () => {
           <div className="flex items-center gap-3">
             <label
               htmlFor="year"
-              className="text-placeholder text-paragraph font-normal"
+              className="text-placeholder text-base font-normal"
             >
               Filter Year:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-paragraph w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-dark text-base w-[19vw] rounded-sm border border-borderInput"
               name="year"
               id="year"
             >
@@ -67,12 +67,12 @@ const Resources = () => {
 
             <label
               htmlFor="year"
-              className="text-placeholder text-paragraph font-normal"
+              className="text-placeholder text-base font-normal"
             >
               Filter Committee:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-paragraph w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-dark text-base w-[19vw] rounded-sm border border-borderInput"
               name="committee"
               id="committee"
             >

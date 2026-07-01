@@ -70,7 +70,7 @@ const EditProfile = () => {
             <div>
               <label
                 htmlFor="name"
-                className="text-dark text-paragraph font-semibold inline-block pb-2"
+                className="text-dark text-base font-semibold inline-block pb-2"
               >
                 Full Name
               </label>
@@ -80,14 +80,14 @@ const EditProfile = () => {
                 type="text"
                 value={formData.name}
                 onChange={handleChange}
-                className="border-border-input placeholder:text-placeholder w-full font-normal border text-paragraph focus:border-dark focus:outline-none py-3 px-4 rounded-md"
+                className="border-border-input placeholder:text-placeholder w-full font-normal border text-base focus:border-dark focus:outline-none py-3 px-4 rounded-md"
               />
             </div>
 
             <div>
               <label
                 htmlFor="phone"
-                className="text-dark text-paragraph font-semibold inline-block pb-2"
+                className="text-dark text-base font-semibold inline-block pb-2"
               >
                 Mobile Number (WhatsApp Preferred)
               </label>
@@ -97,14 +97,14 @@ const EditProfile = () => {
                 type="tel"
                 value={formData.phone}
                 onChange={handleChange}
-                className="border-border-input placeholder:text-placeholder w-full font-normal border text-paragraph focus:border-dark focus:outline-none py-3 px-4 rounded-md"
+                className="border-border-input placeholder:text-placeholder w-full font-normal border text-base focus:border-dark focus:outline-none py-3 px-4 rounded-md"
               />
             </div>
 
             <div>
               <label
                 htmlFor="bio"
-                className="text-dark text-paragraph font-semibold inline-block pb-2"
+                className="text-dark text-base font-semibold inline-block pb-2"
               >
                 Bio
               </label>
@@ -113,14 +113,14 @@ const EditProfile = () => {
                 name="bio"
                 value={formData.bio}
                 onChange={handleChange}
-                className="border-border-input resize-none h-28 placeholder:text-placeholder w-full font-normal border text-paragraph focus:border-dark focus:outline-none py-3 px-4 rounded-md"
+                className="border-border-input resize-none h-28 placeholder:text-placeholder w-full font-normal border text-base focus:border-dark focus:outline-none py-3 px-4 rounded-md"
               />
             </div>
 
             <div>
               <label
                 htmlFor="language"
-                className="text-dark text-paragraph font-semibold inline-block pb-2"
+                className="text-dark text-base font-semibold inline-block pb-2"
               >
                 Change Language
               </label>
@@ -133,7 +133,7 @@ const EditProfile = () => {
                   name="language"
                   value={formData.language}
                   onChange={handleChange}
-                  className="border w-full text-paragraph text-dark font-medium pl-4 pr-10 py-3 rounded-md focus:border-dark appearance-none"
+                  className="border w-full text-base text-dark font-medium pl-4 pr-10 py-3 rounded-md focus:border-dark appearance-none"
                 >
                   <option value="english">English</option>
                   <option value="hindi">Hindi</option>
@@ -145,7 +145,7 @@ const EditProfile = () => {
             <div>
               <label
                 htmlFor="timezone"
-                className="text-dark text-paragraph font-semibold inline-block pb-2"
+                className="text-dark text-base font-semibold inline-block pb-2"
               >
                 Change Time Zone
               </label>
@@ -158,7 +158,7 @@ const EditProfile = () => {
                   name="timezone"
                   value={formData.timezone}
                   onChange={handleChange}
-                  className="border w-full text-paragraph text-dark font-medium pl-4 pr-10 py-3 rounded-md focus:border-dark appearance-none"
+                  className="border w-full text-base text-dark font-medium pl-4 pr-10 py-3 rounded-md focus:border-dark appearance-none"
                 >
                   <option value="-12:00">
                     (GMT -12:00) Eniwetok, Kwajalein

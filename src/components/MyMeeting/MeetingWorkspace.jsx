@@ -35,7 +35,7 @@ const MeetingDetails = () => {
       <PageHeading label="Meeting WorkSpace" />
       <div className="grid md:grid-cols-2 px-4 md:px-10">
         <div>
-          <p className="text-theme-color font-normal leading-none pb-1 text-[10px] md:text-paragraph">
+          <p className="text-theme-color font-normal leading-none pb-1 text-[10px] md:text-base">
             BOARD COMMITTEE
           </p>
           <h1 className="text-[16px] md:text-extraLarge leading-none font-semibold text-dark pb-3">
@@ -43,16 +43,16 @@ const MeetingDetails = () => {
           </h1>
           <div className="flex items-center py-3 md:p-0 gap-4">
             <div className="flex flex-col md:flex-row">
-              <p className="flex items-center gap-1 text-theme-color text-[12px] md:text-paragraph font-semibold">
+              <p className="flex items-center gap-1 text-theme-color text-[12px] md:text-base font-semibold">
                 <AiOutlineCalendar className="text-theme-color" />
                 24/05/23
               </p>
-              <p className="flex items-center gap-1 text-theme-color text-[12px] md:text-paragraph font-semibold">
+              <p className="flex items-center gap-1 text-theme-color text-[12px] md:text-base font-semibold">
                 <AiOutlineClockCircle className="text-theme-color" />
                 9:00 AM - 11:00 AM
               </p>
             </div>
-            <p className="flex items-center gap-1 text-theme-color text-[12px] md:text-paragraph font-semibold">
+            <p className="flex items-center gap-1 text-theme-color text-[12px] md:text-base font-semibold">
               <RiMapPin2Line className="text-theme-color" />
               Online Conference
             </p>
@@ -75,14 +75,14 @@ const MeetingDetails = () => {
               </button>
               {attendance && (
                 <div className="absolute whitespace-nowrap flex flex-col left-0 top-full mt-1 bg-white shadow-attendance rounded-sm">
-                  <span className="text-prof py-1.5 px-3 hover:bg-hover-bg transition-all cursor-pointer text-paragraph font-normal border-b">
+                  <span className="text-prof py-1.5 px-3 hover:bg-hover-bg transition-all cursor-pointer text-base font-normal border-b">
                     Preset
                   </span>
-                  <span className="text-prof py-1.5 px-3 hover:bg-hover-bg transition-all cursor-pointer text-paragraph font-normal border-b">
+                  <span className="text-prof py-1.5 px-3 hover:bg-hover-bg transition-all cursor-pointer text-base font-normal border-b">
                     Leave of Absence
                   </span>
                   <span
-                    className="text-prof py-1.5 px-3 hover:bg-hover-bg transition-all cursor-pointer text-paragraph font-normal"
+                    className="text-prof py-1.5 px-3 hover:bg-hover-bg transition-all cursor-pointer text-base font-normal"
                     onClick={handlePresent}
                   >
                     Present Via VC
@@ -99,7 +99,7 @@ const MeetingDetails = () => {
                     rows="5"
                   />
                   <button
-                    className="bg-meetzen-primary text-white rounded-md px-8 py-2 mt-4 text-paragraph font-medium"
+                    className="bg-meetzen-primary text-white rounded-md px-8 py-2 mt-4 text-base font-medium"
                     onClick={() => setIsPresent(false)}
                   >
                     Lorem Ipsumn
@@ -114,7 +114,7 @@ const MeetingDetails = () => {
               Join VC Call
             </button>
           </div>
-          <p className="text-textGray text-paragraph underline text-end pt-4 font-medium">
+          <p className="text-textGray text-base underline text-end pt-4 font-medium">
             Continue from last left
           </p>
         </div>

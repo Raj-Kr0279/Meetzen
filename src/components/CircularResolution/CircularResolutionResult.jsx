@@ -44,13 +44,13 @@ const CircularResolutionResult = () => {
             <div className="w-full bg-white p-8 min-h-screen">
                 <div className="min-h-[70vh] w-full bg-white border border-gray-200  rounded-md">
                     <div className='py-2 px-4 border-b bg-hover-bg'>
-                        <h1 className="text-dark font-semibold text-large">Results</h1>
+                        <h1 className="text-dark font-semibold text-2xl">Results</h1>
                     </div>
                     <div class="overflow-y-auto h-[70vh] w-full bg-white mb-8 md:rounded-lg">
                         <table class="min-w-full divide-y  divide-gray-200 ">
                             <thead class=" sticky top-0 bg-white ">
                                 <tr>
-                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-paragraph">
+                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-base">
                                         <div className="flex items-center gap-1.5">
                                             <span>Name</span>
                                             <div className="flex flex-col gap-0.5 justify-center">
@@ -59,7 +59,7 @@ const CircularResolutionResult = () => {
                                             </div>
                                         </div>
                                     </th>
-                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-paragraph">
+                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-base">
                                         <div className="flex items-center gap-1.5">
                                             <span>Designation</span>
                                             <div className="flex flex-col gap-0.5 justify-center">
@@ -68,8 +68,8 @@ const CircularResolutionResult = () => {
                                             </div>
                                         </div>
                                     </th>
-                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-paragraph">Vote</th>
-                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-paragraph">Reviewed On</th>
+                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-base">Vote</th>
+                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-base">Reviewed On</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200 ">
@@ -234,28 +234,28 @@ const CircularResolutionResult = () => {
                     <div className='flex items-center justify-between gap-3'>
                         <div className="flex gap-4 items-center">
                             <div className='bg-meetzen-primary w-8 h-8 rounded-full'></div>
-                            <p className='text-placeholder font-medium text-paragraph justify-self-start whitespace-nowrap'>No of director who have given Assent</p>
+                            <p className='text-placeholder font-medium text-base justify-self-start whitespace-nowrap'>No of director who have given Assent</p>
                         </div>
                         <p className='text-theme-color font-extrabold bg-themeLightBlue shrink-0 w-8 h-6 rounded-sm flex item-center justify-center'>6</p>
                     </div>
                     <div className='flex items-center justify-between gap-3'>
                     <div className="flex gap-4 items-center">
                     <div className='bg-[#BBB6F8] w-8 h-8 rounded-full'></div>
-                        <p className='text-placeholder font-medium text-paragraph justify-self-start whitespace-nowrap'>No of director who have given Dissent</p>
+                        <p className='text-placeholder font-medium text-base justify-self-start whitespace-nowrap'>No of director who have given Dissent</p>
                         </div>
                         <p className='text-theme-color font-extrabold bg-themeLightBlue shrink-0 w-8 h-6 rounded-sm flex item-center justify-center'>3</p>
                     </div>
                     <div className='flex items-center justify-between gap-3'>
                     <div className="flex gap-4 items-center">
                     <div className='bg-[#EAEBF0] w-8 h-8 rounded-full'></div>
-                        <p className='text-placeholder font-medium text-paragraph justify-self-start whitespace-nowrap'>No of director who have given Abstain</p>
+                        <p className='text-placeholder font-medium text-base justify-self-start whitespace-nowrap'>No of director who have given Abstain</p>
                         </div>
                         <p className='text-theme-color font-extrabold bg-themeLightBlue shrink-0 w-8 h-6 rounded-sm flex item-center justify-center'>5</p>
                     </div>
                     <div className='flex items-center justify-between gap-3'>
                     <div className="flex gap-4 items-center">
                     <div className='bg-[#F4F0FD] w-8 h-8 rounded-full'></div>
-                        <p className='text-placeholder font-medium text-paragraph justify-self-start whitespace-nowrap'>No of director who have given Vote</p>
+                        <p className='text-placeholder font-medium text-base justify-self-start whitespace-nowrap'>No of director who have given Vote</p>
                         </div>
                         <p className='text-theme-color font-extrabold bg-themeLightBlue shrink-0 w-8 h-6 rounded-sm flex item-center justify-center'>2</p>
                     </div>

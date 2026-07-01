@@ -29,7 +29,7 @@ const ChangePassword = () => {
 
 <div className="flex fixed bg-white top-0 py-2 px-4 w-full justify-between items-center border-b">
                 <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/dashboard")}>
-                    <MdArrowBackIosNew className=' text-largeX font-normal' />
+                    <MdArrowBackIosNew className=' text-2xlX font-normal' />
                     <span className=' text-lg font-medium'>Back</span>
                 </div>
 
@@ -51,7 +51,7 @@ const ChangePassword = () => {
                             id="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="border-border-input w-full placeholder:text-placeholder font-normal border-1 text-paragraph  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md"
+                            className="border-border-input w-full placeholder:text-placeholder font-normal border-1 text-base  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md"
                             placeholder="Enter password"
                         />
                         {showPassword ? (
@@ -77,7 +77,7 @@ const ChangePassword = () => {
                             id="newPassword"
                             value={newPassword}
                             onChange={(e) => setNewPassword(e.target.value)}
-                            className="border-border-input w-full placeholder:text-placeholder font-normal border-1 text-paragraph  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md"
+                            className="border-border-input w-full placeholder:text-placeholder font-normal border-1 text-base  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md"
                             placeholder="Enter new password"
                         />
                         {showNewPassword ? (
@@ -103,7 +103,7 @@ const ChangePassword = () => {
                             id="cnfPassword"
                             value={cnfPassword}
                             onChange={(e) => setCnfPassword(e.target.value)}
-                            className="border-border-input w-full placeholder:text-placeholder font-normal border-1 text-paragraph  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md"
+                            className="border-border-input w-full placeholder:text-placeholder font-normal border-1 text-base  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md"
                             placeholder="Confirm password"
                         />
                         {showCnfPassword ? (

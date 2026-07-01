@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button, IconButton } from "@material-tailwind/react";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 export function Pagination() {
@@ -22,7 +21,7 @@ export function Pagination() {
 
   return (
     <div className="flex justify-between w-full items-center gap-4">
-      <Button
+      {/* <Button
         variant="text"
         className="flex items-center gap-2"
         onClick={prev}
@@ -45,7 +44,7 @@ export function Pagination() {
       >
         Next
         <BsArrowRight strokeWidth={2} className="w-4" />
-      </Button>
+      </Button> */}
     </div>
   );
 }

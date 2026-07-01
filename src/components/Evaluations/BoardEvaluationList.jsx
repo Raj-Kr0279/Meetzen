@@ -16,18 +16,18 @@ const BoardEvaluationList = () => {
         {/* filters and search section  */}
 
         <div className=" bg-hover-bg px-4 py-4  flex justify-between rounded-md mb-4 items-center">
-          <h1 className="text-dark font-semibold text-large">
+          <h1 className="text-dark font-semibold text-2xl">
             All Evaluations
           </h1>
           <div className="flex items-center gap-3">
             <label
               htmlFor="year"
-              className="text-placeholder text-paragraph font-normal"
+              className="text-placeholder text-base font-normal"
             >
               Filter Year:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-paragraph w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-dark text-base w-[19vw] rounded-sm border border-borderInput"
               name="year"
               id="year"
             >
@@ -39,12 +39,12 @@ const BoardEvaluationList = () => {
 
             <label
               htmlFor="year"
-              className="text-placeholder text-paragraph font-normal"
+              className="text-placeholder text-base font-normal"
             >
               Filter Committee:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-paragraph w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-dark text-base w-[19vw] rounded-sm border border-borderInput"
               name="committee"
               id="committee"
             >
@@ -62,28 +62,28 @@ const BoardEvaluationList = () => {
                 <p className=" text-pargraph text-theme-color leading-none font-normal pb-2">
                   {evals.committee}
                 </p>
-                <h1 className="text-dark leading-none pt-1 pb-2 font-semibold text-large">
+                <h1 className="text-dark leading-none pt-1 pb-2 font-semibold text-2xl">
                   {evals.documentName}
                 </h1>
-                <p className="text-paragraph font-medium text-light">
+                <p className="text-base font-medium text-light">
                   Evaluation for:{" "}
-                  <span className="text-theme-color text-mediumCaption font-semibold pl-1">
+                  <span className="text-theme-color text-lg font-semibold pl-1">
                     {evals.evaluationFor}
                   </span>
                 </p>
-                <p className="text-paragraph font-medium text-light">
+                <p className="text-base font-medium text-light">
                   Due Date:{" "}
-                  <span className="text-theme-color text-mediumCaption font-semibold pl-1">
+                  <span className="text-theme-color text-lg font-semibold pl-1">
                     {evals.dueDate}
                   </span>
                 </p>
               </div>
               <div className="flex flex-col items-end">
                 <div className="flex gap-1 items-center">
-                  <p className="text-paragraph font-medium text-light">
+                  <p className="text-base font-medium text-light">
                     Questions Attempted: {evals.questionsAttempted}/{evals.questionsTotal}
                   </p>
-                  <p className="text-paragraph font-medium text-light">
+                  <p className="text-base font-medium text-light">
                     Marks Obtained: {evals.marksObtained}/{evals.marksTotal}
                   </p>
                 </div>
@@ -93,7 +93,7 @@ const BoardEvaluationList = () => {
                     {evals.pendingDaysLeft}
                   </span>
                   <button
-                    className="py-2 px-6 text-paragraph font-medium bg-meetzen-primary text-white rounded-[4px]"
+                    className="py-2 px-6 text-base font-medium bg-meetzen-primary text-white rounded-[4px]"
                     onClick={() =>
                       navigate(`/home/board-evaluation-details/${evals.id}`)
                     }

@@ -1,11 +1,5 @@
 import React, { useState } from 'react'
 import prof from '../../Assets/profileDummy.png'
-import {
-    Accordion,
-    AccordionHeader,
-    AccordionBody,
-    Slider,
-} from "@material-tailwind/react";
 import { BsTriangleFill } from 'react-icons/bs';
 
 
@@ -24,7 +18,7 @@ const CommitteeComposition = () => {
             <h1 className='text-memberCardHeader text-mediumHeading font-bold'>Madelyn Mango</h1>
             <p className='text-gray50 py-0.5 rounded-sm mb-2 text-smallSubheading font-bold w-full  '>Chairman</p>
             <div className='flex flex-col'>
-                <p className='text-graySecondary text-smallSubheading font-medium'>Chairman:</p>
+                <p className='text-meetzen-textSecondary text-smallSubheading font-medium'>Chairman:</p>
                 <h5 className='text-black pb-1.5 font-semibold text-smallSubheading'>Board Meeting</h5>
                 <p className='text-dark text-xs font-normal'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur quam eligendi placeat saepe corrupti facilis ab, esse modi natus.</p>
                 <span className='text-theme-color underline font-bold pt-3'>View profile</span>
@@ -36,7 +30,7 @@ const CommitteeComposition = () => {
         <div className=' h-[75vh] overflow-y-auto w-full p-4 bg-white'>
 
 
-            <Accordion className='mb-4 rounded-md border border-accordion px-4' open={open === 1} icon={<Icon id={1} open={open} />}>
+            {/* <Accordion className='mb-4 rounded-md border border-accordion px-4' open={open === 1} icon={<Icon id={1} open={open} />}>
                 <AccordionHeader onClick={() => handleOpen(1)} className='border-b-0 transition-colors'>
                     <div className='flex w-full justify-between items-center'>
                         <h1 className='text-theme-color font-semibold text-mediumSubheading'>Board of Directors</h1>
@@ -67,7 +61,7 @@ const CommitteeComposition = () => {
                     </div>
 
                 </AccordionBody>
-            </Accordion>
+            </Accordion> */}
 
 
         </div>

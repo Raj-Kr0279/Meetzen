@@ -12,7 +12,7 @@ const HelpAndSupport = () => {
     <>
     {/* <div className="flex bg-white fixed top-0 pt-4 pb-2 px-4 w-full justify-between items-center border-b">
     <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/dashboard")}>
-        <MdArrowBackIosNew className=' text-largeX font-normal' />
+        <MdArrowBackIosNew className=' text-2xlX font-normal' />
         <span className=' text-lg font-medium'>Back</span>
     </div>
     <div className='relative'>
@@ -23,11 +23,11 @@ const HelpAndSupport = () => {
 </div> */}
 <PageHeading label="Help & Support"/>
 
-<div className="flex w-full gap-4 px-10">
+<div className="flex w-full gap-4 mt-4 px-10">
   <div className="sidemenu shrink-0 grow-0">
-    <p className={`${selectedOption === "contact" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph`} onClick={()=>setSelectedOption("contact")}>Contact Details</p>
-    <p className={`${selectedOption === "manual" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph`} onClick={()=>setSelectedOption("manual")}>Director Manuals</p>
-    <p className={`${selectedOption === "video" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-paragraph`} onClick={()=>setSelectedOption("video")}>Video Manuals</p>
+    <p className={`${selectedOption === "contact" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base`} onClick={()=>setSelectedOption("contact")}>Contact Details</p>
+    <p className={`${selectedOption === "manual" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base`} onClick={()=>setSelectedOption("manual")}>Director Manuals</p>
+    <p className={`${selectedOption === "video" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base`} onClick={()=>setSelectedOption("video")}>Video Manuals</p>
   </div>
 
   <div className="mainmenu grow-1">

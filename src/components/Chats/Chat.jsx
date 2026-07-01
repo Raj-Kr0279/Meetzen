@@ -65,7 +65,7 @@ const Chat = () => {
                             <img src={prof} className='w-full h-full rounded-full' alt="" />
                             <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                         </div>
-                        <span className='text-dark text-mediumCaption font-medium'>Jamie Spencer</span>
+                        <span className='text-dark text-lg font-medium'>Jamie Spencer</span>
                     </div>
                     <div className="chat__area flex flex-col gap-5 h-[75vh] overflow-y-auto break-words py-6 px-8">
                         <div className='flex w-[65%] items-start mb-auto'>
@@ -74,7 +74,7 @@ const Chat = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-white font-normal text-paragraph  text-dark p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-white font-normal text-base  text-dark p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-smallSubheading text-placeholder font-normal'>08:15 PM</span>
                             </div>
                         </div>
@@ -84,7 +84,7 @@ const Chat = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-meetzen-primary text-white font-normal text-paragraph p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-meetzen-primary text-white font-normal text-base p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-smallSubheading text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ const Chat = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-white font-normal text-paragraph  text-dark p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-white font-normal text-base  text-dark p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-smallSubheading text-placeholder font-normal'>08:15 PM</span>
                             </div>
                         </div>
@@ -104,7 +104,7 @@ const Chat = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-meetzen-primary text-white font-normal text-paragraph p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-meetzen-primary text-white font-normal text-base p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-smallSubheading text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
                             </div>
                         </div>

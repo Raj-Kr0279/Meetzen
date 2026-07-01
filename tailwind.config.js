@@ -1,12 +1,60 @@
 /** @type {import('tailwindcss').Config} */
-const withMT = require("@material-tailwind/react/utils/withMT");
 
-module.exports = withMT({
+export default  {
   plugins: [],
   content: ["./src/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
+        "theme-color": "#2563EB",
+        "hover-bg": "#F1F5F9",
+        dark: "#49556D",
+        light: "#BFBFBF",
+        placeholder: "#7C8B9D",
+        prof: "#2E3646",
+        "prof-overlay": "#2E364670",
+        profLight40: "#2E364666",
+        datetime: "#818181",
+        filterType: "#525252",
+        profileModalBorder: "#EAEBF0",
+        meetFilterBlueLight: "#DDE9FF",
+        meetGreenPill: "#D7FFD7",
+        meetGreenBg: "#F0FAF0",
+        meetRedBg: "#FFF7F9",
+        meetRedPill: "#FCDCDC",
+        topSearch: "#B7B7B7",
+        calModalBg: "#FAFAFA",
+        textGray: "#707070",
+        starred: "#FFD600",
+        memberCardHeader: "#272D37",
+        gray50: "#5F6D7E",
+        graySecondary: "#8D8D8D",
+        action: "#EEA23E",
+        actionBg: "#FFF8EB",
+        purpleButton: "#3E45EE",
+        searchReport: "#EDF3FF",
+        searchReportText: "#3A3A3A",
+        themeLightBlue: "#EAF2FF",
+        newsHover: "#E4EDFF",
+        memberCount: "#7D7D7D",
+        mapDistance: "#BAC0C8",
+        compareHead: "#444",
+        pdfActive: "#E3EFF7",
+        "modal-overlay": "#00000099",
+        modal: "rgb(42 55 61)",
+        checkedLightBg: "#E9FFF7",
+        lightBlueBg: "#F2F5FF",
+        actionableOrange: "#F4893C",
+        actionableYellow: "#E5C315",
+        actionableLightOrange: "#FFF5EA",
+        actionableLightGreen: "#ECFFF0",
+        actionableLightPurple: "#FDEAFF",
+        actionableLightYellow: "#FDFFEA",
+        chatInput: "#F8F9FB",
+        tableLightBlue: "#F2FAFF",
+        tableHeadText: "#444",
+        overlay: "rgba(0, 0, 0, 0.35)",
+        borderInput: "#DAE0E6",
         meetzen: {
           primary: "#2563EB",
           secondary: "#14B8A6",
@@ -55,6 +103,12 @@ module.exports = withMT({
           compareHead: "#444",
           pdfActive: "#E3EFF7",
         },
+      },
+      screens: {
+        mobile: "280px",
+        desk: "1600px",
+        twok: "2000px",
+        threek: "3000px",
       },
 
       backgroundImage: {},
@@ -115,7 +169,8 @@ module.exports = withMT({
       lineHeight: {},
 
       fontFamily: {
-        sfpro: ['Poppins', 'sans-serif']
+        poppins: ['Poppins', 'sans-serif'],
+        moirai: ["Moirai One", 'system-ui']
       },
 
       boxShadow: {
@@ -128,25 +183,17 @@ module.exports = withMT({
       borderRadius: {
         sm: "4px",
       },
+      screens: {
+      sm: "640px",
+      md: "769px",
+      lg: "1025px",
+      xl: "1281px",
+      "2xl": "1537px",
+    },
 
       dropShadow: {},
       gridTemplateColumns: {},
     },
 
-    screens: {
-      mobile: "279px",
-      xs: "425px",
-      sm: "640px",
-      md: "768px",
-      tab: "821px",
-      lg: "1024px",
-      desk: "1280px",
-      mac: "1440px",
-      xl: "1600px",
-      deskhd: "1920px",
-      twok: "2200px",
-      threek: "3199px",
-    },
   },
-});
-
+}

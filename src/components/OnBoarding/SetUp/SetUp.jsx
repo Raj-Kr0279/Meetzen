@@ -1,18 +1,80 @@
 import React, { useState } from "react";
-import "./stepper.css";
 import { FaCheck } from "react-icons/fa";
+import divider from "../../../assets/divider.png";
+import dividerComplete from "../../../assets/dividerComplete.png";
 import TimeZone from "./TimeZone";
 import ReviewProfile from "./ReviewProfile";
 import SelectLanguage from "./SelectLanguage";
 import { Link, useNavigate } from "react-router-dom";
 import FooterText from "../../FooterText/FooterText";
+import Button from "../../ui/Button";
+
+const stepperStyles = `
+  .step-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .step-item:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    width: 21em;
+    transform: translateX(0) translateY(-100%);
+    height: 0.5rem;
+    right: 50%;
+    top: 36.33%;
+    background: url(${divider}) no-repeat center center / cover;
+  }
+
+  .step {
+    width: 4rem;
+    height: 4rem;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    position: relative;
+    background-color: #fff;
+    border-radius: 9999px;
+    font-weight: 600;
+  }
+
+  .complete:not(:first-child)::before,
+  .active:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 21em;
+    transform: translateX(0) translateY(-100%);
+    height: 0.5rem;
+    right: 50%;
+    top: 36.33%;
+    background-image: url(${dividerComplete});
+    background-size: cover;
+  }
+`;
+
 const SetUp = () => {
   const navigate = useNavigate();
   const steps = ["Customer Info", "Language", "Timezone"];
   const [currentStep, setCurrentStep] = useState(1);
   const [complete, setComplete] = useState(false);
+  const nextButtonClick = () => {
+    if (currentStep === steps.length) {
+      setComplete(true);
+      navigate("/home");
+    } else {
+      setCurrentStep((prev) => prev + 1);
+    }
+  };
   return (
     <>
+      <style>{stepperStyles}</style>
       <div className="topbar px-6 py-1.5 flex w-full place-items-center">
         <p
           onClick={() => {
@@ -35,52 +97,68 @@ const SetUp = () => {
               : "Time Zone"}
         </p>
       </div>
+      <div className="flex flex-col h-[calc(90vh)]">
       <div className="flex justify-between w-[47.5rem] mx-auto my-6">
-        {steps?.map((step, i) => (
-          <div
-            key={i}
-            className={`step-item ${currentStep === i + 1 && "active"} ${
-              (i + 1 < currentStep || complete) && "complete"
-            } `}
-          >
-            <div className="step">
-              {i + 1 < currentStep || complete ? (
-                <FaCheck className="text-heading font-semibold" />
-              ) : (
-                i + 1
-              )}
+        {steps?.map((step, i) => {
+          const isActive = currentStep === i + 1;
+          const isComplete = i + 1 < currentStep || complete;
+
+          return (
+            <div
+              key={i}
+              className={`step-item ${isActive ? "active" : ""} ${
+                isComplete ? "complete" : ""
+              }`}
+            >
+              <div
+                className={`step ${isActive ? "bg-meetzen-border border-2" : ""} ${
+                  isComplete
+                    ? "bg-meetzen-primary text-white border-transparent"
+                    : ""
+                }`}
+              >
+                {isComplete ? (
+                  <FaCheck className="text-heading font-semibold" />
+                ) : (
+                  i + 1
+                )}
+              </div>
+              <p
+                className={`text-dark font-medium text-mediumSubheading ${
+                  isComplete ? "text-white" : ""
+                }`}
+              >
+                {step}
+              </p>
             </div>
-            <p className="text-dark font-medium text-mediumSubheading">
-              {step}
-            </p>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      <button
-        className="bg-meetzen-primary absolute tab:bottom-12 w-[40vw] tracking-widest font-semibold px-6 left-1/2 -translate-x-1/2 rounded-lg text-white py-4"
-        onClick={() => {
-          if (currentStep === steps.length) {
-            setComplete(true);
-            navigate("/home"); // You should have access to navigate from React Router here.
-          } else {
-            setCurrentStep((prev) => prev + 1);
-          }
-        }}
+      {/* <button
+        className="bg-meetzen-primary absolute tab:bottom-12"
+        onClick={}
       >
         {currentStep === steps.length ? "Finish" : "Next"}
-      </button>
-
-      {currentStep === 1 ? (
-        <ReviewProfile />
-      ) : currentStep === 2 ? (
-        <SelectLanguage />
-      ) : (
-        <TimeZone />
-      )}
-
+      </button> */}
+      <div className="flex flex-col justify-center items-center">
+        {currentStep === 1 ? (
+          <ReviewProfile />
+        ) : currentStep === 2 ? (
+          <SelectLanguage />
+        ) : (
+          <TimeZone />
+        )}
+        <Button
+          variant="primary"
+          classNames="w-[40vw] tracking-widest font-semibold px-6 rounded-lg text-white py-4"
+          label={currentStep === steps.length ? "Finish" : "Next"}
+          onClick={nextButtonClick}
+        />
+      </div>
+      </div>
       <div className="absolute w-full text-smallSubheading text-light bottom-4 text-center">
-       <FooterText/>
+        <FooterText />
       </div>
     </>
   );

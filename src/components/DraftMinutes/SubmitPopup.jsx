@@ -37,7 +37,7 @@ const SubmitPopup = ({ modal, setModal, isSaveDraft, setSaveDraft }) => {
                 <p className='text-dark text-medium font-normal'>Your draft minutes are saved successfully. Tap on “Continue” to submit to the company secretary.</p>
                 <div className="grid mt-2 grid-cols-2 gap-2">
                     <button className='text-white rounded-sm border border-white bg-meetzen-primary font-medium py-2 px-4' onClick={()=>setModal(false)}>Save</button>
-                    <button className='text-theme-color rounded-sm bg-white border border-theme-color text-paragraph font-medium py-2 px-4' onClick={handleContinue}>Continue</button>
+                    <button className='text-theme-color rounded-sm bg-white border border-theme-color text-base font-medium py-2 px-4' onClick={handleContinue}>Continue</button>
                 </div>
             </div>
             :

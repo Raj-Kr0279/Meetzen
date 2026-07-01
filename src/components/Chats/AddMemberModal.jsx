@@ -11,12 +11,12 @@ const AddMemberModal = ({ modal, setModal, setGrpModal }) => {
       <div className='flex items-center gap-1.5'>
         <img src={prof} className='rounded-full w-10 h-10' alt="" />
         <div className='flex flex-col'>
-          <p className='text-prof text-paragraph font-medium'>Alex Payne</p>
+          <p className='text-prof text-base font-medium'>Alex Payne</p>
           <span className='text-profLight40 text-smallSubheading font-normal'>Manager</span>
         </div>
       </div>
       <div className='flex items-center text-theme-color justify-center w-12 h-9 bg-hover-bg'>
-        <MdAdd className=' text-large font-bold' />
+        <MdAdd className=' text-2xl font-bold' />
       </div>
     </div>
 
@@ -25,7 +25,7 @@ const AddMemberModal = ({ modal, setModal, setGrpModal }) => {
     <>
       <div className="fixed z-20 top-0 left-0 w-full h-screen bg-overlay" onClick={() => setModal(false)}></div>
       <div className="absolute flex flex-col overflow-hidden h-[80vh] aspect-[2.3/3] max-w-[600px] z-30 top-[10%] bg-white left-1/2 -translate-x-1/2 rounded-2xl shadow-md p-6">
-        <h1 className='text-prof pb-3 text-large font-semibold'>Add Members</h1>
+        <h1 className='text-prof pb-3 text-2xl font-semibold'>Add Members</h1>
         <div className='relative'>
           <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
           <input className='text-placeholder w-full border border-topSearch rounded-md py-2.5 px-8' placeholder='Search' type="text" name="search" id="search" />

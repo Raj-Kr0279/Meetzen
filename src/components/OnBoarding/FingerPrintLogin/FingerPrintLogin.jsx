@@ -14,7 +14,7 @@ const FingerPrintLogin = () => {
       <h1 className="text-heading leading-none text-center text-dark font-semibold">
         Login with Fingerprint
       </h1>
-      <p className="mt-4 text-center text-light leading-snug text-paragraph font-medium break-words">
+      <p className="mt-4 text-center text-light leading-snug text-base font-medium break-words">
         Place your finger over the sensor
       </p>
       <img

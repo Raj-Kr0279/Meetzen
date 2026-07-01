@@ -38,45 +38,46 @@ const HomeLayout = () => {
           onClick={() => setIsSidebarOpen(false)}
         ></div>
       ) : null}
-      <div className="w-full flex h-screen overflow-x-hidden">
-        <Sidebar isSidebarOpen={isSidebarOpen} />
-        <div className="grow-1 w-full relative">
-          <TopHeader
-            isSidebarOpen={isSidebarOpen}
-            setIsSidebarOpen={setIsSidebarOpen}
-            isFiltersModal={isFiltersModal}
-            setIsFilterModal={setIsFilterModal}
+      <div className="h-screen">
+        <TopHeader
+          isSidebarOpen={isSidebarOpen}
+          setIsSidebarOpen={setIsSidebarOpen}
+          isFiltersModal={isFiltersModal}
+          setIsFilterModal={setIsFilterModal}
+          isNotificationsModal={isNotificationsModal}
+          setIsNotificationsModal={setIsNotificationsModal}
+          isProfileModal={isProfileModal}
+          setIsProfileModal={setIsProfileModal}
+        />
+        {isNotificationsModal && (
+          <NotificationModal
             isNotificationsModal={isNotificationsModal}
             setIsNotificationsModal={setIsNotificationsModal}
+          />
+        )}
+        {isFiltersModal && (
+          <FilterModal
+            isFiltersModal={isFiltersModal}
+            setIsFilterModal={setIsFilterModal}
+          />
+        )}
+        {isProfileModal && (
+          <ProfileModal
             isProfileModal={isProfileModal}
             setIsProfileModal={setIsProfileModal}
           />
-          {isNotificationsModal && (
-            <NotificationModal
-              isNotificationsModal={isNotificationsModal}
-              setIsNotificationsModal={setIsNotificationsModal}
-            />
-          )}
-          {isFiltersModal && (
-            <FilterModal
-              isFiltersModal={isFiltersModal}
-              setIsFilterModal={setIsFilterModal}
-            />
-          )}
-          {isProfileModal && (
-            <ProfileModal
-              isProfileModal={isProfileModal}
-              setIsProfileModal={setIsProfileModal}
-            />
-          )}
-          {isMeetingModal && (
-            <MeetingModal
-              isMeetingModal={isMeetingModal}
-              setIsMeetingModal={setIsMeetingModal}
-            />
-          )}
-
-          <Outlet />
+        )}
+        {isMeetingModal && (
+          <MeetingModal
+            isMeetingModal={isMeetingModal}
+            setIsMeetingModal={setIsMeetingModal}
+          />
+        )}
+        <div className="w-full h-[calc(100vh-64px)] flex">
+          <Sidebar isSidebarOpen={isSidebarOpen} />
+          <div className="grow h-full mt-6 w-full relative">
+            <Outlet />
+          </div>
         </div>
       </div>
     </>

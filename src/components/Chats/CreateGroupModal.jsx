@@ -10,12 +10,12 @@ const CreateGroupModal = ({ modal, setGrpModal }) => {
             <div className='flex items-center gap-1.5'>
                 <img src={prof} className='rounded-full w-10 h-10' alt="" />
                 <div className='flex flex-col'>
-                    <p className='text-prof text-paragraph font-medium'>Alex Payne</p>
+                    <p className='text-prof text-base font-medium'>Alex Payne</p>
                     <span className='text-profLight40 text-smallSubheading font-normal'>Manager</span>
                 </div>
             </div>
             <div className='flex items-center text-theme-color justify-center w-12 h-9 bg-hover-bg'>
-                <MdAdd className=' text-large font-bold' />
+                <MdAdd className=' text-2xl font-bold' />
             </div>
         </div>
 
@@ -24,7 +24,7 @@ const CreateGroupModal = ({ modal, setGrpModal }) => {
         <>
             <div className="fixed z-20 top-0 left-0 w-full h-screen bg-overlay" onClick={() => setGrpModal(false)}></div>
             <div className="absolute overflow-hidden md:min-w-[450px] flex flex-col h-[80vh] aspect-square max-w-[600px] z-30 top-[10%] bg-white left-1/2 -translate-x-1/2 rounded-2xl shadow-md p-6">
-                <h1 className='text-prof pb-3 text-large font-semibold'>Create Group</h1>
+                <h1 className='text-prof pb-3 text-2xl font-semibold'>Create Group</h1>
                 <div className='relative mb-4'>
                     <svg className='absolute text-placeholder w-6 h-8 top-1/2 left-2 -translate-y-1/2' viewBox="0 0 24 24" fill="red" xmlns="http://www.w3.org/2000/svg">
                         <g id="groups_FILL0_wght300_GRAD0_opsz24">
@@ -43,7 +43,7 @@ const CreateGroupModal = ({ modal, setGrpModal }) => {
                 <div className="contacts__wrap grow-1 gap-4 flex flex-col overflow-y-auto">
                     {contact}
                 </div>
-                <button className="bg-meetzen-primary text-white font-medium rounded-md text-paragraph py-4 w-full px-8">Create Group</button>
+                <button className="bg-meetzen-primary text-white font-medium rounded-md text-base py-4 w-full px-8">Create Group</button>
             </div>
         </>
     )

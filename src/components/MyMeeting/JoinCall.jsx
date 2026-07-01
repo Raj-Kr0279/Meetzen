@@ -12,7 +12,7 @@ const JoinCall = () => {
         <>
             <div className="flex fixed z-40 bg-white top-0 py-2 px-4 w-full justify-between items-center border-b">
                 <div className='flex items-center font-semibold text-theme-color' onClick={() => navigate("/dashboard")}>
-                    <MdArrowBackIosNew className=' text-largeX font-normal' />
+                    <MdArrowBackIosNew className=' text-2xlX font-normal' />
                     <span className=' text-lg font-medium'>Back</span>
                 </div>
                 <div className='relative'>
@@ -36,8 +36,8 @@ const JoinCall = () => {
                     </div>
                     <div className=''>
                         <h1 className=' text-extraLarge pb-1.5 font-semibold text-dark'>132nd Meeting of Audit Committee</h1>
-                        <p className='text-light text-paragraph font-normal'>Lorem ipsum dolor sit amet consectetur. Donec laoreet molestie semper sed urna.</p>
-                        <button className='bg-meetzen-primary w- mt-10 text-white text-mediumCaption py-4 px-20 rounded-sm'>Join Call</button>
+                        <p className='text-light text-base font-normal'>Lorem ipsum dolor sit amet consectetur. Donec laoreet molestie semper sed urna.</p>
+                        <button className='bg-meetzen-primary w- mt-10 text-white text-lg py-4 px-20 rounded-sm'>Join Call</button>
                     </div>
                 </div>
             </div>

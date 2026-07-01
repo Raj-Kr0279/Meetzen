@@ -11,7 +11,7 @@ const Disclosure = () => {
     <>
       {/* <div className="flex pt-4 pb-2 px-4 w-full justify-between items-center border-b">
     <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/dashboard")}>
-        <MdArrowBackIosNew className=' text-largeX font-normal' />
+        <MdArrowBackIosNew className=' text-2xlX font-normal' />
         <span className=' text-lg font-medium'>Back</span>
     </div>
     <div className='relative'>
@@ -24,11 +24,11 @@ const Disclosure = () => {
       <div className="  bg-hover-bg h-full py-8 px-10">
         <div className="flex justify-between items-center pb-4">
           <img src={logo} alt="" />
-          <span className="text-paragraph font-semibold text-dark">
+          <span className="text-base font-semibold text-dark">
             Page 1/2
           </span>
         </div>
-        <p className="text-paragraph text-dark font-semibold leading-loose">
+        <p className="text-base text-dark font-semibold leading-loose">
           Lorem ipsum dolor sit amet consectetur. Bibendum fermentum aliquam
           sapien ornare volutpat amet. Lorem turpis vitae aliquam nunc. Platea
           in pharetra consectetur nulla fermentum dictum. Phasellus eget tellus

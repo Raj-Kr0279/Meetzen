@@ -17,8 +17,8 @@ const MemberCompanyStructure = () => {
   ))
   return (
     <>
-      <div className='font-semibold flex items-center text-paragraph px-0 overflow-hidden rounded-md h-12 place-items-center'>
-        <div className='font-semibold flex items-center text-paragraph px-0 overflow-hidden whitespace-nowrap border rounded-md h-12 place-items-center'>
+      <div className='font-semibold flex items-center text-base px-0 overflow-hidden rounded-md h-12 place-items-center'>
+        <div className='font-semibold flex items-center text-base px-0 overflow-hidden whitespace-nowrap border rounded-md h-12 place-items-center'>
           <span className={`w-full flex items-center px-4 justify-center h-full border-r ${selectedFilter === 'composition' ? 'bg-meetzen-primary text-white' : 'bg-white text-theme-color'}`} onClick={() => handleFilterSelection('composition')}>Committee Composition</span>
           <span className={`w-full flex items-center justify-center h-full px-4 border-r ${selectedFilter === 'structure' ? 'bg-meetzen-primary text-white' : 'bg-white text-theme-color'}`} onClick={() => handleFilterSelection('structure')}>Company Structure</span>
         </div>
@@ -28,8 +28,8 @@ const MemberCompanyStructure = () => {
         selectedFilter === "composition" ?
           <>
             <div className="flex flex-col mt-4 mb-6 gap-2">
-              <label htmlFor="year" className='text-dark text-paragraph font-semibold'>Committee Composition</label>
-              <select className='py-2.5 px-2.5 bg-white text-dark text-paragraph w-[19vw] rounded-sm border border-borderInput' name="committee" id="committee">
+              <label htmlFor="year" className='text-dark text-base font-semibold'>Committee Composition</label>
+              <select className='py-2.5 px-2.5 bg-white text-dark text-base w-[19vw] rounded-sm border border-borderInput' name="committee" id="committee">
                 <option value="all">Audit Committee</option>
                 <option value="board_meetig">Board Meeting</option>
                 <option value="audit">Audit</option>

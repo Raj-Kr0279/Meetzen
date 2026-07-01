@@ -64,8 +64,8 @@ const MyDocuments = () => {
                                 <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">12/03/2023</td>
                                 <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">
                                     <div className="flex items-center gap-3 text-theme-color">
-                                        <AiOutlineShareAlt className='text-large cursor-pointer' onClick={() => setShareModal(true)} />
-                                        <BsTrash className='text-large cursor-pointer' />
+                                        <AiOutlineShareAlt className='text-2xl cursor-pointer' onClick={() => setShareModal(true)} />
+                                        <BsTrash className='text-2xl cursor-pointer' />
                                     </div>
                                 </td>
                             </tr>
@@ -74,8 +74,8 @@ const MyDocuments = () => {
                                 <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">12/03/2023</td>
                                 <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">
                                     <div className="flex items-center gap-3 text-theme-color">
-                                        <AiOutlineShareAlt className='text-large cursor-pointer' onClick={() => setShareModal(true)} />
-                                        <BsTrash className='text-large cursor-pointer' />
+                                        <AiOutlineShareAlt className='text-2xl cursor-pointer' onClick={() => setShareModal(true)} />
+                                        <BsTrash className='text-2xl cursor-pointer' />
                                     </div>
                                 </td>
                             </tr>
@@ -84,8 +84,8 @@ const MyDocuments = () => {
                                 <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">12/03/2023</td>
                                 <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">
                                     <div className="flex items-center gap-3 text-theme-color">
-                                        <AiOutlineShareAlt className='text-large cursor-pointer' onClick={() => setShareModal(true)} />
-                                        <BsTrash className='text-large cursor-pointer' />
+                                        <AiOutlineShareAlt className='text-2xl cursor-pointer' onClick={() => setShareModal(true)} />
+                                        <BsTrash className='text-2xl cursor-pointer' />
                                     </div>
                                 </td>
                             </tr>
@@ -96,7 +96,7 @@ const MyDocuments = () => {
                     <div class={`mx-auto min-h-[250px] cursor-pointer flex gap-8 h-full aspect-square w-full max-w-lg flex-col ${files.length > 0 ? "justify-between" : "justify-center"} rounded-xl border-2 border-dashed border-borderInput bg-white p-6 text-center`}>
                         <label htmlFor="dropzone-file" className='flex flex-col w-full items-center'>
                             <div className="flex w-12 h-12 border-dashed border-2 rounded-full justify-center items-center">
-                                <BsPlusLg className=" text-largeX " />
+                                <BsPlusLg className=" text-2xlX " />
                             </div>
 
                             <h2 class="mt-4 text-xl font-medium text-gray-700 tracking-wide">Drop your Files Here</h2>

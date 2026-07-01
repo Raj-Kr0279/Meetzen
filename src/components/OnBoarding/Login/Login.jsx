@@ -11,82 +11,75 @@ import fingerprint from "../../../Assets/fingerprint.svg";
 import faceid from "../../../Assets/faceid.svg";
 import FaceModal from "../FaceModal";
 import FooterText from "../../FooterText/FooterText";
+import OnboardingHeader from "../OnboardingHeader";
+import InputField from "../../ui/InputField";
+import Button from "../../ui/Button";
 
-const NewPage = () => {
+const Login = () => {
+  const INITIAL = { user: "", password: "" };
   const [inputError, setInputError] = useState(false);
-  const [password, setPassword] = useState("");
+  const [form, setForm] = useState(INITIAL);
+  const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [faceidModal, setFaceidModal] = useState(false);
   const navigate = useNavigate();
 
+  const validate = () => {
+    const e = {};
+    !form.user.trim() && (e.user = "Username is required");
+    !form.password.trim() && (e.password = "Please enter your password");
+    return e;
+  };
+  console.log(form, "shorma");
+  const handleChange = (e) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setErrors(() => ({ ...errors, [e.target.name]: "" }));
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    //form submission logic here
+    const errs = validate();
+    if (Object.keys(errs).length) {
+      setErrors(errs);
+      console.error("faksdfhkasdhfj");
+      return;
+    }
+    console.log("Form submitted successfully:", form);
+    navigate("/set-up");
   };
-
   const handleViewPassToggle = () => {
     setShowPassword(!showPassword);
   };
 
   return (
     <div>
-      <form action="#" onSubmit={handleSubmit} className="w-full">
+      <OnboardingHeader heading="Login with your credentials" />
+      <form onSubmit={handleSubmit} className="w-full">
         <div className="flex flex-col gap-2 pb-4">
-          <label
-            htmlFor="login_id"
-            className="font-semibold flex items-center text-dark text-normal"
-          >
-            Login ID
-            <span className="text-error pl-1">*</span>
-          </label>
-          <input
+          <InputField
+            label="Login ID"
+            name="user"
             type="text"
-            name="login_id"
-            id="login_id"
-            className={`${
-              inputError ? "border-error" : "border-border-input"
-            } placeholder:text-placeholder font-normal border-1 text-paragraph  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md`}
-            placeholder="Enter Login ID"
+            placeholder="Enter your user name"
+            onChange={handleChange}
+            error={errors.user}
+            value={form.user}
           />
-          {inputError && (
-            <div className="flex gap-2 items-center text-smallCaption text-error">
-              <AiOutlineWarning className="text-smallCaption" />
-              <span className="">Please enter a valid login ID</span>
-            </div>
-          )}
         </div>
 
         <div className="flex flex-col gap-2 pb-4">
-          <label
-            htmlFor="password"
-            className="font-semibold flex items-center text-dark text-normal"
-          >
-            Password
-            <span className="text-error pl-1">*</span>
-          </label>
           <div className="relative">
-            <input
-              type={showPassword ? "text" : "password"}
+            <InputField
+              type="password"
               name="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={`${
-                inputError ? "border-error" : "border-border-input"
-              } w-full placeholder:text-placeholder font-normal border-1 text-paragraph  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md`}
+              label="Password"
+              value={form.password}
+              onChange={handleChange}
               placeholder="Enter password"
+              error={errors.password}
+              showPassword={showPassword}
+              setShowPassword={setShowPassword}
+              handleViewPassToggle={handleViewPassToggle}
             />
-            {showPassword ? (
-              <AiOutlineEyeInvisible
-                onClick={handleViewPassToggle}
-                className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2"
-              />
-            ) : (
-              <AiOutlineEye
-                onClick={handleViewPassToggle}
-                className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2"
-              />
-            )}
           </div>
           {/* {inputError && (
               <div className="flex gap-2 items-center text-smallCaption text-error">
@@ -109,13 +102,11 @@ const NewPage = () => {
             </span>
           </div>
         </div>
-        <button
-          onClick={() => navigate("/set-up")}
-          disabled={false}
-          className="bg-meetzen-primary font-semibold py-3 tracking-widest mt-3 w-full text-white rounded-md"
-        >
-          Login
-        </button>
+        <Button
+          label="Login"
+          variant="primary"
+          classNames="font-semibold py-3 tracking-widest mt-3 w-full text-white rounded-md"
+        />
       </form>
       <p className="text-meetzen-textSecondary text-smallSubheading pt-3 font-normal">
         Do you have another account?{" "}
@@ -127,7 +118,7 @@ const NewPage = () => {
         </span>
       </p>
 
-      <div className="w-full mt-12 h-[1px] bg-lighter text-lighter text-paragraph font-normal relative">
+      {/* <div className="w-full mt-12 h-[1px] bg-lighter text-lighter text-base font-normal relative">
         <h1 className="absolute px-2 bg-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-1">
           OR
         </h1>
@@ -143,9 +134,9 @@ const NewPage = () => {
         <buttons className="border border-theme-color cursor-pointer w-full gap-2 justify-center text-pargraph items-center rounded-md flex py-3 text-theme-color px-4">
           Login with Face ID <img src={faceid} alt="" />{" "}
         </buttons>
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default NewPage;
+export default Login;

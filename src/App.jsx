@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import logo from './logo.svg';
+import logo from '../logo.svg'
 import './App.css';
 import CompanyRegistration from './components/OnBoarding/CompanyRegistration/CompanyRegistration';
 import Login from './components/OnBoarding/Login/Login'
@@ -59,15 +59,14 @@ function App() {
           <Routes>
             <Route path="/" element={<OnBoardingLayout />} >
               <Route index element={<Navigate to="company-registration" />} />
-              <Route path="company-registration" element={<CompanyRegistration />} />
+              <Route path="company-registration" element={<CompanyRegistration /> } />
               <Route path="login" element={<Login />} />
               <Route path="switch-company" element={<SwitchCompany />} />
               <Route path="forgot-password" element={<ForgotPassword />} />
               <Route path="reset-password" element={<ResetPassword />} />
               <Route path="otp-verify" element={<OtpVerify />} />
               <Route path="fingerprint-login" element={<FingerPrintLogin />} />
-              <Route path="set-up" element={<SetUp />} />
-              <Route path="edit-profile" element={<EditProfile />} />
+
               <Route path="change-password" element={<ChangePassword />} />
             </Route >
             <Route path='home' element={<HomeLayout />}>
@@ -106,9 +105,10 @@ function App() {
             </Route>
 
 
-
-            <Route path="/submit-feedback" element={<SubmitFeedback />} />
-            <Route path="/view-member-profile" element={<ProfileLayout />} />
+            <Route path="set-up" element={<SetUp />} />
+            <Route path="edit-profile" element={<EditProfile />} />
+            <Route path="submit-feedback" element={<SubmitFeedback />} />
+            <Route path="view-member-profile" element={<ProfileLayout />} />
             {/* <Route path="/dashboard" element={<FingerPrintLogin />} /> */}
           </Routes>
 

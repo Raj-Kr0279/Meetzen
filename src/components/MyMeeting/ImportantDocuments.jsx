@@ -30,8 +30,8 @@ const ImportantDocuments = () => {
         <>
             <div className='w-full'>
                 <div className='flex justify-end items-center gap-4'>
-                    <label htmlFor="year" className='text-placeholder text-paragraph font-normal'>Filter Year: </label>
-                    <select className='py-2.5 px-2.5 bg-white text-dark text-paragraph w-[19vw] rounded-sm border border-borderInput' name="year" id="year">
+                    <label htmlFor="year" className='text-placeholder text-base font-normal'>Filter Year: </label>
+                    <select className='py-2.5 px-2.5 bg-white text-dark text-base w-[19vw] rounded-sm border border-borderInput' name="year" id="year">
                         <option value="all" >All</option>
                         <option value="2023">2023</option>
                         <option value="2022">2022</option>
@@ -80,8 +80,8 @@ const ImportantDocuments = () => {
                                     <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">12/03/2023</td>
                                     <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">
                                         <div className="flex items-center gap-3 text-theme-color">
-                                            <AiOutlineShareAlt className='text-large' />
-                                            <BsTrash className='text-large' />
+                                            <AiOutlineShareAlt className='text-2xl' />
+                                            <BsTrash className='text-2xl' />
                                         </div>
                                     </td>
                                 </tr>
@@ -91,8 +91,8 @@ const ImportantDocuments = () => {
                                     <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">12/03/2023</td>
                                     <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">
                                         <div className="flex items-center gap-3 text-theme-color">
-                                            <AiOutlineShareAlt className='text-large' />
-                                            <BsTrash className='text-large' />
+                                            <AiOutlineShareAlt className='text-2xl' />
+                                            <BsTrash className='text-2xl' />
                                         </div>
                                     </td>
                                 </tr>
@@ -102,8 +102,8 @@ const ImportantDocuments = () => {
                                     <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">12/03/2023</td>
                                     <td class="px-4 py-4 text-dark text-sm font-medium whitespace-nowrap">
                                         <div className="flex items-center gap-3 text-theme-color">
-                                            <AiOutlineShareAlt className='text-large' />
-                                            <BsTrash className='text-large' />
+                                            <AiOutlineShareAlt className='text-2xl' />
+                                            <BsTrash className='text-2xl' />
                                         </div>
                                     </td>
                                 </tr>
@@ -114,7 +114,7 @@ const ImportantDocuments = () => {
                         <div class={`mx-auto min-h-[250px] cursor-pointer flex gap-8 h-full aspect-square w-full max-w-lg flex-col ${files.length > 0 ? "justify-between" : "justify-center"} rounded-xl border-2 border-dashed border-borderInput bg-white p-6 text-center`}>
                             <label htmlFor="dropzone-file" className='flex flex-col w-full items-center'>
                                 <div className="flex w-12 h-12 border-dashed border-2 rounded-full justify-center items-center">
-                                    <BsPlusLg className=" text-largeX " />
+                                    <BsPlusLg className=" text-2xlX " />
                                 </div>
 
                                 <h2 class="mt-4 text-xl font-medium text-gray-700 tracking-wide">Drop your Files Here</h2>
