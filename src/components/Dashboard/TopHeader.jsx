@@ -29,7 +29,7 @@ const TopHeader = ({
         className="flex items-center cursor-pointer font-semibold text-theme-color"
         onClick={() => navigate(-1)}
       >
-        <MdArrowBackIosNew className="text-2xlX font-normal" />
+        <MdArrowBackIosNew className="text-2xl font-normal" />
         <span className=" text-lg font-medium">Back</span>
       </div>
       <div className="search order-1 md:order-[unset]">
@@ -61,9 +61,9 @@ const TopHeader = ({
         >
           <FiMessageSquare className="text-2xl" />
           <span className="text-medium hidden md:inline-block">Chat</span>
-          <span className="rounded-full bg-dark text-white text-smallSubheading items-center justify-center font-semibold w-6 h-6 hidden md:flex">
+          <p className="rounded-full bg-meetzen-dark text-white text-smallSubheading items-center justify-center font-semibold w-6 h-6 hidden md:flex">
             5
-          </span>
+          </p>
         </div>
         <AiOutlineBell
           onClick={() => setIsNotificationsModal(!isNotificationsModal)}

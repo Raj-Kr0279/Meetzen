@@ -6,7 +6,6 @@ import {
   MdOutlineModeEditOutline,
 } from "react-icons/md";
 import { FiFileText, FiUsers } from "react-icons/fi";
-import "./Sidebar.css";
 import meetzen from "../../Assets/meetzen.png";
 import { AiOutlineFile, AiOutlineSearch } from "react-icons/ai";
 import { RiFileEditLine } from "react-icons/ri";
@@ -67,13 +66,13 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                 to={`/home/${link.link}`}
                 key={link.label}
                 className={({ isActive }) =>
-                  `link rounded-tr-lg rounded-br-lg ${ 
+                  `link rounded-tr-lg rounded-br-lg font-normal flex items-center gap-2 py-2 px-2 text-sm ${ 
                     isActive ? "bg-meetzen-primary text-white " : "hover:bg-meetzen-primary/50 hover:text-white text-meetzen-textPrimary"
                   }`
                 }
               >
                 {link.icon}
-                <span className="">{link.label}</span>
+                <p className="">{link.label}</p>
               </NavLink>
             ))}
           </div>

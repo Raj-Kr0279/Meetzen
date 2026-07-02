@@ -14,6 +14,7 @@ import prof from "../../Assets/profileDummy.png";
 // import "./Dashboard.css";
 import { demoData } from "../../demoData/demoData";
 import ActionablesSummary from "./ActionablesSummary";
+import MeetingCard from "../ui/MeetingCard";
 
 const Dashboard = () => {
   const [isChat, setIsChat] = useState(false);
@@ -21,6 +22,7 @@ const Dashboard = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
   const [isMeetingModal, setIsMeetingModal] = useState(false);
+  const [meetingFilterValue, setMeetingFilterValue] = useState("all");
   const handleDateClick = (date) => {
     if (date) {
       const today = new Date();
@@ -38,122 +40,52 @@ const Dashboard = () => {
       <div className="flex flex-col w-full">
         <div className="highlight__wrp md:min-h-[480px] overflow-hidden border border-gray-300 w-full rounded-xl md:p-4 card">
           <div className="flex highlight_switcher justify-between items-center">
-            <div className="font-semibold flex items-center text-base px-0 overflow-hidden border border-gray-300 rounded-md whitespace-nowrap h-12 place-items-center">
-              <p className="text-success bg-meetzen-greenLight w-full flex items-center justify-center h-full px-4">
-                Upcoming(2)
+            <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-gray-300 rounded-md whitespace-nowrap h-12 place-items-center">
+              <p
+                onClick={() => setMeetingFilterValue("all")}
+                className={`${meetingFilterValue === "all" ? "bg-meetzen-primary text-white" : "text-meetzen-textPrimary bg-white"} w-full flex items-center justify-center h-full px-4`}
+              >
+                {`All(${demoData.meetings.length})`}
               </p>
-              <p className="text-light w-full flex items-center justify-center h-full px-4">
-                Recent
+              <p
+                onClick={() => setMeetingFilterValue("upcoming")}
+                className={`${meetingFilterValue === "upcoming" ? "bg-meetzen-primary text-white" : "text-meetzen-textPrimary bg-white"} w-full flex items-center justify-center h-full px-4`}
+              >
+                {`Upcoming(${demoData.meetings.filter(i=>i.status === "upcoming").length})`}
+              </p>
+              <p
+                onClick={() => setMeetingFilterValue("recent")}
+                className={`${meetingFilterValue === "recent" ? "bg-meetzen-primary text-white" : "text-meetzen-textPrimary bg-white"}  w-full flex items-center justify-center h-full px-4`}
+              >
+                {`Recent(${demoData.meetings.filter(i=>i.status === "recent").length})`}
               </p>
             </div>
             <span
-              onClick={() => navigate("/home/my-meetings-list")}
+              onClick={() => {
+                setMeetingFilterValue("all");
+                navigate("/home/my-meetings-list");
+              }}
               className="underline cursor-pointer text-theme-color font-semibold"
             >
               View all
             </span>
           </div>
           <div className="highlights__content_wrp max-h-[395px] overflow-y-scroll flex md:flex-col gap-2 mt-6">
-            <Link
-              to={`/home/meeting-details/0`}
-              className="inner__card bg-meetzen-greenSelection px-4 py-3 rounded-xl border border-meetzen-success"
-            >
-              <p className="text-smallSubheading font-medium text-meetzen-primary uppercase leading-[1.1] pb-1">
-                Board Committee
-              </p>
-              <h3 className="text-meetzen-dark text-lg font-semibold pb-1">
-                132nd Meeting of Board Committee
-              </h3>
-              <div className="flex text-meetzen-datetime gap-4 text-smallSubheading font-medium leading-snug pb-2">
-                <div className="flex items-center gap-1">
-                  <AiOutlineCalendar />
-                  <span>24/05/23</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <AiOutlineClockCircle />
-                  <span>9:00 AM - 11:00 AM</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-5 pt-1">
-                <div className="flex items-center text-smallSubheading font-normal gap-1 text-placeholder">
-                  <FiUsers />
-                  <span>Members Accepted (27/50)</span>
-                </div>
-                <div className="users_preview_wrp flex">
-                  <div
-                    className={`users__image rounded-full border-theme-color border bg-center bg-cover w-8 h-8 -ml-2`}
-                    style={{ backgroundImage: `url(${prof})` }}
-                  ></div>
-                  <div
-                    className={`users__image rounded-full border-theme-color border bg-center bg-cover w-8 h-8 -ml-2`}
-                    style={{ backgroundImage: `url(${prof})` }}
-                  ></div>
-                  <div
-                    className={`users__image rounded-full border-theme-color border bg-center bg-cover w-8 h-8 -ml-2`}
-                    style={{ backgroundImage: `url(${prof})` }}
-                  ></div>
-                  <div
-                    className={`users__image rounded-full border-theme-color border bg-center bg-cover w-8 h-8 -ml-2`}
-                    style={{ backgroundImage: `url(${prof})` }}
-                  ></div>
-                  <div className="bg-dark text-smallSubheading flex rounded-full border-theme-color border w-8 h-8 -ml-2 text-white justify-center items-center font-medium">
-                    <span>+23</span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            {Array.from({ length: 20 }, (_, index) => (
-              <Link
-                to={`/home/meeting-details/${index}`}
-                key={index}
-                className="inner__card bg-meetzen-greenLight p-4 rounded-xl border border-meetzen-success"
-              >
-                <p className="text-smallSubheading font-medium text-theme-color uppercase leading-[1.1] pb-1">
-                  Board Committee
-                </p>
-                <h3 className="text-dark text-lg font-semibold pb-1">
-                  132nd Meeting of Board Committee
-                </h3>
-                <div className="flex text-datetime gap-4 text-smallSubheading font-medium leading-snug pb-2">
-                  <div className="flex items-center gap-1">
-                    <AiOutlineCalendar />
-                    <span>24/05/23</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <AiOutlineClockCircle />
-                    <span>9:00 AM - 11:00 AM</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-5 pt-1">
-                  <div className="flex items-center text-smallSubheading font-normal gap-1 text-placeholder">
-                    <FiUsers />
-                    <span>Members Accepted (27/50)</span>
-                  </div>
-                  <div className="users_preview_wrp flex">
-                    <div
-                      className={`users__image rounded-full border-theme-color border bg-center bg-cover w-8 h-8 -ml-2`}
-                      style={{ backgroundImage: `url(${prof})` }}
-                    ></div>
-                    <div
-                      className={`users__image rounded-full border-theme-color border bg-center bg-cover w-8 h-8 -ml-2`}
-                      style={{ backgroundImage: `url(${prof})` }}
-                    ></div>
-                    <div
-                      className={`users__image rounded-full border-theme-color border bg-center bg-cover w-8 h-8 -ml-2`}
-                      style={{ backgroundImage: `url(${prof})` }}
-                    ></div>
-                    <div
-                      className={`users__image rounded-full border-theme-color border bg-center bg-cover w-8 h-8 -ml-2`}
-                      style={{ backgroundImage: `url(${prof})` }}
-                    ></div>
-                    <div className="bg-dark text-smallSubheading flex rounded-full border-theme-color border w-8 h-8 -ml-2 text-white justify-center items-center font-medium">
-                      <span>+23</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
+            {meetingFilterValue === "upcoming"
+              ? demoData.meetings
+                  .filter((item) => item.status === "upcoming")
+                  .map((meeting) => (
+                    <MeetingCard meeting={meeting} id={meeting.id} />
+                  ))
+              : meetingFilterValue === "recent"
+                ? demoData.meetings
+                    .filter((item) => item.status === "recent")
+                    .map((meeting) => (
+                      <MeetingCard meeting={meeting} id={meeting.id} />
+                    ))
+                : demoData.meetings.map((meeting) => (
+                    <MeetingCard meeting={meeting} id={meeting.id} />
+                  ))}
           </div>
         </div>
         <ActionablesSummary />

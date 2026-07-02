@@ -5,7 +5,7 @@ const Button = ({ variant, label, onClick, classNames }) => {
  return variant === "primary" && (
     <button
       onClick={onClick}
-      className={`bg-meetzen-primary hover:bg-meetzen-primary/50 text-white font-semibold  px-5 py-2.5  transition-colors ${classNames}`}
+      className={`bg-meetzen-primary hover:brightness-90 text-white font-semibold  px-5 py-2.5  transition ${classNames}`}
     >
       {label}
     </button>

@@ -8,19 +8,7 @@ const ResolutionDoc = () => {
   const navigate = useNavigate()
   return (
 <>
-    <div className="flex pt-4 pb-2 px-4 w-full justify-between items-center border-b">
-    <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/circular-resolution")}>
-        <MdArrowBackIosNew className=' text-2xlX font-normal' />
-        <span className=' text-lg font-medium'>Back</span>
-    </div>
-    <div className='relative'>
-        <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
-        <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
-    </div>
-
-</div>
-<p className='text-dark fixed  top-2 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Board Book</p>
-    <div className=' mt-6 px-10'>
+    <div className='px-10'>
       <div className='flex justify-between items-center pb-4'>
         <img src={logo} alt="" />
       <span className='text-base font-semibold text-dark'>Page 1/2</span>

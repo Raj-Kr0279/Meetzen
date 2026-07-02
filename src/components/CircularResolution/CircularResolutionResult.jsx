@@ -42,15 +42,15 @@ const CircularResolutionResult = () => {
         <>
               <PageHeading/>
             <div className="w-full bg-white p-8 min-h-screen">
-                <div className="min-h-[70vh] w-full bg-white border border-gray-200  rounded-md">
+                <div className="w-full bg-white border border-gray-200  rounded-md">
                     <div className='py-2 px-4 border-b bg-hover-bg'>
-                        <h1 className="text-dark font-semibold text-2xl">Results</h1>
+                        <h1 className="text-dark font-medium text-2xl">Results</h1>
                     </div>
-                    <div class="overflow-y-auto h-[70vh] w-full bg-white mb-8 md:rounded-lg">
+                    <div class="overflow-y-auto w-full bg-white mb-8 md:rounded-lg">
                         <table class="min-w-full divide-y  divide-gray-200 ">
-                            <thead class=" sticky top-0 bg-white ">
+                            <thead className="sticky top-0 bg-white [&_th]:py-3.5 [&_th]:px-4 [&_th]:tracking-wide [&_th]:text-left [&_th]:rtl:text-right [&_th]:text-prof [&_th]:font-medium [&_th]:text-base [&_th]:bg-meetzen-primary">
                                 <tr>
-                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-base">
+                                    <th scope="col" class="">
                                         <div className="flex items-center gap-1.5">
                                             <span>Name</span>
                                             <div className="flex flex-col gap-0.5 justify-center">
@@ -59,7 +59,7 @@ const CircularResolutionResult = () => {
                                             </div>
                                         </div>
                                     </th>
-                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-base">
+                                    <th scope="col" class="">
                                         <div className="flex items-center gap-1.5">
                                             <span>Designation</span>
                                             <div className="flex flex-col gap-0.5 justify-center">
@@ -68,8 +68,8 @@ const CircularResolutionResult = () => {
                                             </div>
                                         </div>
                                     </th>
-                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-base">Vote</th>
-                                    <th scope="col" class="py-3.5 px-4 tracking-wide text-left rtl:text-right text-prof font-medium text-base">Reviewed On</th>
+                                    <th scope="col" class="">Vote</th>
+                                    <th scope="col" class="">Reviewed On</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200 ">

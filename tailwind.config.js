@@ -1,6 +1,4 @@
-/** @type {import('tailwindcss').Config} */
-
-export default  {
+/** @type {import('tailwindcss').Config} */ export default {
   plugins: [],
   content: ["./src/**/*.{js,jsx}"],
   theme: {
@@ -40,7 +38,7 @@ export default  {
         mapDistance: "#BAC0C8",
         compareHead: "#444",
         pdfActive: "#E3EFF7",
-        "modal-overlay": "#00000099",
+        modal_overlay: "#00000099",
         modal: "rgb(42 55 61)",
         checkedLightBg: "#E9FFF7",
         lightBlueBg: "#F2F5FF",
@@ -110,7 +108,6 @@ export default  {
         twok: "2000px",
         threek: "3000px",
       },
-
       backgroundImage: {},
       backgroundColor: {
         "modal-overlay": "#00000099",
@@ -128,18 +125,13 @@ export default  {
         tableHeadText: "#444",
         overlay: "rgba(0, 0, 0, 0.35)",
       },
-
       borderColor: {
         light: "#2E36461A",
         checkbox: "#C4C4C4",
         accordion: "#B6C2E2",
         borderInput: "#DAE0E6",
       },
-
-      textColor: {
-        light_black: "rgba(22, 22, 22, 0.6)",
-      },
-
+      textColor: { light_black: "rgba(22, 22, 22, 0.6)" },
       fontSize: {
         headingxl: "2.625rem",
         heading: "2rem",
@@ -155,45 +147,30 @@ export default  {
         largeX: "1.625rem",
         extraLarge: "1.75rem",
       },
-
-      borderWidth: {
-        "1": "0.5px",
-      },
-
+      borderWidth: { 1: "0.5px" },
       width: {},
-
-      height: {
-        screen: "100dvh",
-      },
-
+      height: { screen: "100dvh" },
       lineHeight: {},
-
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        moirai: ["Moirai One", 'system-ui']
+        poppins: ["Poppins", "sans-serif"],
+        moirai: ["Moirai One", "system-ui"],
       },
-
       boxShadow: {
         filter: "2px 4px 4px 0px rgba(152, 152, 152, 0.25)",
         meetModal: "2px 2px 2px 0px rgba(152, 152, 152, 0.16)",
         textarea: "2px 2px 2px 0px rgba(152, 152, 152, 0.18)",
         attendance: "0px 0px 24px 0px rgba(0, 0, 0, 0.25)",
       },
-
-      borderRadius: {
-        sm: "4px",
-      },
+      borderRadius: { sm: "4px" },
       screens: {
-      sm: "640px",
-      md: "769px",
-      lg: "1025px",
-      xl: "1281px",
-      "2xl": "1537px",
-    },
-
+        sm: "640px",
+        md: "769px",
+        lg: "1025px",
+        xl: "1281px",
+        "2xl": "1537px",
+      },
       dropShadow: {},
       gridTemplateColumns: {},
     },
-
   },
-}
+};

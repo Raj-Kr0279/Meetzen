@@ -10,19 +10,7 @@ const JoinCall = () => {
     const [isAudio, setAudio] = useState(false)
     return (
         <>
-            <div className="flex fixed z-40 bg-white top-0 py-2 px-4 w-full justify-between items-center border-b">
-                <div className='flex items-center font-semibold text-theme-color' onClick={() => navigate("/dashboard")}>
-                    <MdArrowBackIosNew className=' text-2xlX font-normal' />
-                    <span className=' text-lg font-medium'>Back</span>
-                </div>
-                <div className='relative'>
-                    <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
-                    <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
-                </div>
-            </div>
-            <p className='text-dark z-40 leading-[1.2] fixed top-[12px] twok:top-[20px] left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Meeting Workspace</p>
-
-            <div className="px-10 mt-[100px]">
+            <div className="px-10">
                 <div className="grid md:grid-cols-2 gap-10 place-items-center lg:px-12">
                     <div className='bg-prof h-96 rounded-lg w-full flex items-end justify-center p-6'>
                         <div className="flex gap-2 items-center ">
