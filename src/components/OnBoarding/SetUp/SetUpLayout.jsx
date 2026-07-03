@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
-import divider from "../../../assets/divider.png";
-import dividerComplete from "../../../assets/dividerComplete.png";
+import divider from "../../../Assets/divider.png";
+import dividerComplete from "../../../Assets/dividerComplete.png";
 import Button from "../../ui/Button";
 import FooterText from "../../FooterText/FooterText";
 
@@ -160,4 +160,3 @@ const SetUpLayout = () => {
 };
 
 export default SetUpLayout;
-
