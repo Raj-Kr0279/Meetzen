@@ -35,14 +35,11 @@ const MyMeetingsList = () => {
         {/* filters and search section  */}
         <div className=" flex justify-between rounded-md mb-4 items-center">
           <div className="flex highlight_switcher justify-between items-center">
-            <div className="font-semibold flex items-center border-borderInput text-xs px-0 overflow-hidden border rounded-md h-12 place-items-center">
-              <div className="font-semibold flex items-center border-borderInput text-xs px-0 overflow-hidden border rounded-md h-12 place-items-center">
+              <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-border rounded-md whitespace-nowrap h-12 place-items-center">
                 <p
                   className={`w-full flex items-center px-4 justify-center h-full  ${
                     selectedFilter === "all"
-                      ? "bg-meetFilterBlueLight text-theme-color"
-                      : "bg-white text-dark"
-                  }`}
+                      ? "bg-selected" : "text-foreground bg-white"} w-full flex items-center justify-center h-full px-4`}
                   onClick={() => handleFilterSelection("all")}
                 >
                   All
@@ -50,9 +47,7 @@ const MyMeetingsList = () => {
                 <p
                   className={`w-full flex items-center justify-center h-full px-4 ${
                     selectedFilter === "upcoming"
-                      ? "bg-meetFilterBlueLight text-theme-color"
-                      : "bg-white text-dark"
-                  }`}
+                      ? "bg-selected" : "text-foreground bg-white"} w-full flex items-center justify-center h-full px-4`}
                   onClick={() => handleFilterSelection("upcoming")}
                 >
                   Upcoming
@@ -60,16 +55,13 @@ const MyMeetingsList = () => {
                 <p
                   className={`w-full flex items-center justify-center h-full px-4 ${
                     selectedFilter === "recent"
-                      ? "bg-meetFilterBlueLight text-theme-color"
-                      : "bg-white text-dark"
-                  }`}
+                      ? "bg-selected" : "text-foreground bg-white"} w-full flex items-center justify-center h-full px-4`}
                   onClick={() => handleFilterSelection("recent")}
                 >
                   Recent
                 </p>
               </div>
             </div>
-          </div>
           <div className="flex items-center gap-3">
             <label
               htmlFor="year"
@@ -78,7 +70,7 @@ const MyMeetingsList = () => {
               Filter Year:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-xs w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-foreground text-xs w-[19vw] rounded-sm border border-border"
               name="year"
               id="year"
             >
@@ -95,7 +87,7 @@ const MyMeetingsList = () => {
               Filter Committee:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-xs w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-foreground text-xs w-[19vw] rounded-sm border border-border"
               name="committee"
               id="committee"
             >

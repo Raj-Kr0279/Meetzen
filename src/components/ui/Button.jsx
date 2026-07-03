@@ -1,32 +1,18 @@
 import React from "react";
 
 const Button = ({ variant, label, onClick, classNames }) => {
-    console.log(classNames, "clalfjladjflajsd")
- return variant === "primary" && (
-    <button
-      onClick={onClick}
-      className={`bg-meetzen-primary hover:brightness-90 text-white font-semibold  px-5 py-2.5  transition ${classNames}`}
-    >
-      {label}
-    </button>
-  );
-
-  variant === "outline" && (
-    <button
-      onClick={onClick}
-      className={`border border-meetzen-primary text-meetzen-textPrimary hover:bg-meetzen-primary hover:text-meetzen-textPrimary font-semibold font-poppins px-5 py-2.5 rounded-lg transition-colors bg-transparent ${classNames}`}
-    >
-      {label}
-    </button>
-  );
-  variant === "tertiary" && (
-    <button
-      onClick={onClick}
-      className={`text-[#7C3AED] hover:underline font-poppins px-5 py-2.5 rounded-lg transition-colors ${classNames}`}
-    >
-      {label}
-    </button>
-  );
+  console.log(classNames, "clalfjladjflajsd");
+  const baseClasses = `font-normal transition px-5 py-2.5 font-poppins rounded-xs`;
+  const primaryClasses = "bg-primary hover:bg-primary-hover text-white";
+  const outlineClasses =
+    "border border-primary text-primary hover:bg-primary hover:text-inverse transition-colors bg-transparent";
+  const tertiaryClasses = "text-[#7C3AED] hover:underline transition-colors";
+  return <button
+    onClick={onClick}
+    className={`${baseClasses} ${variant === "primary" ? primaryClasses : variant === "outline" ? outlineClasses : variant === "tertiary" ? tertiaryClasses : ""}  ${classNames}`}
+  >
+    {label}
+  </button>;
 };
 
 export default Button;

@@ -7,9 +7,9 @@ const TimeZone = ({next, prev}) => {
   const navigate = useNavigate()
   return (
 <>
-    <div className="select-wrapper w-[40%] relative mx-auto">
+    <div className="select-wrapper md:w-[40%] relative mx-auto">
       <FaAngleDown className='absolute right-4 top-1/2 -translate-y-1/2 z-0'/>
-    <select value={selectedTimezone} name="timezone_offset" id="timezone-offset" className="border w-full text-xs text-dark font-medium pl-4 pr-10 py-3 rounded-md focus-visible:border-dark appearance-none" onChange={(e)=>setSelectedTimezone(e.target.value)}>
+    <select value={selectedTimezone} name="timezone_offset" id="timezone-offset" className="border w-full text-xs text-foreground font-medium pl-4 pr-10 py-3 rounded-md focus-visible:border-dark appearance-none" onChange={(e)=>setSelectedTimezone(e.target.value)}>
 	<option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
 	<option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
 	<option value="-10:00">(GMT -10:00) Hawaii</option>

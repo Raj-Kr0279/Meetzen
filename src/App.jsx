@@ -9,7 +9,9 @@ import ForgotPassword from './components/OnBoarding/ForgotPassword/ForgotPasswor
 import ResetPassword from './components/OnBoarding/ResetPassword/ResetPassword';
 import OtpVerify from './components/OnBoarding/OtpVefify/OtpVerify';
 import FingerPrintLogin from './components/OnBoarding/FingerPrintLogin/FingerPrintLogin';
-import SetUp from './components/OnBoarding/SetUp/SetUp';
+import SetUpLayout from './components/OnBoarding/SetUp/SetUpLayout';
+import SelectLanguage from './components/OnBoarding/SetUp/SelectLanguage';
+import TimeZone from './components/OnBoarding/SetUp/TimeZone';
 import Dashboard from './components/Dashboard/Dashboard';
 // import MyMeeting from './components/MyMeeting/MyMeeting';
 import EditProfile from './components/EditProfile/EditProfile';
@@ -48,6 +50,7 @@ import ViewFinalMinute from './components/FinalMinutes/ViewFinalMinute';
 import CircularResolutionResult from './components/CircularResolution/CircularResolutionResult';
 import CircularResolutionList from './components/CircularResolution/CircularResolutionList';
 import OnBoardingLayout from './components/OnBoarding/ForgotPassword/OnBoardingLayout';
+import ReviewProfile from './components/OnBoarding/SetUp/ReviewProfile';
 
 function App() {
   return (
@@ -105,7 +108,13 @@ function App() {
             </Route>
 
 
-            <Route path="set-up" element={<SetUp />} />
+            <Route path="set-up" element={<SetUpLayout />}>
+              <Route index element={<Navigate to="review-profile" replace />} />
+              <Route path="review-profile" element={<ReviewProfile />} />
+              <Route path="language" element={<SelectLanguage />} />
+              <Route path="timezone" element={<TimeZone />} />
+            </Route>
+
             <Route path="edit-profile" element={<EditProfile />} />
             <Route path="submit-feedback" element={<SubmitFeedback />} />
             <Route path="view-member-profile" element={<ProfileLayout />} />

@@ -22,13 +22,13 @@ const Resources = () => {
 
         <div className=" bg-hover-bg px-4 py-2  flex justify-between rounded-md mb-4 items-center">
           <div className="flex highlight_switcher justify-between items-center">
-            <div className="font-semibold flex items-center border-borderInput text-base px-0 overflow-hidden border rounded-md h-10 place-items-center">
-              <div className="font-semibold whitespace-nowrap flex items-center border-borderInput text-base px-0 overflow-hidden border rounded-md h-10 place-items-center">
+            <div className="font-semibold flex items-center border-border text-base px-0 overflow-hidden border rounded-md h-10 place-items-center">
+              <div className="font-semibold whitespace-nowrap flex items-center border-border text-base px-0 overflow-hidden border rounded-md h-10 place-items-center">
                 <span
                   className={`w-full flex items-center px-4 justify-center h-full border-r ${
                     selectedFilter === "my_docs"
-                      ? "bg-meetFilterBlueLight text-theme-color"
-                      : "bg-white text-dark"
+                      ? "bg-meetFilterBlueLight text-primary"
+                      : "bg-white text-foreground"
                   }`}
                   onClick={() => handleFilterSelection("my_docs")}
                 >
@@ -37,8 +37,8 @@ const Resources = () => {
                 <span
                   className={`w-full flex items-center justify-center h-full px-4 border-r ${
                     selectedFilter === "company_docs"
-                      ? "bg-meetFilterBlueLight text-theme-color"
-                      : "bg-white text-dark"
+                      ? "bg-meetFilterBlueLight text-primary"
+                      : "bg-white text-foreground"
                   }`}
                   onClick={() => handleFilterSelection("company_docs")}
                 >
@@ -55,7 +55,7 @@ const Resources = () => {
               Filter Year:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-base w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border"
               name="year"
               id="year"
             >
@@ -72,7 +72,7 @@ const Resources = () => {
               Filter Committee:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-base w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border"
               name="committee"
               id="committee"
             >

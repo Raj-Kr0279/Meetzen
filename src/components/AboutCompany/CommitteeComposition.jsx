@@ -20,8 +20,8 @@ const CommitteeComposition = () => {
             <div className='flex flex-col'>
                 <p className='text-meetzen-textSecondary text-smallSubheading font-medium'>Chairman:</p>
                 <h5 className='text-black pb-1.5 font-semibold text-smallSubheading'>Board Meeting</h5>
-                <p className='text-dark text-xs font-normal'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur quam eligendi placeat saepe corrupti facilis ab, esse modi natus.</p>
-                <span className='text-theme-color underline font-bold pt-3'>View profile</span>
+                <p className='text-foreground text-xs font-normal'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur quam eligendi placeat saepe corrupti facilis ab, esse modi natus.</p>
+                <span className='text-primary underline font-bold pt-3'>View profile</span>
             </div>
         </div>
     ))
@@ -33,7 +33,7 @@ const CommitteeComposition = () => {
             {/* <Accordion className='mb-4 rounded-md border border-accordion px-4' open={open === 1} icon={<Icon id={1} open={open} />}>
                 <AccordionHeader onClick={() => handleOpen(1)} className='border-b-0 transition-colors'>
                     <div className='flex w-full justify-between items-center'>
-                        <h1 className='text-theme-color font-semibold text-mediumSubheading'>Board of Directors</h1>
+                        <h1 className='text-primary font-semibold text-mediumSubheading'>Board of Directors</h1>
                         <span className='text-memberCount font-medium text-mediumSubheading'>20 Members</span>
                     </div>
                 </AccordionHeader>
@@ -50,7 +50,7 @@ const CommitteeComposition = () => {
             <Accordion className='mb-4 rounded-md border border-accordion px-4' open={open === 2} icon={<Icon id={2} open={open} />}>
                 <AccordionHeader onClick={() => handleOpen(2)} className='border-b-0 transition-colors'>
                     <div className='flex w-full justify-between items-center'>
-                        <h1 className='text-theme-color font-semibold text-mediumSubheading'>Board of Directors</h1>
+                        <h1 className='text-primary font-semibold text-mediumSubheading'>Board of Directors</h1>
                         <span className='text-memberCount font-medium text-mediumSubheading'>20 Members</span>
                     </div>
                 </AccordionHeader>

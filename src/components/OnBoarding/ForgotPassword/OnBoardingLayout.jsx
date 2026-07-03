@@ -9,8 +9,8 @@ const OnBoardingLayout = () => {
   return (
     <>
       <div className="h-screen flex justify-center items-center">
-        <div className=" max-w-7xl w-3/4">
-          <div className="flex-col flex md:flex-row p-4  gap-8 md:gap-4">
+        <div className="md:max-w-7xl w-full lg:w-3/4">
+          <div className="flex-col flex md:flex-row p-4 gap-12  md:gap-8">
             <LeftColumn />
             <div className="flex-1">
               <Outlet />

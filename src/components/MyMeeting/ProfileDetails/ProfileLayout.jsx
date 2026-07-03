@@ -15,7 +15,7 @@ const ProfileLayout = () => {
             <div className="flex flex-col h-screen">
                 {/* top navigation  */}
                 <div className="flex fixed bg-white z-10 pt-4 pb-2 px-4 w-full justify-between items-center">
-                    <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/dashboard")}>
+                    <div className='flex items-center font-semibold text-primary cursor-pointer' onClick={() => navigate("/home/dashboard")}>
                         <MdArrowBackIosNew className=' text-2xlX font-normal' />
                         <span className=' text-lg font-medium'>Back</span>
                     </div>
@@ -25,14 +25,14 @@ const ProfileLayout = () => {
                     </div>
 
                 </div>
-                <p className='text-dark fixed top-4 z-20 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Meeting WorkSpace</p>
+                <p className='text-foreground fixed top-4 z-20 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Meeting WorkSpace</p>
 
                 <div className="flex mt-[70px] grow gap-6">
                     <div className='flex flex-col whitespace-nowrap'>
-                        <p className={`${selectedOption === "profile" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("profile")}>Personal Details</p>
-                        <p className={`${selectedOption === "structure" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("structure")}>Company Structure</p>
-                        <p className={`${selectedOption === "news" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("news")}>News Updates</p>
-                        <p className={`${selectedOption === "about" ? "bg-meetzen-primary text-white" : "text-theme-color"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("about")}>About Company</p>
+                        <p className={`${selectedOption === "profile" ? "bg-primary text-white" : "text-primary"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("profile")}>Personal Details</p>
+                        <p className={`${selectedOption === "structure" ? "bg-primary text-white" : "text-primary"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("structure")}>Company Structure</p>
+                        <p className={`${selectedOption === "news" ? "bg-primary text-white" : "text-primary"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("news")}>News Updates</p>
+                        <p className={`${selectedOption === "about" ? "bg-primary text-white" : "text-primary"} py-2 px-4 font-medium text-base cursor-pointer`} onClick={() => setSelectedOption("about")}>About Company</p>
                     </div>
                     <div className="grow w-full bg-hover-bg p-6">
                         {

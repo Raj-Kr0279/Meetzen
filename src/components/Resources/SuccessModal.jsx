@@ -10,8 +10,8 @@ const SuccessModal = ({setModal}) => {
     <div className="flex flex-col gap-2">
     <img src={done} alt="" className=' w-14 h-14' />
     <h3 className='text-prof font-medium text-mediumSubheading'>Files Uploaded</h3>
-    <p className='text-dark text-medium font-normal'>Your files has been uploaded successfully.</p>
-    <button className='bg-meetzen-primary mt-3 text-white py-2 px-6 w-full rounded-md' onClick={()=>setModal(false)}>Okay</button>
+    <p className='text-foreground text-medium font-normal'>Your files has been uploaded successfully.</p>
+    <button className='bg-primary mt-3 text-white py-2 px-6 w-full rounded-md' onClick={()=>setModal(false)}>Okay</button>
 </div>
 </div>
 </>

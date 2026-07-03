@@ -1,40 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineCalendar, AiOutlineClockCircle } from "react-icons/ai";
 import { FiUsers } from "react-icons/fi";
 import { RiMapPin2Line } from "react-icons/ri";
-import prof from "../../assets/profileDummy.png"
+import { useNavigate } from "react-router-dom";
 
 const MeetingCard = ({ meeting }) => {
+  const [mapModal, setMapModal] = useState(false);
+  const peopleThumbnailsList = Array.from({ length: 6 }, (_, index) => (
+    <img
+      key={index}
+      src={`https://randomuser.me/api/portraits/${
+        index % 2 === 0 ? "men" : "women"
+      }/${index % 100}.jpg`}
+      alt=""
+      className="w-10 h-10 rounded-full object-cover"
+    />
+  ));
+  const navigate = useNavigate();
   return (
     <div
       key={meeting.id}
-      className={`inner__card w-full ${
-        meeting.status === "recent"
-          ? "bg-meetzen-meetRedBg border-meetzen-error"
-          : "bg-meetzen-meetGreenBg border-meetzen-success"
-      } px-4 p-6 rounded-xl border`}
+      className={`inner__card w-full px-4 p-6 rounded-xl border border-border`}
       onClick={() => navigate(`/home/meeting-details/${meeting.id}`)}
     >
       <div className="flex justify-between items-center">
-        <p className="text-xs font-normal text-theme-color tracking-[.04rem] uppercase leading-[1.1]">
+        <p className="text-sm font-semibold text-primary tracking-[.04rem] uppercase leading-[1.1]">
           {meeting.type}
         </p>
         <span
           className={`${
-            meeting.status === "recent"
-              ? "text-meetzen-error bg-meetzen-meetRedPill"
-              : "text-meetzen-success bg-meetzen-meetGreenPill"
-          } font-medium text-xs py-[5px] px-3.5 rounded-xl`}
+            meeting.status === "recent" ? "bg-error-soft" : "bg-info-soft"
+          } font-medium text-xs py-1.25 px-3.5 rounded-xl`}
         >
           {meeting.status === "recent" ? "Recents" : "Upcoming"}
         </span>
       </div>
-      <h3 className="text-dark text-base font-semibold pb-2">
+      <h3 className="text-foreground text-base font-medium pb-2">
         {meeting.committeeName}
       </h3>
-      <div className="flex text-dark pb-2 gap-4 text-xs font-medium leading-snug">
+      <div className="flex text-foreground pb-2 gap-4 text-xs font-medium leading-snug">
         <div className="flex items-center gap-1">
-          <AiOutlineCalendar className="text-theme-color" />
+          <AiOutlineCalendar className="text-primary" />
           <span>
             {new Date(meeting.startAt).toLocaleDateString("en-GB", {
               day: "2-digit",
@@ -44,7 +50,7 @@ const MeetingCard = ({ meeting }) => {
           </span>
         </div>
         <div className="flex items-center gap-1">
-          <AiOutlineClockCircle className="text-theme-color" />
+          <AiOutlineClockCircle className="text-primary" />
           <span>
             {new Date(meeting.startAt).toLocaleTimeString("en-GB", {
               hour: "2-digit",
@@ -60,11 +66,11 @@ const MeetingCard = ({ meeting }) => {
           </span>
         </div>
       </div>
-      <div className="flex items-center text-xs pb-2 text-dark font-medium">
-        <RiMapPin2Line className="text-theme-color mr-1" />
+      <div className="flex items-center text-xs pb-2 text-foreground font-medium">
+        <RiMapPin2Line className="text-primary mr-1" />
         <span className="mr-2">{meeting.location.label}</span>
         <span
-          className="text-theme-color underline text-meetzen-smallSubheading cursor-pointer"
+          className="text-primary underline text-xs cursor-pointer"
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -75,32 +81,19 @@ const MeetingCard = ({ meeting }) => {
         </span>
       </div>
       <div className="flex items-center gap-5 pt-1">
-        <div className="flex items-center text-xs font-normal gap-1 text-placeholder">
-          <FiUsers className="text-theme-color" />
+        <div className="flex items-center text-xs font-normal gap-1 text-muted">
+          <FiUsers className="text-primary" />
           <span>
             Members Accepted ({meeting.membersAccepted}/{meeting.membersTotal})
           </span>
         </div>
         <div className="users_preview_wrp flex">
-          <div
-            className={`users__image rounded-full border-meetzen-primary border bg-center bg-cover w-10 h-10 -ml-2.5`}
-            style={{ backgroundImage: `url(${prof})` }}
-          ></div>
-          <div
-            className={`users__image rounded-full border-meetzen-primary border bg-center bg-cover w-10 h-10 -ml-2.5`}
-            style={{ backgroundImage: `url(${prof})` }}
-          ></div>
-          <div
-            className={`users__image rounded-full border-meetzen-primary border bg-center bg-cover w-10 h-10 -ml-2.5`}
-            style={{ backgroundImage: `url(${prof})` }}
-          ></div>
-          <div
-            className={`users__image rounded-full border-meetzen-primary border bg-center bg-cover w-10 h-10 -ml-2.5`}
-            style={{ backgroundImage: `url(${prof})` }}
-          ></div>
-          <div className="bg-dark text-xs flex rounded-full border-meetzen-primary border w-10 h-10 -ml-2.5 text-white justify-center items-center font-medium">
-            <span>+23</span>
-          </div>
+          {peopleThumbnailsList}
+          {peopleThumbnailsList.length > 4 && (
+            <div className="bg-primary text-xs flex rounded-full border-primary border w-10 h-10 -ml-2.5 text-inverse justify-center items-center font-medium">
+              <span className="text-foreground">{`+${peopleThumbnailsList.length - 4}`}</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

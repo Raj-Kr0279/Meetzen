@@ -14,7 +14,7 @@ const ShareDocModal = ({ modal, setModal }) => {
                     <span className='text-profLight40 text-smallSubheading font-normal'>Manager</span>
                 </div>
             </div>
-            <div className='flex items-center text-theme-color justify-center w-12 h-9 bg-hover-bg'>
+            <div className='flex items-center text-primary justify-center w-12 h-9 bg-hover-bg'>
                 <MdAdd className=' text-2xl font-bold' />
             </div>
         </div>
@@ -30,12 +30,12 @@ const ShareDocModal = ({ modal, setModal }) => {
                     <input className='text-placeholder w-full border border-topSearch rounded-md py-2.5 px-8' placeholder='Search' type="text" name="search" id="search" />
                 </div>
                 <div className='py-2 px-4  inline-flex items-center gap-2 cursor-pointer'>
-                    <p className="text-dark text-smallSubheading font-semibold">People with access</p>
+                    <p className="text-foreground text-smallSubheading font-semibold">People with access</p>
                 </div>
-                <div className="contacts__wrap border-t grow-1 border-borderInput gap-4 flex flex-col overflow-y-auto">
+                <div className="contacts__wrap border-t grow-1 border-border gap-4 flex flex-col overflow-y-auto">
                     {contact}
                 </div>
-                <button className="bg-meetzen-primary w-full text-white py-3 rounded-md px-8 " onClick={() => setModal(false)}>Done</button>
+                <button className="bg-primary w-full text-white py-3 rounded-md px-8 " onClick={() => setModal(false)}>Done</button>
             </div>
         </>
     )

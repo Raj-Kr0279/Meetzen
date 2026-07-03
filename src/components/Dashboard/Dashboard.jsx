@@ -15,9 +15,10 @@ import prof from "../../Assets/profileDummy.png";
 import { demoData } from "../../demoData/demoData";
 import ActionablesSummary from "./ActionablesSummary";
 import MeetingCard from "../ui/MeetingCard";
-
+import { formatDateTime } from "../../utils/dateFormatter";
+import { RiNumbersFill } from "react-icons/ri";
 const Dashboard = () => {
-  const [isChat, setIsChat] = useState(false);
+  const [notifFilterValue, setNotifFilterValue] = useState("notif");
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
@@ -40,24 +41,24 @@ const Dashboard = () => {
       <div className="flex flex-col w-full">
         <div className="highlight__wrp md:min-h-[480px] overflow-hidden border border-gray-300 w-full rounded-xl md:p-4 card">
           <div className="flex highlight_switcher justify-between items-center">
-            <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-gray-300 rounded-md whitespace-nowrap h-12 place-items-center">
+            <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-border rounded-md whitespace-nowrap h-12 place-items-center">
               <p
                 onClick={() => setMeetingFilterValue("all")}
-                className={`${meetingFilterValue === "all" ? "bg-meetzen-primary text-white" : "text-meetzen-textPrimary bg-white"} w-full flex items-center justify-center h-full px-4`}
+                className={`${meetingFilterValue === "all" ? "bg-selected" : "text-foreground bg-white"} w-full flex items-center justify-center h-full px-4`}
               >
                 {`All(${demoData.meetings.length})`}
               </p>
               <p
                 onClick={() => setMeetingFilterValue("upcoming")}
-                className={`${meetingFilterValue === "upcoming" ? "bg-meetzen-primary text-white" : "text-meetzen-textPrimary bg-white"} w-full flex items-center justify-center h-full px-4`}
+                className={`${meetingFilterValue === "upcoming" ? "bg-selected" : "text-foreground bg-white"} w-full flex items-center justify-center h-full px-4`}
               >
-                {`Upcoming(${demoData.meetings.filter(i=>i.status === "upcoming").length})`}
+                {`Upcoming(${demoData.meetings.filter((i) => i.status === "upcoming").length})`}
               </p>
               <p
                 onClick={() => setMeetingFilterValue("recent")}
-                className={`${meetingFilterValue === "recent" ? "bg-meetzen-primary text-white" : "text-meetzen-textPrimary bg-white"}  w-full flex items-center justify-center h-full px-4`}
+                className={`${meetingFilterValue === "recent" ? "bg-selected" : "text-foreground bg-white"}  w-full flex items-center justify-center h-full px-4`}
               >
-                {`Recent(${demoData.meetings.filter(i=>i.status === "recent").length})`}
+                {`Recent(${demoData.meetings.filter((i) => i.status === "recent").length})`}
               </p>
             </div>
             <span
@@ -65,12 +66,12 @@ const Dashboard = () => {
                 setMeetingFilterValue("all");
                 navigate("/home/my-meetings-list");
               }}
-              className="underline cursor-pointer text-theme-color font-semibold"
+               className="underline cursor-pointer text-primary text-sm text-accent"
             >
               View all
             </span>
           </div>
-          <div className="highlights__content_wrp max-h-[395px] overflow-y-scroll flex md:flex-col gap-2 mt-6">
+          <div className="highlights__content_wrp max-h-[395px] overflow-y-scroll flex md:flex-col gap-2 mt-3">
             {meetingFilterValue === "upcoming"
               ? demoData.meetings
                   .filter((item) => item.status === "upcoming")
@@ -121,7 +122,7 @@ const Dashboard = () => {
                   {<AiOutlineLeft />}
                 </button>
 
-                <span className=" text-2xl text-dark font-semibold text-left w-full pl-6">
+                <span className=" text-2xl text-foreground font-semibold text-left w-full pl-6">
                   {monthDate.toLocaleString("en-US", {
                     month: "long",
                     year: "numeric",
@@ -142,36 +143,32 @@ const Dashboard = () => {
             inline
           />
         </div> */}
-        <div className="notifications border border-gray-300 rounded-lg p-4 card flex-col flex bg-white h-[50vh]">
+        <div className="notifications border border-border rounded-lg p-4 card flex-col flex h-[50vh]">
           <div className="flex highlight_switcher whitespace-nowrap mb-3 justify-between items-center">
-            <div className="font-semibold flex items-center text-base px-0 overflow-hidden border border-gray-300 rounded-md h-12">
+            <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-gray-300 rounded-md whitespace-nowrap h-12 place-items-center">
               <p
                 className={`w-full flex items-center justify-center h-full px-4 ${
-                  isChat
-                    ? "bg-white text-dark"
-                    : "bg-lightBlueBg text-theme-color"
-                }`}
-                onClick={() => setIsChat(false)}
+                  notifFilterValue === "notif" ? "bg-selected" : "text-foreground bg-white"
+                } w-full flex items-center justify-center h-full px-4`}
+                onClick={() => setNotifFilterValue("notif")}
               >
                 Notifications (2)
               </p>
               <p
                 className={`w-full flex items-center justify-center h-full px-4 ${
-                  !isChat
-                    ? "bg-white text-dark"
-                    : "bg-lightBlueBg text-theme-color"
-                }`}
-                onClick={() => setIsChat(true)}
+                  notifFilterValue === "chats" ? "bg-selected" : "text-foreground bg-white"
+                } w-full flex items-center justify-center h-full px-4`}
+                onClick={() => setNotifFilterValue("chats")}
               >
                 Chats (4)
               </p>
             </div>
             <span
-              className="underline cursor-pointer text-theme-color font-semibold"
+              className="underline cursor-pointer text-primary text-sm"
               onClick={() => {
-                if (isChat) {
+                if (notifFilterValue === "chats") {
                   navigate("/home/chat");
-                } else {
+                } else if (notifFilterValue === "notif"){
                   navigate("/home/notifications");
                 }
               }}
@@ -179,28 +176,23 @@ const Dashboard = () => {
               View all
             </span>
           </div>
-          <div className="flex flex-col overflow-scroll grow-1 chat__wrapper">
-            {!isChat
-              ? Array.from({ length: 4 }, (_, index) => (
-                  <div key={index} className="pt-4 grow-1 noti__wrapper">
-                    <div className="flex flex-col mb-2 break-words bg-hover-bg border-l-4 p-2 border-theme-color">
-                      <h1 className="text-dark text-base font-semibold">
-                        80th Meeting of Board Committee
+          <div className="flex flex-col overflow-scroll grow-1 gap-3 chat__wrapper">
+            {notifFilterValue === "notif"
+              ? demoData.notifications.map((notif) => 
+                    <div key={notif.id} className="flex flex-col break-words bg-hover-bg border-l-3 border-accent p-2 border-theme-color">
+                      <h1 className="text-foreground text-sm font-normal">
+                        {notif.title}
                       </h1>
-                      <span className="text-smallCaption tracking-[.18px] pb-1 text-placeholder font-normal">
-                        Lorem ipsum dolor sit amet consectetur. Donec laoreet
-                        molestie semper sed urna. Donec laoreet molestie semper
-                        sed urna.{" "}
+                      <span className="text-xs tracking-[.18px] pb-1.5 text-placeholder font-extralight">
+                       {notif.message}
                       </span>
-                      <p className=" text-smallCaption text-theme-color font-semibold">
-                        July 23, 2023 at 05:45 PM
+                      <p className=" text-xs text-primary font-medium">
+                        {formatDateTime(notif.createdAt)}
                       </p>
                     </div>
-                  </div>
-                ))
-              : Array.from({ length: 5 }, (_, index) => (
-                  <div key={index} className="chat__card px-6">
-                    <div className="flex items-start">
+                )
+              : notifFilterValue === "chats" ? demoData.chats.map((chat) => (
+                    <div key={chat.isToday} className="flex items-start">
                       <div className="relative w-10 h-10 shrink-0 mr-4">
                         <img
                           src={prof}
@@ -211,22 +203,21 @@ const Dashboard = () => {
                       </div>
                       <div className="flex flex-col">
                         <div className="flex justify-between leading-none pb-1 items-center">
-                          <p className="text-dark font-medium text-smallSubheading">
+                          <p className="text-foreground font-normal text-sm">
                             Brenda White
                           </p>
-                          <span className="text-light font-medium text-[.813rem]">
+                          <span className="font-medium text-xs">
                             12:00
                           </span>
                         </div>
-                        <span className="text-light text-smallSubheading text__content_dash">
+                        <span className="text-subtle text-xs text__content_dash">
                           Lorem ipsum dolor sit amet consectetur adipisicing
                           elit. Similique ipsa repellat suscipit optio ex,
                           voluptates quos nihil sunt consequuntur voluptate?
                         </span>
                       </div>
                     </div>
-                  </div>
-                ))}
+                )) : ""}
           </div>
         </div>
       </div>

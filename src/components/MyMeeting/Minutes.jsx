@@ -7,15 +7,15 @@ const Minutes = () => {
     const minutes = Array.from({ length: 12 }, (_, index) => (
         <div key={index} className="flex border-b py-2 items-center justify-between">
           <div className="flex flex-col gap-1">
-            <h1 className='text-dark font-semibold text-2xl'>Document Name</h1>
+            <h1 className='text-foreground font-semibold text-2xl'>Document Name</h1>
             <div className='flex items-center gap-2'>
                 <span className='text-placeholder'>Date & Time:</span>
-                <p className=" text-lg text-theme-color font-medium">20/06/23 06:57 PM</p>
+                <p className=" text-lg text-primary font-medium">20/06/23 06:57 PM</p>
             </div>
           </div>
           <div className="flex items-center gap-4 ">
             <span className='flex items-center text-action font-medium p-0.5 bg-actionBg'><BsClock/>Pending 15 days left</span>
-            <button className={`text-white bg-meetzen-primary py-2 px-4 font-medium text-base rounded-sm`} onClick={()=>navigate("/submit-feedback")}>Submit Feedback</button></div>
+            <button className={`text-white bg-primary py-2 px-4 font-medium text-base rounded-sm`} onClick={()=>navigate("/submit-feedback")}>Submit Feedback</button></div>
         </div>
     ))
   return (

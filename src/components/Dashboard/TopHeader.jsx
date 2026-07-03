@@ -26,14 +26,14 @@ const TopHeader = ({
   return (
     <div className=" relative h-[64px] py-3 md:bg-hover-bg flex flex-col gap-6 md:gap-0 md:grid grid-cols-3 w-full">
       <div
-        className="flex items-center cursor-pointer font-semibold text-theme-color"
+        className="flex items-center cursor-pointer font-semibold text-primary"
         onClick={() => navigate(-1)}
       >
         <MdArrowBackIosNew className="text-2xl font-normal" />
         <span className=" text-lg font-medium">Back</span>
       </div>
       <div className="search order-1 md:order-[unset]">
-        <div className="relative mobile:border mobile:border-borderInput mobile:mx-4 md:mx-0 mobile:py-4 mobile:rounded-sm md:border-none md:py-0 md:rounded-none flex flex-col text-placeholder h-full">
+        <div className="relative mobile:border mobile:border-border mobile:mx-4 md:mx-0 mobile:py-4 mobile:rounded-sm md:border-none md:py-0 md:rounded-none flex flex-col text-placeholder h-full">
           <FiSearch className="absolute top-1/2 text-mediumSubheading -translate-y-1/2 left-4" />
           <MdTune
             onClick={() => setIsFilterModal(!isFiltersModal)}
@@ -48,7 +48,7 @@ const TopHeader = ({
           />
         </div>
       </div>
-      <div className="action__links text-theme-color flex w-full justify-end mobile:px-4 px-6 gap-4 items-center">
+      <div className="action__links text-primary flex w-full justify-end mobile:px-4 px-6 gap-4 items-center">
         <div
           className="sidebar__toggle block md:hidden mr-auto"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}

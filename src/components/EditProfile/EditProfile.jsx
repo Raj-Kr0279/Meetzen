@@ -44,14 +44,14 @@ const EditProfile = () => {
               className="w-[240px] h-[240px] rounded-full"
               alt=""
             />
-            <span className="text-dark font-medium text-smallSubheading text-center pb-6">
+            <span className="text-foreground font-medium text-smallSubheading text-center pb-6">
               Recommeded image size
               <br />
               250x250
             </span>
           </div>
           <div className="buttons flex flex-col gap-4 w-9/12">
-            <button className="bg-meetzen-primary text-white py-3 px-4 rounded-md flex items-center gap-2 justify-center text-smallSubheading font-normal">
+            <button className="bg-primary text-white py-3 px-4 rounded-md flex items-center gap-2 justify-center text-smallSubheading font-normal">
               <MdOutlineImage />
               Change Picture
             </button>
@@ -70,7 +70,7 @@ const EditProfile = () => {
             <div>
               <label
                 htmlFor="name"
-                className="text-dark text-base font-semibold inline-block pb-2"
+                className="text-foreground text-base font-semibold inline-block pb-2"
               >
                 Full Name
               </label>
@@ -87,7 +87,7 @@ const EditProfile = () => {
             <div>
               <label
                 htmlFor="phone"
-                className="text-dark text-base font-semibold inline-block pb-2"
+                className="text-foreground text-base font-semibold inline-block pb-2"
               >
                 Mobile Number (WhatsApp Preferred)
               </label>
@@ -104,7 +104,7 @@ const EditProfile = () => {
             <div>
               <label
                 htmlFor="bio"
-                className="text-dark text-base font-semibold inline-block pb-2"
+                className="text-foreground text-base font-semibold inline-block pb-2"
               >
                 Bio
               </label>
@@ -120,7 +120,7 @@ const EditProfile = () => {
             <div>
               <label
                 htmlFor="language"
-                className="text-dark text-base font-semibold inline-block pb-2"
+                className="text-foreground text-base font-semibold inline-block pb-2"
               >
                 Change Language
               </label>
@@ -133,7 +133,7 @@ const EditProfile = () => {
                   name="language"
                   value={formData.language}
                   onChange={handleChange}
-                  className="border w-full text-base text-dark font-medium pl-4 pr-10 py-3 rounded-md focus:border-dark appearance-none"
+                  className="border w-full text-base text-foreground font-medium pl-4 pr-10 py-3 rounded-md focus:border-dark appearance-none"
                 >
                   <option value="english">English</option>
                   <option value="hindi">Hindi</option>
@@ -145,7 +145,7 @@ const EditProfile = () => {
             <div>
               <label
                 htmlFor="timezone"
-                className="text-dark text-base font-semibold inline-block pb-2"
+                className="text-foreground text-base font-semibold inline-block pb-2"
               >
                 Change Time Zone
               </label>
@@ -158,7 +158,7 @@ const EditProfile = () => {
                   name="timezone"
                   value={formData.timezone}
                   onChange={handleChange}
-                  className="border w-full text-base text-dark font-medium pl-4 pr-10 py-3 rounded-md focus:border-dark appearance-none"
+                  className="border w-full text-base text-foreground font-medium pl-4 pr-10 py-3 rounded-md focus:border-dark appearance-none"
                 >
                   <option value="-12:00">
                     (GMT -12:00) Eniwetok, Kwajalein
@@ -183,7 +183,7 @@ const EditProfile = () => {
 
             <button
               type="submit"
-              className="w-full mt-6 py-4 px-8 rounded-lg bg-meetzen-primary text-white"
+              className="w-full mt-6 py-4 px-8 rounded-lg bg-primary text-white"
             >
               Save Changes
             </button>

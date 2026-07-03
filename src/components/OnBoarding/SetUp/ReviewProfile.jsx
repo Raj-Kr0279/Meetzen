@@ -56,7 +56,7 @@ const ReviewProfile = ({ next, prev }) => {
   return (
     <>
       <div className="w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-2/3 place-items-center mx-auto pt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:px-0 lg:w-2/3 place-items-center mx-auto lg:pt-20">
           <div className="my-6 self-start tab:my-0">
             <label
               htmlFor="profile_pic"
@@ -89,7 +89,7 @@ const ReviewProfile = ({ next, prev }) => {
             <div className="flex flex-col gap-2 pb-4">
               {/* <label
               htmlFor="login_id"
-              className="font-semibold flex items-center text-dark text-normal"
+              className="font-semibold flex items-center text-foreground text-normal"
             >
               Full Name
               <span className="text-error pl-1">*</span>
@@ -121,7 +121,7 @@ const ReviewProfile = ({ next, prev }) => {
             <div className="flex flex-col gap-2 pb-4">
               {/* <label
               htmlFor="whasapp"
-              className="font-semibold flex items-center text-dark text-normal"
+              className="font-semibold flex items-center text-foreground text-normal"
             >
               Mobile Number (WhatsApp Preferred)
               <span className="text-error pl-1">*</span>
@@ -153,7 +153,7 @@ const ReviewProfile = ({ next, prev }) => {
             <div className="flex flex-col gap-2 pb-4">
               {/* <label
               htmlFor="bio"
-              className="font-semibold flex items-center text-dark text-normal"
+              className="font-semibold flex items-center text-foreground text-normal"
             >
               Bio
               <span className="text-error pl-1">*</span>

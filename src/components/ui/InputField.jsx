@@ -12,20 +12,25 @@ const InputField = ({
   value,
   showPassword,
   setShowPassword,
-  handleViewPassToggle
+  handleViewPassToggle,
+  passStrength
 }) => {
   
-  const base = `w-full border border-borderInput rounded-xl bg-white px-4 py-3 text-meetzen-textPrimary text-sm placeholder-meetzen-placeholder focus:outline-none focus:ring-2 transition-all disabled:cursor-not-allowed disabled:opacity-60 focus:ring-meetzen-primary/20 focus:border-meetzen-primary`;
+const base = `w-full border border-border rounded-md bg-surface px-4 py-3 text-foreground text-sm placeholder-placeholder focus:outline-none focus:ring-2 transition-all disabled:cursor-not-allowed disabled:opacity-60 focus:ring-primary/20 focus:border-primary`;
+
 
   // Apply error styles directly in `base` to keep class handling simple.
   const inputBase = error
-    ? `${base} border-meetzen-error/60 focus:border-meetzen-error focus:ring-meetzen-error/20`
+    ? `${base} border-error/60 focus:border-error focus:ring-error/20`
     : base;
+
+
   return (
     <div className="">
-      <label className="font-normal pb-1 flex items-center text-meetzen-textPrimary text-sm">
+      <label className="font-normal pb-1 flex items-center text-foreground text-sm">
         {label}
       </label>
+
       {type === "textarea" ? (
         <textarea
           name={name}

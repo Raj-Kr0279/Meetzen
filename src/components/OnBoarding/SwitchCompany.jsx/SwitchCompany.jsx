@@ -20,7 +20,7 @@ const SwitchCompany = () => {
             <span>P</span>
           </div>
           <div>
-            <p className="text-dark font-semibold leading-none text-base">
+            <p className="text-foreground font-semibold leading-none text-base">
               proCS
             </p>
             <span className="text-light font-medium text-smallCaption">
@@ -33,7 +33,7 @@ const SwitchCompany = () => {
             <span>N</span>
           </div>
           <div>
-            <p className="text-dark font-semibold leading-none text-base">
+            <p className="text-foreground font-semibold leading-none text-base">
               NIIT
             </p>
             <span className="text-light font-medium text-smallCaption">
@@ -42,11 +42,11 @@ const SwitchCompany = () => {
           </div>
         </div>
         <div className="flex border-b px-6 py-3 gap-4 items-center ">
-          <div className="bg-meetzen-primary w-8 h-8 flex justify-center items-center rounded-full text-white">
+          <div className="bg-primary w-8 h-8 flex justify-center items-center rounded-full text-white">
             <span>M</span>
           </div>
           <div>
-            <p className="text-dark font-semibold leading-none text-base">
+            <p className="text-foreground font-semibold leading-none text-base">
               MSTC
             </p>
             <span className="text-light font-medium text-smallCaption">
@@ -59,7 +59,7 @@ const SwitchCompany = () => {
             <span>J</span>
           </div>
           <div>
-            <p className="text-dark font-semibold leading-none text-base">
+            <p className="text-foreground font-semibold leading-none text-base">
               Jubiliant
             </p>
             <span className="text-light font-medium text-smallCaption">
@@ -69,7 +69,7 @@ const SwitchCompany = () => {
         </div>
         <button
           onClick={() => navigate("/")}
-          className="bg-meetzen-primary px-6 w-full text-white py-4 flex gap-4 items-center"
+          className="bg-primary px-6 w-full text-white py-4 flex gap-4 items-center"
         >
           <AiOutlinePlus /> Add other company
         </button>

@@ -10,12 +10,12 @@ const FilterModal = ({setIsFilterModal, isFiltersModal}) => {
     };
     return (
         <div className="absolute z-40 bg-white w-full md:w-[48vw] bottom-0 md:bottom-[unset] md:left-7 md:top-20 left-0 rounded-2xl shadow-md p-4">
-            <AiFillCloseCircle className='text-theme-color cursor-pointer text-heading absolute right-4 top-4' onClick={()=>setIsFilterModal(false)} />
+            <AiFillCloseCircle className='text-primary cursor-pointer text-heading absolute right-4 top-4' onClick={()=>setIsFilterModal(false)} />
             <div className="flex items-center pb-8 gap-4">
-                <h1 className=' text-dark pr-6 text-[1.8rem] font-bold'>Filters</h1>
+                <h1 className=' text-foreground pr-6 text-[1.8rem] font-bold'>Filters</h1>
                 <div className='flex items-center mobile:max-md:bg-red-500 gap-2'>
-                    <buttons className="p-[6px_12px] cursor-pointer border-2 border-theme-color text-white bg-meetzen-primary rounded-md">Apply Filter</buttons>
-                    <buttons className="p-[6px_12px] cursor-pointer text-theme-color bg-white border-theme-color border-2 rounded-md">Clear all</buttons>
+                    <buttons className="p-[6px_12px] cursor-pointer border-2 border-theme-color text-white bg-primary rounded-md">Apply Filter</buttons>
+                    <buttons className="p-[6px_12px] cursor-pointer text-primary bg-white border-theme-color border-2 rounded-md">Clear all</buttons>
                 </div>
             </div>
 

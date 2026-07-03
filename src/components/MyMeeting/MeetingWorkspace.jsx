@@ -19,7 +19,7 @@ const MeetingDetails = () => {
   const [attendance, setAttendance] = useState(false);
   const [isPresent, setIsPresent] = useState(false);
   const navLinks = ["agenda", "members", "minutes", "documents", "requests"];
-  const activeStyles = `bg-meetzen-primary text-white`;
+  const activeStyles = `bg-primary text-white`;
   const { id } = useParams();
   const handlePresent = () => {
     setAttendance(false);
@@ -35,25 +35,25 @@ const MeetingDetails = () => {
       <PageHeading label="Meeting WorkSpace" />
       <div className="grid md:grid-cols-2 px-4 md:px-10">
         <div>
-          <p className="text-theme-color font-normal leading-none pb-1 text-[10px] md:text-base">
+          <p className="text-primary font-normal leading-none pb-1 text-[10px] md:text-base">
             BOARD COMMITTEE
           </p>
-          <h1 className="text-[16px] md:text-extraLarge leading-none font-semibold text-dark pb-3">
+          <h1 className="text-[16px] md:text-extraLarge leading-none font-semibold text-foreground pb-3">
             132nd Meeting of Board Committee
           </h1>
           <div className="flex items-center py-3 md:p-0 gap-4">
             <div className="flex flex-col md:flex-row">
-              <p className="flex items-center gap-1 text-theme-color text-[12px] md:text-base font-semibold">
-                <AiOutlineCalendar className="text-theme-color" />
+              <p className="flex items-center gap-1 text-primary text-[12px] md:text-base font-semibold">
+                <AiOutlineCalendar className="text-primary" />
                 24/05/23
               </p>
-              <p className="flex items-center gap-1 text-theme-color text-[12px] md:text-base font-semibold">
-                <AiOutlineClockCircle className="text-theme-color" />
+              <p className="flex items-center gap-1 text-primary text-[12px] md:text-base font-semibold">
+                <AiOutlineClockCircle className="text-primary" />
                 9:00 AM - 11:00 AM
               </p>
             </div>
-            <p className="flex items-center gap-1 text-theme-color text-[12px] md:text-base font-semibold">
-              <RiMapPin2Line className="text-theme-color" />
+            <p className="flex items-center gap-1 text-primary text-[12px] md:text-base font-semibold">
+              <RiMapPin2Line className="text-primary" />
               Online Conference
             </p>
           </div>
@@ -61,14 +61,14 @@ const MeetingDetails = () => {
         <div className=" md:justify-self-end">
           <div className="flex flex-wrap items-center gap-2">
             <button
-              className="text-theme-color font-medium py-1.5 px-2.5 border border-theme-color rounded-md"
+              className="text-primary font-medium py-1.5 px-2.5 border border-theme-color rounded-md"
               onClick={() => navigate("/home/board-book")}
             >
               View Board book
             </button>
             <div className="relative">
               <button
-                className="text-theme-color font-medium py-1.5 px-2.5 border border-theme-color rounded-md"
+                className="text-primary font-medium py-1.5 px-2.5 border border-theme-color rounded-md"
                 onClick={handleAttendance}
               >
                 Attendance
@@ -99,7 +99,7 @@ const MeetingDetails = () => {
                     rows="5"
                   />
                   <button
-                    className="bg-meetzen-primary text-white rounded-md px-8 py-2 mt-4 text-base font-medium"
+                    className="bg-primary text-white rounded-md px-8 py-2 mt-4 text-base font-medium"
                     onClick={() => setIsPresent(false)}
                   >
                     Lorem Ipsumn
@@ -108,7 +108,7 @@ const MeetingDetails = () => {
               )}
             </div>
             <button
-              className="rounded-md basis-full md:basis-[unset] py-3 font-medium text-white mt-2 md:mt-0 md:py-1.5 px-2.5 bg-meetzen-primary border border-theme-color"
+              className="rounded-md basis-full md:basis-[unset] py-3 font-medium text-white mt-2 md:mt-0 md:py-1.5 px-2.5 bg-primary border border-theme-color"
               onClick={() => navigate("/home/join-call")}
             >
               Join VC Call
@@ -128,7 +128,7 @@ const MeetingDetails = () => {
               key={link}
               className={({ isActive }) =>
                 `cursor-pointer  rounded-[8px_8px_0px_0px] p-3 ${
-                  isActive && "bg-meetzen-primary text-white"
+                  isActive && "bg-primary text-white"
                 }`
               }
             >

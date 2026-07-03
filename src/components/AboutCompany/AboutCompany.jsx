@@ -23,11 +23,11 @@ const AboutCompany = () => {
             <div className="px-10 w-full">
                 <div className='w-full px-10 min-h-screen bg-hover-bg'>
                     <div className="flex highlight_switcher pt-10 justify-between items-center">
-                        <div className='font-semibold flex items-center border-borderInput text-base px-0 overflow-hidden border rounded-md h-12 place-items-center'>
-                            <div className='font-semibold whitespace-nowrap flex items-center border-borderInput text-base px-0 overflow-hidden border rounded-md h-12 place-items-center'>
-                                <span className={`w-full cursor-pointer flex items-center px-4 justify-center h-full border-r ${selectedFilter === 'structure' ? 'bg-meetFilterBlueLight text-theme-color' : 'bg-white text-dark'}`} onClick={() => handleFilterSelection('structure')}>Company Structure</span>
-                                <span className={`w-full cursor-pointer flex items-center justify-center h-full px-4 border-r ${selectedFilter === 'news' ? 'bg-meetFilterBlueLight text-theme-color' : 'bg-white text-dark'}`} onClick={() => handleFilterSelection('news')}>News & Updates</span>
-                                <span className={`w-full cursor-pointer flex items-center justify-center h-full px-4 ${selectedFilter === 'composition' ? 'bg-meetFilterBlueLight text-theme-color' : 'bg-white text-dark'}`} onClick={() => handleFilterSelection('composition')}>Committee Composition</span>
+                        <div className='font-semibold flex items-center border-border text-base px-0 overflow-hidden border rounded-md h-12 place-items-center'>
+                            <div className='font-semibold whitespace-nowrap flex items-center border-border text-base px-0 overflow-hidden border rounded-md h-12 place-items-center'>
+                                <span className={`w-full cursor-pointer flex items-center px-4 justify-center h-full border-r ${selectedFilter === 'structure' ? 'bg-meetFilterBlueLight text-primary' : 'bg-white text-foreground'}`} onClick={() => handleFilterSelection('structure')}>Company Structure</span>
+                                <span className={`w-full cursor-pointer flex items-center justify-center h-full px-4 border-r ${selectedFilter === 'news' ? 'bg-meetFilterBlueLight text-primary' : 'bg-white text-foreground'}`} onClick={() => handleFilterSelection('news')}>News & Updates</span>
+                                <span className={`w-full cursor-pointer flex items-center justify-center h-full px-4 ${selectedFilter === 'composition' ? 'bg-meetFilterBlueLight text-primary' : 'bg-white text-foreground'}`} onClick={() => handleFilterSelection('composition')}>Committee Composition</span>
                             </div>
                         </div>
                     </div>

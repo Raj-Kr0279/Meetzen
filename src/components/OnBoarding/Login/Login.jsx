@@ -32,6 +32,7 @@ const Login = () => {
   };
   console.log(form, "shorma");
   const handleChange = (e) => {
+    console.log(e, "check e")
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     setErrors(() => ({ ...errors, [e.target.name]: "" }));
   };
@@ -111,7 +112,7 @@ const Login = () => {
       <p className="text-meetzen-textSecondary text-smallSubheading pt-3 font-normal">
         Do you have another account?{" "}
         <span
-          className="text-theme-color cursor-pointer"
+          className="text-primary cursor-pointer"
           onClick={() => navigate("/switch-company")}
         >
           Switch Company
@@ -127,11 +128,11 @@ const Login = () => {
       <div className="biometric__buttons flex gap-3 mt-12 flex-col w-full">
         <buttons
           onClick={() => navigate("/fingerprint-login")}
-          className="border border-theme-color cursor-pointer w-full gap-2 justify-center text-pargraph items-center rounded-md flex py-3 text-theme-color px-4"
+          className="border border-theme-color cursor-pointer w-full gap-2 justify-center text-pargraph items-center rounded-md flex py-3 text-primary px-4"
         >
           Login with Fingerprint ID <img src={fingerprint} alt="" />{" "}
         </buttons>
-        <buttons className="border border-theme-color cursor-pointer w-full gap-2 justify-center text-pargraph items-center rounded-md flex py-3 text-theme-color px-4">
+        <buttons className="border border-theme-color cursor-pointer w-full gap-2 justify-center text-pargraph items-center rounded-md flex py-3 text-primary px-4">
           Login with Face ID <img src={faceid} alt="" />{" "}
         </buttons>
       </div> */}

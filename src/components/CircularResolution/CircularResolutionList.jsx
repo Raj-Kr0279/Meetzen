@@ -34,19 +34,19 @@ const CircularResolutionList = () => {
       <PageHeading label="Resolution By Circulation" />
       <div className="w-full px-10 flex flex-col ">
         {/* filters and search section  */}
-        <div className=" bg-hover-bg px-4 py-2 flex justify-between rounded-md mb-4 items-center">
-          <h1 className="text-dark font-semibold text-2xl">
+        <div className=" bg-hover-bg py-2 flex justify-between rounded-md items-center">
+          <h1 className="text-foreground font-medium text-2xl">
             All resolutions By Circulation
           </h1>
-          <div className="flex items-center gap-3">
+          <div className="flex items-end gap-3">
             <label
               htmlFor="year"
-              className="text-placeholder text-base font-normal"
+              className="text-foreground text-base font-normal"
             >
               Filter Committee:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-base w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-md border border-border"
               name="committee"
               id="committee"
             >
@@ -58,28 +58,28 @@ const CircularResolutionList = () => {
           </div>
         </div>
 
-        <div className="h-[70dvh] mt-4 w-full border-borderInput border rounded-md overflow-y-scroll">
+        <div className="h-[70dvh] mt-2 w-full border-border border rounded-md overflow-y-scroll">
           {demoData.circularResolutonLists.map((resolutions) => (
             <div
               key={resolutions?.id}
-              className="flex justify-between p-4 border-b border-b-gray-300"
+              className="flex justify-between p-4 border-b border-b-border"
               onClick={() =>
                 navigate(`/home/circular-resolution-result/${resolutions?.id}`)
               }
             >
               <div>
-                <p className=" text-pargraph text-theme-color leading-none font-normal">
+                <p className="text-sm text-primary leading-none font-semibold">
                   AUDIT COMMITTEE
                 </p>
-                <h1 className="text-dark leading-none pt-1.5 font-semibold text-2xl">
+                <h1 className="text-foreground leading-none pt-1.5 font-medium text-xl">
                   Stakeholders Relationship Committee
                 </h1>
-                <p className="text-base pt-1.5 font-medium text-light">
+                <p className="text-sm py-1.5 font-medium text-subtle">
                   CR/Audit/001/Fy2023-2024
                 </p>
-                <p className="text-base font-medium text-light">
-                  Date{" "}
-                  <span className="text-theme-color text-lg font-semibold pl-1">
+                <p className="text-sm font-medium text-foreground">
+                  Date:{" "}
+                  <span className="text-primary text-sm font-medium pl-1">
                     03/04/2023
                   </span>
                 </p>
@@ -87,10 +87,10 @@ const CircularResolutionList = () => {
                   <label
                     onClick={(e) => e.stopPropagation()}
                     htmlFor="assent"
-                    className={`relative py-2 px-6 cursor-pointer text-base font-medium border border-meetzen-success rounded-[4px] ${
+                    className={`relative py-2 px-6 cursor-pointer text-base font-medium border border-success rounded-[4px] ${
                       voteByResolutionId[resolutions?.id] === "ascent"
-                        ? "bg-meetzen-success text-white"
-                        : "text-meetzen-success"
+                        ? "bg-success text-inverse"
+                        : "text-success"
                     }`}
                   >
                     <input
@@ -109,10 +109,10 @@ const CircularResolutionList = () => {
                   <label
                     onClick={(e) => e.stopPropagation()}
                     htmlFor={`dissent-${resolutions?.id}`}
-                    className={`relative py-2 px-6 cursor-pointer text-base font-medium border border-meetzen-error rounded-[4px] ${
+                    className={`relative py-2 px-6 cursor-pointer text-base font-medium border border-error rounded-[4px] ${
                       voteByResolutionId[resolutions?.id] === "dissent"
-                        ? "bg-meetzen-error text-white"
-                        : "text-meetzen-error"
+                        ? "bg-error text-inverse"
+                        : "text-error"
                     }`}
                   >
                     <input
@@ -133,10 +133,10 @@ const CircularResolutionList = () => {
                   <label
                     onClick={(e) => e.stopPropagation()}
                     htmlFor={`abstain-${resolutions?.id}`}
-                    className={`relative py-2 px-6 cursor-pointer text-base font-medium border  border-meetzen-action rounded-[4px] ${
+                    className={`relative py-2 px-6 cursor-pointer text-base font-medium border  border-secondary rounded-[4px] ${
                       voteByResolutionId[resolutions?.id] === "abstain"
-                        ? "bg-meetzen-action text-white"
-                        : "text-meetzen-action"
+                        ? "bg-secondary text-inverse"
+                        : "text-secondary"
                     }`}
                   >
                     <input
@@ -157,10 +157,10 @@ const CircularResolutionList = () => {
                   <label
                     onClick={(e) => e.stopPropagation()}
                     htmlFor="req_meeting"
-                    className={`relative py-2 px-6 cursor-pointer text-base font-medium  border border-meetzen-purpleButton rounded-[4px] ${
+                    className={`relative py-2 px-6 cursor-pointer text-base font-medium  border accent rounded-[4px] ${
                       voteByResolutionId[resolutions?.id] === "req_meeting"
-                        ? "bg-meetzen-purpleButton text-white"
-                        : "text-meetzen-purpleButton"
+                        ? "bg-accent text-inverse"
+                        : "text-accent"
                     }`}
                   >
                     <input
@@ -184,13 +184,13 @@ const CircularResolutionList = () => {
                   <BsClock />
                   Pending 15 days left
                 </p>
-                <p className="flex items-center justify-end gap-1 text-meetzen-primary font-medium mt-4 underline">
+                <p className="flex items-center justify-end gap-1 text-primary font-medium mt-4 underline">
                   <AiOutlineEye />
                   View Document
                 </p>
                 {voteByResolutionId[resolutions.id] === "" ? (
                   <button
-                    className="text-white mt-4 bg-meetzen-primary text-base font-medium rounded-[4px] py-2 px-6"
+                    className="text-white mt-4 bg-primary text-base font-medium rounded-[4px] py-2 px-6"
                     onClick={(e) => {
                       e.stopPropagation();
                       navigate(
@@ -202,7 +202,7 @@ const CircularResolutionList = () => {
                   </button>
                 ) : (
                   <button
-                    className="text-white mt-4 bg-meetzen-primary text-base font-medium rounded-[4px] py-2 px-6"
+                    className="text-white mt-4 bg-primary text-base font-medium rounded-[4px] py-2 px-6"
                     onClick={(e) => {
                       e.stopPropagation();
                       alert("submitted");

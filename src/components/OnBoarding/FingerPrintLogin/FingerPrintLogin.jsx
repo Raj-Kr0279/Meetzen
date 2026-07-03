@@ -11,7 +11,7 @@ const FingerPrintLogin = () => {
   return (
     <>
       {faceModal && <FaceModal />}
-      <h1 className="text-heading leading-none text-center text-dark font-semibold">
+      <h1 className="text-heading leading-none text-center text-foreground font-semibold">
         Login with Fingerprint
       </h1>
       <p className="mt-4 text-center text-light leading-snug text-base font-medium break-words">

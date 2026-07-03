@@ -36,7 +36,7 @@ const CompanyRegistration = () => {
         <div className="flex flex-col gap-2 pb-8">
           {/* <label
             htmlFor="company_code"
-            className="font-semibold flex items-center text-dark text-normal"
+            className="font-semibold flex items-center text-foreground text-normal"
           >
             Enter Company Registration Code{" "}
             <span className="text-error pl-1">*</span>
@@ -74,7 +74,7 @@ const CompanyRegistration = () => {
         <button
           onClick={() => navigate("/login")}
           disabled={false}
-          className="bg-meetzen-primary py-3 w-full text-white rounded-md"
+          className="bg-primary py-3 w-full text-white rounded-md"
         >
           Continue
         </button>
@@ -82,7 +82,7 @@ const CompanyRegistration = () => {
         <div className="flex justify-center border-b border-theme-color w-max mx-auto pt-6 items-center">
           <img src={swap} alt="" />
           <span
-            className="inline-block font-medium text-center leading-tight text-theme-color text-smallSubheading cursor-pointer"
+            className="inline-block font-medium text-center leading-tight text-primary text-smallSubheading cursor-pointer"
             onClick={() => navigate("/switch-company")}
           >
             Switch Company

@@ -7,7 +7,7 @@ const PageHeading = ({label}) => {
   return (
     <>
      
-   {/* <p className='text-dark py-8 text-mediumSubheading text-center font-semibold'>{label}</p> */}
+   {/* <p className='text-foreground py-8 text-mediumSubheading text-center font-semibold'>{label}</p> */}
     </>
   )
 }

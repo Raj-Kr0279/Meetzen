@@ -4,26 +4,31 @@ import RightColumn from "../RightColumn";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import OnboardingHeader from "../OnboardingHeader";
+import InputField from "../../ui/InputField";
 
 const ResetPassword = () => {
-  const [password, setPassword] = useState("");
-  const [cnfPassword, setCnfPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-  const [showCnfPassword, setShowCnfPassword] = useState(false);
-  const [inputError, setInputError] = useState(false);
+  const [form, setForm] = useState({
+    password: "",
+    confirmPassword: "",
+  });
+  const [showPassword, setShowPassword] = useState({
+    pass: false,
+    confirmPassword: false,
+  });
+  const [error, setError] = useState("");
   const [passwordStrength, setPasswordStrength] = useState(0); // Password strength indicator
   const navigate = useNavigate();
-  const handleViewPassToggle = () => {
-    setShowPassword(!showPassword);
+  const handleViewPassToggle = (name) => {
+    console.log(name, "is it e");
+    setShowPassword((prev) => ({ ...prev, [name]: !prev[name] }));
   };
-  const handleViewCnfPasswordToggle = () => {
-    setShowCnfPassword(!showCnfPassword);
-  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your form submission logic here
   };
   const calculatePasswordStrength = (password) => {
+    console.log(password, "cclallall")
     const hasUppercase = /[A-Z]/.test(password);
     const hasLowercase = /[a-z]/.test(password);
     const hasNumbers = /[0-9]/.test(password);
@@ -39,9 +44,16 @@ const ResetPassword = () => {
   };
 
   const handlePasswordChange = (e) => {
-    const newPassword = e.target.value;
-    setPassword(newPassword);
-    const strength = calculatePasswordStrength(newPassword);
+    let tempForm 
+   const {value, name} = e.target;
+    setForm((prev) => (
+     tempForm = {...prev, [name]: value }
+    ));
+    console.log(form, "faaaarm");
+    if (tempForm.password === tempForm.confirmPassword)
+      setError("");
+    else  setError("Passwords do not match")
+   const strength = calculatePasswordStrength(tempForm.value);
     setPasswordStrength(strength);
   };
 
@@ -51,73 +63,36 @@ const ResetPassword = () => {
         heading="Reset Password"
         subHeading="Set a new password for your account"
       />
-      <form action="#" onSubmit={handleSubmit} className="w-full">
+      <form onSubmit={handleSubmit} className="w-full">
         <div className="flex flex-col gap-2 pb-4">
-          <label
-            htmlFor="password"
-            className="font-semibold flex items-center text-dark text-normal"
-          >
-            Password
-            <span className="text-error pl-1">*</span>
-          </label>
-          <div className="relative">
-            <input
-              type={showPassword ? "text" : "password"}
-              name="password"
-              id="password"
-              value={password}
-              onChange={handlePasswordChange}
-              className={`${
-                inputError ? "border-error" : "border-border-input"
-              } w-full placeholder:text-placeholder font-normal border-1 text-xs  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md`}
-              placeholder="Enter password"
-            />
-            {showPassword ? (
-              <AiOutlineEyeInvisible
-                onClick={handleViewPassToggle}
-                className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2"
-              />
-            ) : (
-              <AiOutlineEye
-                onClick={handleViewPassToggle}
-                className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2"
-              />
-            )}
-          </div>
+          <InputField
+            type="password"
+            label="Enter new password"
+            handleViewPassToggle={() => handleViewPassToggle("pass")}
+            className=""
+            showPassword={showPassword.pass}
+            name="password"
+            value={form.password}
+            onChange={handlePasswordChange}
+            placeholder="enter your password"
+            passStrength={() => calculatePasswordStrength(form.pass)}
+          />
         </div>
 
         <div className="flex flex-col gap-2 pb-4">
-          <label
-            htmlFor="password"
-            className="font-semibold flex items-center text-dark text-normal"
-          >
-            Password
-            <span className="text-error pl-1">*</span>
-          </label>
-          <div className="relative">
-            <input
-              type={showCnfPassword ? "text" : "password"}
-              name="password"
-              id="password"
-              value={cnfPassword}
-              onChange={(e) => setCnfPassword(e.target.value)}
-              className={`${
-                inputError ? "border-error" : "border-border-input"
-              } w-full placeholder:text-placeholder font-normal border-1 text-xs  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md`}
-              placeholder="Enter password"
-            />
-            {showCnfPassword ? (
-              <AiOutlineEyeInvisible
-                onClick={handleViewCnfPasswordToggle}
-                className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2"
-              />
-            ) : (
-              <AiOutlineEye
-                onClick={handleViewCnfPasswordToggle}
-                className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2"
-              />
-            )}
-          </div>
+          <InputField
+            type="password"
+            label="Confirm password"
+            handleViewPassToggle={() => handleViewPassToggle("confirmPassword")}
+            className=""
+            showPassword={showPassword.confirmPassword}
+            name="confirmPassword"
+            error={error}
+            value={form.confirmPassword}
+            onChange={handlePasswordChange}
+            placeholder="Confirm password"
+            passStrength={() => calculatePasswordStrength(form.confirmPassword)}
+          />
           {passwordStrength === 1 && (
             <>
               <div className="grid grid-cols-5 gap-4">
@@ -158,7 +133,7 @@ const ResetPassword = () => {
         <button
           onClick={() => navigate("/")}
           disabled={false}
-          className="bg-meetzen-primary font-semibold tracking-widest py-3 mt-12 w-full text-white rounded-md"
+          className="bg-primary font-semibold tracking-widest py-3 mt-12 w-full text-white rounded-md"
         >
           Change Password
         </button>

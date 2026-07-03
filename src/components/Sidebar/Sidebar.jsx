@@ -58,7 +58,7 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
         <div className="main__sidenav">
           <div className="logo py-10 font-moirai font-semibold text-center flex items-center justify-center flex-col">
            <img src={meetzen} alt="" className="w-20" />
-           <h1 className="text-meetzen-textSecondary text-4xl ps-2">MEET<span className="text-meetzen-secondary">ZEN</span></h1> 
+           <h1 className="text-secondar text-4xl ps-2">MEET<span className="text-subtle">ZEN</span></h1> 
           </div>
           <div className="links flex flex-col">
             {navLinks.map((link) => (
@@ -67,7 +67,7 @@ const Sidebar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                 key={link.label}
                 className={({ isActive }) =>
                   `link rounded-tr-lg rounded-br-lg font-normal flex items-center gap-2 py-2 px-2 text-sm ${ 
-                    isActive ? "bg-meetzen-primary text-white " : "hover:bg-meetzen-primary/50 hover:text-white text-meetzen-textPrimary"
+                    isActive ? "bg-primary text-inverse" : "hover:bg-surface-hover text-foreground"
                   }`
                 }
               >

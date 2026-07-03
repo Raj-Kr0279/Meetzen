@@ -13,11 +13,11 @@ const BoardBook = () => {
       <div className="px-10">
         <div className="flex justify-between items-center pb-4">
           <img src={logo} alt="" />
-          <span className="text-base font-semibold text-dark">
+          <span className="text-base font-semibold text-foreground">
             Page 1/2
           </span>
         </div>
-        <p className="text-base text-dark font-semibold leading-loose">
+        <p className="text-base text-foreground font-semibold leading-loose">
           Lorem ipsum dolor sit amet consectetur. Bibendum fermentum aliquam
           sapien ornare volutpat amet. Lorem turpis vitae aliquam nunc. Platea
           in pharetra consectetur nulla fermentum dictum. Phasellus eget tellus

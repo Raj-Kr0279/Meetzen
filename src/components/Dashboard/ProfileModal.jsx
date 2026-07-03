@@ -12,23 +12,23 @@ const ProfileModal = () => {
         <div className="absolute profile__modal flex-col z-10 flex bg-white right-6 top-20 rounded-2xl shadow-md">
             <div className="flex border-b  cursor-pointer border-profileModalBorder py-2 items-center" onClick={()=>navigate("/edit-profile")}>
                 <img src={prof} className='w-6 h-6 mx-4' alt="" />
-                <span className='text-dark text-smallSubheading font-normal mr-4'>Profile Details</span>
+                <span className='text-foreground text-smallSubheading font-normal mr-4'>Profile Details</span>
             </div>
             <div className="flex border-b  cursor-pointer border-profileModalBorder py-2 items-center" onClick={()=>navigate("/change-password")}>
                 <img src={pass} className='w-6 h-6 mx-4' alt="" />
-                <span className='text-dark text-smallSubheading font-normal mr-4'>Change Password</span>
+                <span className='text-foreground text-smallSubheading font-normal mr-4'>Change Password</span>
             </div>
             <div className="flex border-b  cursor-pointer border-profileModalBorder py-2 items-center">
                 <img src={face} className='w-6 h-6 mx-4' alt="" />
-                <span className='text-dark text-smallSubheading font-normal mr-4'>Setup Face ID</span>
+                <span className='text-foreground text-smallSubheading font-normal mr-4'>Setup Face ID</span>
             </div>
             <div className="flex border-b cursor-pointer border-profileModalBorder py-2 items-center">
                 <img src={fing} className='w-6 h-6 mx-4' alt="" />
-                <span className='text-dark text-smallSubheading font-normal mr-4'>Setup Fingerprint ID</span>
+                <span className='text-foreground text-smallSubheading font-normal mr-4'>Setup Fingerprint ID</span>
             </div>
             <div className="flex py-2 items-center cursor-pointer" onClick={()=>navigate("/")}>
                 <img src={logout} className='w-6 h-6 mx-4' alt="" />
-                <span className='text-dark text-smallSubheading font-normal mr-4' >Logout</span>
+                <span className='text-foreground text-smallSubheading font-normal mr-4' >Logout</span>
             </div>
             
 

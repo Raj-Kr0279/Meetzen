@@ -15,8 +15,8 @@ const FinalMinutesList = () => {
       <PageHeading label="Final Minutes" />
       <div className="w-full px-10 flex flex-col ">
         {/* filters and search section  */}
-        <div className=" bg-hover-bg px-4 py-2  flex justify-between rounded-md mb-4 items-center">
-          <h1 className="text-dark font-semibold text-large">
+        <div className="bg-hover-bg px-4 py-2 flex justify-between rounded-md mb-4 items-center">
+          <h1 className="text-foreground font-semibold text-large">
             All Final Minutes
           </h1>
           <div className="flex items-center gap-3">
@@ -27,7 +27,7 @@ const FinalMinutesList = () => {
               Filter Year:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-paragraph w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-foreground text-paragraph w-[19vw] rounded-sm border border-border"
               name="year"
               id="year"
             >
@@ -43,7 +43,7 @@ const FinalMinutesList = () => {
               Filter Committee:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-dark text-paragraph w-[19vw] rounded-sm border border-borderInput"
+              className="py-2.5 px-2.5 bg-white text-foreground text-paragraph w-[19vw] rounded-sm border border-border"
               name="committee"
               id="committee"
             >
@@ -55,22 +55,22 @@ const FinalMinutesList = () => {
           </div>
         </div>
 
-        <div className="h-[70dvh] mt-4 w-full  border border-gray-300 rounded-md overflow-y-scroll">
+        <div className="h-[70dvh] w-full  border border-gray-300 rounded-md overflow-y-scroll">
           {demoData.finalMinutes.map((final) => (
             <div
               key={final.id}
               className="flex hover:bg-hover-bg justify-between items-center p-4 border-b border-b-gray-300"
             >
               <div>
-                <p className=" text-pargraph text-theme-color leading-none font-normal">
+                <p className=" text-pargraph text-primary leading-none font-normal">
                   {final.committee}
                 </p>
-                <h1 className="text-dark leading-none pt-2 pb-1.5  font-semibold text-large">
+                <h1 className="text-foreground leading-none pt-2 pb-1.5  font-semibold text-large">
                   {final.documentName}
                 </h1>
                 <p className="text-paragraph font-medium text-light">
                   Date & Time:{" "}
-                  <span className="text-theme-color tracking-wide text-mediumCaption font-semibold pl-1">
+                  <span className="text-primary tracking-wide text-mediumCaption font-semibold pl-1">
                     {formatDateTime(final.dateTime)}
                   </span>
                 </p>
@@ -81,13 +81,13 @@ const FinalMinutesList = () => {
                     onClick={() =>
                       navigate(`/home/final-minute-details/${final.id}`)
                     }
-                    className="flex items-center justify-end gap-1 text-theme-color font-medium underline cursor-pointer"
+                    className="flex items-center justify-end gap-1 text-primary font-medium underline cursor-pointer"
                   >
                     <AiOutlineEye />
                     View Document
                   </button>
                   <button
-                    className="text-white bg-meetzen-primary text-paragraph font-medium rounded-[4px] py-2 px-3"
+                    className="text-white bg-primary text-paragraph font-medium rounded-[4px] py-2 px-3"
                     onClick={() => navigate("/compare-documents")}
                   >
                     Compare with Draft Minutes

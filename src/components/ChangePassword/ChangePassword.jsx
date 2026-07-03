@@ -28,18 +28,18 @@ const ChangePassword = () => {
         <>
 
 <div className="flex fixed bg-white top-0 py-2 px-4 w-full justify-between items-center border-b">
-                <div className='flex items-center font-semibold text-theme-color cursor-pointer' onClick={() => navigate("/dashboard")}>
+                <div className='flex items-center font-semibold text-primary cursor-pointer' onClick={() => navigate("/dashboard")}>
                     <MdArrowBackIosNew className=' text-2xlX font-normal' />
                     <span className=' text-lg font-medium'>Back</span>
                 </div>
 
             </div>
-            <p className='text-dark leading-[1.2] fixed top-2 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Change Password</p>
+            <p className='text-foreground leading-[1.2] fixed top-2 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Change Password</p>
             <form className="w-full max-w-[650px] max-h-[calc(100dvh-40px)] mt-16 overflow-hidden flex flex-col gap-4 mx-auto">
                 <div className="flex flex-col gap-2 pb-4">
                     <label
                         htmlFor="password"
-                        className="font-semibold flex items-center text-dark text-normal"
+                        className="font-semibold flex items-center text-foreground text-normal"
                     >
                         Password
                         <span className="text-error pl-1">*</span>
@@ -65,7 +65,7 @@ const ChangePassword = () => {
                 <div className="flex flex-col gap-2 pb-4">
                     <label
                         htmlFor="newPassword"
-                        className="font-semibold flex items-center text-dark text-normal"
+                        className="font-semibold flex items-center text-foreground text-normal"
                     >
                         New Password
                         <span className="text-error pl-1">*</span>
@@ -91,7 +91,7 @@ const ChangePassword = () => {
                 <div className="flex flex-col gap-2 pb-4">
                     <label
                         htmlFor="cnfPassword"
-                        className="font-semibold flex items-center text-dark text-normal"
+                        className="font-semibold flex items-center text-foreground text-normal"
                     >
                         Confirm Password
                         <span className="text-error pl-1">*</span>
@@ -117,7 +117,7 @@ const ChangePassword = () => {
                     <input type="checkbox" className='' name="" id="" style={{appearance: 'revert'}} />
                     <span>I agree to the privacy policy & Terms of Service </span>
                 </div>
-                <button onClick={() => navigate("/")} disabled={false} className="bg-meetzen-primary font-medium tracking-widest py-4 w-full text-white rounded-md">
+                <button onClick={() => navigate("/")} disabled={false} className="bg-primary font-medium tracking-widest py-4 w-full text-white rounded-md">
                     Change Password
                 </button>
             </form>
