@@ -1,15 +1,13 @@
-import React, { useState, createContext, useEffect } from "react";
-import { useMediaQuery } from "react-responsive";
-export const DataContext = createContext();
-export const DataProvider = ({ children }) => {
-    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-    const [sidemenu, setSidemenu] = useState(true);
-    const [isFiltersModal, setIsFilterModal] = useState(false);
-    console.log(isFiltersModal, ">>>")
-  return ( <DataContext.Provider value={{
+import React, { createContext, useState } from "react";
 
-   isMobile, sidemenu,setSidemenu, isFiltersModal, setIsFilterModal
-  }}>
-        {children}
-    </DataContext.Provider>)
-}
+export const DataContext = createContext();
+
+export const DataProvider = ({ children }) => {
+  const [isFiltersModal, setIsFilterModal] = useState(false);
+
+  return (
+    <DataContext.Provider value={{ isFiltersModal, setIsFilterModal }}>
+      {children}
+    </DataContext.Provider>
+  );
+};

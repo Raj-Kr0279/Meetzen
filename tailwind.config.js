@@ -59,21 +59,10 @@ export default {
         // Rating / Highlight
         star: "#FACC15",
       },
-      screens: {
-        mobile: "280px",
-        desk: "1600px",
-        twok: "2000px",
-        threek: "3000px",
-      },
-
-
       fontSize: {
         xxs: "0.6875rem", //11
         "2xs": "0.75rem", //12
       },
-
-
-      width: {},
 
       height: {
         screen: "100dvh",
@@ -100,7 +89,11 @@ export default {
         xl: "20px",
       },
       screens: {
+        mobile: "280px",
         xs: "480px",
+        desk: "1600px",
+        twok: "2000px",
+        threek: "3000px",
         "3xl": "1920px",
       },
     },

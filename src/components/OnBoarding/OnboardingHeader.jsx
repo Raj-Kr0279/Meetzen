@@ -7,7 +7,7 @@ const OnboardingHeader = ({ heading, subHeading }) => {
         <h1 className="text-primary text-2xl">{heading}</h1>
       )}
       {!(subHeading === "") && (
-        <p className="text-meetzen-textSecondary text-xs font-light">
+        <p className="text-muted text-xs font-light">
           {subHeading}
         </p>
       )}

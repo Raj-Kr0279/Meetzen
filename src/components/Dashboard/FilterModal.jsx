@@ -1,21 +1,16 @@
-import React, { useState } from 'react'
-import { AiFillCloseCircle, AiOutlineCloseCircle } from 'react-icons/ai'
-import './Dashboard.css';
+import React from "react";
+import { AiFillCloseCircle } from "react-icons/ai";
+import "./Dashboard.css";
 
-const FilterModal = ({setIsFilterModal, isFiltersModal}) => {
-    const [checked, setChecked] = useState(false);
-
-    const handleRadioChange = () => {
-        setChecked(!checked);
-    };
+const FilterModal = ({ onClose }) => {
     return (
-        <div className="absolute z-40 bg-white w-full md:w-[48vw] bottom-0 md:bottom-[unset] md:left-7 md:top-20 left-0 rounded-2xl shadow-md p-4">
-            <AiFillCloseCircle className='text-primary cursor-pointer text-heading absolute right-4 top-4' onClick={()=>setIsFilterModal(false)} />
+        <div className="fixed bottom-0 left-0 z-50 w-full rounded-t-2xl bg-white p-4 shadow-lg md:left-7 md:top-20 md:bottom-auto md:w-[48vw] md:rounded-2xl">
+            <AiFillCloseCircle className='absolute right-4 top-4 cursor-pointer text-heading text-primary' onClick={onClose} />
             <div className="flex items-center pb-8 gap-4">
                 <h1 className=' text-foreground pr-6 text-[1.8rem] font-bold'>Filters</h1>
-                <div className='flex items-center mobile:max-md:bg-red-500 gap-2'>
-                    <buttons className="p-[6px_12px] cursor-pointer border-2 border-theme-color text-white bg-primary rounded-md">Apply Filter</buttons>
-                    <buttons className="p-[6px_12px] cursor-pointer text-primary bg-white border-theme-color border-2 rounded-md">Clear all</buttons>
+                <div className='flex items-center gap-2'>
+                    <button type="button" className="rounded-md border-2 border-theme-color bg-primary p-[6px_12px] text-white">Apply Filter</button>
+                    <button type="button" className="rounded-md border-2 border-theme-color bg-white p-[6px_12px] text-primary">Clear all</button>
                 </div>
             </div>
 

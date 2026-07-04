@@ -35,7 +35,6 @@ import JoinCall from './components/MyMeeting/JoinCall';
 import ProfileLayout from './components/MyMeeting/ProfileDetails/ProfileLayout';
 import SubmitFeedback from './components/MyMeeting/SubmitFeedback';
 import PdfAgenda from './components/MyMeeting/Agenda/PdfAgenda';
-import { DataProvider } from './components/Context/DataContext';
 import Agenda from './components/MyMeeting/Agenda/Agenda';
 import Members from './components/MyMeeting/Members';
 import Minutes from './components/MyMeeting/Minutes';
@@ -55,8 +54,7 @@ import ReviewProfile from './components/OnBoarding/SetUp/ReviewProfile';
 function App() {
   return (
     <>
-      <DataProvider>
-        <BrowserRouter>
+      <BrowserRouter>
           {/* <DataProvider> */}
 
           <Routes>
@@ -122,8 +120,7 @@ function App() {
           </Routes>
 
           {/* </DataProvider> */}
-        </BrowserRouter>
-      </DataProvider>
+      </BrowserRouter>
     </>
   );
 }

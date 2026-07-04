@@ -54,7 +54,7 @@ const SearchReport = () => {
                     <div className="flex w-full items-center gap-4">
                         <div className='relative w-[60%]'>
                             <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
-                            <input className='text-placeholder w-full border text-smallSubheading border-topSearch rounded-sm py-2 px-8' placeholder='Advanced Search using filter' type="text" name="search" id="search" />
+                            <input className='text-placeholder w-full border text-xs border-topSearch rounded-sm py-2 px-8' placeholder='Advanced Search using filter' type="text" name="search" id="search" />
                         </div>
                         <button className="text-white  bg-primary py-2 px-8 rounded-sm text-base font-medium">Search</button>
                     </div>

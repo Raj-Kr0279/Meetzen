@@ -78,13 +78,13 @@ const CircularResolutionResult = () => {
                                         <div className="flex items-center gap-2">
                                             <img src={prof} className='w-8 h-8 rounded-full' alt="" />
                                             <div className='flex flex-col'>
-                                                <span className='text-prof text-smallSubheading font-medium'>Kelly Casper</span>
-                                                <span className='text-foreground text-smallSubheading font-medium'>Mario.Koss@hotmail.com</span></div>
+                                                <span className='text-prof text-xs font-medium'>Kelly Casper</span>
+                                                <span className='text-foreground text-xs font-medium'>Mario.Koss@hotmail.com</span></div>
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Employer</td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-smallSubheading font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
+                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-xs font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">20/06/23</td>
 
@@ -94,13 +94,13 @@ const CircularResolutionResult = () => {
                                         <div className="flex items-center gap-2">
                                             <img src={prof} className='w-8 h-8 rounded-full' alt="" />
                                             <div className='flex flex-col'>
-                                                <span className='text-prof text-smallSubheading font-medium'>Kelly Casper</span>
-                                                <span className='text-foreground text-smallSubheading font-medium'>Mario.Koss@hotmail.com</span></div>
+                                                <span className='text-prof text-xs font-medium'>Kelly Casper</span>
+                                                <span className='text-foreground text-xs font-medium'>Mario.Koss@hotmail.com</span></div>
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Employer</td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                                        <p className='text-success bg-meetGreenBg inline-block rounded-[2px] p-[1px_2px] text-smallSubheading font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-success'></span>Ascent</p>
+                                        <p className='text-success bg-meetGreenBg inline-block rounded-[2px] p-[1px_2px] text-xs font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-success'></span>Ascent</p>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">20/06/23</td>
 
@@ -110,13 +110,13 @@ const CircularResolutionResult = () => {
                                         <div className="flex items-center gap-2">
                                             <img src={prof} className='w-8 h-8 rounded-full' alt="" />
                                             <div className='flex flex-col'>
-                                                <span className='text-prof text-smallSubheading font-medium'>Kelly Casper</span>
-                                                <span className='text-foreground text-smallSubheading font-medium'>Mario.Koss@hotmail.com</span></div>
+                                                <span className='text-prof text-xs font-medium'>Kelly Casper</span>
+                                                <span className='text-foreground text-xs font-medium'>Mario.Koss@hotmail.com</span></div>
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Employer</td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                                        <p className='text-error bg-meetRedBg inline-block rounded-[2px] p-[1px_2px] text-smallSubheading font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-error'></span>Dissent</p>
+                                        <p className='text-error bg-meetRedBg inline-block rounded-[2px] p-[1px_2px] text-xs font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-error'></span>Dissent</p>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">20/06/23</td>
 
@@ -126,13 +126,13 @@ const CircularResolutionResult = () => {
                                         <div className="flex items-center gap-2">
                                             <img src={prof} className='w-8 h-8 rounded-full' alt="" />
                                             <div className='flex flex-col'>
-                                                <span className='text-prof text-smallSubheading font-medium'>Kelly Casper</span>
-                                                <span className='text-foreground text-smallSubheading font-medium'>Mario.Koss@hotmail.com</span></div>
+                                                <span className='text-prof text-xs font-medium'>Kelly Casper</span>
+                                                <span className='text-foreground text-xs font-medium'>Mario.Koss@hotmail.com</span></div>
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Employer</td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-smallSubheading font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
+                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-xs font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">20/06/23</td>
 
@@ -142,13 +142,13 @@ const CircularResolutionResult = () => {
                                         <div className="flex items-center gap-2">
                                             <img src={prof} className='w-8 h-8 rounded-full' alt="" />
                                             <div className='flex flex-col'>
-                                                <span className='text-prof text-smallSubheading font-medium'>Kelly Casper</span>
-                                                <span className='text-foreground text-smallSubheading font-medium'>Mario.Koss@hotmail.com</span></div>
+                                                <span className='text-prof text-xs font-medium'>Kelly Casper</span>
+                                                <span className='text-foreground text-xs font-medium'>Mario.Koss@hotmail.com</span></div>
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Employer</td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-smallSubheading font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
+                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-xs font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">20/06/23</td>
 
@@ -158,13 +158,13 @@ const CircularResolutionResult = () => {
                                         <div className="flex items-center gap-2">
                                             <img src={prof} className='w-8 h-8 rounded-full' alt="" />
                                             <div className='flex flex-col'>
-                                                <span className='text-prof text-smallSubheading font-medium'>Kelly Casper</span>
-                                                <span className='text-foreground text-smallSubheading font-medium'>Mario.Koss@hotmail.com</span></div>
+                                                <span className='text-prof text-xs font-medium'>Kelly Casper</span>
+                                                <span className='text-foreground text-xs font-medium'>Mario.Koss@hotmail.com</span></div>
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Employer</td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-smallSubheading font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
+                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-xs font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">20/06/23</td>
 
@@ -174,13 +174,13 @@ const CircularResolutionResult = () => {
                                         <div className="flex items-center gap-2">
                                             <img src={prof} className='w-8 h-8 rounded-full' alt="" />
                                             <div className='flex flex-col'>
-                                                <span className='text-prof text-smallSubheading font-medium'>Kelly Casper</span>
-                                                <span className='text-foreground text-smallSubheading font-medium'>Mario.Koss@hotmail.com</span></div>
+                                                <span className='text-prof text-xs font-medium'>Kelly Casper</span>
+                                                <span className='text-foreground text-xs font-medium'>Mario.Koss@hotmail.com</span></div>
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Employer</td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-smallSubheading font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
+                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-xs font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">20/06/23</td>
 
@@ -190,13 +190,13 @@ const CircularResolutionResult = () => {
                                         <div className="flex items-center gap-2">
                                             <img src={prof} className='w-8 h-8 rounded-full' alt="" />
                                             <div className='flex flex-col'>
-                                                <span className='text-prof text-smallSubheading font-medium'>Kelly Casper</span>
-                                                <span className='text-foreground text-smallSubheading font-medium'>Mario.Koss@hotmail.com</span></div>
+                                                <span className='text-prof text-xs font-medium'>Kelly Casper</span>
+                                                <span className='text-foreground text-xs font-medium'>Mario.Koss@hotmail.com</span></div>
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Employer</td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-smallSubheading font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
+                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-xs font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">20/06/23</td>
 
@@ -206,13 +206,13 @@ const CircularResolutionResult = () => {
                                         <div className="flex items-center gap-2">
                                             <img src={prof} className='w-8 h-8 rounded-full' alt="" />
                                             <div className='flex flex-col'>
-                                                <span className='text-prof text-smallSubheading font-medium'>Kelly Casper</span>
-                                                <span className='text-foreground text-smallSubheading font-medium'>Mario.Koss@hotmail.com</span></div>
+                                                <span className='text-prof text-xs font-medium'>Kelly Casper</span>
+                                                <span className='text-foreground text-xs font-medium'>Mario.Koss@hotmail.com</span></div>
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Employer</td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-smallSubheading font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
+                                        <p className='text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-xs font-medium'><span className='w-2 h-2 mr-1 rounded-full bg-action'></span>Abstained</p>
                                     </td>
                                     <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">20/06/23</td>
 

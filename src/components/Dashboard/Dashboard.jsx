@@ -37,9 +37,9 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="grid dash__wrapper px-4 md:px-10 grid-cols-1 md:grid-cols-[1.5fr_1fr] pb-20 gap-8">
+    <div className="grid dash__wrapper grid-cols-1 md:grid-cols-[1.5fr_1fr] pb-20 gap-8">
       <div className="flex flex-col w-full">
-        <div className="highlight__wrp md:min-h-[480px] overflow-hidden border border-gray-300 w-full rounded-xl md:p-4 card">
+        <div className="highlight__wrp md:min-h-120 overflow-hidden border border-border w-full rounded-xl p-4 card">
           <div className="flex highlight_switcher justify-between items-center">
             <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-border rounded-md whitespace-nowrap h-12 place-items-center">
               <p
@@ -71,7 +71,7 @@ const Dashboard = () => {
               View all
             </span>
           </div>
-          <div className="highlights__content_wrp max-h-[395px] overflow-y-scroll flex md:flex-col gap-2 mt-3">
+          <div className="highlights__content_wrp max-h-[395px] overflow-y-scroll flex flex-col gap-2 mt-3">
             {meetingFilterValue === "upcoming"
               ? demoData.meetings
                   .filter((item) => item.status === "upcoming")
@@ -112,7 +112,7 @@ const Dashboard = () => {
                 <button
                   aria-label="Previous Month"
                   className={
-                    "absolute flex justify-center items-center w-8 h-8 right-14 border-2 text-smallSubheading top-3 rounded-md"
+                    "absolute flex justify-center items-center w-8 h-8 right-14 border-2 text-xs top-3 rounded-md"
                   }
                   style={
                     customHeaderCount === 1 ? { visibility: "hidden" } : null
@@ -131,7 +131,7 @@ const Dashboard = () => {
                 <button
                   aria-label="Next Month"
                   className={
-                    "absolute flex justify-center items-center w-8 h-8 right-3 border-2 text-smallSubheading top-3 rounded-md"
+                    "absolute flex justify-center items-center w-8 h-8 right-3 border-2 text-xs top-3 rounded-md"
                   }
                   // style={customHeaderCount === 0 ? { visibility: "hidden" } : null}
                   onClick={increaseMonth}

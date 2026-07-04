@@ -82,7 +82,7 @@ const CompanyRegistration = () => {
         <div className="flex justify-center border-b border-theme-color w-max mx-auto pt-6 items-center">
           <img src={swap} alt="" />
           <span
-            className="inline-block font-medium text-center leading-tight text-primary text-smallSubheading cursor-pointer"
+            className="inline-block font-medium text-center leading-tight text-primary text-xs cursor-pointer"
             onClick={() => navigate("/switch-company")}
           >
             Switch Company

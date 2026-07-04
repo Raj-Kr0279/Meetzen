@@ -83,8 +83,8 @@ const PdfAgenda = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-white font-normal text-smallSubheading  text-foreground p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
-                                <span className=' text-smallSubheading text-placeholder font-normal'>08:15 PM</span>
+                                <p className='bg-white font-normal text-xs  text-foreground p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <span className=' text-xs text-placeholder font-normal'>08:15 PM</span>
                             </div>
                         </div>
                         <div className='flex ml-auto w-[85%] flex-row-reverse items-start'>
@@ -93,8 +93,8 @@ const PdfAgenda = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-primary text-white font-normal text-smallSubheading p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
-                                <span className=' text-smallSubheading text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
+                                <p className='bg-primary text-white font-normal text-xs p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <span className=' text-xs text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
                             </div>
                         </div>
                         <div className='flex w-[85%] items-start mb-auto'>
@@ -103,8 +103,8 @@ const PdfAgenda = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-white font-normal text-smallSubheading  text-foreground p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
-                                <span className=' text-smallSubheading text-placeholder font-normal'>08:15 PM</span>
+                                <p className='bg-white font-normal text-xs  text-foreground p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <span className=' text-xs text-placeholder font-normal'>08:15 PM</span>
                             </div>
                         </div>
                         <div className='flex ml-auto w-[85%] flex-row-reverse items-start'>
@@ -113,8 +113,8 @@ const PdfAgenda = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-primary text-white font-normal text-smallSubheading p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
-                                <span className=' text-smallSubheading text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
+                                <p className='bg-primary text-white font-normal text-xs p-4 rounded-[10px_10px_3px_10px] '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <span className=' text-xs text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
                             </div>
                         </div>
                     </div>
@@ -125,8 +125,8 @@ const PdfAgenda = () => {
                             <MdOutlineEmojiEmotions className='absolute text-mediumHeading text-placeholder top-1/2 right-10 -translate-y-1/2' />
                             <MdAttachFile className='absolute text-mediumHeading text-placeholder top-1/2 right-4 -translate-y-1/2' onClick={() => setAttachModal(!attachModal)} />
                             <div className={`${attachModal ? "flex" : "hidden"} absolute bottom-full mb-2 bg-white shadow-filter py-2 rounded-sm right-0 flex-col`}>
-                                <div className="flex items-center gap-1 py-2 border-b border-profileModalBorder px-4"><img src={gallery} className='w-[16px] h-auto ' alt="" /><span className=' text-smallSubheading font-normal text-prof' >Photos & Videos</span></div>
-                                <div className="flex items-center gap-1 py-2 px-4"><img src={doc} className='w-[16px] h-auto ' alt="" /><span className=' text-smallSubheading font-normal text-prof' >Document</span></div>
+                                <div className="flex items-center gap-1 py-2 border-b border-profileModalBorder px-4"><img src={gallery} className='w-[16px] h-auto ' alt="" /><span className=' text-xs font-normal text-prof' >Photos & Videos</span></div>
+                                <div className="flex items-center gap-1 py-2 px-4"><img src={doc} className='w-[16px] h-auto ' alt="" /><span className=' text-xs font-normal text-prof' >Document</span></div>
                             </div>
                             <input placeholder="Write your message here..." className='w-full border text-foreground border-topSearch rounded-md py-3 px-8' type="text" name="search" id="search" />
                         </div>

@@ -11,7 +11,7 @@ const ShareDocModal = ({ modal, setModal }) => {
                 <img src={prof} className='rounded-full w-10 h-10' alt="" />
                 <div className='flex flex-col'>
                     <p className='text-prof text-base font-medium'>Alex Payne</p>
-                    <span className='text-profLight40 text-smallSubheading font-normal'>Manager</span>
+                    <span className='text-profLight40 text-xs font-normal'>Manager</span>
                 </div>
             </div>
             <div className='flex items-center text-primary justify-center w-12 h-9 bg-hover-bg'>
@@ -30,7 +30,7 @@ const ShareDocModal = ({ modal, setModal }) => {
                     <input className='text-placeholder w-full border border-topSearch rounded-md py-2.5 px-8' placeholder='Search' type="text" name="search" id="search" />
                 </div>
                 <div className='py-2 px-4  inline-flex items-center gap-2 cursor-pointer'>
-                    <p className="text-foreground text-smallSubheading font-semibold">People with access</p>
+                    <p className="text-foreground text-xs font-semibold">People with access</p>
                 </div>
                 <div className="contacts__wrap border-t grow-1 border-border gap-4 flex flex-col overflow-y-auto">
                     {contact}

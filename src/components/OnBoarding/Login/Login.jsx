@@ -88,16 +88,16 @@ const Login = () => {
                 <span className="">Please enter a valid code</span>
               </div>
             )} */}
-          <div className="flex w-full justify-between font-medium text-smallSubheading items-end">
+          <div className="flex w-full justify-between font-medium text-xs items-end">
             <span
               onClick={() => navigate("/")}
-              className="text-meetzen-textSecondary underline cursor-pointer"
+              className="text-muted underline cursor-pointer"
             >
               Login with different user
             </span>
             <span
               onClick={() => navigate("/forgot-password")}
-              className="text-meetzen-textSecondary cursor-pointer"
+              className="text-muted cursor-pointer"
             >
               Forgot Password?
             </span>
@@ -109,7 +109,7 @@ const Login = () => {
           classNames="font-semibold py-3 tracking-widest mt-3 w-full text-white rounded-md"
         />
       </form>
-      <p className="text-meetzen-textSecondary text-smallSubheading pt-3 font-normal">
+      <p className="text-muted text-xs pt-3 font-normal">
         Do you have another account?{" "}
         <span
           className="text-primary cursor-pointer"

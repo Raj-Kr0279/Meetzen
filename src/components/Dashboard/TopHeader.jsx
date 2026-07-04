@@ -1,92 +1,109 @@
-import React, { useContext, useEffect, useState } from "react";
-import { FiFilter, FiMenu, FiMessageSquare, FiSearch } from "react-icons/fi";
-import { AiFillFilter, AiOutlineBell } from "react-icons/ai";
-import { MdArrowBackIosNew, MdSync, MdTune } from "react-icons/md";
+import React from "react";
+import { FiMenu, FiMessageSquare, FiSearch } from "react-icons/fi";
+import { AiOutlineBell } from "react-icons/ai";
+import { MdArrowBackIosNew, MdTune } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa";
 import prof from "../../Assets/profileDummy.png";
 import { useNavigate } from "react-router-dom";
-import { getDatasetAtEvent } from "react-chartjs-2";
-import { DataContext } from "../Context/DataContext";
 
 const TopHeader = ({
-  setIsFilterModal,
-  isFiltersModal,
-  isNotificationsModal,
-  setIsNotificationsModal,
-  isProfileModal,
-  setIsProfileModal,
-  isSidebarOpen,
+  activeOverlay,
+  toggleOverlay,
   setIsSidebarOpen,
 }) => {
-  const { sidemenu, isMobile, setSidemenu } = useContext(DataContext);
   const navigate = useNavigate();
-  // useEffect(()=>{
-  //     isMobile && setSidemenu(true)
-  //         },[])
+
   return (
-    <div className=" relative h-[64px] py-3 md:bg-hover-bg flex flex-col gap-6 md:gap-0 md:grid grid-cols-3 w-full">
-      <div
-        className="flex items-center cursor-pointer font-semibold text-primary"
-        onClick={() => navigate(-1)}
-      >
-        <MdArrowBackIosNew className="text-2xl font-normal" />
-        <span className=" text-lg font-medium">Back</span>
-      </div>
-      <div className="search order-1 md:order-[unset]">
-        <div className="relative mobile:border mobile:border-border mobile:mx-4 md:mx-0 mobile:py-4 mobile:rounded-sm md:border-none md:py-0 md:rounded-none flex flex-col text-placeholder h-full">
-          <FiSearch className="absolute top-1/2 text-mediumSubheading -translate-y-1/2 left-4" />
-          <MdTune
-            onClick={() => setIsFilterModal(!isFiltersModal)}
-            className="absolute top-1/2 text-mediumSubheading cursor-pointer -translate-y-1/2 right-4"
-          />
-          <input
-            type="text"
-            name=""
-            id=""
-            className="border-none text-smallSubheading bg-transparent px-16 focus-visible:outline-none focus-visible:border-none h-full w-full"
-            placeholder="Advance Search using filter"
-          />
-        </div>
-      </div>
-      <div className="action__links text-primary flex w-full justify-end mobile:px-4 px-6 gap-4 items-center">
-        <div
-          className="sidebar__toggle block md:hidden mr-auto"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+    <header className="sticky top-0 z-30 border-b border-border bg-surface/95 backdrop-blur">
+      <div className="flex min-h-16 items-center gap-3 px-4 py-3 md:px-6">
+        <button
+          type="button"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border text-foreground transition hover:bg-surface-hover md:hidden"
+          onClick={() => setIsSidebarOpen(true)}
+          aria-label="Open navigation menu"
         >
-          <FiMenu className="text-2xl" />
-        </div>
-        <div
-          className="chat__action md:border md:border-theme-color rounded-lg p-2 font-medium cursor-pointer flex gap-2 items-center"
-          onClick={() => navigate("/home/chat")}
+          <FiMenu className="text-xl" />
+        </button>
+
+        <button
+          type="button"
+          className="hidden items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-primary transition hover:bg-info-bg md:inline-flex"
+          onClick={() => navigate(-1)}
         >
-          <FiMessageSquare className="text-2xl" />
-          <span className="text-medium hidden md:inline-block">Chat</span>
-          <p className="rounded-full bg-meetzen-dark text-white text-smallSubheading items-center justify-center font-semibold w-6 h-6 hidden md:flex">
-            5
-          </p>
+          <MdArrowBackIosNew className="text-base" />
+          <span>Back</span>
+        </button>
+
+        <div className="flex min-w-0 flex-1 items-center">
+          <label className="relative w-full max-w-2xl">
+            <FiSearch className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-subtle" />
+            <input
+              type="text"
+              className="h-11 w-full rounded-lg border border-border bg-background py-2 pl-11 pr-12 text-sm text-foreground outline-none transition placeholder:text-placeholder focus:border-primary focus:ring-2 focus:ring-info-soft"
+              placeholder="Advanced search using filters"
+            />
+            <button
+              type="button"
+              onClick={() => toggleOverlay("filters")}
+              className="absolute right-2 top-1/2 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-subtle transition hover:bg-surface-hover hover:text-foreground"
+              aria-label="Open filters"
+              aria-expanded={activeOverlay === "filters"}
+            >
+              <MdTune className="text-lg" />
+            </button>
+          </label>
         </div>
-        <AiOutlineBell
-          onClick={() => setIsNotificationsModal(!isNotificationsModal)}
-          className="text-heading font-normal cursor-pointer"
-        />
-        <MdSync className="text-heading md:inline-block hidden" />
-        <div
-          className="profile__action hidden md:flex items-center cursor-pointer"
-          onClick={() => setIsProfileModal(!isProfileModal)}
-        >
-          <img src={prof} className=" w-10 h-10 rounded-full" alt="" />
-          <div className="flex flex-col text-smallSubheading ml-2">
-            <span className="text-prof font-medium leading-[1.4]">
-              John Doe
+
+        <div className="flex shrink-0 items-center gap-2 md:gap-3">
+          <button
+            type="button"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-border px-3 text-primary transition hover:bg-info-bg"
+            onClick={() => navigate("/home/chat")}
+            aria-label="Open chat"
+          >
+            <FiMessageSquare className="text-lg" />
+            <span className="hidden text-sm font-medium md:inline">Chat</span>
+            <span className="hidden h-6 min-w-6 items-center justify-center rounded-full bg-primary px-1.5 text-xs font-semibold text-white md:inline-flex">
+              5
             </span>
-            <span className="text-light font-normal leading-[1.4]">
-              President
-            </span>
-          </div>
-          <FaAngleDown className="text-light ml-3.5" />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => toggleOverlay("notifications")}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground transition hover:bg-surface-hover"
+            aria-label="Open notifications"
+            aria-expanded={activeOverlay === "notifications"}
+          >
+            <AiOutlineBell className="text-xl" />
+          </button>
+
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-border transition hover:opacity-90 md:hidden"
+            onClick={() => toggleOverlay("profile")}
+            aria-label="Open profile menu"
+            aria-expanded={activeOverlay === "profile"}
+          >
+            <img src={prof} className="h-full w-full object-cover" alt="Profile" />
+          </button>
+
+          <button
+            type="button"
+            className="hidden items-center rounded-lg border border-border px-2 py-1.5 transition hover:bg-surface-hover md:flex"
+            onClick={() => toggleOverlay("profile")}
+            aria-expanded={activeOverlay === "profile"}
+          >
+            <img src={prof} className="h-10 w-10 rounded-full" alt="Profile" />
+            <div className="ml-3 text-left">
+              <div className="text-sm font-medium text-foreground">John Doe</div>
+              <div className="text-xs text-subtle">President</div>
+            </div>
+            <FaAngleDown className="ml-3 text-subtle" />
+          </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

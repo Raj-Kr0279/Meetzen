@@ -11,7 +11,7 @@ const MemberCompanyStructure = () => {
   const membercards = Array.from({ length: 12 }, (_, index) => (
     <div key={index} className='w-60 rounded-md border flex justify-center items-center flex-col bg-white p-4'>
       <img src={prof} className=' w-12 h-12 rounded-full' alt="" />
-      <h1 className='text-memberCardHeader pb-2 text-smallSubheading font-semibold'>Madelyn Mango</h1>
+      <h1 className='text-memberCardHeader pb-2 text-xs font-semibold'>Madelyn Mango</h1>
       <span className='w-full text-center bg-hover-bg text-foreground my-1 text-smallCaption font0-semibold p-1'>Chairman</span>
     </div>
   ))
@@ -48,7 +48,7 @@ const MemberCompanyStructure = () => {
               <div className='relative mb-6 w-full flex flex-col items-center justify-center'>
                 <div className='w-60 rounded-md border flex justify-center items-center flex-col bg-white p-4'>
                   <img src={prof} className=' w-12 h-12 rounded-full' alt="" />
-                  <h1 className='text-memberCardHeader pb-2 text-smallSubheading font-semibold'>Madelyn Mango</h1>
+                  <h1 className='text-memberCardHeader pb-2 text-xs font-semibold'>Madelyn Mango</h1>
                   <span className='w-full text-center bg-hover-bg text-foreground my-1 text-smallCaption font0-semibold p-1'>Chairman</span>
                   <p className='bg-[#D7D6FF] cursor-pointer text-compareHead px-3 py-1 rounded-full -translate-x-1/2 left-1/2 flex items-center gap-1 absolute -bottom-3' onClick={() => setCollapsed(!isCollapsed)}>2<FaAngleDown /></p>
                 </div>

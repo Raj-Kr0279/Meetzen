@@ -16,10 +16,10 @@ const CommitteeComposition = () => {
         <div key={index} className="member__card break-words bg-hover-bg flex rounded-lg flex-col items-center text-center p-4">
             <img src={prof} className='rounded-full w-1/3 h-1/3' alt="" />
             <h1 className='text-memberCardHeader text-mediumHeading font-bold'>Madelyn Mango</h1>
-            <p className='text-gray50 py-0.5 rounded-sm mb-2 text-smallSubheading font-bold w-full  '>Chairman</p>
+            <p className='text-gray50 py-0.5 rounded-sm mb-2 text-xs font-bold w-full  '>Chairman</p>
             <div className='flex flex-col'>
-                <p className='text-meetzen-textSecondary text-smallSubheading font-medium'>Chairman:</p>
-                <h5 className='text-black pb-1.5 font-semibold text-smallSubheading'>Board Meeting</h5>
+                <p className='text-muted text-xs font-medium'>Chairman:</p>
+                <h5 className='text-black pb-1.5 font-semibold text-xs'>Board Meeting</h5>
                 <p className='text-foreground text-xs font-normal'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur quam eligendi placeat saepe corrupti facilis ab, esse modi natus.</p>
                 <span className='text-primary underline font-bold pt-3'>View profile</span>
             </div>

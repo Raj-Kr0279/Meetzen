@@ -116,10 +116,10 @@ const MyDocuments = () => {
                                 <div className='flex w-full justify-between text-start items-center' key={index} alt="">
                                     <div className="flex w-8/12 items-center gap-2">
                                         <FiFolder className='text-primary shrink-0' />
-                                        <span className='text-foreground text-smallSubheading font-normal'>{v.name}</span>
+                                        <span className='text-foreground text-xs font-normal'>{v.name}</span>
                                     </div>
                                     <div className="flex w-4/12 items-center gap-2">
-                                        <div className='flex items-center border rounded-sm py-1 px-2'><span className='text-foreground text-smallSubheading font-normal'>{Math.floor(v.size / 1024 / 1024 * 100) / 100 + " Mb"}</span></div>
+                                        <div className='flex items-center border rounded-sm py-1 px-2'><span className='text-foreground text-xs font-normal'>{Math.floor(v.size / 1024 / 1024 * 100) / 100 + " Mb"}</span></div>
                                         <BsTrash className='shrink-0' onClick={(e) => { e.stopPropagation(); deleteFile(index) }} />
                                     </div>
                                 </div>

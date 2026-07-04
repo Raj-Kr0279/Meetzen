@@ -23,7 +23,7 @@ const MeetingScheduleList = () => {
                     <div className=''>
                         <button
                             aria-label="Previous Month"
-                            className={"hidden absolute justify-center items-center w-8 h-8 right-14 border-2 text-smallSubheading top-3 rounded-md"}
+                            className={"hidden absolute justify-center items-center w-8 h-8 right-14 border-2 text-xs top-3 rounded-md"}
                             style={customHeaderCount === 1 ? { visibility: "hidden" } : null}
                             onClick={decreaseMonth}
                         >{<AiOutlineLeft />}</button>
@@ -36,7 +36,7 @@ const MeetingScheduleList = () => {
                         </span>
                         <button
                             aria-label="Next Month"
-                            className={"hidden absolute justify-center items-center w-8 h-8 right-3 border-2 text-smallSubheading top-3 rounded-md"}
+                            className={"hidden absolute justify-center items-center w-8 h-8 right-3 border-2 text-xs top-3 rounded-md"}
                             // style={customHeaderCount === 0 ? { visibility: "hidden" } : null}
                             onClick={increaseMonth}
                         >

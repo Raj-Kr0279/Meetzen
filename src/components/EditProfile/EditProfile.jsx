@@ -44,18 +44,18 @@ const EditProfile = () => {
               className="w-[240px] h-[240px] rounded-full"
               alt=""
             />
-            <span className="text-foreground font-medium text-smallSubheading text-center pb-6">
+            <span className="text-foreground font-medium text-xs text-center pb-6">
               Recommeded image size
               <br />
               250x250
             </span>
           </div>
           <div className="buttons flex flex-col gap-4 w-9/12">
-            <button className="bg-primary text-white py-3 px-4 rounded-md flex items-center gap-2 justify-center text-smallSubheading font-normal">
+            <button className="bg-primary text-white py-3 px-4 rounded-md flex items-center gap-2 justify-center text-xs font-normal">
               <MdOutlineImage />
               Change Picture
             </button>
-            <button className="bg-white border-error border text-error py-3 px-4 rounded-md flex items-center gap-2 justify-center text-smallSubheading font-normal">
+            <button className="bg-white border-error border text-error py-3 px-4 rounded-md flex items-center gap-2 justify-center text-xs font-normal">
               <FiTrash2 />
               Delete
             </button>

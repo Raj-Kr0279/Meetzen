@@ -1,83 +1,103 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import TopHeader from "./TopHeader";
 import FilterModal from "./FilterModal";
 import NotificationModal from "./NotificationModal";
 import ProfileModal from "./ProfileModal";
-import { MdOutlineMessage } from "react-icons/md";
-import cal from "../../Assets/Calendar.png";
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import MeetingModal from "./MeetingModal";
-import { DataContext } from "../Context/DataContext";
 
 const HomeLayout = () => {
-  const { sidemenu, setSidemenu, isFiltersModal, setIsFilterModal } =
-    useContext(DataContext);
-
-  const [isNotificationsModal, setIsNotificationsModal] = useState(false);
-  const [isProfileModal, setIsProfileModal] = useState(false);
-  const [isMeetingModal, setIsMeetingModal] = useState(false);
+  const [activeOverlay, setActiveOverlay] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  useEffect(() => {}, [window.location.pathname]);
+  const location = useLocation();
+
+  const toggleOverlay = (overlayName) => {
+    setActiveOverlay((currentOverlay) =>
+      currentOverlay === overlayName ? null : overlayName
+    );
+  };
+
+  const closeOverlay = () => {
+    setActiveOverlay(null);
+  };
+
+  useEffect(() => {
+    setIsSidebarOpen(false);
+    setActiveOverlay(null);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsSidebarOpen(false);
+        setActiveOverlay(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    if (!isSidebarOpen && !activeOverlay) {
+      return undefined;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [activeOverlay, isSidebarOpen]);
+
   return (
     <>
-      {console.log(isSidebarOpen, "checking")}
-      {/* overlay for mobile screen  */}
-
-      <div
-        className={`${
-          isMeetingModal || isFiltersModal ? "block" : "hidden"
-        } z-40 fixed h-full w-full bg-[#00000095] top-0 left-0`}
-      ></div>
-      {isSidebarOpen ? (
-        <div
-          className={`z-40 md:hidden overlay fixed h-full w-full bg-[#00000095] top-0 left-0`}
-          onClick={() => setIsSidebarOpen(false)}
-        ></div>
-      ) : null}
-      <div className="h-screen">
-        <TopHeader
-          isSidebarOpen={isSidebarOpen}
-          setIsSidebarOpen={setIsSidebarOpen}
-          isFiltersModal={isFiltersModal}
-          setIsFilterModal={setIsFilterModal}
-          isNotificationsModal={isNotificationsModal}
-          setIsNotificationsModal={setIsNotificationsModal}
-          isProfileModal={isProfileModal}
-          setIsProfileModal={setIsProfileModal}
+      {activeOverlay ? (
+        <button
+          type="button"
+          className="fixed inset-0 z-40 bg-slate-950/55"
+          onClick={closeOverlay}
+          aria-label="Close dialog"
         />
-        {isNotificationsModal && (
-          <NotificationModal
-            isNotificationsModal={isNotificationsModal}
-            setIsNotificationsModal={setIsNotificationsModal}
+      ) : null}
+
+      {isSidebarOpen ? (
+        <button
+          type="button"
+          className="fixed inset-0 z-40 bg-slate-950/45 md:hidden"
+          onClick={() => setIsSidebarOpen(false)}
+          aria-label="Close navigation menu"
+        />
+      ) : null}
+
+      <div className="h-dvh overflow-hidden bg-background text-foreground">
+        <TopHeader
+          setIsSidebarOpen={setIsSidebarOpen}
+          activeOverlay={activeOverlay}
+          toggleOverlay={toggleOverlay}
+        />
+
+        {activeOverlay === "notifications" ? (
+          <NotificationModal onClose={closeOverlay} />
+        ) : null}
+        {activeOverlay === "filters" ? (
+          <FilterModal onClose={closeOverlay} />
+        ) : null}
+        {activeOverlay === "profile" ? (
+          <ProfileModal onClose={closeOverlay} />
+        ) : null}
+        {activeOverlay === "meeting" ? <MeetingModal onClose={closeOverlay} /> : null}
+
+        <div className="flex h-[calc(100dvh-78px)] min-h-0 overflow-hidden">
+          <Sidebar
+            isSidebarOpen={isSidebarOpen}
+            setIsSidebarOpen={setIsSidebarOpen}
           />
-        )}
-        {isFiltersModal && (
-          <FilterModal
-            isFiltersModal={isFiltersModal}
-            setIsFilterModal={setIsFilterModal}
-          />
-        )}
-        {isProfileModal && (
-          <ProfileModal
-            isProfileModal={isProfileModal}
-            setIsProfileModal={setIsProfileModal}
-          />
-        )}
-        {isMeetingModal && (
-          <MeetingModal
-            isMeetingModal={isMeetingModal}
-            setIsMeetingModal={setIsMeetingModal}
-          />
-        )}
-        <div className="w-full h-[calc(100vh-64px)] flex">
-          <Sidebar isSidebarOpen={isSidebarOpen} />
-          <div className="grow h-full mt-6 w-full relative">
+          <main className="min-w-0 min-h-0 flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-6">
             <Outlet />
-          </div>
+          </main>
         </div>
       </div>
     </>

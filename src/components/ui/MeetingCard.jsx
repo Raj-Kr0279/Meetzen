@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const MeetingCard = ({ meeting }) => {
   const [mapModal, setMapModal] = useState(false);
-  const peopleThumbnailsList = Array.from({ length: 6 }, (_, index) => (
+  const peopleThumbnailsList = Array.from({ length: 4 }, (_, index) => (
     <img
       key={index}
       src={`https://randomuser.me/api/portraits/${
@@ -80,7 +80,7 @@ const MeetingCard = ({ meeting }) => {
           view on map
         </span>
       </div>
-      <div className="flex items-center gap-5 pt-1">
+      <div className="flex-col mt-2 md:mt-0 flex md:flex-row md:items-center gap-1 md:gap-5 pt-1">
         <div className="flex items-center text-xs font-normal gap-1 text-muted">
           <FiUsers className="text-primary" />
           <span>
