@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
-import divider from "../../../assets/divider.png";
-import dividerComplete from "../../../assets/dividerComplete.png";
+import divider from "../../../Assets/divider.png";
+import dividerComplete from "../../../Assets/dividerComplete.png";
 import TimeZone from "./TimeZone";
 import ReviewProfile from "./ReviewProfile";
 import SelectLanguage from "./SelectLanguage";
