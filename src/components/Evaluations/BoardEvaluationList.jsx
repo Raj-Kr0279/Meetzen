@@ -12,7 +12,7 @@ const BoardEvaluationList = () => {
   return (
     <>
       <PageHeading label="Evaluation & Service" />
-      <div className="w-full px-10 max-h-[calc(100dvh-40px)] flex flex-col h-screen overflow-y-scroll">
+      <div className="w-full md:pe-10 flex flex-col">
         {/* filters and search section  */}
 
         <div className=" bg-hover-bg px-4 py-4  flex justify-between rounded-md mb-4 items-center">

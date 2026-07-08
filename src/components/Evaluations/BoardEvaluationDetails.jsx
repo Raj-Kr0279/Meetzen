@@ -31,10 +31,10 @@ const BoardEvaluationDetails = () => {
   const stepsBarWidth = ((currentStep - 1) / 4) * 100 + "%";
   return (
     <>
-      <div className="w-full px-10 max-h-[calc(100dvh-40px)] flex flex-col overflow-y-scroll">
+      <div className="w-full md:pe-10 flex flex-col">
         {/* filters and search section  */}
 
-        <div className=" bg-hover-bg px-4 py-4  flex justify-between rounded-md mt-6 mb-4 items-center">
+        <div className=" bg-surface  flex justify-between rounded-md mt-6 mb-4 items-center">
           <div className="">
             <p className=" text-pargraph text-primary leading-none font-normal pb-2">
               Director Evaluation | Board of Directors

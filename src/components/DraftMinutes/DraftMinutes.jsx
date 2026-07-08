@@ -23,17 +23,17 @@ const DraftMinutes = () => {
           setSaveDraft={setSaveDraft}
         />
       )}
-      <PageHeading label="Draft Minutes" />
-      <div className="w-full px-10 flex flex-col">
+      {/* <PageHeading label="Draft Minutes" /> */}
+      <div className="w-full flex flex-col">
         {/* filters and search section  */}
-        <div className="bg-hover-bg py-2 flex justify-between rounded-md mb-4 items-center">
-          <h1 className="text-foreground font-semibold text-2xl">
+        <div className="bg-hover-bg py-2 flex justify-between rounded-md items-center">
+          <h1 className="text-foreground font-normal text-lg lg:text-2xl">
             All Draft Minutes
           </h1>
-          <div className="flex items-center gap-3">
+          <div className="flex items-baseline gap-3">
             <label
               htmlFor="year"
-              className="text-placeholder text-base font-normal"
+              className="text-placeholder text-xs font-normal"
             >
               Filter Committee:{" "}
             </label>

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../Assets/proCSSmall.svg";
+import logo from "../../assets/meetzen.png";
 import { useNavigate } from "react-router-dom";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -12,7 +12,7 @@ const BoardBook = () => {
       <PageHeading label="Board Book"/>
       <div className="px-10">
         <div className="flex justify-between items-center pb-4">
-          <img src={logo} alt="" />
+          <img src={logo} alt="" className="w-10 h-10" />
           <span className="text-base font-semibold text-foreground">
             Page 1/2
           </span>

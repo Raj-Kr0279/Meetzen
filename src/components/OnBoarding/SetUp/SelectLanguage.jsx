@@ -7,7 +7,7 @@ const SelectLanguage = ({ next, prev }) => {
   const [selected, setSelected] = useState("english");
 
   return (
-    <div className="grid grid-cols-3 max-w-7xl w-full mx-auto place-items-center gap-x-6 gap-y-4 mt-4 mb-16">
+    <div className="grid grid-cols-2 md:grid-cols-3 max-w-7xl w-full mx-auto place-items-center gap-x-6 gap-y-4 mt-4 mb-16">
       {languages.map(({ value, label, native }) => {
         const isSelected = selected === value;
         const cardClass = isSelected

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../../Assets/proCSLogo.svg'
+import logo from "../../assets/meetzen.png";
 import prof from '../../Assets/profileDummy.png'
 import { BsTriangleFill } from 'react-icons/bs';
 import { FaAngleDown } from 'react-icons/fa';

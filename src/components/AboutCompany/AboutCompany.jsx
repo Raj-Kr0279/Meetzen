@@ -20,9 +20,9 @@ const AboutCompany = () => {
     return (
         <>
         <PageHeading label="About Company"/>
-            <div className="px-10 w-full">
+            <div className="md:pe-10 w-full flex flex-col">
                 <div className='w-full px-10 min-h-screen bg-hover-bg'>
-                    <div className="flex highlight_switcher pt-10 justify-between items-center">
+                    <div className="flex highlight_switcher justify-between items-center">
                         <div className='font-semibold flex items-center border-border text-base px-0 overflow-hidden border rounded-md h-12 place-items-center'>
                             <div className='font-semibold whitespace-nowrap flex items-center border-border text-base px-0 overflow-hidden border rounded-md h-12 place-items-center'>
                                 <span className={`w-full cursor-pointer flex items-center px-4 justify-center h-full border-r ${selectedFilter === 'structure' ? 'bg-meetFilterBlueLight text-primary' : 'bg-white text-foreground'}`} onClick={() => handleFilterSelection('structure')}>Company Structure</span>

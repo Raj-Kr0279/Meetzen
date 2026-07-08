@@ -13,7 +13,7 @@ const FinalMinutesList = () => {
   return (
     <>
       <PageHeading label="Final Minutes" />
-      <div className="w-full px-10 flex flex-col ">
+      <div className="w-full md:pe-10 flex flex-col ">
         {/* filters and search section  */}
         <div className="bg-hover-bg px-4 py-2 flex justify-between rounded-md mb-4 items-center">
           <h1 className="text-foreground font-semibold text-large">

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../Assets/proCSSmall.svg";
+import logo from "../../assets/meetzen.png";
 import { useNavigate } from "react-router-dom";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -21,9 +21,9 @@ const Disclosure = () => {
 
 </div> */}
       <PageHeading label="Director's Disclosure" />
-      <div className="  bg-hover-bg h-full py-8 px-10">
+      <div className="bg-surface flex flex-col md:pe-10">
         <div className="flex justify-between items-center pb-4">
-          <img src={logo} alt="" />
+          <img src={logo} alt="" className="w-20 h-20" />
           <span className="text-base font-semibold text-foreground">
             Page 1/2
           </span>

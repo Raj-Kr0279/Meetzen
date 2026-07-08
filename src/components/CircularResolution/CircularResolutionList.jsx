@@ -4,6 +4,7 @@ import { BsClock } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import PageHeading from "../PageHeading";
 import { demoData } from "../../demoData/demoData";
+import Button from "../ui/Button";
 
 const CircularResolutionList = () => {
   // Keep one selected vote per resolution row, keyed by resolution id.
@@ -28,11 +29,17 @@ const CircularResolutionList = () => {
       [id]: value,
     }));
   };
+  const handleSubmit = () => {
+    alert("submitted");
+  };
+  const handleViewResult = (id) => {
+    navigate(`/home/circular-resolution-result/${id}`);
+  };
 
   return (
     <>
       <PageHeading label="Resolution By Circulation" />
-      <div className="w-full px-10 flex flex-col ">
+      <div className="w-full flex flex-col ">
         {/* filters and search section  */}
         <div className=" bg-hover-bg py-2 flex justify-between rounded-md items-center">
           <h1 className="text-foreground font-medium text-2xl">
@@ -62,11 +69,15 @@ const CircularResolutionList = () => {
           {demoData.circularResolutonLists.map((resolutions) => (
             <div
               key={resolutions?.id}
-              className="flex justify-between p-4 border-b border-b-border"
+              className="flex relative lg:items-end flex-wrap justify-between p-4 border-b border-b-border"
               onClick={() =>
                 navigate(`/home/circular-resolution-result/${resolutions?.id}`)
               }
             >
+               <p className="absolute flex gap-2 items-center top-2 right-2 text-xs font-normal text-warning">
+                  <BsClock />
+                  Pending 15 days left
+                </p>
               <div>
                 <p className="text-sm text-primary leading-none font-semibold">
                   AUDIT COMMITTEE
@@ -83,7 +94,7 @@ const CircularResolutionList = () => {
                     03/04/2023
                   </span>
                 </p>
-                <div className="flex items-center pt-3 gap-4">
+                <div className="flex flex-wrap items-center pt-3 gap-4">
                   <label
                     onClick={(e) => e.stopPropagation()}
                     htmlFor="assent"
@@ -179,38 +190,27 @@ const CircularResolutionList = () => {
                   </label>
                 </div>
               </div>
-              <div className="flex flex-col items-end">
-                <p className="flex items-center text-meetzen-action font-medium p-0.5 gap-1 bg-meetzen-actionBg">
-                  <BsClock />
-                  Pending 15 days left
-                </p>
-                <p className="flex items-center justify-end gap-1 text-primary font-medium mt-4 underline">
-                  <AiOutlineEye />
+              <div className="flex flex-col lg:justify-between lg:items-end">
+               
+                <div>
+                <p className="flex items-center text-sm md:justify-end gap-1 text-primary font-medium mt-4 mb-3 underline">
+                  <AiOutlineEye className=""/>
                   View Document
                 </p>
-                {voteByResolutionId[resolutions.id] === "" ? (
-                  <button
-                    className="text-white mt-4 bg-primary text-base font-medium rounded-[4px] py-2 px-6"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(
-                        `/home/circular-resolution-result/${resolutions.id}`,
-                      );
-                    }}
-                  >
-                    View Results
-                  </button>
-                ) : (
-                  <button
-                    className="text-white mt-4 bg-primary text-base font-medium rounded-[4px] py-2 px-6"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      alert("submitted");
-                    }}
-                  >
-                    Submit
-                  </button>
-                )}
+                <Button
+                  label={
+                    voteByResolutionId[resolutions.id] === ""
+                      ? "View Results"
+                      : "Submit"
+                  }
+                  onClick={
+                    voteByResolutionId[resolutions.id] === ""
+                      ? ()=>handleViewResult(resolutions.id)
+                      : handleSubmit
+                  }
+                  variant="primary"
+                />
+                </div>
               </div>
             </div>
           ))}

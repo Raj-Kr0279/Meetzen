@@ -13,7 +13,7 @@ const SearchReport = () => {
         <>
             <PageHeading label="Search Reports"/>
 
-            <div className='w-full px-10'>
+            <div className='w-full flex flex-col md:pe-10'>
                 <form >
                     <div className="grid md:grid-cols-4 mb-6 gap-x-6 whitespace-nowrap">
                     <div className="flex flex-col gap-2">
