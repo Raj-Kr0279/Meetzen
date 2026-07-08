@@ -1,13 +1,7 @@
 import React, { useState } from "react";
+import { languages } from "../../../utils/timeZones";
 
-const languages = [
-  { value: "english", label: "English" },
-  { value: "hindi", label: "Hindi", native: "हिन्दी" },
-  { value: "marathi", label: "Marathi", native: "मराठी" },
-  { value: "kannada", label: "Kannada", native: "ಕನ್ನಡ" },
-  { value: "malayalam", label: "Malayalam", native: "മലയാളം" },
-  { value: "bengali", label: "Bengali", native: "বাংলা" },
-];
+
 
 const SelectLanguage = ({ next, prev }) => {
   const [selected, setSelected] = useState("english");
@@ -18,12 +12,12 @@ const SelectLanguage = ({ next, prev }) => {
         const isSelected = selected === value;
         const cardClass = isSelected
           ? "bg-primary text-inverse"
-          : "bg-hover-bg text-foreground";
+          : "border-border border text-foreground";
 
         return (
           <label
             key={value}
-            className={`lang__cards rounded-xl w-full xl:w-[85%] p-6 flex flex-col justify-center items-center aspect-20/9 font-bold text-heading cursor-pointer ${cardClass}`}
+            className={`lang__cards rounded-xl w-full xl:w-[85%] p-6 flex flex-col justify-center items-center aspect-20/9 font-bold text-heading cursor-pointer transition-colors ${cardClass}`}
           >
             <input
               type="radio"

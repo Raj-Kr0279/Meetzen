@@ -6,24 +6,27 @@ import prof from "../../Assets/profileDummy.png";
 import { FaAngleDown } from "react-icons/fa";
 import { FiTrash2 } from "react-icons/fi";
 import PageHeading from "../PageHeading";
+import InputField from "../ui/InputField";
+import { languages, TIME_ZONES } from "../../utils/timeZones";
 
 const EditProfile = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     name: "",
-    phone: "",
+    number: "",
     bio: "",
-    language: "english",
-    timezone: "+00:00",
+    language: "",
+    timezone: "",
   });
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setForm((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
+  console.log(form, "form");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,118 +70,51 @@ const EditProfile = () => {
             onSubmit={handleSubmit}
             className="flex edit_profile flex-col w-full gap-6 lg:gap-2"
           >
+            <InputField
+              label="name"
+              name="name"
+              type="text"
+              value={form.name}
+              onChange={handleInputChange}
+            />
+            <InputField
+              label="Enter your number"
+              name="number"
+              type="text"
+              value={form.number}
+              onChange={handleInputChange}
+            />
+            <InputField
+              label="Bio"
+              name="bio"
+              type="textarea"
+              value={form.bio}
+              onChange={handleInputChange}
+            />
+
             <div>
-              <label
-                htmlFor="name"
-                className="text-foreground text-base font-semibold inline-block pb-2"
-              >
-                Full Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                value={formData.name}
-                onChange={handleChange}
-                className="border-border-input placeholder:text-placeholder w-full font-normal border text-base focus:border-dark focus:outline-none py-3 px-4 rounded-md"
+              <InputField
+                label="Change Language"
+                name="language"
+                type="select"
+                value={form.language}
+                className=""
+                onChange={handleInputChange}
+                selectWrapperClasses=""
+                options={languages}
               />
             </div>
 
             <div>
-              <label
-                htmlFor="phone"
-                className="text-foreground text-base font-semibold inline-block pb-2"
-              >
-                Mobile Number (WhatsApp Preferred)
-              </label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handleChange}
-                className="border-border-input placeholder:text-placeholder w-full font-normal border text-base focus:border-dark focus:outline-none py-3 px-4 rounded-md"
+              <InputField
+                label="Change Time Zone"
+                name="timezone"
+                type="select"
+                className=""
+                onChange={handleInputChange}
+                selectWrapperClasses=""
+                options={TIME_ZONES}
               />
-            </div>
-
-            <div>
-              <label
-                htmlFor="bio"
-                className="text-foreground text-base font-semibold inline-block pb-2"
-              >
-                Bio
-              </label>
-              <textarea
-                id="bio"
-                name="bio"
-                value={formData.bio}
-                onChange={handleChange}
-                className="border-border-input resize-none h-28 placeholder:text-placeholder w-full font-normal border text-base focus:border-dark focus:outline-none py-3 px-4 rounded-md"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="language"
-                className="text-foreground text-base font-semibold inline-block pb-2"
-              >
-                Change Language
-              </label>
-
-              <div className="select-wrapper w-full relative">
-                <FaAngleDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-
-                <select
-                  id="language"
-                  name="language"
-                  value={formData.language}
-                  onChange={handleChange}
-                  className="border w-full text-base text-foreground font-medium pl-4 pr-10 py-3 rounded-md focus:border-dark appearance-none"
-                >
-                  <option value="english">English</option>
-                  <option value="hindi">Hindi</option>
-                  <option value="bengali">Bengali</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="timezone"
-                className="text-foreground text-base font-semibold inline-block pb-2"
-              >
-                Change Time Zone
-              </label>
-
-              <div className="select-wrapper w-full relative">
-                <FaAngleDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-
-                <select
-                  id="timezone"
-                  name="timezone"
-                  value={formData.timezone}
-                  onChange={handleChange}
-                  className="border w-full text-base text-foreground font-medium pl-4 pr-10 py-3 rounded-md focus:border-dark appearance-none"
-                >
-                  <option value="-12:00">
-                    (GMT -12:00) Eniwetok, Kwajalein
-                  </option>
-                  <option value="-11:00">
-                    (GMT -11:00) Midway Island, Samoa
-                  </option>
-                  <option value="-10:00">(GMT -10:00) Hawaii</option>
-                  {/* ...rest of the options... */}
-                  <option value="+00:00">
-                    (GMT) Western Europe Time, London, Lisbon, Casablanca
-                  </option>
-                  <option value="+05:30">
-                    (GMT +5:30) Bombay, Calcutta, Madras, New Delhi
-                  </option>
-                  <option value="+14:00">
-                    (GMT +14:00) Line Islands, Tokelau
-                  </option>
-                </select>
-              </div>
             </div>
 
             <button

@@ -12,7 +12,7 @@ const ActionablesSummary = () => {
           </h1>
           <div className="grid-cols-2 md:grid-cols-4 grid gap-2">
             <div className="flex flex-col items-center text-center px-2 py-4 rounded-xl bg-actionableLightOrange">
-              <FiEdit className="text-heading text-white w-[52px] h-[52px] rounded-full p-2 bg-actionableOrange" />
+              <FiEdit className="text-heading text-white w-[52px] h-[52px] rounded-full p-2 bg-warning" />
               <span className="text-foreground text-smallCaption tracking-[1px] pt-2 font-medium pb-2">
                 Draft Minutes
               </span>
@@ -33,7 +33,7 @@ const ActionablesSummary = () => {
               <h1 className="text-foreground text-heading font-bold mt-auto">{demoData.circularResolutonLists.length}</h1>
             </div>
             <div className="flex flex-col items-center text-center px-2 py-4 rounded-xl bg-actionableLightYellow">
-              <FiFile className="text-heading text-white w-[52px] h-[52px] rounded-full p-2 bg-actionableYellow" />
+              <FiFile className="text-heading text-white w-[52px] h-[52px] rounded-full p-2 bg-primary" />
               <span className="text-foreground text-smallCaption tracking-[1px] pt-2 font-medium pb-2">
                 Final Minutes
               </span>

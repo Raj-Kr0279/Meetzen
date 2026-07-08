@@ -53,7 +53,7 @@ const Login = () => {
 
   return (
     <div>
-      <OnboardingHeader heading="Login with your credentials" />
+      <OnboardingHeader heading="Login" subHeading= "Login with your credentials"/>
       <form onSubmit={handleSubmit} className="w-full">
         <div className="flex flex-col gap-2 pb-4">
           <InputField

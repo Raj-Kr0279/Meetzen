@@ -19,35 +19,21 @@ const stepperStyles = `
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 8rem;
   }
 
   /* divider between steps */
-  .step-item:not(:first-child)::before {
+  .stepper::before {
     content: "";
     position: absolute;
-    width: 21em;
-    transform: translateX(0) translateY(-100%);
-    height: 0.5rem;
-    right: 50%;
-    top: 36.33%;
-    background: url(${divider}) no-repeat center center / cover;
+    width: 80%;
+    height: 1px;
+    right: 9%;
+    top: 28px;
+    border: 1px dotted #dce0e5;
+    border-style: dashed;
   }
 
-  .complete:not(:first-child)::before,
-  .active:not(:first-child)::before {
-    content: "";
-    position: absolute;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 21em;
-    transform: translateX(0) translateY(-100%);
-    height: 0.5rem;
-    right: 50%;
-    top: 36.33%;
-    background-image: url(${dividerComplete});
-    background-size: cover;
-  }
+
 `;
 
 const steps = [
@@ -60,10 +46,60 @@ const SetUpLayout = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [complete, setComplete] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    number: "",
+    bio: "",
+    language: "",
+    timezone: "",
+  });
+  const [error, setError] = useState({});
+  const [profileImage, setProfileImage] = useState(null); // Initialize as null
+  const validate = (data) => {
+    const e = {};
+    if (formData.name.trim() === "") {
+      e.name = "Name is mandatory";
+    }
+    if (!formData.number) {
+      e.number = "Phone number is required";
+    } else if (!/^\d+$/.test(formData.number)) {
+      e.number = "Phone number must contain only digits";
+    } else if (formData.number.length !== 10) {
+      e.number = "Phone number must be 10 digits";
+    }
+
+    if (formData.bio.trim().length < 10) {
+      e.bio = "Enter about yourself";
+    }
+    if (!formData.profile_image) {
+      e.profile = "set a profile photo please";
+    }
+
+    return e;
+  };
+  const fileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      // Ensure a file is selected
+      setProfileImage(URL.createObjectURL(e.target.files[0]));
+    }
+  };
+
+  const handleFormChange = (e) => {
+    const value = e.target.value;
+    console.log(value, "inevent");
+    const newData = { ...formData, [e.target.name]: value };
+    const err = validate(newData);
+    setFormData(newData);
+    if (Object.keys(err).length) {
+      setError(err);
+    } else {
+      setError(() => ({ ...error, [e.target.name]: "" }));
+    }
+  };
 
   const currentIndex = Math.max(
     0,
-    steps.findIndex((s) => location.pathname.endsWith(`/set-up/${s.path}`))
+    steps.findIndex((s) => location.pathname.endsWith(`/set-up/${s.path}`)),
   );
   const currentStep = currentIndex + 1;
 
@@ -83,6 +119,11 @@ const SetUpLayout = () => {
     }
     navigate("/login");
   };
+  const stepClasses = {
+    active: "border-2 bg-white border-primary text-foreground",
+    completed: "bg-success text-inverse",
+    inactive: "bg-white",
+  };
 
   return (
     <>
@@ -95,53 +136,72 @@ const SetUpLayout = () => {
         >
           Back
         </p>
-        <p className="text-center text-foreground w-full font-medium text-foreground text-[clamp(1rem,_3vw,_1.25rem)] justify-self-start">
+        <p className="text-center text-foreground w-full font-medium text-[clamp(1rem,_3vw,_1.25rem)] justify-self-start">
           {steps[currentIndex]?.label}
         </p>
       </div>
 
       <div className="flex flex-col h-[calc(90vh)]">
-        <div className="flex justify-between w-full lg:w-[47.5rem] mx-auto my-6 stepper">
-          {steps.map((step, i) => {
-            const isActive = currentIndex === i;
-            const isComplete = i < currentIndex || complete;
+        <div className="flex justify-center">
+          <div className="flex justify-between mobile:w-72 sm:w-96 md:w-[40rem] mx-auto my-6 stepper">
+            {steps.map((step, i) => {
+              const isActive = currentIndex === i;
+              const isComplete = i < currentIndex || complete;
 
-            return (
-              <div key={step.path} className={`step-item ${isActive ? "active" : ""} ${isComplete ? "complete" : ""}`}>
+              return (
                 <div
-                  className={`
+                  key={step.path}
+                  className={`step-item ${isActive ? "" : ""} ${isComplete ? "" : ""}`}
+                >
+                  <div
+                    className={`
                     step
-                    border
+                    border-border
                     flex items-center justify-center
-                    w-16 h-16
+                    w-14 h-14
                     rounded-full
-                    font-semibold
+                    font-normal
                     z-10
-                    ${isActive ? "bg-primary border-2 border-primary text-inverse" : "bg-white"}
-                    ${isComplete ? "bg-primary text-foreground border-border" : ""}
-                  `}
-                >
-                  {isComplete ? (
-                    <FaCheck className="text-xl font-medium" />
-                  ) : (
-                    i + 1
-                  )}
-                </div>
+                    border
+                     ${
+                       currentIndex === i
+                         ? stepClasses.active
+                         : i < currentIndex
+                           ? stepClasses.completed
+                           : stepClasses.inactive
+                     }
+    `}
+                  >
+                    {isComplete ? (
+                      <FaCheck className="text-xl font-medium" />
+                    ) : (
+                      i + 1
+                    )}
+                  </div>
 
-                <p
-                  className={`mt-2 font-medium text-lg ${
-                    isComplete ? "text-white" : "text-foreground"
-                  }`}
-                >
-                  {step.label}
-                </p>
-              </div>
-            );
-          })}
+                  <p
+                    className={`mt-2 text-xs md:text-base ${
+                      isActive ? "text-primary font-semibold" : "text-muted font-medium"
+                    }`}
+                  >
+                    {step.label}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="flex flex-col md:mx-0 mx-4 h-full justify-between items-center">
-          <Outlet />
+          <Outlet
+            context={{
+              formData,
+              setFormData,
+              handleFormChange,
+              error,
+              setError,
+            }}
+          />
 
           <Button
             variant="primary"

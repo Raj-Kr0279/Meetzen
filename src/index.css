@@ -33,9 +33,6 @@
   background-color: #49556d;
   /* Customize the scrollbar thumb */
 }
-span {
-  display: inline-block;
-}
 textarea {
   resize: none;
 }

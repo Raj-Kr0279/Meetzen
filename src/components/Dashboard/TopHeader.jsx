@@ -63,7 +63,7 @@ const TopHeader = ({
           >
             <FiMessageSquare className="text-lg" />
             <span className="hidden text-sm font-medium md:inline">Chat</span>
-            <span className="hidden h-6 min-w-6 items-center justify-center rounded-full bg-primary px-1.5 text-xs font-semibold text-white md:inline-flex">
+            <span className="hidden h-6 min-w-6 items-center justify-center rounded-full bg-primary px-1.5 text-xs font-semibold text-white md:flex">
               5
             </span>
           </button>

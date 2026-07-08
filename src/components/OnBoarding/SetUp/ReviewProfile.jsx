@@ -2,56 +2,11 @@ import React, { useState } from "react";
 import profile from "../../../Assets/profileDummy.png";
 import { AiOutlinePlus } from "react-icons/ai";
 import InputField from "../../ui/InputField";
+import { useOutletContext } from "react-router-dom";
 
 const ReviewProfile = ({ next, prev }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    number: "",
-    bio: "",
-    profile_image: null,
-  });
-  const [error, setError] = useState({});
-  const [profileImage, setProfileImage] = useState(null); // Initialize as null
-  const validate = () => {
-    const e = {};
-    if (formData.name.trim() === "") {
-      e.name = "Name is mandatory";
-    }
-    if (!formData.number) {
-      e.number = "Phone number is required";
-    } else if (!/^\d+$/.test(formData.number)) {
-      e.number = "Phone number must contain only digits";
-    } else if (formData.number.length !== 10) {
-      e.number = "Phone number must be 10 digits";
-    }
-
-    if (formData.bio.trim().length < 10) {
-      e.bio = "Enter about yourself";
-    }
-    if (!formData.profile_image) {
-      e.profile = "set a profile photo please";
-    }
-
-    return e;
-  };
-  const fileChange = (e) => {
-    if (e.target.files && e.target.files[0]) {
-      // Ensure a file is selected
-      setProfileImage(URL.createObjectURL(e.target.files[0]));
-    }
-  };
-
-  const handleFormChange = (e) => {
-    const value = e.target.value;
-    const err = validate();
-    setFormData((prev) => ({ ...prev, [e.target.name]: value }));
-    if (Object.keys(err).length) {
-      setError(err);
-    } else {
-      setError(() => ({ ...error, [e.target.name]: "" }));
-    }
-  };
-  console.log(error, "dfajsdkfhkjdhferrir");
+const {formData, handleFormChange, error, setError} = useOutletContext();
+console.log(formData, "form in review")
 
   return (
     <>
@@ -60,27 +15,27 @@ const ReviewProfile = ({ next, prev }) => {
           <div className="my-6 self-start tab:my-0">
             <label
               htmlFor="profile_pic"
-              className="w-[110px] tab:w-[300px] overflow-hidden inline-block h-[110px] tab:h-[300px] relative cursor-pointer"
+              className="w-[210px] tab:w-[300px] rounded-full overflow-hidden inline-block h-[210px] tab:h-[300px] relative cursor-pointer"
             >
-              <div className="absolute overflow-hidden w-[110px] tab:w-[300px] h-[110px] tab:h-[300px] top-0 left-0 rounded-full">
+              <div className="absolute overflow-hidden w-[210px] tab:w-[300px] h-[210px] tab:h-[300px] top-0 left-0 rounded-full">
                 <img
-                  src={profileImage || profile}
+                  src={profile}
                   alt="profile"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bg-prof-overlay h-1/2 bottom-0 left-0 flex flex-col w-full items-center justify-center font-semibold text-white gap-2">
-                  <AiOutlinePlus className=" text-mediumSubheading tab:text-heading font-semibold" />
-                  <p className="text-small font-medium tab:text-medium">
+                <div className="absolute bg-gray-900/80 h-1/2 bottom-0 left-0 flex flex-col w-full items-center justify-center font-semibold text-white gap-2">
+                  <AiOutlinePlus className=" text-xl tab:text-heading font-normal" />
+                  <p className="text-xs font-medium tab:text-medium">
                     Change Image
                   </p>
                 </div>
               </div>
               <input
                 type="file"
-                name="profile_pic"
-                className="hidden"
-                id="profile_pic"
-                onChange={fileChange}
+                name="profile"
+                className="absolute inset-2.5 opacity-0"
+                id="profile"
+                onChange={handleFormChange}
               />
             </label>
           </div>
@@ -103,9 +58,9 @@ const ReviewProfile = ({ next, prev }) => {
             /> */}
               <InputField
                 type="text"
-                label="login_id"
+                label="Name"
                 placeholder="Enter full name"
-                name="login_id"
+                name="name"
                 className=""
                 onChange={handleFormChange}
                 error={error.name}

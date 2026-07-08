@@ -47,11 +47,12 @@ const stepperStyles = `
 `;
 
 
-// Backwards-compat wrapper kept temporarily; new routing uses SetUpLayout + nested routes.
+
 const SetUp = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const navigate = useNavigate();
   const steps = ["review-profile", "language", "timezone"];
+
   return (
     <>
       <style>{stepperStyles}</style>
