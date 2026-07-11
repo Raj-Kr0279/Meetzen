@@ -4,9 +4,28 @@ import RightColumn from "../RightColumn";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Navigate, useNavigate } from "react-router-dom";
 import OnboardingHeader from "../OnboardingHeader";
+import { useDispatch, useSelector } from "react-redux";
+import { useGetCompaniesListQuery } from "../../../features/company/companyApi";
+import { setSelectedCompany } from "../../../features/company/companySlice";
+import Button from "../../ui/Button";
 
 const SwitchCompany = () => {
+  const {
+    data: companies,
+    error,
+    isSuccess,
+    isLoading,
+    refetch,
+  } = useGetCompaniesListQuery(undefined, { refetchOnMountOrArgChange: true });
+  const dispatch = useDispatch();
+  const { selectedCompany } = useSelector((state) => state.company);
   const navigate = useNavigate();
+  const handleCompanySelect = (company) => {
+    
+  };
+  const handleSelectCompany = (company)=>{
+dispatch(setSelectedCompany(company));
+  }
   return (
     <>
       <OnboardingHeader
@@ -14,65 +33,29 @@ const SwitchCompany = () => {
         subHeading="Select a company"
       />
 
-      <div className="border border-transparent mt-12 rounded-2xl overflow-hidden">
-        <div className="flex border-b px-6 py-3 gap-4 items-center bg-hover-bg">
-          <div className="bg-green-500 w-8 h-8 flex justify-center items-center rounded-full text-white">
-            <span>P</span>
-          </div>
-          <div>
-            <p className="text-foreground font-semibold leading-none text-base">
-              proCS
-            </p>
-            <span className="text-light font-medium text-smallCaption">
-              email@gmail.com
-            </span>
-          </div>
+      <div className="border border-transparent rounded-2xl h-60">
+        <div className="overflow-auto mb-5 border-border border rounded-lg h-full">
+          {companies?.map((company) => (
+            <button
+              onClick={()=>handleSelectCompany(company)}
+              key={company?.companyId}
+              className={`${company?.companyId === selectedCompany?.companyId ? "bg-primary text-white" : "hover:bg-surface-hover" } w-full flex border-b cursor-pointer  border-border px-6 py-3 gap-4 items-center bg-hover-bg transition-colors`}
+            >
+              <div className={`${company?.companyId === selectedCompany?.companyId ? "bg-warning" : "bg-primary text-white"} w-8 h-8 flex justify-center items-center rounded-full `}>
+                <span>{company.name[0]}</span>
+              </div>
+              <div className="flex gap-1 flex-col items-start">
+                <p className={`${company?.companyId === selectedCompany?.companyId ? "" : "text-foreground"}  font-medium leading-none text-sm`}>
+                  {company?.name}
+                </p>
+                <span className={`${company?.companyId === selectedCompany?.companyId ? "" : "text-subtle"}  font-normal text-xs`}>
+                  {company?.email}
+                </span>
+              </div>
+            </button>
+          ))}
         </div>
-        <div className="flex border-b px-6 py-3 gap-4 items-center ">
-          <div className="bg-purple-500 w-8 h-8 flex justify-center items-center rounded-full text-white">
-            <span>N</span>
-          </div>
-          <div>
-            <p className="text-foreground font-semibold leading-none text-base">
-              NIIT
-            </p>
-            <span className="text-light font-medium text-smallCaption">
-              j******4
-            </span>
-          </div>
-        </div>
-        <div className="flex border-b px-6 py-3 gap-4 items-center ">
-          <div className="bg-primary w-8 h-8 flex justify-center items-center rounded-full text-white">
-            <span>M</span>
-          </div>
-          <div>
-            <p className="text-foreground font-semibold leading-none text-base">
-              MSTC
-            </p>
-            <span className="text-light font-medium text-smallCaption">
-              email@gmail.com
-            </span>
-          </div>
-        </div>
-        <div className="flex border-b px-6 py-3 gap-4 items-center ">
-          <div className="bg-red-500 w-8 h-8 flex justify-center items-center rounded-full text-white">
-            <span>J</span>
-          </div>
-          <div>
-            <p className="text-foreground font-semibold leading-none text-base">
-              Jubiliant
-            </p>
-            <span className="text-light font-medium text-smallCaption">
-              email@gmail.com
-            </span>
-          </div>
-        </div>
-        <button
-          onClick={() => navigate("/")}
-          className="bg-primary px-6 w-full text-white py-4 flex gap-4 items-center"
-        >
-          <AiOutlinePlus /> Add other company
-        </button>
+    <Button variant="primary" classNames="w-full" label="Go to Login" onClick={()=>navigate("/login")}/>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LeftColumn from "../LeftColumn";
 import RightColumn from "../RightColumn";
 import {
@@ -12,16 +12,33 @@ import swap from "../../../Assets/swapIcon.svg";
 import { useNavigate } from "react-router-dom";
 import InputField from "../../ui/InputField";
 import OnboardingHeader from "../OnboardingHeader";
+import Button from "../../ui/Button";
+import { useGetCompanyByIdMutation } from "../../../features/company/companyApi";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedCompany } from "../../../features/company/companySlice";
 const CompanyRegistration = () => {
-  const [inputError, setInputError] = useState(true);
+  const [inputError, setInputError] = useState("");
   const [companyCode, setCompanyCode] = useState("");
+  const [getCompanyById, { data: company, error, isLoading, isSuccess }] =
+    useGetCompanyByIdMutation();
+  const { selectedCompany } = useSelector((state) => state.company);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(companyCode, "coddddd");
+
+  const handleSubmit =  (e) => {
+    e.preventDefault()
+    getCompanyById(companyCode)
+      .unwrap()
+      .then((result) => {dispatch(setSelectedCompany(result)); setInputError(""); setTimeout(() => {
+        navigate("/login")
+      }, 2000);})
+      .catch((error) => setInputError("company not found"));
+      setInputError("")
   };
+console.log(selectedCompany, "silly")
+  
   const handleChange = (e) => {
-    const value = e.target.value
+    const value = e.target.value;
     setCompanyCode(value);
     if (!value) {
       setInputError("Enter company code");
@@ -29,40 +46,17 @@ const CompanyRegistration = () => {
       setInputError("Company code too short");
     } else setInputError("");
   };
+
   return (
     <>
-    <OnboardingHeader heading="Company Code" subHeading="Enter your company code received on your e-mail"/>
+      <OnboardingHeader
+        heading="Company Code"
+        subHeading="Enter your company code received on your e-mail"
+      />
       <form onSubmit={handleSubmit} className="w-full">
-        <div className="flex flex-col gap-2 pb-8">
-          {/* <label
-            htmlFor="company_code"
-            className="font-semibold flex items-center text-foreground text-normal"
-          >
-            Enter Company Registration Code{" "}
-            <span className="text-error pl-1">*</span>
-            <a className="my-anchor-element inline-block ml-2 cursor-pointer">
-              {" "}
-              <AiOutlineInfoCircle />
-            </a>
-          </label>
-          <input
-            type="text"
-            name="company_code"
-            id="company_code"
-            className={`${
-              !inputError ? "border-error" : "border"
-            } border-1 text-base  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md`}
-            placeholder="Email code"
-          />
-          {inputError && (
-            <div className="flex gap-2 items-center text-smallCaption text-error">
-              <AiOutlineWarning className="text-smallCaption" />
-              <span className="">Please enter a valid code</span>
-            </div>
-          )} */}
-
+        <div className="flex flex-col gap-2 pb-4">
           <InputField
-            label="Enter Company Registration Code"
+            label={`"Enter Company Registration Code"`}
             type="text"
             error={inputError}
             className=""
@@ -71,13 +65,29 @@ const CompanyRegistration = () => {
             placeholder="your company code"
           />
         </div>
-        <button
-          onClick={() => navigate("/login")}
-          disabled={false}
-          className="bg-primary py-3 w-full text-white rounded-md"
-        >
-          Continue
-        </button>
+         {selectedCompany && <div
+              className={`w-full flex cursor-pointer bg-accent/80 text-surface rounded-full px-6 py-3 mb-4 gap-4 items-center bg-hover-bg transition-colors`}
+            >
+              <div className={`w-8 h-8 flex justify-center items-center rounded-full `}>
+                <span>{selectedCompany?.name?.[0]}</span>
+              </div>
+              <div className="flex gap-1 flex-col items-start">
+                <p className={`font-medium leading-none text-sm`}>
+                  {selectedCompany?.name}
+                </p>
+                <span className={`font-normal text-xs`}>
+                  {selectedCompany?.email}
+                </span>
+              </div>
+            </div>}
+
+        <Button
+          label={`${isSuccess ? "Redirecting..." : "Continue"}`}
+          variant="primary"
+          onClick={handleSubmit}
+          disabled={inputError !== ""}
+          classNames="w-full"
+        />
 
         <div className="flex justify-center border-b border-theme-color w-max mx-auto pt-6 items-center">
           <img src={swap} alt="" />
@@ -89,6 +99,9 @@ const CompanyRegistration = () => {
           </span>
         </div>
       </form>
+      <div>
+        
+      </div>
 
       <Tooltip
         style={{

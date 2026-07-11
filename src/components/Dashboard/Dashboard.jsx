@@ -17,6 +17,7 @@ import ActionablesSummary from "./ActionablesSummary";
 import MeetingCard from "../ui/MeetingCard";
 import { formatDateTime } from "../../utils/dateFormatter";
 import { RiNumbersFill } from "react-icons/ri";
+import MeetingFilter from "../ui/MeetingFilter";
 const Dashboard = () => {
   const [notifFilterValue, setNotifFilterValue] = useState("notif");
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ const Dashboard = () => {
       <div className="flex flex-col w-full">
         <div className="highlight__wrp md:min-h-120 overflow-hidden border border-border w-full rounded-xl p-4 card">
           <div className="flex highlight_switcher justify-between items-center">
-            <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-border rounded-md whitespace-nowrap h-12 place-items-center">
+            {/* <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-border rounded-md whitespace-nowrap h-12 place-items-center">
               <p
                 onClick={() => setMeetingFilterValue("all")}
                 className={`${meetingFilterValue === "all" ? "bg-selected" : "text-foreground bg-white"} w-full flex items-center justify-center h-full px-4`}
@@ -60,7 +61,8 @@ const Dashboard = () => {
               >
                 {`Recent(${demoData.meetings.filter((i) => i.status === "recent").length})`}
               </p>
-            </div>
+            </div> */}
+            <MeetingFilter isFilter={false}/>
             <span
               onClick={() => {
                 setMeetingFilterValue("all");

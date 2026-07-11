@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { languages } from "../../../utils/timeZones";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { editUser } from "../../../features/user/userSlice";
 
 const SelectLanguage = ({ next, prev }) => {
   const [selected, setSelected] = useState("english");
-
+  const { language } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 max-w-7xl w-full mx-auto place-items-center gap-x-6 gap-y-4 mt-4 mb-16">
       {languages.map(({ value, label, native }) => {
-        const isSelected = selected === value;
+        const isSelected = language === value;
         const cardClass = isSelected
           ? "bg-primary text-inverse"
           : "border-border border text-foreground";
@@ -24,7 +25,9 @@ const SelectLanguage = ({ next, prev }) => {
               name="language"
               value={value}
               checked={isSelected}
-              onChange={(e) => setSelected(e.target.value)}
+              onChange={(e) =>
+                dispatch(editUser({ field: "language", value: e.target.value }))
+              }
               className="hidden"
             />
 

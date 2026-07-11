@@ -14,6 +14,9 @@ import FooterText from "../../FooterText/FooterText";
 import OnboardingHeader from "../OnboardingHeader";
 import InputField from "../../ui/InputField";
 import Button from "../../ui/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { useLoginMutation } from "../../../features/user/userApi";
+import { setUserDetails } from "../../../features/user/userSlice";
 
 const Login = () => {
   const INITIAL = { user: "", password: "" };
@@ -23,20 +26,25 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [faceidModal, setFaceidModal] = useState(false);
   const navigate = useNavigate();
-
+ const {selectedCompany} = useSelector(state => state.company);
+ const [login, {error, data, isSuccess, isLoading}] = useLoginMutation();
+const dispatch = useDispatch()
   const validate = () => {
     const e = {};
-    !form.user.trim() && (e.user = "Username is required");
+    if (!form.email.trim()) {
+      e.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      e.email = "Invalid email address";
+    }
     !form.password.trim() && (e.password = "Please enter your password");
     return e;
   };
-  console.log(form, "shorma");
   const handleChange = (e) => {
     console.log(e, "check e")
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     setErrors(() => ({ ...errors, [e.target.name]: "" }));
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) {
@@ -44,8 +52,17 @@ const Login = () => {
       console.error("faksdfhkasdhfj");
       return;
     }
-    console.log("Form submitted successfully:", form);
-    navigate("/set-up");
+    try {
+    const result = await login({...form, companyId: selectedCompany?.companyId})
+    console.log(result, "resulted")
+    dispatch(setUserDetails(result?.data));
+    navigate('/set-up');
+    } catch (error) {
+      console.log(error)
+    }
+   
+
+    // navigate('/home/dashboard');
   };
   const handleViewPassToggle = () => {
     setShowPassword(!showPassword);
@@ -53,17 +70,19 @@ const Login = () => {
 
   return (
     <div>
-      <OnboardingHeader heading="Login" subHeading= "Login with your credentials"/>
+      {isSuccess && <h1 className="text-7xl">Success</h1>}
+      <OnboardingHeader heading={"Login"} subHeading= {"Login with your credentials"}/>
+      <span className="text-xs text-accent font-medium">{selectedCompany?.name}</span>
       <form onSubmit={handleSubmit} className="w-full">
         <div className="flex flex-col gap-2 pb-4">
           <InputField
-            label="Login ID"
-            name="user"
+            label="Login with your E-mail"
+            name="email"
             type="text"
-            placeholder="Enter your user name"
+            placeholder="Enter your email ID"
             onChange={handleChange}
-            error={errors.user}
-            value={form.user}
+            error={errors.email}
+            value={form.email}
           />
         </div>
 

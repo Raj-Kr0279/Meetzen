@@ -1,6 +1,17 @@
 const express = require("express")
-const app = express()
-app.use(express.json())
+const cors = require("cors")
+const mongoose = require("mongoose")
+require('dotenv').config();
+const companyRoutes = require("./routes/company");
+const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.error('MongoDB connection error:', err));
 app.get("/",(req, res)=>{
 try {
    res.send("hello-world") 
@@ -9,7 +20,11 @@ try {
 }
 })
 
+app.use('/api/company', companyRoutes)
+app.use('/api/auth', authRoutes)
+app.use('/api/user', userRoutes)
+
 const port = 5000;
 app.listen(port, ()=>{
-    console.log("server running")
+    console.log("server running" + port)
 })

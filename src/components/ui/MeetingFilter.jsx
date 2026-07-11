@@ -8,6 +8,7 @@ const MeetingFilter = ({
   onYearChange,
   committee,
   onCommitteeChange,
+  isFilter
 }) => {
   const yearOptions = [
     { value: 'all', label: 'All' },
@@ -59,7 +60,7 @@ const MeetingFilter = ({
         </div>
       </div>
 
-      <div className="grid grid-cols-2 items-center gap-3">
+      {isFilter && <div className="grid grid-cols-2 items-center gap-3">
         <InputField
           type="select"
           label="Filter Year:"
@@ -78,7 +79,7 @@ const MeetingFilter = ({
           value={committee}
           onChange={(e) => onCommitteeChange(e.target.value)}
         />
-      </div>
+      </div>}
     </div>
   )
 }

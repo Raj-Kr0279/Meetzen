@@ -5,6 +5,7 @@ import divider from "../../../Assets/divider.png";
 import dividerComplete from "../../../Assets/dividerComplete.png";
 import Button from "../../ui/Button";
 import FooterText from "../../FooterText/FooterText";
+import { useSelector } from "react-redux";
 
 const stepperStyles = `
   .stepper {

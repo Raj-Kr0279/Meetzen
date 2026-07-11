@@ -3,10 +3,14 @@ import profile from "../../../Assets/profileDummy.png";
 import { AiOutlinePlus } from "react-icons/ai";
 import InputField from "../../ui/InputField";
 import { useOutletContext } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { editUser } from "../../../features/user/userSlice";
 
 const ReviewProfile = ({ next, prev }) => {
 const {formData, handleFormChange, error, setError} = useOutletContext();
-console.log(formData, "form in review")
+const {name, phone, bio} = useSelector(state=>state.user);
+const dispatch = useDispatch()
+console.log(name, "form in review")
 
   return (
     <>
@@ -42,98 +46,42 @@ console.log(formData, "form in review")
 
           <form className="w-full">
             <div className="flex flex-col gap-2 pb-4">
-              {/* <label
-              htmlFor="login_id"
-              className="font-semibold flex items-center text-foreground text-normal"
-            >
-              Full Name
-              <span className="text-error pl-1">*</span>
-            </label>
-            <input
-              type="text"
-              name="login_id"
-              id="login_id"
-              className={`${inputError ? 'border-error' : "border-border-input"} placeholder:text-placeholder w-full font-normal border-1 text-xs  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md`}
-              placeholder="Enter full name"
-            /> */}
               <InputField
                 type="text"
                 label="Name"
+                value={name}
                 placeholder="Enter full name"
                 name="name"
                 className=""
-                onChange={handleFormChange}
+                onChange={(e)=> dispatch(editUser({field: "name", value: e.target.value}))}
                 error={error.name}
               />
-              {/* {inputError && (
-              <div className="flex gap-2 items-center text-smallCaption text-error">
-                <AiOutlineWarning className="text-smallCaption" />
-                <span className="">Please enter a valid login ID</span>
-              </div>
-            )} */}
             </div>
 
             <div className="flex flex-col gap-2 pb-4">
-              {/* <label
-              htmlFor="whasapp"
-              className="font-semibold flex items-center text-foreground text-normal"
-            >
-              Mobile Number (WhatsApp Preferred)
-              <span className="text-error pl-1">*</span>
-            </label>
-            <input
-              type="whasapp"
-              name="whasapp"
-              id="whasapp"
-              className={`${inputError ? 'border-error' : "border-border-input"} w-full placeholder:text-placeholder font-normal border-1 text-xs  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md`}
-              placeholder="Enter Whatsapp number"
-            /> */}
-              {/* {inputError && (
-              <div className="flex gap-2 items-center text-smallCaption text-error">
-                <AiOutlineWarning className="text-smallCaption" />
-                <span className="">Please enter a valid login ID</span>
-              </div>
-            )} */}
               <InputField
                 type="text"
                 label="Mobile Number (Whatsapp Preferred)"
-                name="number"
+                name="phone"
+                value={phone}
                 placeholder="Enter Whatsapp number"
                 className=""
-                onChange={handleFormChange}
+                onChange={(e)=> dispatch(editUser({field: "phone", value: e.target.value}))}
                 error={error.number}
               />
             </div>
 
             <div className="flex flex-col gap-2 pb-4">
-              {/* <label
-              htmlFor="bio"
-              className="font-semibold flex items-center text-foreground text-normal"
-            >
-              Bio
-              <span className="text-error pl-1">*</span>
-            </label>
-            <textarea
-              name="bio"
-              id="bio"
-              className={`w-full h-[80px] tab:h-[135px] placeholder:text-placeholder font-normal border-1 text-xs  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md`}
-              placeholder=""
-            /> */}
               <InputField
                 type="textarea"
                 label="Bio"
                 name="bio"
+                value={bio}
                 className=""
-                onChange={handleFormChange}
+                onChange={(e)=> dispatch(editUser({field: "bio", value: e.target.value}))}
                 error={error.bio}
                 placeholder="Enter something about yourself here..."
               />
-              {/* {inputError && (
-              <div className="flex gap-2 items-center text-smallCaption text-error">
-                <AiOutlineWarning className="text-smallCaption" />
-                <span className="">Please enter a valid login ID</span>
-              </div>
-            )} */}
             </div>
           </form>
         </div>

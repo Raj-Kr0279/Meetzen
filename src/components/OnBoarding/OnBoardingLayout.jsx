@@ -1,7 +1,7 @@
-import React from "react";
-import LeftColumn from "../LeftColumn";
+import React, { Suspense } from "react";
+import LeftColumn from "./LeftColumn";
 import { Outlet, useOutletContext } from "react-router-dom";
-import FooterText from "../../FooterText/FooterText";
+import FooterText from "../FooterText/FooterText";
 
 const OnBoardingLayout = () => {
 
@@ -13,7 +13,9 @@ const OnBoardingLayout = () => {
           <div className="flex-col flex md:flex-row p-4 gap-12  md:gap-8">
             <LeftColumn />
             <div className="flex-1">
+              <Suspense fallback={()=><p>loading....</p>}>
               <Outlet />
+              </Suspense>
             </div>
           </div>
         </div>

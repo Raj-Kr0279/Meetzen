@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../Sidebar/Sidebar";
 import TopHeader from "./TopHeader";
@@ -96,7 +96,9 @@ const HomeLayout = () => {
             setIsSidebarOpen={setIsSidebarOpen}
           />
           <main className="min-w-0 min-h-0 flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-6">
+            <Suspense fallback={<p>loading....</p>}>
             <Outlet />
+            </Suspense>
           </main>
         </div>
       </div>
