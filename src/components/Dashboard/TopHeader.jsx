@@ -5,6 +5,7 @@ import { MdArrowBackIosNew, MdTune } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa";
 import prof from "../../Assets/profileDummy.png";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const TopHeader = ({
   activeOverlay,
@@ -12,6 +13,7 @@ const TopHeader = ({
   setIsSidebarOpen,
 }) => {
   const navigate = useNavigate();
+  const{name,role}=useSelector(state=>state.user)
 
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-surface/95 backdrop-blur">
@@ -96,8 +98,8 @@ const TopHeader = ({
           >
             <img src={prof} className="h-10 w-10 rounded-full" alt="Profile" />
             <div className="ml-3 text-left">
-              <div className="text-sm font-medium text-foreground">John Doe</div>
-              <div className="text-xs text-subtle">President</div>
+              <div className="text-sm font-medium text-foreground">{name}</div>
+              <div className="text-xs text-subtle">{role}</div>
             </div>
             <FaAngleDown className="ml-3 text-subtle" />
           </button>

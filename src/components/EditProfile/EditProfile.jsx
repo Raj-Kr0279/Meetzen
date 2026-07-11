@@ -8,15 +8,17 @@ import { FiTrash2 } from "react-icons/fi";
 import PageHeading from "../PageHeading";
 import InputField from "../ui/InputField";
 import { languages, TIME_ZONES } from "../../utils/timeZones";
+import { useSelector } from "react-redux";
 
 const EditProfile = () => {
+  const user =useSelector(state=>state.user)
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    name: "",
-    number: "",
-    bio: "",
-    language: "",
-    timezone: "",
+    name: user.name,
+    phone: user.phone,
+    bio: user.bio,
+    language: user.language,
+    timezone: user.timezone,
   });
 
   const handleInputChange = (e) => {
@@ -79,9 +81,9 @@ const EditProfile = () => {
             />
             <InputField
               label="Enter your number"
-              name="number"
+              name="phone"
               type="text"
-              value={form.number}
+              value={form.phone}
               onChange={handleInputChange}
             />
             <InputField
