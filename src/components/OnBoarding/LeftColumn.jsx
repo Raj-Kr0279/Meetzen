@@ -4,7 +4,7 @@ import meetzen from '../../assets/Meetzen.png'
 const LeftColumn = () => {
   return (
     <div className='flex-1 flex justify-center items-center'>
-      <div className=''>
+      <div className='flex flex-col items-center justify-center'>
          <img src={meetzen} className='w-40 mx-auto' alt="" />
          <h1 className=' text-meetzen-secondary text-4xl md:text-5xl font-bold font-moirai'>
          MEET<span className='text-muted'>ZEN</span>
