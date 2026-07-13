@@ -1,5 +1,5 @@
 import React from 'react'
-import meetzen from '../../Assets/meetzen.png'
+import meetzen from '../../Assets/Meetzen.png'
 
 const LeftColumn = () => {
   return (

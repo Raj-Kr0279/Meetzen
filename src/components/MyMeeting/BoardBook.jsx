@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/meetzen.png";
+import logo from "../../assets/Meetzen.png";
 import { useNavigate } from "react-router-dom";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";

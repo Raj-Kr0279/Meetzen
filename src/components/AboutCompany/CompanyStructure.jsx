@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from "../../assets/meetzen.png";
+import meetzen from "../../assets/Meetzen.png";
 import prof from '../../assets/profileDummy.png'
 import { BsTriangleFill } from 'react-icons/bs';
 import { FaAngleDown } from 'react-icons/fa';
@@ -25,7 +25,7 @@ const CompanyStructure = () => {
     return (
         <>
             <div className="flex items-center gap-8 pb-8">
-                <img src={logo} className='w-[170px] h-[170px] bg-white rounded-md' alt="" />
+                <img src={meetzen} className='w-[170px] h-[170px] bg-white rounded-md' alt="" />
                 <div>
                     <h1 className='text-memberCardHeader text-2xl font-semibold pb-2'>Brief Introduction</h1>
                     <p className='text-gray50 font-normal text-base leading-loose'>Vel nunc ut pulvinar eget elit enim neque, in sed. Facilisi ultrices in sed vitae, dolor. Nibh at et eget massa in orci, scelerisque tempor. Penatibus fermentum in in id dolor faucibus felis ac eget. Orci facilisis risus risus viverra. Iaculis dapibus purus, diam ullamcorper fames sit placerat id egestas. In sit egestas lobortis enim facilisis. Id turpis turpis ligula aenean. Vel nunc ut pulvinar eget elit enim neque, in sed. Facilisi ultrices in sed vitae, dolor. Nibh at et eget massa in orci, scelerisque tempor. Penatibus fermentum in in id dolor faucibus felis ac eget. </p>

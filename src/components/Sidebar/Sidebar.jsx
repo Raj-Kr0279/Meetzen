@@ -7,7 +7,7 @@ import {
   MdOutlineModeEditOutline,
 } from "react-icons/md";
 import { FiFileText, FiUsers } from "react-icons/fi";
-import meetzen from "../../Assets/meetzen.png";
+import meetzen from "../../Assets/Meetzen.png";
 import { AiOutlineFile, AiOutlineSearch } from "react-icons/ai";
 import { BiSupport } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
