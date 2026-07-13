@@ -10,9 +10,9 @@ import ForgotPassword from "./components/OnBoarding/ForgotPassword/ForgotPasswor
 import ResetPassword from "./components/OnBoarding/ResetPassword/ResetPassword";
 import OtpVerify from "./components/OnBoarding/OtpVefify/OtpVerify";
 import FingerPrintLogin from "./components/OnBoarding/FingerPrintLogin/FingerPrintLogin";
-import SetUpLayout from "./components/OnBoarding/SetUp/SetUpLayout";
-import SelectLanguage from "./components/OnBoarding/SetUp/SelectLanguage";
-import TimeZone from "./components/OnBoarding/SetUp/TimeZone";
+// import SetUpLayout from "./components/OnBoarding/SetUp/SetUpLayout";
+// import SelectLanguage from "./components/OnBoarding/SetUp/SelectLanguage";
+// import TimeZone from "./components/OnBoarding/SetUp/TimeZone";
 const Dashboard = lazy(() => import("./components/Dashboard/Dashboard"));
 // import MyMeeting from './components/MyMeeting/MyMeeting';
 import EditProfile from "./components/EditProfile/EditProfile";
@@ -50,7 +50,7 @@ const ViewFinalMinute = lazy(()=>import("./components/FinalMinutes/ViewFinalMinu
 const CircularResolutionResult = lazy(()=>import("./components/CircularResolution/CircularResolutionResult"));
 const CircularResolutionList = lazy(()=>import("./components/CircularResolution/CircularResolutionList"));
 import OnboardingHeader from "./components/OnBoarding/OnboardingHeader";
-const ReviewProfile = lazy(()=>import("./components/OnBoarding/SetUp/ReviewProfile"))
+// const ReviewProfile = lazy(()=>import("./components/OnBoarding/SetUp/ReviewProfile"))
 import AddCompanies from "./components/AddCompanies";
 import { MdLineAxis } from "react-icons/md";
 
@@ -123,12 +123,12 @@ function App() {
             <Route path="chat" element={<Chat />} />
           </Route>
 
-          <Route path="set-up" element={<SetUpLayout />}>
+          {/* <Route path="set-up" element={<SetUpLayout />}>
             <Route index element={<Navigate to="review-profile" replace />} />
             <Route path="review-profile" element={<ReviewProfile />} />
             <Route path="language" element={<SelectLanguage />} />
             <Route path="timezone" element={<TimeZone />} />
-          </Route>
+          </Route> */}
 
           <Route path="edit-profile" element={<EditProfile />} />
           <Route path="submit-feedback" element={<SubmitFeedback />} />

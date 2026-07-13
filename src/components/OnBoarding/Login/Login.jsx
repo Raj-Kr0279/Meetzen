@@ -56,7 +56,7 @@ const dispatch = useDispatch()
     const result = await login({...form, companyId: selectedCompany?.companyId}).unwrap()
     console.log(result, "resulted")
     dispatch(setUserDetails(result));
-    navigate('/set-up');
+    navigate('/home/dashboard');
     } catch (error) {
       console.log(error)
     }
