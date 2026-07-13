@@ -32,7 +32,7 @@ const CompanyRegistration = () => {
       .then((result) => {dispatch(setSelectedCompany(result)); setInputError(""); setTimeout(() => {
         navigate("/login")
       }, 2000);})
-      .catch((error) => setInputError("company not found"));
+      .catch((error) => setInputError("Something went wrong, please try later"));
       setInputError("")
   };
 console.log(selectedCompany, "silly")
@@ -56,7 +56,7 @@ console.log(selectedCompany, "silly")
       <form onSubmit={handleSubmit} className="w-full">
         <div className="flex flex-col gap-2 pb-4">
           <InputField
-            label={`"Enter Company Registration Code"`}
+            label="Enter Company Registration Code"
             type="text"
             error={inputError}
             className=""

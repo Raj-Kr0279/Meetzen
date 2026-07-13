@@ -19,7 +19,7 @@ import { useLoginMutation } from "../../../features/user/userApi";
 import { setUserDetails } from "../../../features/user/userSlice";
 
 const Login = () => {
-  const INITIAL = { user: "", password: "" };
+  const INITIAL = { email: "", password: "" };
   const [inputError, setInputError] = useState(false);
   const [form, setForm] = useState(INITIAL);
   const [errors, setErrors] = useState({});
@@ -31,9 +31,9 @@ const Login = () => {
 const dispatch = useDispatch()
   const validate = () => {
     const e = {};
-    if (!form.email.trim()) {
+    if (!form?.email?.trim()) {
       e.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form?.email)) {
       e.email = "Invalid email address";
     }
     !form.password.trim() && (e.password = "Please enter your password");
@@ -53,9 +53,9 @@ const dispatch = useDispatch()
       return;
     }
     try {
-    const result = await login({...form, companyId: selectedCompany?.companyId})
+    const result = await login({...form, companyId: selectedCompany?.companyId}).unwrap()
     console.log(result, "resulted")
-    dispatch(setUserDetails(result?.data));
+    dispatch(setUserDetails(result));
     navigate('/set-up');
     } catch (error) {
       console.log(error)
@@ -64,6 +64,7 @@ const dispatch = useDispatch()
 
     // navigate('/home/dashboard');
   };
+  console.log(form, "formwa")
   const handleViewPassToggle = () => {
     setShowPassword(!showPassword);
   };
@@ -101,12 +102,6 @@ const dispatch = useDispatch()
               handleViewPassToggle={handleViewPassToggle}
             />
           </div>
-          {/* {inputError && (
-              <div className="flex gap-2 items-center text-smallCaption text-error">
-                <AiOutlineWarning className="text-smallCaption" />
-                <span className="">Please enter a valid code</span>
-              </div>
-            )} */}
           <div className="flex w-full justify-between font-medium text-xs items-end">
             <span
               onClick={() => navigate("/")}
@@ -122,6 +117,7 @@ const dispatch = useDispatch()
             </span>
           </div>
         </div>
+        <p className={`${error ? "opacity-100 h-3" : "opacity-0 h-0"} text-sm text-red-500 transition-all ease-in-out`}>{error?.data?.message}</p>
         <Button
           label="Login"
           variant="primary"

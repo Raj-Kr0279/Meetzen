@@ -19,13 +19,13 @@ const MeetingCard = ({ meeting }) => {
   const navigate = useNavigate();
   return (
     <div
-      key={meeting.id}
+      key={meeting._id}
       className={`inner__card w-full px-4 p-6 rounded-xl border border-border`}
-      onClick={() => navigate(`/home/meeting-details/${meeting.id}`)}
+      onClick={() => navigate(`/home/meeting-details/${meeting._id}`)}
     >
       <div className="flex justify-between items-center">
         <p className="text-sm font-semibold text-primary tracking-[.04rem] uppercase leading-[1.1]">
-          {meeting.type}
+          {meeting.meetingType}
         </p>
         <span
           className={`${

@@ -17,6 +17,7 @@ import { demoData } from "../../demoData/demoData";
 import { formatDateTime } from "../../utils/dateFormatter";
 import MeetingCard from "../ui/MeetingCard";
 import MeetingFilter from "../ui/MeetingFilter";
+import { useGetMeetingsListQuery } from "../../features/meeting/meetingApi";
 
 const MyMeetingsList = () => {
   const navigate = useNavigate();
@@ -28,8 +29,8 @@ const MyMeetingsList = () => {
   const handleFilterSelection = (filter) => {
     setSelectedFilter(filter);
   };
-
-  const filteredMeetings = demoData.meetings.filter((m) => {
+ const { data: meetings, error, isLoading } = useGetMeetingsListQuery();
+  const filteredMeetings = meetings?.filter((m) => {
     const matchesStatus =
       selectedFilter === "all" ? true : m.status === selectedFilter;
 
@@ -62,7 +63,7 @@ const MyMeetingsList = () => {
         {/* meeting cards  */}
         <div className=" w-full overflow-scroll place-content-baseline h-[50rem] grid grid-cols-1 md:grid-cols-[repeat(auto-fit,_minmax(26.563rem,_1fr))] gap-4 place-items-center">
           {filteredMeetings.map((meeting) => (
-            <MeetingCard key={meeting.id} meeting={meeting} />
+            <MeetingCard key={meeting._id} meeting={meeting} />
           ))}
         </div>
       </div>

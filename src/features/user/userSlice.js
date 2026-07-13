@@ -25,22 +25,22 @@ const userSlice = createSlice({
         Object.assign(state, action.payload);
     }
   },
-  extraReducers: (builder) => {
-    builder
-      .addMatcher(
-        userApi.endpoints.getUser.matchFulfilled,
-        (state, action) => {
-          Object.assign(state, action.payload ?? {});
-        }
-      )
-      .addMatcher(
-        userApi.endpoints.editUser.matchFulfilled,
-        (state, action) => {
-          // If backend returns updated user, merge it.
-          Object.assign(state, action.payload ?? {});
-        }
-      );
-  },
+  // extraReducers: (builder) => {
+  //   builder
+  //     .addMatcher(
+  //       userApi.endpoints.getUser.matchFulfilled,
+  //       (state, action) => {
+  //         Object.assign(state, action.payload ?? {});
+  //       }
+  //     )
+  //     .addMatcher(
+  //       userApi.endpoints.editUser.matchFulfilled,
+  //       (state, action) => {
+  //         // If backend returns updated user, merge it.
+  //         Object.assign(state, action.payload ?? {});
+  //       }
+  //     );
+  // },
 });
 
 export const { editUser, setUserDetails } = userSlice.actions;

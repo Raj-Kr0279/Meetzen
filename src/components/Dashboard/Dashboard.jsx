@@ -18,13 +18,26 @@ import MeetingCard from "../ui/MeetingCard";
 import { formatDateTime } from "../../utils/dateFormatter";
 import { RiNumbersFill } from "react-icons/ri";
 import MeetingFilter from "../ui/MeetingFilter";
+import { useGetMeetingsListQuery } from "../../features/meeting/meetingApi";
 const Dashboard = () => {
   const [notifFilterValue, setNotifFilterValue] = useState("notif");
+  const { data: meetings, error, isLoading } = useGetMeetingsListQuery();
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
   const [isMeetingModal, setIsMeetingModal] = useState(false);
-  const [meetingFilterValue, setMeetingFilterValue] = useState("all");
+  const [selectedFilter, setSelectedFilter] = useState("all");
+  const [committee, setCommittee] = useState("all");
+
+  const filteredMeetings = meetings?.filter((m) => {
+    const matchesStatus =
+      selectedFilter === "all" ? true : m.status === selectedFilter;
+    return matchesStatus;
+  });
+
+    const handleFilterSelection = (filter) => {
+    setSelectedFilter(filter);
+  };
   const handleDateClick = (date) => {
     if (date) {
       const today = new Date();
@@ -62,33 +75,34 @@ const Dashboard = () => {
                 {`Recent(${demoData.meetings.filter((i) => i.status === "recent").length})`}
               </p>
             </div> */}
-            <MeetingFilter isFilter={false}/>
+            <MeetingFilter isFilter={false} selectedFilter={selectedFilter} onFilterSelection={handleFilterSelection}/>
             <span
               onClick={() => {
-                setMeetingFilterValue("all");
+                setSelectedFilter("all");
                 navigate("/home/my-meetings-list");
               }}
-               className="underline cursor-pointer text-primary text-sm text-accent"
+              className="underline cursor-pointer text-primary text-sm text-accent"
             >
               View all
             </span>
           </div>
           <div className="highlights__content_wrp max-h-[395px] overflow-y-scroll flex flex-col gap-2 mt-3">
-            {meetingFilterValue === "upcoming"
-              ? demoData.meetings
-                  .filter((item) => item.status === "upcoming")
-                  .map((meeting) => (
-                    <MeetingCard meeting={meeting} id={meeting.id} />
-                  ))
-              : meetingFilterValue === "recent"
-                ? demoData.meetings
-                    .filter((item) => item.status === "recent")
+            {meetings &&
+              (selectedFilter === "upcoming"
+                ? meetings
+                    .filter((item) => item.status === "upcoming")
                     .map((meeting) => (
                       <MeetingCard meeting={meeting} id={meeting.id} />
                     ))
-                : demoData.meetings.map((meeting) => (
-                    <MeetingCard meeting={meeting} id={meeting.id} />
-                  ))}
+                : selectedFilter === "recent"
+                  ? meetings
+                      .filter((item) => item.status === "recent")
+                      .map((meeting) => (
+                        <MeetingCard meeting={meeting} id={meeting.id} />
+                      ))
+                  : meetings.map((meeting) => (
+                      <MeetingCard meeting={meeting} id={meeting.id} />
+                    )))}
           </div>
         </div>
         <ActionablesSummary />
@@ -150,7 +164,9 @@ const Dashboard = () => {
             <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-gray-300 rounded-md whitespace-nowrap h-12 place-items-center">
               <p
                 className={`w-full flex items-center justify-center h-full px-4 ${
-                  notifFilterValue === "notif" ? "bg-selected" : "text-foreground bg-white"
+                  notifFilterValue === "notif"
+                    ? "bg-selected"
+                    : "text-foreground bg-white"
                 } w-full flex items-center justify-center h-full px-4`}
                 onClick={() => setNotifFilterValue("notif")}
               >
@@ -158,7 +174,9 @@ const Dashboard = () => {
               </p>
               <p
                 className={`w-full flex items-center justify-center h-full px-4 ${
-                  notifFilterValue === "chats" ? "bg-selected" : "text-foreground bg-white"
+                  notifFilterValue === "chats"
+                    ? "bg-selected"
+                    : "text-foreground bg-white"
                 } w-full flex items-center justify-center h-full px-4`}
                 onClick={() => setNotifFilterValue("chats")}
               >
@@ -170,7 +188,7 @@ const Dashboard = () => {
               onClick={() => {
                 if (notifFilterValue === "chats") {
                   navigate("/home/chat");
-                } else if (notifFilterValue === "notif"){
+                } else if (notifFilterValue === "notif") {
                   navigate("/home/notifications");
                 }
               }}
@@ -180,20 +198,24 @@ const Dashboard = () => {
           </div>
           <div className="flex flex-col overflow-scroll grow-1 gap-3 chat__wrapper">
             {notifFilterValue === "notif"
-              ? demoData.notifications.map((notif) => 
-                    <div key={notif.id} className="flex flex-col break-words bg-hover-bg border-l-3 border-accent p-2 border-theme-color">
-                      <h1 className="text-foreground text-sm font-normal">
-                        {notif.title}
-                      </h1>
-                      <span className="text-xs tracking-[.18px] pb-1.5 text-placeholder font-extralight">
-                       {notif.message}
-                      </span>
-                      <p className=" text-xs text-primary font-medium">
-                        {formatDateTime(notif.createdAt)}
-                      </p>
-                    </div>
-                )
-              : notifFilterValue === "chats" ? demoData.chats.map((chat) => (
+              ? demoData.notifications.map((notif) => (
+                  <div
+                    key={notif.id}
+                    className="flex flex-col break-words bg-hover-bg border-l-3 border-accent p-2 border-theme-color"
+                  >
+                    <h1 className="text-foreground text-sm font-normal">
+                      {notif.title}
+                    </h1>
+                    <span className="text-xs tracking-[.18px] pb-1.5 text-placeholder font-extralight">
+                      {notif.message}
+                    </span>
+                    <p className=" text-xs text-primary font-medium">
+                      {formatDateTime(notif.createdAt)}
+                    </p>
+                  </div>
+                ))
+              : notifFilterValue === "chats"
+                ? demoData.chats.map((chat) => (
                     <div key={chat.isToday} className="flex items-start">
                       <div className="relative w-10 h-10 shrink-0 mr-4">
                         <img
@@ -208,9 +230,7 @@ const Dashboard = () => {
                           <p className="text-foreground font-normal text-sm">
                             Brenda White
                           </p>
-                          <span className="font-medium text-xs">
-                            12:00
-                          </span>
+                          <span className="font-medium text-xs">12:00</span>
                         </div>
                         <span className="text-subtle text-xs text__content_dash">
                           Lorem ipsum dolor sit amet consectetur adipisicing
@@ -219,7 +239,8 @@ const Dashboard = () => {
                         </span>
                       </div>
                     </div>
-                )) : ""}
+                  ))
+                : ""}
           </div>
         </div>
       </div>
