@@ -1,128 +1,138 @@
-import React, { useState } from 'react';
-import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import { MdArrowBackIosNew } from 'react-icons/md';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { MdArrowBackIosNew } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import InputField from "../ui/InputField";
+import OnboardingHeader from "../OnBoarding/OnboardingHeader";
+import Button from "../ui/Button";
 
 const ChangePassword = () => {
-    const navigate = useNavigate()
-    const [showPassword, setShowPassword] = useState(false);
-    const [showNewPassword, setShowNewPassword] = useState(false);
-    const [showCnfPassword, setShowCnfPassword] = useState(false);
-    const [password, setPassword] = useState("");
-    const [newPassword, setNewPassword] = useState("")
-    const [cnfPassword, setCnfPassword] = useState("");
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState({
+    oldPassword: false,
+    newPassword: false,
+    confirmPassword: false,
+  });
+  const [passwordError, setPasswordError] = useState("");
+  const [form, setForm] = useState({
+    oldPassword: "",
+    newPassword: "",
+    confirmPassword: "",
+  });
+  const [terms, setTerms] = useState(false)
+  const validate = ({ newPassword, confirmPassword }) => {
+    const strongPassword =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(
+        newPassword,
+      );
 
-    const handleViewPassToggle = () => {
-        setShowPassword(!showPassword);
-    };
+    if (!strongPassword) {
+      setPasswordError("Weak password");
+      return;
+    }
 
-    const handleViewNewPasswordToggle = () => {
-        setShowNewPassword(!showNewPassword);
-    };
+    if (newPassword !== confirmPassword) {
+      setPasswordError("password not matching");
+      return;
+    }
 
-    const handleViewCnfPasswordToggle = () => {
-        setShowCnfPassword(!showCnfPassword);
-    };
+    setPasswordError("");
+  };
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+    const tempForm = { ...form, [name]: value };
+    validate(tempForm);
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+  const handleViewPassToggle = (field) => {
+    console.log(field, "field");
+    setShowPassword((prev) => ({ ...prev, [field]: !showPassword.field }));
+  };
+  const handleChangePassword = (e)=>{
+    e.preventDefault()
+    console.log("clicked")
+  }
+  const isDisabled =
+  !form.oldPassword ||
+  !form.newPassword ||
+  !form.confirmPassword ||
+  !!passwordError ||
+  !terms;
 
-    return (
-        <>
+  return (
+    <>
+      <OnboardingHeader
+        heading="Change Password"
+        subHeading="Change your password"
+      />
+      
+      <form onSubmit={handleChangePassword} className="w-full">
+        <div className="flex flex-col gap-2 pb-4">
+          <InputField
+            type="password"
+            label="Old Password"
+            name="oldPassword"
+            id="new_password"
+            value={form.oldPassword}
+            onChange={handleChange}
+            showPassword={showPassword.oldPassword}
+            handleViewPassToggle={() => handleViewPassToggle("oldPassword")}
+          />
+        </div>
+        <div className="flex flex-col gap-2 pb-4">
+          <InputField
+            type="password"
+            label="Confirm Password"
+            name="newPassword"
+            id="new_password"
+            value={form.newPassword}
+            onChange={handleChange}
+            showPassword={showPassword.newPassword}
+            handleViewPassToggle={() => handleViewPassToggle("newPassword")}
+          />
+        </div>
+        <div className="flex flex-col gap-2 pb-2">
+          <InputField
+            type="password"
+            label="Confirm Password"
+            name="confirmPassword"
+            id="confirm_password"
+            value={form.confirmPassword}
+            onChange={handleChange}
+            showPassword={showPassword.confirmPassword}
+            handleViewPassToggle={() => handleViewPassToggle("confirmPassword")}
+          />
+        </div>
+        {
+          <p
+            className={`${passwordError ? "opacity-100 h-6" : "opacity-0 h-0"} text-sm text-red-500 transition-all ease-in-out`}
+          >
+            {passwordError}
+          </p>
+        }
+        <p className="text-xs pb-2 text-foreground font-medium mb-2 ">
+        Password should contain at least 8 characters, one uppercase letter, one
+        lowercase letter, one number, and one special character
+      </p>
 
-<div className="flex fixed bg-white top-0 py-2 px-4 w-full justify-between items-center border-b">
-                <div className='flex items-center font-semibold text-primary cursor-pointer' onClick={() => navigate("/dashboard")}>
-                    <MdArrowBackIosNew className=' text-2xlX font-normal' />
-                    <span className=' text-lg font-medium'>Back</span>
-                </div>
-
-            </div>
-            <p className='text-foreground leading-[1.2] fixed top-2 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Change Password</p>
-            <form className="w-full max-w-[650px] max-h-[calc(100dvh-40px)] mt-16 overflow-hidden flex flex-col gap-4 mx-auto">
-                <div className="flex flex-col gap-2 pb-4">
-                    <label
-                        htmlFor="password"
-                        className="font-semibold flex items-center text-foreground text-normal"
-                    >
-                        Password
-                        <span className="text-error pl-1">*</span>
-                    </label>
-                    <div className="relative">
-                        <input
-                            type={showPassword ? 'text' : 'password'}
-                            name="password"
-                            id="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="border-border-input w-full placeholder:text-placeholder font-normal border-1 text-base  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md"
-                            placeholder="Enter password"
-                        />
-                        {showPassword ? (
-                            <AiOutlineEyeInvisible onClick={handleViewPassToggle} className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2" />
-                        ) : (
-                            <AiOutlineEye onClick={handleViewPassToggle} className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2" />
-                        )}
-                    </div>
-                </div>
-
-                <div className="flex flex-col gap-2 pb-4">
-                    <label
-                        htmlFor="newPassword"
-                        className="font-semibold flex items-center text-foreground text-normal"
-                    >
-                        New Password
-                        <span className="text-error pl-1">*</span>
-                    </label>
-                    <div className="relative">
-                        <input
-                            type={showNewPassword ? 'text' : 'password'}
-                            name="newPassword"
-                            id="newPassword"
-                            value={newPassword}
-                            onChange={(e) => setNewPassword(e.target.value)}
-                            className="border-border-input w-full placeholder:text-placeholder font-normal border-1 text-base  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md"
-                            placeholder="Enter new password"
-                        />
-                        {showNewPassword ? (
-                            <AiOutlineEyeInvisible onClick={handleViewNewPasswordToggle} className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2" />
-                        ) : (
-                            <AiOutlineEye onClick={handleViewNewPasswordToggle} className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2" />
-                        )}
-                    </div>
-                </div>
-
-                <div className="flex flex-col gap-2 pb-4">
-                    <label
-                        htmlFor="cnfPassword"
-                        className="font-semibold flex items-center text-foreground text-normal"
-                    >
-                        Confirm Password
-                        <span className="text-error pl-1">*</span>
-                    </label>
-                    <div className="relative">
-                        <input
-                            type={showCnfPassword ? 'text' : 'password'}
-                            name="cnfPassword"
-                            id="cnfPassword"
-                            value={cnfPassword}
-                            onChange={(e) => setCnfPassword(e.target.value)}
-                            className="border-border-input w-full placeholder:text-placeholder font-normal border-1 text-base  focus-within:border-dark focus-within:outline-none py-3 px-4 rounded-md"
-                            placeholder="Confirm password"
-                        />
-                        {showCnfPassword ? (
-                            <AiOutlineEyeInvisible onClick={handleViewCnfPasswordToggle} className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2" />
-                        ) : (
-                            <AiOutlineEye onClick={handleViewCnfPasswordToggle} className="absolute cursor-pointer text-light right-4 top-1/2 -translate-y-1/2" />
-                        )}
-                    </div>
-                </div>
-                <div className="accept_terms mt-12 flex items-center gap-2">
-                    <input type="checkbox" className='' name="" id="" style={{appearance: 'revert'}} />
-                    <span>I agree to the privacy policy & Terms of Service </span>
-                </div>
-                <button onClick={() => navigate("/")} disabled={false} className="bg-primary font-medium tracking-widest py-4 w-full text-white rounded-md">
-                    Change Password
-                </button>
-            </form>
-        </>
-    );
-}
+        <div className="accept_terms mb-2 flex items-center gap-2">
+          <input
+            type="checkbox"
+            className=""
+            value={terms}
+            name="terms"
+            id=""
+            onChange={()=>setTerms((prev)=>!prev)}
+            style={{ appearance: "revert" }}
+          />
+          <span className="text-xs text-muted">
+            I agree to the privacy policy & Terms of Service{" "}
+          </span>
+        </div>
+        <Button variant="primary" label="Change Password" disabled={isDisabled} classNames="w-full"/>
+      </form>
+    </>
+  );
+};
 
 export default ChangePassword;
