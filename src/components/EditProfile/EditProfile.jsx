@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdArrowBackIosNew, MdOutlineImage } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import prof from "../../Assets/profileDummy.png";
+import prof from "../../assets/profileDummy.png";
 import { FaAngleDown } from "react-icons/fa";
 import { FiTrash2 } from "react-icons/fi";
 import PageHeading from "../PageHeading";

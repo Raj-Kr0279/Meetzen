@@ -3,7 +3,7 @@ import { FiMenu, FiMessageSquare, FiSearch } from "react-icons/fi";
 import { AiOutlineBell } from "react-icons/ai";
 import { MdArrowBackIosNew, MdTune } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa";
-import prof from "../../Assets/profileDummy.png";
+import prof from "../../assets/profileDummy.png";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 

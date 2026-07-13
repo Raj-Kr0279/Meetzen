@@ -2,10 +2,10 @@ import React, { useRef, useState } from 'react'
 import { AiOutlineShareAlt } from 'react-icons/ai'
 import { BsFillTrashFill, BsFillTriangleFill, BsPlusLg, BsTrash } from 'react-icons/bs'
 import { FiFolder } from 'react-icons/fi'
-import pdf from '../../Assets/pdf.svg'
-import xls from '../../Assets/xls.svg'
-import ppt from '../../Assets/ppt.svg'
-import image from '../../Assets/image.svg'
+import pdf from '../../assets/pdf.svg'
+import xls from '../../assets/xls.svg'
+import ppt from '../../assets/ppt.svg'
+import image from '../../assets/image.svg'
 
 const ImportantDocuments = () => {
     const [files, setFiles] = useState([])

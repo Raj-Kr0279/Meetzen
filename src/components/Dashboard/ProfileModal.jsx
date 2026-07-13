@@ -1,10 +1,10 @@
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
-import prof from "../../Assets/person_FILL0_wght300_GRAD0_opsz24.svg";
-import pass from "../../Assets/password_FILL0_wght300_GRAD0_opsz24 1.svg";
-import face from "../../Assets/Face ID Symbol.png";
-import fing from "../../Assets/fingerprint_FILL0_wght200_GRAD200_opsz24 1.svg";
-import logout from "../../Assets/logout_FILL0_wght300_GRAD0_opsz24.svg";
+import prof from "../../assets/person_FILL0_wght300_GRAD0_opsz24.svg";
+import pass from "../../assets/password_FILL0_wght300_GRAD0_opsz24 1.svg";
+import face from "../../assets/Face ID Symbol.png";
+import fing from "../../assets/fingerprint_FILL0_wght200_GRAD200_opsz24 1.svg";
+import logout from "../../assets/logout_FILL0_wght300_GRAD0_opsz24.svg";
 import { useNavigate } from "react-router-dom";
 
 const ProfileModal = ({ onClose }) => {

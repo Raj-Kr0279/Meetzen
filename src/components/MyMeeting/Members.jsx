@@ -1,5 +1,5 @@
 import React from 'react'
-import prof from '../../Assets/profileDummy.png'
+import prof from '../../assets/profileDummy.png'
 import { useNavigate } from 'react-router-dom'
 
 const Members = () => {

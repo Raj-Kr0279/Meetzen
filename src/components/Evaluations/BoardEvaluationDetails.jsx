@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import { BiBarChartAlt2 } from "react-icons/bi";
 import { BsTriangleFill } from "react-icons/bs";
-import strategy from "../../Assets/strategy_FILL0_wght300_GRAD0_opsz24.svg";
+import strategy from "../../assets/strategy_FILL0_wght300_GRAD0_opsz24.svg";
 function Icon({ id, open }) {
   return (
     <BsTriangleFill

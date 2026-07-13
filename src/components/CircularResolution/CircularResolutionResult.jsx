@@ -3,7 +3,7 @@ import { AiOutlineSearch, AiOutlineShareAlt } from 'react-icons/ai'
 import { BsFillTriangleFill, BsTrash } from 'react-icons/bs'
 import { MdArrowBackIosNew } from 'react-icons/md'
 import { Pagination } from '../Pagination'
-import prof from '../../Assets/profileDummy.png'
+import prof from '../../assets/profileDummy.png'
 import { useNavigate } from 'react-router-dom'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";

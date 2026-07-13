@@ -2,7 +2,7 @@ import React from 'react'
 import { demoData } from '../../demoData/demoData'
 import { FiEdit, FiFile } from 'react-icons/fi'
 import { MdOutlineMessage } from 'react-icons/md'
-import dash from "../../Assets/Icon placeholder.svg";
+import dash from "../../assets/Icon placeholder.svg";
 
 const ActionablesSummary = () => {
   return (

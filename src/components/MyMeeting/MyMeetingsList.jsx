@@ -5,7 +5,7 @@ import {
   AiOutlineClockCircle,
   AiOutlineSearch,
 } from "react-icons/ai";
-import prof from "../../Assets/profileDummy.png";
+import prof from "../../assets/profileDummy.png";
 import { FiUsers } from "react-icons/fi";
 import { RiMapPin2Line } from "react-icons/ri";
 import { FaAngleLeft } from "react-icons/fa";

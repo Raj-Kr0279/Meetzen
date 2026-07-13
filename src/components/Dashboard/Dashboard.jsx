@@ -9,7 +9,7 @@ import { FiEdit, FiFile, FiUsers } from "react-icons/fi";
 import { MdOutlineMessage } from "react-icons/md";
 // import DatePicker from "react-modern-calendar-datepicker";
 import { useState } from "react";
-import prof from "../../Assets/profileDummy.png";
+import prof from "../../assets/profileDummy.png";
 
 // import "./Dashboard.css";
 import { demoData } from "../../demoData/demoData";

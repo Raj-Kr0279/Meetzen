@@ -1,6 +1,6 @@
 import React from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
-import prof from '../../Assets/profileDummy.png'
+import prof from '../../assets/profileDummy.png'
 import { BsColumnsGap, BsPlusLg } from 'react-icons/bs'
 import { MdAdd } from 'react-icons/md'
 

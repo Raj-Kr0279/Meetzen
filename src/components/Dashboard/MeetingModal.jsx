@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
-import cal from "../../Assets/redCal.png";
+import cal from "../../assets/redCal.png";
 import { Link } from "react-router-dom";
 
 const MeetingModal = ({ onClose }) => {

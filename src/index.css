@@ -5,7 +5,7 @@
 @config "../tailwind.config.js";
   /* @font-face {
   font-family: sfpro;
-  src: url(./Assets/fonts/SFpro/SFPRODISPLAYREGULAR.OTF);
+  src: url(./assets/fonts/SFpro/SFPRODISPLAYREGULAR.OTF);
 } */
   html {
     font-family: "Poppins", sans-serif;

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import done from '../../Assets/done_FILL0_wght400_GRAD0_opsz48 (1) 1.svg'
+import done from '../../assets/done_FILL0_wght400_GRAD0_opsz48 (1) 1.svg'
 import { useEffect } from 'react';
 
 const SubmitPopup = ({ modal, setModal, isSaveDraft, setSaveDraft }) => {

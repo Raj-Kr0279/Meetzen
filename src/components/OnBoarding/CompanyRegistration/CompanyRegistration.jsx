@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 import { Tooltip } from "react-tooltip";
 import { CiWarning } from "react-icons/ci";
-import swap from "../../../Assets/swapIcon.svg";
+import swap from "../../../assets/swapIcon.svg";
 import { useNavigate } from "react-router-dom";
 import InputField from "../../ui/InputField";
 import OnboardingHeader from "../OnboardingHeader";

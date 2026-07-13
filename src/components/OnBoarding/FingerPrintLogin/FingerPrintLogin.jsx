@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import finger from "../../../Assets/fingerpringBig.svg";
+import finger from "../../../assets/fingerpringBig.svg";
 import LeftColumn from "../LeftColumn";
 import RightColumn from "../RightColumn";
-import fingerSuccess from "../../../Assets/fingerprintBigSuccess.svg";
+import fingerSuccess from "../../../assets/fingerprintBigSuccess.svg";
 import FaceModal from "../FaceModal";
 
 const FingerPrintLogin = () => {

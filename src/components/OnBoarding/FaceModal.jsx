@@ -1,6 +1,6 @@
 import React from 'react'
-import faceid from '../../Assets/Face ID Symbol.svg'
-import facesucc from '../../Assets/Touch ID Symbol.png'
+import faceid from '../../assets/Face ID Symbol.svg'
+import facesucc from '../../assets/Touch ID Symbol.png'
 
 const FaceModal = () => {
     return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import prof from '../../Assets/profileDummy.png'
+import prof from '../../assets/profileDummy.png'
 import { BsTriangleFill } from 'react-icons/bs';
 
 

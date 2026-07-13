@@ -1,5 +1,5 @@
 import React from 'react'
-import map from '../../Assets/map.png'
+import map from '../../assets/map.png'
 
 const ViewMapModal = ({setModal}) => {
   return (

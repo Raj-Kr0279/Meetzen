@@ -7,8 +7,8 @@ import {
   AiOutlineEyeInvisible,
 } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import fingerprint from "../../../Assets/fingerprint.svg";
-import faceid from "../../../Assets/faceid.svg";
+import fingerprint from "../../../assets/fingerprint.svg";
+import faceid from "../../../assets/faceid.svg";
 import FaceModal from "../FaceModal";
 import FooterText from "../../FooterText/FooterText";
 import OnboardingHeader from "../OnboardingHeader";
