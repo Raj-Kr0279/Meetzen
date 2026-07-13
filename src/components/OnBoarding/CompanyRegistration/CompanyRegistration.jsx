@@ -85,7 +85,7 @@ console.log(selectedCompany, "silly")
           label={`${isSuccess ? "Redirecting..." : "Continue"}`}
           variant="primary"
           onClick={handleSubmit}
-          disabled={inputError !== ""}
+          disabled={(inputError !== "") || isLoading || isSuccess}
           classNames="w-full"
         />
 

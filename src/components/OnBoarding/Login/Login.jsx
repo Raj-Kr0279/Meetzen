@@ -122,6 +122,7 @@ const dispatch = useDispatch()
           label="Login"
           variant="primary"
           classNames="font-semibold py-3 tracking-widest mt-3 w-full text-white rounded-md"
+          disabled={isLoading || isSuccess}
         />
       </form>
       <p className="text-muted text-xs pt-3 font-normal">
