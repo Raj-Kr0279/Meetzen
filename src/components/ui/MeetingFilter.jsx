@@ -1,5 +1,5 @@
-import React from 'react'
-import InputField from './InputField'
+import React from "react";
+import InputField from "./InputField";
 
 const MeetingFilter = ({
   selectedFilter,
@@ -8,80 +8,66 @@ const MeetingFilter = ({
   onYearChange,
   committee,
   onCommitteeChange,
-  isFilter
+  isFilter,
+  filters
 }) => {
   const yearOptions = [
-    { value: 'all', label: 'All' },
-    { value: '2023', label: '2023' },
-  ]
+    { value: "all", label: "All" },
+    { value: "2023", label: "2023" },
+  ];
+
 
   const committeeOptions = [
-    { value: 'all', label: 'All' },
-    { value: 'audit', label: 'Audit' },
-    { value: 'finance', label: 'Finance' },
-    { value: 'hr', label: 'HR' },
-    { value: 'risk_management', label: 'Risk Management' },
-  ]
+    { value: "all", label: "All" },
+    { value: "audit", label: "Audit" },
+    { value: "finance", label: "Finance" },
+    { value: "hr", label: "HR" },
+    { value: "risk_management", label: "Risk Management" },
+  ];
 
   return (
-    <div className=" flex justify-between rounded-md mb-4 items-center">
-      <div className="flex highlight_switcher justify-between items-center">
-        <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-border rounded-md whitespace-nowrap h-12 place-items-center">
-          <p
-            className={`w-full flex items-center px-4 justify-center h-full  ${
-              selectedFilter === 'all'
-                ? 'bg-selected'
-                : 'text-foreground bg-white'
-            } w-full flex items-center justify-center h-full px-4`}
-            onClick={() => onFilterSelection('all')}
-          >
-            All
-          </p>
-          <p
-            className={`w-full flex items-center justify-center h-full px-4 ${
-              selectedFilter === 'upcoming'
-                ? 'bg-selected'
-                : 'text-foreground bg-white'
-            } w-full flex items-center justify-center h-full px-4`}
-            onClick={() => onFilterSelection('upcoming')}
-          >
-            Upcoming
-          </p>
-          <p
-            className={`w-full flex items-center justify-center h-full px-4 ${
-              selectedFilter === 'recent'
-                ? 'bg-selected'
-                : 'text-foreground bg-white'
-            } w-full flex items-center justify-center h-full px-4`}
-            onClick={() => onFilterSelection('recent')}
-          >
-            Recent
-          </p>
+    <div className=" flex justify-between rounded-md mb-4 items-center w-full">
+      <div className="">
+        <div className="font-normal rounded-full p-1 bg-surface flex items-center text-sm overflow-hidden border border-border whitespace-nowrap h-12 place-items-center">
+          {filters?.map((filter) => 
+            <p key={filter.value}
+              className={`w-full flex items-center px-4 justify-center h-full rounded-full ${
+                selectedFilter === filter.value
+                  ? "bg-primary text-white"
+                  : "text-foreground"
+              } w-full flex items-center justify-center h-full px-4`}
+              onClick={() => onFilterSelection(filter.value)}
+            >
+              {filter.label}
+            </p>
+          )}
         </div>
       </div>
 
-      {isFilter && <div className="grid grid-cols-2 items-center gap-3">
-        <InputField
-          type="select"
-          label="Filter Year:"
-          name="year"
-          options={yearOptions}
-          value={year}
-          className=""
-          onChange={(e) => onYearChange(e.target.value)}
-        />
+      {isFilter && (
+        <div className="grid grid-cols-2 items-center gap-3">
+          <InputField
+            type="select"
+            label="Filter Year:"
+            name="year"
+            options={yearOptions}
+            value={year}
+            className=""
+            onChange={(e) => onYearChange(e.target.value)}
+          />
 
-        <InputField
-          type="select"
-          label="Filter Committee:"
-          name="committee"
-          options={committeeOptions}
-          value={committee}
-          onChange={(e) => onCommitteeChange(e.target.value)}
-        />
-      </div>}
+          <InputField
+            type="select"
+            label="Filter Committee:"
+            name="committee"
+            options={committeeOptions}
+            value={committee}
+            onChange={(e) => onCommitteeChange(e.target.value)}
+          />
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default MeetingFilter
+export default MeetingFilter;

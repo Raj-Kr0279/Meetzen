@@ -20,15 +20,14 @@ const Disclosure = () => {
     </div>
 
 </div> */}
-      <PageHeading label="Director's Disclosure" />
-      <div className="bg-surface flex flex-col md:pe-10">
+      <div className="bg-surface flex flex-col p-4 border-border border rounded-xl md:pe-10">
         <div className="flex justify-between items-center pb-4">
           <img src={logo} alt="" className="w-20 h-20" />
-          <span className="text-base font-semibold text-foreground">
+          <span className="text-caption text-muted">
             Page 1/2
           </span>
         </div>
-        <p className="text-base text-foreground font-semibold leading-loose">
+        <p className="text-body-md">
           Lorem ipsum dolor sit amet consectetur. Bibendum fermentum aliquam
           sapien ornare volutpat amet. Lorem turpis vitae aliquam nunc. Platea
           in pharetra consectetur nulla fermentum dictum. Phasellus eget tellus

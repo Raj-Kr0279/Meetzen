@@ -62,7 +62,7 @@ const SearchReport = () => {
                 </form>
             </div>
 
-            <div className="w-full bg-searchReport min-h-[90vh] mt-6 border-t text-searchReportText font-medium">
+            <div className="w-full bg-searchReport md:h-[65dvh] overflow-y-auto mt-6 border-t text-searchReportText font-medium">
                 <div className="grid grid-cols-[120px_auto] break-words border-b p-4">
                     <p>Committee:</p>
                     <p>Board Committee</p>

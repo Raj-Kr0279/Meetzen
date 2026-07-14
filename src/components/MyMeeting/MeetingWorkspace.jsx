@@ -33,7 +33,7 @@ const MeetingDetails = () => {
   return (
     <>
       <PageHeading label="Meeting WorkSpace" />
-      <div className="grid md:grid-cols-2 px-4 md:px-10">
+      <div className="grid md:grid-cols-2">
         <div>
           <p className="text-primary font-normal leading-none pb-1 text-[10px] md:text-base">
             BOARD COMMITTEE
@@ -137,7 +137,7 @@ const MeetingDetails = () => {
           ))}
         </div>
 
-        <div className="bg-hover-bg md:p-4 w-[95%] h-[70dvh] overflow-y-scroll pt-12 flex justify-center rounded-xl">
+        <div className="bg-hover-bg w-full h-[70dvh] overflow-y-scroll pt-12 flex justify-center rounded-xl">
           <Outlet />
         </div>
       </div>

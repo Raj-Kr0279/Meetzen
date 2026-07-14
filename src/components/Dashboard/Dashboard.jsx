@@ -34,10 +34,22 @@ const Dashboard = () => {
       selectedFilter === "all" ? true : m.status === selectedFilter;
     return matchesStatus;
   });
+    const meetFilters = [
+    { label: "All", value: "all" },
+    { label: "Upcoming", value: "upcoming" },
+    { label: "Recents", value: "recent" },
+  ];
+  const notifFilters = [
+    {label: "Notifications", value: "notif"},
+    {label: "Chats", value: "chats"}
+  ]
 
     const handleFilterSelection = (filter) => {
     setSelectedFilter(filter);
   };
+  const handleNotiFilterSelect = (filter)=>{
+setNotifFilterValue(filter);
+  }
   const handleDateClick = (date) => {
     if (date) {
       const today = new Date();
@@ -53,8 +65,7 @@ const Dashboard = () => {
   return (
     <div className="grid dash__wrapper grid-cols-1 md:grid-cols-[1.5fr_1fr] pb-20 gap-8">
       <div className="flex flex-col w-full">
-        <div className="highlight__wrp md:min-h-120 overflow-hidden border border-border w-full rounded-xl p-4 card">
-          <div className="flex highlight_switcher justify-between items-center">
+        <div className="highlight__wrp md:min-h-120 overflow-hidden card">
             {/* <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-border rounded-md whitespace-nowrap h-12 place-items-center">
               <p
                 onClick={() => setMeetingFilterValue("all")}
@@ -75,17 +86,18 @@ const Dashboard = () => {
                 {`Recent(${demoData.meetings.filter((i) => i.status === "recent").length})`}
               </p>
             </div> */}
-            <MeetingFilter isFilter={false} selectedFilter={selectedFilter} onFilterSelection={handleFilterSelection}/>
+            <div className="flex justify-between items-center">
+            <MeetingFilter isFilter={false} filters={meetFilters} selectedFilter={selectedFilter} onFilterSelection={handleFilterSelection}/>
             <span
               onClick={() => {
                 setSelectedFilter("all");
                 navigate("/home/my-meetings-list");
               }}
-              className="underline cursor-pointer text-primary text-sm text-accent"
+              className="underline whitespace-nowrap cursor-pointer text-primary text-sm text-accent"
             >
               View all
             </span>
-          </div>
+            </div>
           <div className="highlights__content_wrp max-h-[395px] overflow-y-scroll flex flex-col gap-2 mt-3">
             {meetings &&
               (selectedFilter === "upcoming"
@@ -159,32 +171,11 @@ const Dashboard = () => {
             inline
           />
         </div> */}
-        <div className="notifications border border-border rounded-lg p-4 card flex-col flex h-[50vh]">
-          <div className="flex highlight_switcher whitespace-nowrap mb-3 justify-between items-center">
-            <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-gray-300 rounded-md whitespace-nowrap h-12 place-items-center">
-              <p
-                className={`w-full flex items-center justify-center h-full px-4 ${
-                  notifFilterValue === "notif"
-                    ? "bg-selected"
-                    : "text-foreground bg-white"
-                } w-full flex items-center justify-center h-full px-4`}
-                onClick={() => setNotifFilterValue("notif")}
-              >
-                Notifications (2)
-              </p>
-              <p
-                className={`w-full flex items-center justify-center h-full px-4 ${
-                  notifFilterValue === "chats"
-                    ? "bg-selected"
-                    : "text-foreground bg-white"
-                } w-full flex items-center justify-center h-full px-4`}
-                onClick={() => setNotifFilterValue("chats")}
-              >
-                Chats (4)
-              </p>
-            </div>
+        <div className="notifications card bg-surface p-3 border border-border rounded-xl flex-col flex h-[50vh]">
+           <div className="flex justify-between items-center">
+              <MeetingFilter filters={notifFilters} selectedFilter={notifFilterValue} isFilter={false} onFilterSelection={handleNotiFilterSelect}/>
             <span
-              className="underline cursor-pointer text-primary text-sm"
+              className="underline whitespace-nowrap cursor-pointer text-primary text-sm"
               onClick={() => {
                 if (notifFilterValue === "chats") {
                   navigate("/home/chat");
@@ -195,14 +186,13 @@ const Dashboard = () => {
             >
               View all
             </span>
-          </div>
+            </div>
           <div className="flex flex-col overflow-scroll grow-1 gap-3 chat__wrapper">
             {notifFilterValue === "notif"
               ? demoData.notifications.map((notif) => (
                   <div
                     key={notif.id}
-                    className="flex flex-col break-words bg-hover-bg border-l-3 border-accent p-2 border-theme-color"
-                  >
+                    className="flex flex-col break-words bg-hover-bg border-l-4 border-l-secondary bg-surface p-2 border-border border rounded-md">
                     <h1 className="text-foreground text-sm font-normal">
                       {notif.title}
                     </h1>
@@ -216,7 +206,7 @@ const Dashboard = () => {
                 ))
               : notifFilterValue === "chats"
                 ? demoData.chats.map((chat) => (
-                    <div key={chat.isToday} className="flex items-start">
+                    <div key={chat.isToday} className="flex items-start bg-surface p-2 border-border border rounded-md">
                       <div className="relative w-10 h-10 shrink-0 mr-4">
                         <img
                           src={prof}
