@@ -8,7 +8,7 @@ const Agenda = () => {
   return (
     <>
     <div className="flex flex-col gap-4 w-full">
-        <div className='bg-white rounded-md w-full p-4'>
+        <div className='rounded-md w-full border border-border p-4 bg-surface hover:border-secondary'>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full place-items-center">
                     <div className="flex items-center gap-3 justify-self-start">
                         <div className='bg-primary rounded-md text-2xl flex items-center justify-center w-10 h-10 text-white'>1</div>
@@ -41,7 +41,7 @@ const Agenda = () => {
         
         
         
-        <div className='bg-white rounded-md w-full p-4'>
+        <div className='rounded-md w-full border border-border p-4 bg-surface hover:border-secondary'>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full place-items-center">
                     <div className="flex items-center gap-3 justify-self-start">
                         <div className='bg-primary rounded-md text-2xl flex items-center justify-center w-10 h-10 text-white'>2</div>

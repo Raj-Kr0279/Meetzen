@@ -69,7 +69,7 @@ const navLinks = [
 const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   return (
     <aside
-      className={`fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-border bg-surface shadow-lg transition-transform duration-300 ease-out md:static md:z-auto md:w-64 md:translate-x-0 md:shadow-none ${
+      className={`fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-border bg-background shadow-lg transition-transform duration-300 ease-out md:static md:z-auto md:w-64 md:translate-x-0 md:shadow-none ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
       aria-label="Primary navigation"

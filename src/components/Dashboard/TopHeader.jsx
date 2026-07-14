@@ -16,7 +16,7 @@ const TopHeader = ({
   const{name,role}=useSelector(state=>state.user)
 
   return (
-    <header className="sticky top-0 z-30 border-b border-border bg-surface/95 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-border bg-background backdrop-blur">
       <div className="flex min-h-16 items-center gap-3 px-4 py-3 md:px-6">
         <button
           type="button"

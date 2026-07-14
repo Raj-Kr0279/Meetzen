@@ -2,10 +2,10 @@ import React from 'react'
 
 const News = () => {
     const news = Array.from({ length: 10 }, (_, index) => (
-        <div key={index} className='break-words bg-white py-6 px-8 hover:bg-newsHover transition-all'>
-            <h1 className='text-foreground font-semibold text-2xl'>Sales achieved</h1>
-            <p className='text-light font-normal text-base'>Lorem ipsum dolor sit amet consectetur. Donec laoreet molestie semper sed urna. Lorem ipsum dolor sit amet consectetur. Donec laoreet molestie semper sed urna.</p>
-            <span className='text-placeholder font-normal text-base'>20 mins ago</span>
+        <div key={index} className=' bg-white py-6 border-border border rounded-md px-8 hover:border-secondary transition-all'>
+            <h1 className='text-display-md'>Sales achieved</h1>
+            <p className='text-body-lg'>Lorem ipsum dolor sit amet consectetur. Donec laoreet molestie semper sed urna. Lorem ipsum dolor sit amet consectetur. Donec laoreet molestie semper sed urna.</p>
+            <span className='text-secondary text-caption'>20 mins ago</span>
         </div>
     ))
   return (

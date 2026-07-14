@@ -42,7 +42,7 @@ const CircularResolutionList = () => {
       <div className="w-full flex flex-col ">
         {/* filters and search section  */}
         <div className=" bg-hover-bg py-2 flex justify-between rounded-md items-center">
-          <h1 className="text-foreground font-medium text-2xl">
+          <h1 className="text-foreground font-medium text-display-lg">
             All resolutions By Circulation
           </h1>
           <div className="flex items-end gap-3">
@@ -74,7 +74,7 @@ const CircularResolutionList = () => {
                 navigate(`/home/circular-resolution-result/${resolutions?.id}`)
               }
             >
-               <p className="absolute flex gap-2 items-center top-2 right-2 text-xs font-normal text-warning">
+               <p className="absolute flex gap-2 items-center top-2 right-2 text-caption font-normal text-warning">
                   <BsClock />
                   Pending 15 days left
                 </p>

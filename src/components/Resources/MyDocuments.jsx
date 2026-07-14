@@ -32,7 +32,7 @@ const MyDocuments = () => {
         <>
             {shareModal && <ShareDocModal modal={shareModal} setModal={setShareModal} />}
             {successModal && <SuccessModal modal={successModal} setModal={setSuccessModal} />}
-            <div className="grid mt-4 gap-8 grid-cols-1 md:grid-cols-[8fr_4fr] place-items-start">
+            <div className="grid gap-8 grid-cols-1 md:grid-cols-[8fr_4fr] place-items-start">
                 <div class="overflow-y-scroll h-[75vh] border border-gray-200 w-full bg-white  md:rounded-lg">
                     <table class="min-w-full divide-y divide-gray-200 ">
                         <thead class="bg-tableLightBlue sticky top-0 text-tableHeadText ">
