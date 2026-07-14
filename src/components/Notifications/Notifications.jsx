@@ -9,11 +9,11 @@ const Notifications = () => {
     return (
         <>
            <PageHeading label = "Notifications"/>
-            <div className="w-full px-10 flex flex-col ">
+            <div className="w-full flex flex-col ">
                 {/* filters and search section  */}
 
-                <div className=' bg-hover-bg px-4 py-2  flex justify-between rounded-md mt-6 mb-4 items-center'>
-                    <h1 className='text-foreground font-semibold text-2xl'>All Notifications</h1>
+                <div className=' bg-hover-bg py-2 flex justify-between rounded-md mb-4 items-center'>
+                    <h1 className='text-primary text-display-md'>All Notifications</h1>
                     <div className="flex items-center gap-3">
                         {/* <label htmlFor="year" className='text-placeholder text-base font-normal'>Filter Year: </label>
             <select className='py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border' name="year" id="year">
@@ -34,51 +34,27 @@ const Notifications = () => {
 
                 </div>
 
-                <div className="h-[80vh] overflow-y-scroll w-full">
+                <div className="h-[70vh] overflow-y-scroll w-full">
                     <div className='rounded-lg border-transparent border overflow-hidden'>
-                        <div className="bg-primary w-full text-white py-2 text-heading font-semibold px-4">Recent</div>
-                        <div className="flex flex-col w-full mt-2">
-                            <div className='px-8 py-6 bg-hover-bg'>
-                                <p className='text-primary font-normal text-base'>BOARD COMMITTEE</p>
-                                <h2 className='text-foreground font-semibold text-2xl tracking-wide '>80th Meeting of Board Committee</h2>
-                                <p className=' text-medium font-normal text-light'>Project management is a discipline that involves planning, organizing, securing, managing, leading, and controlling resources to achieve specific goals</p>
-                                <p className='text-base text-light font-normal'>20 mins ago</p>
-                            </div>
-                            <div className='px-8 py-6'>
-                                <p className='text-primary font-normal text-base'>BOARD COMMITTEE</p>
-                                <h2 className='text-foreground font-semibold text-2xl tracking-wide '>80th Meeting of Board Committee</h2>
-                                <p className=' text-medium font-normal text-light'>Project management is a discipline that involves planning, organizing, securing, managing, leading, and controlling resources to achieve specific goals</p>
-                                <p className='text-base text-light font-normal'>20 mins ago</p>
-                            </div>
-                                 <div className='px-8 py-6'>
-                                <p className='text-primary font-normal text-base'>BOARD COMMITTEE</p>
-                                <h2 className='text-foreground font-semibold text-2xl tracking-wide '>80th Meeting of Board Committee</h2>
-                                <p className=' text-medium font-normal text-light'>Project management is a discipline that involves planning, organizing, securing, managing, leading, and controlling resources to achieve specific goals</p>
-                                <p className='text-base text-light font-normal'>20 mins ago</p>
-                            </div>
+                        <div className="text-display-sm">Recent</div>
+                        <div className="flex flex-col gap-2 w-full mt-2">
+                           {Array.from({length: 4}, (_, index)=> <div key={index} className='px-8 rounded-lg border border-border bg-surface py-4 bg-hover-bg'>
+                                <p className='text-primary text-body-sm'>BOARD COMMITTEE</p>
+                                <h2 className='text-primary text-display-sm font-display pb-2'>80th Meeting of Board Committee</h2>
+                                <p className='text-body-md'>Project management is a discipline that involves planning, organizing, securing, managing, leading, and controlling resources to achieve specific goals</p>
+                                <p className='text-body-sm text-secondary pt-2'>20 mins ago</p>
+                            </div>)}
                         </div>
                     </div>
                     <div className='rounded-lg border-transparent border overflow-hidden'>
-                        <div className="bg-primary w-full text-white py-2 text-heading font-semibold px-4">Past</div>
-                        <div className="flex flex-col w-full mt-2">
-                            <div className='px-8 py-6 bg-hover-bg'>
-                                <p className='text-primary font-normal text-base'>BOARD COMMITTEE</p>
-                                <h2 className='text-foreground font-semibold text-2xl tracking-wide '>80th Meeting of Board Committee</h2>
-                                <p className=' text-medium font-normal text-light'>Project management is a discipline that involves planning, organizing, securing, managing, leading, and controlling resources to achieve specific goals</p>
-                                <p className='text-base text-light font-normal'>20 mins ago</p>
-                            </div>
-                            <div className='px-8 py-6'>
-                                <p className='text-primary font-normal text-base'>BOARD COMMITTEE</p>
-                                <h2 className='text-foreground font-semibold text-2xl tracking-wide '>80th Meeting of Board Committee</h2>
-                                <p className=' text-medium font-normal text-light'>Project management is a discipline that involves planning, organizing, securing, managing, leading, and controlling resources to achieve specific goals</p>
-                                <p className='text-base text-light font-normal'>20 mins ago</p>
-                            </div>
-                                 <div className='px-8 py-6'>
-                                <p className='text-primary font-normal text-base'>BOARD COMMITTEE</p>
-                                <h2 className='text-foreground font-semibold text-2xl tracking-wide '>80th Meeting of Board Committee</h2>
-                                <p className=' text-medium font-normal text-light'>Project management is a discipline that involves planning, organizing, securing, managing, leading, and controlling resources to achieve specific goals</p>
-                                <p className='text-base text-light font-normal'>20 mins ago</p>
-                            </div>
+                        <div className="text-display-sm pt-6 pb-1">Past</div>
+                        <div className="flex flex-col gap-2 w-full">
+                            {Array.from({length: 4}, (_, index)=> <div key={index} className='px-8 rounded-lg border border-border bg-surface py-4 bg-hover-bg'>
+                                <p className='text-primary text-body-sm'>BOARD COMMITTEE</p>
+                                <h2 className='text-primary text-display-sm font-display pb-2'>80th Meeting of Board Committee</h2>
+                                <p className='text-body-md'>Project management is a discipline that involves planning, organizing, securing, managing, leading, and controlling resources to achieve specific goals</p>
+                                <p className='text-body-sm text-secondary pt-2'>20 mins ago</p>
+                            </div>)}
                         </div>
                     </div>
                 </div>

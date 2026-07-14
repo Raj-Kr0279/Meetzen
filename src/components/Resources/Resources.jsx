@@ -25,6 +25,7 @@ const Resources = () => {
       <div className="w-full md:pe-10 flex flex-col">
           <MeetingFilter
             filters={resourceFilters}
+            durationFilters
             isFilter={true}
             selectedFilter={selectedFilter}
             onFilterSelection={handleFilterSelection}

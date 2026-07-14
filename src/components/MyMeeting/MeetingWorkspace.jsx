@@ -6,13 +6,14 @@ import {
 } from "react-icons/ai";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { RiMapPin2Line } from "react-icons/ri";
-import { NavLink, Outlet, useNavigate, useParams } from "react-router-dom";
+import { NavLink, Outlet, useNavigate,useParams } from "react-router-dom";
 import Agenda from "./Agenda/Agenda";
 import Members from "./Members";
 import Minutes from "./Minutes";
 import ImportantDocuments from "./ImportantDocuments";
 import Requests from "./Requests";
 import PageHeading from "../PageHeading";
+import MeetingFilter from "../ui/MeetingFilter";
 
 const MeetingDetails = () => {
   const [currentTab, setCurrentTab] = useState("agenda");
@@ -35,25 +36,25 @@ const MeetingDetails = () => {
       <PageHeading label="Meeting WorkSpace" />
       <div className="grid md:grid-cols-2">
         <div>
-          <p className="text-primary font-normal leading-none pb-1 text-[10px] md:text-base">
+          <p className="text-secondary text-body-sm pb-0.5">
             BOARD COMMITTEE
           </p>
-          <h1 className="text-[16px] md:text-extraLarge leading-none font-semibold text-foreground pb-3">
+          <h1 className="text-display-md font-display text-primary pb-3">
             132nd Meeting of Board Committee
           </h1>
-          <div className="flex items-center py-3 md:p-0 gap-4">
+          <div className="flex items-center py-3 md:p-0 text-mono-md text-subtle gap-4">
             <div className="flex flex-col md:flex-row">
-              <p className="flex items-center gap-1 text-primary text-[12px] md:text-base font-semibold">
-                <AiOutlineCalendar className="text-primary" />
+              <p className="flex items-center gap-1 ">
+                <AiOutlineCalendar className="" />
                 24/05/23
               </p>
-              <p className="flex items-center gap-1 text-primary text-[12px] md:text-base font-semibold">
-                <AiOutlineClockCircle className="text-primary" />
+              <p className="flex items-center gap-1 ">
+                <AiOutlineClockCircle className="" />
                 9:00 AM - 11:00 AM
               </p>
             </div>
-            <p className="flex items-center gap-1 text-primary text-[12px] md:text-base font-semibold">
-              <RiMapPin2Line className="text-primary" />
+            <p className="flex items-center gap-1 ">
+              <RiMapPin2Line className="" />
               Online Conference
             </p>
           </div>
@@ -121,23 +122,22 @@ const MeetingDetails = () => {
       </div>
 
       <div className="flex flex-col items-center w-full mt-6 mb-4 ">
-        <div className="flex gap-8 md:gap-1 w-full overflow-x-auto md:w-auto whitespace-nowrap">
+        <div className="font-normal rounded-full p-1 bg-surface flex mb-2 items-center text-sm overflow-hidden border border-border whitespace-nowrap h-12 place-items-center">
           {navLinks.map((link, key) => (
             <NavLink
               to={`/home/meeting-details/${id}/${link}`}
               key={link}
               className={({ isActive }) =>
-                `cursor-pointer  rounded-[8px_8px_0px_0px] p-3 ${
-                  isActive && "bg-primary text-white"
+                `w-full flex items-center px-4 justify-center h-full rounded-full ${
+                  isActive ? "bg-primary text-white" : "text-foreground"
                 }`
               }
-            >
-              {link}
+            >{link}
             </NavLink>
           ))}
         </div>
 
-        <div className="bg-hover-bg w-full h-[70dvh] overflow-y-scroll pt-12 flex justify-center rounded-xl">
+        <div className="bg-hover-bg w-full h-[60dvh] overflow-y-scroll pt-4 flex justify-center rounded-xl">
           <Outlet />
         </div>
       </div>
