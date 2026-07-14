@@ -19,6 +19,7 @@ import { formatDateTime } from "../../utils/dateFormatter";
 import { RiNumbersFill } from "react-icons/ri";
 import MeetingFilter from "../ui/MeetingFilter";
 import { useGetMeetingsListQuery } from "../../features/meeting/meetingApi";
+import MeetingCardSkeleton from "../ui/MeetingCardSkeleton";
 const Dashboard = () => {
   const [notifFilterValue, setNotifFilterValue] = useState("notif");
   const { data: meetings, error, isLoading } = useGetMeetingsListQuery();
@@ -87,7 +88,7 @@ setNotifFilterValue(filter);
               </p>
             </div> */}
             <div className="flex justify-between items-center">
-            <MeetingFilter isFilter={false} filters={meetFilters} selectedFilter={selectedFilter} onFilterSelection={handleFilterSelection}/>
+            <MeetingFilter durationFilters={true} isFilter={false} filters={meetFilters} selectedFilter={selectedFilter} onFilterSelection={handleFilterSelection}/>
             <span
               onClick={() => {
                 setSelectedFilter("all");
@@ -99,7 +100,7 @@ setNotifFilterValue(filter);
             </span>
             </div>
           <div className="highlights__content_wrp max-h-[395px] overflow-y-scroll flex flex-col gap-2 mt-3">
-            {meetings &&
+            {meetings ?
               (selectedFilter === "upcoming"
                 ? meetings
                     .filter((item) => item.status === "upcoming")
@@ -114,7 +115,8 @@ setNotifFilterValue(filter);
                       ))
                   : meetings.map((meeting) => (
                       <MeetingCard meeting={meeting} id={meeting.id} />
-                    )))}
+                    ))) : 
+                    Array.from({length: 3},(_, index)=><MeetingCardSkeleton/>)}
           </div>
         </div>
         <ActionablesSummary />
@@ -173,7 +175,7 @@ setNotifFilterValue(filter);
         </div> */}
         <div className="notifications card bg-surface p-3 border border-border rounded-xl flex-col flex h-[50vh]">
            <div className="flex justify-between items-center">
-              <MeetingFilter filters={notifFilters} selectedFilter={notifFilterValue} isFilter={false} onFilterSelection={handleNotiFilterSelect}/>
+              <MeetingFilter durationFilters filters={notifFilters} selectedFilter={notifFilterValue} isFilter={false} onFilterSelection={handleNotiFilterSelect}/>
             <span
               className="underline whitespace-nowrap cursor-pointer text-primary text-sm"
               onClick={() => {
@@ -187,7 +189,7 @@ setNotifFilterValue(filter);
               View all
             </span>
             </div>
-          <div className="flex flex-col overflow-scroll grow-1 gap-3 chat__wrapper">
+          <div className="flex flex-col overflow-scroll mt-2 grow-1 gap-3 chat__wrapper">
             {notifFilterValue === "notif"
               ? demoData.notifications.map((notif) => (
                   <div

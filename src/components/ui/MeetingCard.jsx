@@ -20,7 +20,7 @@ const MeetingCard = ({ meeting }) => {
   return (
     <div
       key={meeting._id}
-      className={`inner__card bg-surface w-full grid grid-cols-[60px_12fr] rounded-xl border border-border hover:border-secondary cursor-pointer`}
+      className={`inner__card bg-surface w-full grid grid-cols-[60px_1fr] rounded-xl border border-border hover:border-secondary cursor-pointer relative`}
       onClick={() => navigate(`/home/meeting-details/${meeting._id}`)}
     >
       <div className="bg-primary text-center flex flex-col justify-center rounded-s-xl text-inverse">
@@ -43,12 +43,12 @@ const MeetingCard = ({ meeting }) => {
           <span
             className={`${
               meeting.status === "recent" ? "bg-error-soft" : "bg-info-soft"
-            } font-medium text-xs pb-1.25 px-3.5 rounded-xl`}
+            } text-caption text-primary rounded-full p-1 px-3 absolute top-2 right-2`}
           >
             {meeting.status === "recent" ? "Recents" : "Upcoming"}
           </span>
         </div>
-        <h3 className="font-display text-display-sm pb-3 truncate">
+        <h3 className="font-display text-display-sm pb-3 truncate w-full">
           {meeting.committeeName}
         </h3>
         <div className="flex text-foreground items-center pb-2 gap-4 text-xs font-medium leading-snug">

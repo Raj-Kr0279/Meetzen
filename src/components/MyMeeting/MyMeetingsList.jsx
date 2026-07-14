@@ -18,6 +18,7 @@ import { formatDateTime } from "../../utils/dateFormatter";
 import MeetingCard from "../ui/MeetingCard";
 import MeetingFilter from "../ui/MeetingFilter";
 import { useGetMeetingsListQuery } from "../../features/meeting/meetingApi";
+import MeetingCardSkeleton from "../ui/MeetingCardSkeleton";
 
 const MyMeetingsList = () => {
   const navigate = useNavigate();
@@ -60,6 +61,7 @@ const MyMeetingsList = () => {
           selectedFilter={selectedFilter}
           onFilterSelection={handleFilterSelection}
           year={year}
+          durationFilters={true}
           filters={meetFilters}
           onYearChange={setYear}
           committee={committee}
@@ -67,10 +69,12 @@ const MyMeetingsList = () => {
         />
 
         {/* meeting cards  */}
-        <div className=" w-full overflow-scroll place-content-baseline h-[50rem] grid grid-cols-1 md:grid-cols-[repeat(auto-fit,_minmax(26.563rem,_1fr))] gap-4 place-items-center">
-          {filteredMeetings?.map((meeting) => (
+        <div className=" w-full overflow-scroll place-content-baseline h-200 mt-2 grid grid-cols-1 md:grid-cols-[repeat(auto-fit,_minmax(26.563rem,_1fr))] gap-4 place-items-center">
+          {isLoading ? Array.from({length: 6}, (_, index)=><MeetingCardSkeleton/>) : filteredMeetings?.map((meeting) => (
             <MeetingCard key={meeting._id} meeting={meeting} />
-          ))}
+          ))
+          
+          }
         </div>
       </div>
     </>

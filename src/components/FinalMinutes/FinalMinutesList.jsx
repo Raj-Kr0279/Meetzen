@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import PageHeading from "../PageHeading";
 import { demoData } from "../../demoData/demoData";
 import { formatDateTime } from "../../utils/dateFormatter";
+import Button from "../ui/Button";
+import MeetingFilter from "../ui/MeetingFilter";
 
 const FinalMinutesList = () => {
   const navigate = useNavigate();
@@ -15,83 +17,47 @@ const FinalMinutesList = () => {
       <PageHeading label="Final Minutes" />
       <div className="w-full md:pe-10 flex flex-col ">
         {/* filters and search section  */}
-        <div className="bg-hover-bg px-4 py-2 flex justify-between rounded-md mb-4 items-center">
-          <h1 className="text-foreground font-semibold text-large">
+        <div className="bg-hover-bg py-2 rounded-md md:items-end mb-4 grid lg:grid-cols-[8fr_4fr]">
+          <div className="">
+          <h1 className="text-display-md whitespace-nowrap">
             All Final Minutes
           </h1>
-          <div className="flex items-center gap-3">
-            <label
-              htmlFor="year"
-              className="text-placeholder text-paragraph font-normal"
-            >
-              Filter Year:{" "}
-            </label>
-            <select
-              className="py-2.5 px-2.5 bg-white text-foreground text-paragraph w-[19vw] rounded-sm border border-border"
-              name="year"
-              id="year"
-            >
-              <option value="all">All</option>
-              <option value="2023">2023</option>
-              <option value="2022">2022</option>
-              <option value="2021">2021</option>
-            </select>
-            <label
-              htmlFor="year"
-              className="text-placeholder text-paragraph font-normal"
-            >
-              Filter Committee:{" "}
-            </label>
-            <select
-              className="py-2.5 px-2.5 bg-white text-foreground text-paragraph w-[19vw] rounded-sm border border-border"
-              name="committee"
-              id="committee"
-            >
-              <option value="all">All</option>
-              <option value="board_meetig">Board Meeting</option>
-              <option value="audit">Audit</option>
-              <option value="src">SRC</option>
-            </select>
           </div>
+          <MeetingFilter durationFilters={false} isFilter={true}/>
         </div>
 
-        <div className="h-[70dvh] w-full  border border-gray-300 rounded-md overflow-y-scroll">
+        <div className="h-[60dvh] flex flex-col gap-2 w-full overflow-y-scroll">
           {demoData.finalMinutes.map((final) => (
             <div
               key={final.id}
-              className="flex hover:bg-hover-bg justify-between items-center p-4 border-b border-b-gray-300"
+              className="flex hover:bg-hover-bg rounded-md flex-col lg:flex-row bg-surface hover:border-secondary lg:justify-between lg:items-center p-4 border-border border"
             >
               <div>
-                <p className=" text-pargraph text-primary leading-none font-normal">
+                <p className="text-secondary text-body-sm">
                   {final.committee}
                 </p>
-                <h1 className="text-foreground leading-none pt-2 pb-1.5  font-semibold text-large">
+                <h1 className="pt-2 pb-1.5 text-display-sm font-display">
                   {final.documentName}
                 </h1>
-                <p className="text-paragraph font-medium text-light">
+                <p className="text-subtle text-mono-md">
                   Date & Time:{" "}
-                  <span className="text-primary tracking-wide text-mediumCaption font-semibold pl-1">
+                  <span className="text-subtle pl-1">
                     {formatDateTime(final.dateTime)}
                   </span>
                 </p>
               </div>
               <div className="flex items-end">
-                <div className="flex items-center justify-end gap-4">
-                  <button
+                <div className="flex lg:items-center lg:flex-row flex-col lg:justify-end lg:gap-4 gap-1 items-baseline whitespace-nowrap">
+                  <p
                     onClick={() =>
                       navigate(`/home/final-minute-details/${final.id}`)
                     }
-                    className="flex items-center justify-end gap-1 text-primary font-medium underline cursor-pointer"
+                    className="flex items-center justify-end gap-1 text-secondary text-body-sm underline cursor-pointer"
                   >
                     <AiOutlineEye />
                     View Document
-                  </button>
-                  <button
-                    className="text-white bg-primary text-paragraph font-medium rounded-[4px] py-2 px-3"
-                    onClick={() => navigate("/compare-documents")}
-                  >
-                    Compare with Draft Minutes
-                  </button>
+                  </p>
+                  <Button variant="primary" label="Compare with Draft Minutes" classNames="text-body-sm"/>
                 </div>
               </div>
             </div>

@@ -87,6 +87,7 @@ console.log(selectedCompany, "silly")
           onClick={handleSubmit}
           disabled={(inputError !== "") || isLoading || isSuccess}
           classNames="w-full"
+          isLoading={isLoading}
         />
 
         <div className="flex justify-center border-b border-theme-color w-max mx-auto pt-6 items-center">
