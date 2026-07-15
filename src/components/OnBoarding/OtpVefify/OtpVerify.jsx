@@ -25,7 +25,7 @@ const OtpVerify = () => {
         <div className="flex flex-col pb-4 w-full gap-4 justify-center otp__wrapper">
           <label
             htmlFor="otp"
-            className="font-semibold justify-self-start flex items-center text-foreground text-normal"
+            className="font-semibold justify-self-start flex items-center text-primary text-normal"
           >
             Enter OTP
             <span className="text-error pl-1">*</span>

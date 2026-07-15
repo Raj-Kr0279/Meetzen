@@ -16,7 +16,7 @@ const BoardEvaluationList = () => {
         {/* filters and search section  */}
 
         <div className=" bg-hover-bg px-4 py-4  flex justify-between rounded-md mb-4 items-center">
-          <h1 className="text-foreground font-semibold text-2xl">
+          <h1 className="text-primary font-semibold text-2xl">
             All Evaluations
           </h1>
           <div className="flex items-center gap-3">
@@ -27,7 +27,7 @@ const BoardEvaluationList = () => {
               Filter Year:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border"
+              className="py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-sm border border-border"
               name="year"
               id="year"
             >
@@ -44,7 +44,7 @@ const BoardEvaluationList = () => {
               Filter Committee:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border"
+              className="py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-sm border border-border"
               name="committee"
               id="committee"
             >
@@ -62,7 +62,7 @@ const BoardEvaluationList = () => {
                 <p className=" text-pargraph text-primary leading-none font-normal pb-2">
                   {evals.committee}
                 </p>
-                <h1 className="text-foreground leading-none pt-1 pb-2 font-semibold text-2xl">
+                <h1 className="text-primary leading-none pt-1 pb-2 font-semibold text-2xl">
                   {evals.documentName}
                 </h1>
                 <p className="text-base font-medium text-light">

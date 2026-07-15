@@ -6,7 +6,7 @@ import {
 } from "react-icons/ai";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { RiMapPin2Line } from "react-icons/ri";
-import { NavLink, Outlet, useNavigate,useParams } from "react-router-dom";
+import { NavLink, Outlet, useNavigate, useParams } from "react-router-dom";
 import Agenda from "./Agenda/Agenda";
 import Members from "./Members";
 import Minutes from "./Minutes";
@@ -14,12 +14,19 @@ import ImportantDocuments from "./ImportantDocuments";
 import Requests from "./Requests";
 import PageHeading from "../PageHeading";
 import MeetingFilter from "../ui/MeetingFilter";
+import InputField from "../ui/InputField";
 
 const MeetingDetails = () => {
-  const [currentTab, setCurrentTab] = useState("agenda");
+  const [currentTab, setCurrentTab] = useState("Agenda");
   const [attendance, setAttendance] = useState(false);
   const [isPresent, setIsPresent] = useState(false);
-  const navLinks = ["agenda", "members", "minutes", "documents", "requests"];
+  const navLinks = [
+  { value: "agenda", label: "Agenda" },
+  { value: "members", label: "Members" },
+  { value: "minutes", label: "Minutes" },
+  { value: "documents", label: "Documents" },
+  { value: "requests", label: "Requests" },
+];
   const activeStyles = `bg-primary text-white`;
   const { id } = useParams();
   const handlePresent = () => {
@@ -30,15 +37,16 @@ const MeetingDetails = () => {
     setIsPresent(false);
     setAttendance(true);
   };
+  const handleSelect = (item)=>{
+setCurrentTab(item)
+  }
   const navigate = useNavigate();
   return (
     <>
       <PageHeading label="Meeting WorkSpace" />
       <div className="grid md:grid-cols-2">
         <div>
-          <p className="text-secondary text-body-sm pb-0.5">
-            BOARD COMMITTEE
-          </p>
+          <p className="text-secondary text-body-sm pb-0.5">BOARD COMMITTEE</p>
           <h1 className="text-display-md font-display text-primary pb-3">
             132nd Meeting of Board Committee
           </h1>
@@ -122,17 +130,19 @@ const MeetingDetails = () => {
       </div>
 
       <div className="flex flex-col items-center w-full mt-6 mb-4 ">
-        <div className="font-normal rounded-full p-1 bg-surface flex mb-2 items-center text-sm overflow-hidden border border-border whitespace-nowrap h-12 place-items-center">
+        {/* Desktop Tabs */}
+        <div className=" font-normal w-full lg:w-auto rounded-full p-1 bg-surface flex mb-2 items-center text-sm overflow-x-auto snap-x snap-mandatory scroll-smooth border border-border whitespace-nowrap h-12 place-items-center">
           {navLinks.map((link, key) => (
             <NavLink
-              to={`/home/meeting-details/${id}/${link}`}
-              key={link}
+              to={`/home/meeting-details/${id}/${link.value}`}
+              key={link.label}
               className={({ isActive }) =>
-                `w-full flex items-center px-4 justify-center h-full rounded-full ${
-                  isActive ? "bg-primary text-white" : "text-foreground"
+                `w-full flex items-center px-4 snap-start shrink justify-center h-full rounded-full ${
+                  isActive ? "bg-primary text-white" : "text-primary"
                 }`
               }
-            >{link}
+            >
+              {link.label}
             </NavLink>
           ))}
         </div>

@@ -39,7 +39,7 @@ const BoardEvaluationDetails = () => {
             <p className=" text-pargraph text-primary leading-none font-normal pb-2">
               Director Evaluation | Board of Directors
             </p>
-            <h1 className="text-foreground font-semibold text-2xl">
+            <h1 className="text-primary font-semibold text-2xl">
               All Evaluations
             </h1>
             <p className="text-base font-medium text-light">
@@ -72,7 +72,7 @@ const BoardEvaluationDetails = () => {
           </AccordionHeader>
           <AccordionBody>
             <div className="mb-4">
-              <p className="text-foreground font-normal text-base break-words">
+              <p className="text-primary font-normal text-base break-words">
                 1.{" "}
                 <span>
                   Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
@@ -119,7 +119,7 @@ const BoardEvaluationDetails = () => {
             </div>
 
             <div className="mb-4">
-              <p className="text-foreground font-normal text-base break-words">
+              <p className="text-primary font-normal text-base break-words">
                 2.{" "}
                 <span>
                   Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
@@ -177,7 +177,7 @@ const BoardEvaluationDetails = () => {
           </AccordionHeader>
           <AccordionBody>
             <div className="mb-4">
-              <p className="text-foreground font-normal text-base break-words">
+              <p className="text-primary font-normal text-base break-words">
                 1.{" "}
                 <span>
                   Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
@@ -224,7 +224,7 @@ const BoardEvaluationDetails = () => {
             </div>
 
             <div className="mb-4">
-              <p className="text-foreground font-normal text-base break-words">
+              <p className="text-primary font-normal text-base break-words">
                 2.{" "}
                 <span>
                   Neque, faucibus fames at et rhoncus pellentesque. Scelerisque

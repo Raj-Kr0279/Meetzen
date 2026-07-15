@@ -35,7 +35,7 @@ const MeetingFilter = ({
               className={`w-full flex items-center px-4 justify-center h-full rounded-full ${
                 selectedFilter === filter.value
                   ? "bg-primary text-white"
-                  : "text-foreground"
+                  : "text-primary"
               } w-full flex items-center justify-center h-full px-4`}
               onClick={() => onFilterSelection(filter.value)}
             >

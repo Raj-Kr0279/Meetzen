@@ -5,7 +5,7 @@ export function Pagination() {
   const [active, setActive] = useState(1);
 
   const getItemProps = (index) => ({
-    className: `cursor-pointer p-2 font-medium text-smallCaption ${active === index ? "text-primary" : "text-foreground"}`,
+    className: `cursor-pointer p-2 font-medium text-smallCaption ${active === index ? "text-primary" : "text-primary"}`,
     onClick: () => setActive(index),
   });
 

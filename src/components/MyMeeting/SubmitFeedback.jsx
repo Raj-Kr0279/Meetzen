@@ -37,7 +37,7 @@ const SubmitFeedback = () => {
                     <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
                 </div>
             </div>
-            <p className='text-foreground fixed top-2 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Draft Minutes</p>
+            <p className='text-primary fixed top-2 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Draft Minutes</p>
 
 
 
@@ -46,7 +46,7 @@ const SubmitFeedback = () => {
 
                 <div className=' bg-hover-bg px-4 py-4  flex justify-between rounded-md mt-6 mb-4 items-center'>
                     <div className="">
-                        <h1 className='text-foreground font-semibold text-2xl pb-1.5'>132nd Meeting of Board Committee</h1>
+                        <h1 className='text-primary font-semibold text-2xl pb-1.5'>132nd Meeting of Board Committee</h1>
                         <p className='text-primary text-lg font-semibold'>Document Name</p>
                         <p className='text-base font-medium text-light' >Date & Time: <span className='text-primary text-lg font-semibold pl-1'>20/06/23 07:20 PM</span></p>
                     </div>
@@ -62,7 +62,7 @@ const SubmitFeedback = () => {
                     </AccordionHeader>
                     <AccordionBody>
                         <div className='mb-4'>
-                            <p className='text-foreground font-normal text-base break-words'>
+                            <p className='text-primary font-normal text-base break-words'>
                                 1. <span>Neque, faucibus fames at et rhoncus pellentesque. Scelerisque commodo nunc tellus, elit semper tempus. Tristique ac tincidunt velit netus ipsum rutrum id ut.</span>
                             </p>
                             <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
@@ -92,7 +92,7 @@ const SubmitFeedback = () => {
                         </div>
 
                         <div className='mb-4'>
-                            <p className='text-foreground font-normal text-base break-words'>
+                            <p className='text-primary font-normal text-base break-words'>
                                 2. <span>Neque, faucibus fames at et rhoncus pellentesque. Scelerisque commodo nunc tellus, elit semper tempus. Tristique ac tincidunt velit netus ipsum rutrum id ut.</span>
                             </p>
                             <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
@@ -132,7 +132,7 @@ const SubmitFeedback = () => {
                     </AccordionHeader>
                     <AccordionBody>
                         <div className='mb-4'>
-                            <p className='text-foreground font-normal text-base break-words'>
+                            <p className='text-primary font-normal text-base break-words'>
                                 1. <span>Neque, faucibus fames at et rhoncus pellentesque. Scelerisque commodo nunc tellus, elit semper tempus. Tristique ac tincidunt velit netus ipsum rutrum id ut.</span>
                             </p>
                             <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
@@ -162,7 +162,7 @@ const SubmitFeedback = () => {
                         </div>
 
                         <div className='mb-4'>
-                            <p className='text-foreground font-normal text-base break-words'>
+                            <p className='text-primary font-normal text-base break-words'>
                                 2. <span>Neque, faucibus fames at et rhoncus pellentesque. Scelerisque commodo nunc tellus, elit semper tempus. Tristique ac tincidunt velit netus ipsum rutrum id ut.</span>
                             </p>
                             <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">

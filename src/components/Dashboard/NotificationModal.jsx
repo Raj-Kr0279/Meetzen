@@ -25,7 +25,7 @@ const NotificationModal = ({ onClose }) => {
       </button>
 
       <div className="flex items-center justify-between pr-8">
-        <h1 className="font-semibold text-foreground">Notifications</h1>
+        <h1 className="font-semibold text-primary">Notifications</h1>
         <button
           type="button"
           className="text-xs font-medium text-primary underline"
@@ -37,7 +37,7 @@ const NotificationModal = ({ onClose }) => {
 
       <div className="grow overflow-y-auto">
         <div className="mb-2 flex flex-col break-words border-l-4 border-primary bg-hover p-2">
-          <h1 className="text-base font-semibold text-foreground">
+          <h1 className="text-base font-semibold text-primary">
             80th Meeting of Board Committee
           </h1>
           <span className="pb-1 text-smallCaption font-normal tracking-[.18px] text-placeholder">
@@ -49,7 +49,7 @@ const NotificationModal = ({ onClose }) => {
           </p>
         </div>
         <div className="mb-2 flex flex-col break-words border-l-4 border-transparent p-2">
-          <h1 className="text-base font-semibold text-foreground">
+          <h1 className="text-base font-semibold text-primary">
             80th Meeting of Board Committee
           </h1>
           <span className="pb-1 text-smallCaption font-normal tracking-[.18px] text-placeholder">
@@ -61,7 +61,7 @@ const NotificationModal = ({ onClose }) => {
           </p>
         </div>
         <div className="mb-2 flex flex-col break-words border-l-4 border-transparent p-2">
-          <h1 className="text-base font-semibold text-foreground">
+          <h1 className="text-base font-semibold text-primary">
             80th Meeting of Board Committee
           </h1>
           <span className="pb-1 text-smallCaption font-normal tracking-[.18px] text-placeholder">

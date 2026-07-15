@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const MeetingModal = ({ onClose }) => {
     const meetinglist = Array.from({ length: 20 }, (_, index) => (
         <div key={index} className='flex pl-4 flex-col gap-2 py-2.5 border-b border-border'>
-                <h1 className='text-foreground leading-none text-base font-semibold'>123rd Board Meeting</h1>
+                <h1 className='text-primary leading-none text-base font-semibold'>123rd Board Meeting</h1>
                 <p className='text-light leading-none text-xs font-medium'>9:00 AM - 11:00 AM</p>
             </div>
     ));
@@ -27,7 +27,7 @@ const MeetingModal = ({ onClose }) => {
         <div className='flex p-2 rounded-md items-center gap-3 bg-white'>
             <img src={cal} className="w-11 h-11" alt="" />
             <div>
-                <h1 className='text-foreground text-mediumSubheading leading-tight font-semibold'>13th June 2023</h1>
+                <h1 className='text-primary text-mediumSubheading leading-tight font-semibold'>13th June 2023</h1>
                 <p className='text-primary text-base font-normal'>5 Meetings</p>
             </div>
         </div>

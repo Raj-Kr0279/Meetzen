@@ -27,7 +27,7 @@ const DraftMinutes = () => {
       <div className="w-full flex flex-col">
         {/* filters and search section  */}
         <div className="bg-hover-bg py-2 flex justify-between rounded-md items-center">
-          <h1 className="text-foreground font-normal text-lg lg:text-2xl">
+          <h1 className="text-primary font-normal text-lg lg:text-2xl">
             All Draft Minutes
           </h1>
           <div className="flex items-baseline gap-3">
@@ -38,7 +38,7 @@ const DraftMinutes = () => {
               Filter Committee:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border"
+              className="py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-sm border border-border"
               name="committee"
               id="committee"
             >
@@ -60,11 +60,11 @@ const DraftMinutes = () => {
                 <p className=" text-sm text-primary leading-none font-semibold">
                   {draft.committee}
                 </p>
-                <h1 className="text-foreground leading-none pt-1 font-normal text-xl">
+                <h1 className="text-primary leading-none pt-1 font-normal text-xl">
                   {draft.documentTitle}
                 </h1>
                 {/* <p className="text-primary font-medium pt-1.5">Document Name</p> */}
-                <p className="text-sm font-medium mt-2 text-foreground">
+                <p className="text-sm font-medium mt-2 text-primary">
                   Date:{" "}
                   <span className="text-primary font-medium pl-1">
                     {formatDateTime(draft.createdAt)}

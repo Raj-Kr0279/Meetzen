@@ -31,7 +31,7 @@ const ImportantDocuments = () => {
             <div className='w-full'>
                 <div className='flex justify-end items-center gap-4'>
                     <label htmlFor="year" className='text-placeholder text-base font-normal'>Filter Year: </label>
-                    <select className='py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border' name="year" id="year">
+                    <select className='py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-sm border border-border' name="year" id="year">
                         <option value="all" >All</option>
                         <option value="2023">2023</option>
                         <option value="2022">2022</option>
@@ -75,10 +75,10 @@ const ImportantDocuments = () => {
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200 ">
                                 <tr>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Compliance</td>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">12/03/2023</td>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">Compliance</td>
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">12/03/2023</td>
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">
                                         <div className="flex items-center gap-3 text-primary">
                                             <AiOutlineShareAlt className='text-2xl' />
                                             <BsTrash className='text-2xl' />
@@ -86,10 +86,10 @@ const ImportantDocuments = () => {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Annual Reports</td>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">12/03/2023</td>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">Annual Reports</td>
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">12/03/2023</td>
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">
                                         <div className="flex items-center gap-3 text-primary">
                                             <AiOutlineShareAlt className='text-2xl' />
                                             <BsTrash className='text-2xl' />
@@ -97,10 +97,10 @@ const ImportantDocuments = () => {
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">Compliance</td>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">12/03/2023</td>
-                                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">Compliance</td>
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">12/03/2023</td>
+                                    <td class="px-4 py-4 text-primary text-sm font-medium whitespace-nowrap">
                                         <div className="flex items-center gap-3 text-primary">
                                             <AiOutlineShareAlt className='text-2xl' />
                                             <BsTrash className='text-2xl' />
@@ -134,10 +134,10 @@ const ImportantDocuments = () => {
                                     <div className='flex w-full justify-between text-start items-center' key={index} alt="">
                                         <div className="flex w-8/12 items-center gap-2">
                                             <FiFolder className='text-primary shrink-0' />
-                                            <span className='text-foreground text-xs font-normal'>{v.name}</span>
+                                            <span className='text-primary text-xs font-normal'>{v.name}</span>
                                         </div>
                                         <div className="flex w-4/12 items-center gap-2">
-                                            <div className='flex items-center border rounded-sm py-1 px-2'><span className='text-foreground text-xs font-normal'>{Math.floor(v.size / 1024 / 1024 * 100) / 100 + " Mb"}</span></div>
+                                            <div className='flex items-center border rounded-sm py-1 px-2'><span className='text-primary text-xs font-normal'>{Math.floor(v.size / 1024 / 1024 * 100) / 100 + " Mb"}</span></div>
                                             <BsTrash className='shrink-0' onClick={(e) => { e.stopPropagation(); deleteFile(index) }} />
                                         </div>
                                     </div>

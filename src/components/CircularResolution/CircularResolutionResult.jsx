@@ -41,137 +41,183 @@ const CircularResolutionResult = () => {
   return (
     <>
       <PageHeading />
-      <div className="w-full border-border border rounded-xl bg-white p-5 min-h-screen">
-        <div className="w-full bg-white ">
-          <div className="py-2 px-4">
-            <h1 className="text-foreground font-medium text-2xl">Results</h1>
-          </div>
-          <div class="overflow-y-auto border-border border h-96 w-full bg-white mb-8 md:rounded-lg">
-            <table class="min-w-full divide-y  divide-gray-200 ">
-              <thead className="sticky top-0 bg-white [&_th]:py-3.5 [&_th]:px-4 [&_th]:tracking-wide [&_th]:text-left [&_th]:rtl:text-right [&_th]:text-prof [&_th]:font-medium [&_th]:text-base [&_th]:bg-primary [&_th]:text-inverse">
-                <tr>
-                  <th scope="col" class="">
-                    <div className="flex items-center gap-1.5">
-                      <span>Name</span>
-                      <div className="flex flex-col gap-0.5 justify-center">
-                        <BsFillTriangleFill className=" text-[5px]" />
-                        <BsFillTriangleFill className=" text-[5px] rotate-180" />
+      <div className="w-full min-h-screen rounded-xl border border-border bg-white p-4 md:p-6">
+  <div className="w-full">
+    <div className="mb-5">
+      <h1 className="text-display-lg font-display">
+        Results
+      </h1>
+    </div>
+
+    {/* TABLE */}
+    <div className="overflow-hidden rounded-xl border border-border bg-white">
+      <div className="overflow-x-auto">
+        <div className="max-h-[420px] overflow-y-auto">
+          <table className="min-w-[850px] w-full table-auto border-collapse">
+            <thead className="sticky top-0 z-20 bg-primary text-inverse">
+              <tr className="[&_th]:px-5 [&_th]:py-3 [&_th]:text-left [&_th]:text-body-md">
+                <th>
+                  <div className="flex items-center gap-2">
+                    <span>Name</span>
+
+                    <div className="flex flex-col gap-0.5">
+                      <BsFillTriangleFill className="text-[5px]" />
+                      <BsFillTriangleFill className="rotate-180 text-[5px]" />
+                    </div>
+                  </div>
+                </th>
+
+                <th>
+                  <div className="flex items-center gap-2">
+                    <span>Designation</span>
+
+                    <div className="flex flex-col gap-0.5">
+                      <BsFillTriangleFill className="text-[5px]" />
+                      <BsFillTriangleFill className="rotate-180 text-[5px]" />
+                    </div>
+                  </div>
+                </th>
+
+                <th>Vote</th>
+
+                <th>Reviewed On</th>
+              </tr>
+            </thead>
+
+            <tbody className="divide-y divide-border bg-white">
+              {Array.from({ length: 20 }, (_, index) => (
+                <tr
+                  key={index}
+                  className="transition-colors hover:bg-surface-hover"
+                >
+                  {/* NAME */}
+                  <td className="px-5 py-4">
+                    <div className="flex min-w-[240px] items-center gap-3">
+                      <img
+                        src={prof}
+                        alt=""
+                        className="h-10 w-10 shrink-0 rounded-full object-cover"
+                      />
+
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-semibold text-primary">
+                          Kelly Casper
+                        </p>
+
+                        <p className="truncate text-captionLight text-muted">
+                          Mario.Koss@hotmail.com
+                        </p>
                       </div>
                     </div>
-                  </th>
-                  <th scope="col" class="">
-                    <div className="flex items-center gap-1.5">
-                      <span>Designation</span>
-                      <div className="flex flex-col gap-0.5 justify-center">
-                        <BsFillTriangleFill className=" text-[5px]" />
-                        <BsFillTriangleFill className=" text-[5px] rotate-180" />
-                      </div>
-                    </div>
-                  </th>
-                  <th scope="col" class="">
-                    Vote
-                  </th>
-                  <th scope="col" class="">
-                    Reviewed On
-                  </th>
+                  </td>
+
+                  {/* DESIGNATION */}
+                  <td className="whitespace-nowrap px-5 py-4 text-sm text-primary">
+                    Employer
+                  </td>
+
+                  {/* VOTE */}
+                  <td className="px-5 py-4">
+                    <span className="inline-flex items-center rounded-full bg-warning/15 px-3 py-1 text-xs font-medium text-warning whitespace-nowrap">
+                      Abstained
+                    </span>
+                  </td>
+
+                  {/* DATE */}
+                  <td className="whitespace-nowrap px-5 py-4 text-sm font-medium text-primary">
+                    20/06/23
+                  </td>
                 </tr>
-              </thead>
-              <tbody class="bg-white divide-y divide-gray-200 ">
-                {Array.from({ length: 20 }, (_, index) => (
-                  <tr key={index}>
-                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                      <div className="flex items-center gap-2">
-                        <img
-                          src={prof}
-                          className="w-8 h-8 rounded-full"
-                          alt=""
-                        />
-                        <div className="flex flex-col">
-                          <span className="text-prof text-xs font-medium">
-                            Kelly Casper
-                          </span>
-                          <span className="text-foreground text-xs font-medium">
-                            Mario.Koss@hotmail.com
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                      Employer
-                    </td>
-                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                      <p className="text-action bg-actionBg inline-block rounded-[2px] p-[1px_2px] text-xs font-medium">
-                        <span className="w-2 h-2 mr-1 rounded-full bg-action"></span>
-                        Abstained
-                      </p>
-                    </td>
-                    <td class="px-4 py-4 text-foreground text-sm font-medium whitespace-nowrap">
-                      20/06/23
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <Pagination />
+              ))}
+            </tbody>
+          </table>
         </div>
+      </div>
+    </div>
 
-        <div className="graph__section flex justify-center gap-16 items-center mt-6">
-          <div className="pie w-[20rem]">
-            <Doughnut data={data} options={options} className="" />
+    {/* Pagination */}
+    <div className="mt-5">
+      <Pagination />
+    </div>
+
+    {/* GRAPH SECTION */}
+    <div className="mt-10 flex flex-col items-center justify-between gap-10 xl:flex-row xl:items-start">
+      {/* Chart */}
+      <div className="w-full max-w-sm shrink-0">
+        <Doughnut data={data} options={options} />
+      </div>
+
+      {/* Legend */}
+      <div className="w-full max-w-2xl">
+        <h2 className="mb-6 text-xl font-semibold text-primary">
+          Results
+        </h2>
+
+        <div className="space-y-5">
+          {/* Item */}
+          <div className="flex items-start justify-between gap-6">
+            <div className="flex items-start gap-4">
+              <div className="mt-1 h-7 w-7 rounded-full bg-primary"></div>
+
+              <p className="text-base font-medium leading-6 text-placeholder">
+                No of director who have given Assent
+              </p>
+            </div>
+
+            <div className="flex h-7 w-9 shrink-0 items-center justify-center rounded bg-themeLightBlue font-bold text-primary">
+              6
+            </div>
           </div>
-          <div className="flex flex-col gap-4">
-            <h1 className="text-foreground font-semibold text-mediumSubheading pl-4">
-              Results
-            </h1>
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex gap-4 items-center">
-                <div className="bg-primary w-8 h-8 rounded-full"></div>
-                <p className="text-placeholder font-medium text-base justify-self-start whitespace-nowrap">
-                  No of director who have given Assent
-                </p>
-              </div>
-              <p className="text-primary font-extrabold bg-themeLightBlue shrink-0 w-8 h-6 rounded-sm flex item-center justify-center">
-                6
+
+          {/* Item */}
+          <div className="flex items-start justify-between gap-6">
+            <div className="flex items-start gap-4">
+              <div className="mt-1 h-7 w-7 rounded-full bg-[#BBB6F8]"></div>
+
+              <p className="text-base font-medium leading-6 text-placeholder">
+                No of director who have given Dissent
               </p>
             </div>
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex gap-4 items-center">
-                <div className="bg-[#BBB6F8] w-8 h-8 rounded-full"></div>
-                <p className="text-placeholder font-medium text-base justify-self-start whitespace-nowrap">
-                  No of director who have given Dissent
-                </p>
-              </div>
-              <p className="text-primary font-extrabold bg-themeLightBlue shrink-0 w-8 h-6 rounded-sm flex item-center justify-center">
-                3
+
+            <div className="flex h-7 w-9 shrink-0 items-center justify-center rounded bg-themeLightBlue font-bold text-primary">
+              3
+            </div>
+          </div>
+
+          {/* Item */}
+          <div className="flex items-start justify-between gap-6">
+            <div className="flex items-start gap-4">
+              <div className="mt-1 h-7 w-7 rounded-full bg-[#EAEBF0]"></div>
+
+              <p className="text-base font-medium leading-6 text-placeholder">
+                No of director who have given Abstain
               </p>
             </div>
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex gap-4 items-center">
-                <div className="bg-[#EAEBF0] w-8 h-8 rounded-full"></div>
-                <p className="text-placeholder font-medium text-base justify-self-start whitespace-nowrap">
-                  No of director who have given Abstain
-                </p>
-              </div>
-              <p className="text-primary font-extrabold bg-themeLightBlue shrink-0 w-8 h-6 rounded-sm flex item-center justify-center">
-                5
+
+            <div className="flex h-7 w-9 shrink-0 items-center justify-center rounded bg-themeLightBlue font-bold text-primary">
+              5
+            </div>
+          </div>
+
+          {/* Item */}
+          <div className="flex items-start justify-between gap-6">
+            <div className="flex items-start gap-4">
+              <div className="mt-1 h-7 w-7 rounded-full bg-[#F4F0FD]"></div>
+
+              <p className="text-base font-medium leading-6 text-placeholder">
+                No of director who have given Vote
               </p>
             </div>
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex gap-4 items-center">
-                <div className="bg-[#F4F0FD] w-8 h-8 rounded-full"></div>
-                <p className="text-placeholder font-medium text-base justify-self-start whitespace-nowrap">
-                  No of director who have given Vote
-                </p>
-              </div>
-              <p className="text-primary font-extrabold bg-themeLightBlue shrink-0 w-8 h-6 rounded-sm flex item-center justify-center">
-                2
-              </p>
+
+            <div className="flex h-7 w-9 shrink-0 items-center justify-center rounded bg-themeLightBlue font-bold text-primary">
+              2
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
     </>
   );
 };

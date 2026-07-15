@@ -25,7 +25,7 @@ const ProfileLayout = () => {
                     </div>
 
                 </div>
-                <p className='text-foreground fixed top-4 z-20 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Meeting WorkSpace</p>
+                <p className='text-primary fixed top-4 z-20 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Meeting WorkSpace</p>
 
                 <div className="flex mt-[70px] grow gap-6">
                     <div className='flex flex-col whitespace-nowrap'>

@@ -64,25 +64,25 @@ setNotifFilterValue(filter);
   };
 
   return (
-    <div className="grid dash__wrapper grid-cols-1 md:grid-cols-[1.5fr_1fr] pb-20 gap-8">
+    <div className="grid dash__wrapper grid-cols-1 lg:grid-cols-[1.5fr_1fr] pb-20 gap-8">
       <div className="flex flex-col w-full">
         <div className="highlight__wrp md:min-h-120 overflow-hidden card">
             {/* <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-border rounded-md whitespace-nowrap h-12 place-items-center">
               <p
                 onClick={() => setMeetingFilterValue("all")}
-                className={`${meetingFilterValue === "all" ? "bg-selected" : "text-foreground bg-white"} w-full flex items-center justify-center h-full px-4`}
+                className={`${meetingFilterValue === "all" ? "bg-selected" : "text-primary bg-white"} w-full flex items-center justify-center h-full px-4`}
               >
                 {`All(${demoData.meetings.length})`}
               </p>
               <p
                 onClick={() => setMeetingFilterValue("upcoming")}
-                className={`${meetingFilterValue === "upcoming" ? "bg-selected" : "text-foreground bg-white"} w-full flex items-center justify-center h-full px-4`}
+                className={`${meetingFilterValue === "upcoming" ? "bg-selected" : "text-primary bg-white"} w-full flex items-center justify-center h-full px-4`}
               >
                 {`Upcoming(${demoData.meetings.filter((i) => i.status === "upcoming").length})`}
               </p>
               <p
                 onClick={() => setMeetingFilterValue("recent")}
-                className={`${meetingFilterValue === "recent" ? "bg-selected" : "text-foreground bg-white"}  w-full flex items-center justify-center h-full px-4`}
+                className={`${meetingFilterValue === "recent" ? "bg-selected" : "text-primary bg-white"}  w-full flex items-center justify-center h-full px-4`}
               >
                 {`Recent(${demoData.meetings.filter((i) => i.status === "recent").length})`}
               </p>
@@ -152,7 +152,7 @@ setNotifFilterValue(filter);
                   {<AiOutlineLeft />}
                 </button>
 
-                <span className=" text-2xl text-foreground font-semibold text-left w-full pl-6">
+                <span className=" text-2xl text-primary font-semibold text-left w-full pl-6">
                   {monthDate.toLocaleString("en-US", {
                     month: "long",
                     year: "numeric",
@@ -195,7 +195,7 @@ setNotifFilterValue(filter);
                   <div
                     key={notif.id}
                     className="flex flex-col break-words bg-hover-bg border-l-4 border-l-secondary bg-surface p-2 border-border border rounded-md">
-                    <h1 className="text-foreground text-sm font-normal">
+                    <h1 className="text-primary text-sm font-normal">
                       {notif.title}
                     </h1>
                     <span className="text-xs tracking-[.18px] pb-1.5 text-placeholder font-extralight">
@@ -219,7 +219,7 @@ setNotifFilterValue(filter);
                       </div>
                       <div className="flex flex-col">
                         <div className="flex justify-between leading-none pb-1 items-center">
-                          <p className="text-foreground font-normal text-sm">
+                          <p className="text-primary font-normal text-sm">
                             Brenda White
                           </p>
                           <span className="font-medium text-xs">12:00</span>

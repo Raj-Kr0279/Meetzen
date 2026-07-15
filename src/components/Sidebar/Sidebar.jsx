@@ -81,14 +81,14 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
             <p className="text-xs font-medium uppercase tracking-[0.24em] text-subtle">
               Meeting Manager
             </p>
-            <h1 className="text-xl font-semibold text-foreground">
+            <h1 className="text-xl font-semibold text-primary">
               MEET<span className="text-secondary">ZEN</span>
             </h1>
           </div>
         </div>
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-foreground transition hover:bg-surface-hover md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-primary transition hover:bg-surface-hover md:hidden"
           onClick={() => setIsSidebarOpen(false)}
           aria-label="Close navigation menu"
         >
@@ -107,7 +107,7 @@ const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }) => {
                 `flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium transition ${
                   isActive
                     ? "bg-primary text-inverse shadow-sm"
-                    : "text-muted hover:bg-surface-hover hover:text-foreground"
+                    : "text-muted hover:bg-surface-hover hover:text-primary"
                 }`
               }
             >

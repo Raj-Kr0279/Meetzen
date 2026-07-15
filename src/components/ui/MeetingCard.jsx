@@ -48,10 +48,10 @@ const MeetingCard = ({ meeting }) => {
             {meeting.status === "recent" ? "Recents" : "Upcoming"}
           </span>
         </div>
-        <h3 className="font-display text-display-sm pb-3 truncate w-full">
+        <h3 className="font-display text-display-sm pb-3 w-full">
           {meeting.committeeName}
         </h3>
-        <div className="flex text-foreground items-center pb-2 gap-4 text-xs font-medium leading-snug">
+        <div className="flex lg:flex-row flex-col lg:gap-4 pb-2">
           {/* <div className="flex items-center gap-1">
             <AiOutlineCalendar className="text-primary" />
             <span>
@@ -64,8 +64,8 @@ const MeetingCard = ({ meeting }) => {
           </div> */}
           
           <div className="flex items-center gap-1">
-            <AiOutlineClockCircle className="text-body-sm text-subtle" />
-            <span className="text-body-sm text-subtle">
+            <AiOutlineClockCircle className="text-mono-sm text-subtle" />
+            <span className="text-mono-sm text-subtle">
               {new Date(meeting.startAt).toLocaleTimeString("en-GB", {
                 hour: "2-digit",
                 minute: "2-digit",
@@ -79,7 +79,7 @@ const MeetingCard = ({ meeting }) => {
               })}
             </span>
           </div>
-           <div className="flex items-center text-body-sm text-subtle">
+           <div className="flex items-center text-mono-sm text-subtle">
           <RiMapPin2Line className="mr-1" />
           <span className="mr-2">{meeting.location.label}</span>
           <span
@@ -100,11 +100,11 @@ const MeetingCard = ({ meeting }) => {
             {peopleThumbnailsList}
             {peopleThumbnailsList.length > 4 && (
               <div className="bg-primary text-xs flex rounded-full border-primary border w-8 h-8 -ml-2.5 text-inverse justify-center items-center font-medium">
-                <span className="text-foreground">{`+${peopleThumbnailsList.length - 4}`}</span>
+                <span className="text-primary">{`+${peopleThumbnailsList.length - 4}`}</span>
               </div>
             )}
           </div>
-          <div className="text-body-sm flex items-center text-subtle">
+          <div className="text-caption flex items-center text-muted">
             <FiUsers className="" />
             <span className="ps-1">
               Members Accepted (<span className="text-primary">{meeting.membersAccepted}/{meeting.membersTotal}</span>

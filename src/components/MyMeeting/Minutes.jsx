@@ -7,7 +7,7 @@ const Minutes = () => {
     const minutes = Array.from({ length: 12 }, (_, index) => (
         <div key={index} className="flex border-b py-2 items-center justify-between">
           <div className="flex flex-col gap-1">
-            <h1 className='text-foreground font-semibold text-2xl'>Document Name</h1>
+            <h1 className='text-primary font-semibold text-2xl'>Document Name</h1>
             <div className='flex items-center gap-2'>
                 <span className='text-placeholder'>Date & Time:</span>
                 <p className=" text-lg text-primary font-medium">20/06/23 06:57 PM</p>

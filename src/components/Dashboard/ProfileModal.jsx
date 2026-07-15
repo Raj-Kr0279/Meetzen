@@ -29,10 +29,10 @@ const ProfileModal = ({ onClose }) => {
       <button
         type="button"
         className="flex items-center border-b border-divider py-3 pl-4 pr-10 text-left"
-        onClick={() => navigateAndClose("/edit-profile")}
+        onClick={() => navigateAndClose("/home/edit-profile")}
       >
         <img src={prof} className="mr-4 h-6 w-6" alt="" />
-        <span className="text-xs font-normal text-foreground">Profile Details</span>
+        <span className="text-xs font-normal text-primary">Profile Details</span>
       </button>
       <button
         type="button"
@@ -40,21 +40,21 @@ const ProfileModal = ({ onClose }) => {
         onClick={() => navigateAndClose("/change-password")}
       >
         <img src={pass} className="mr-4 h-6 w-6" alt="" />
-        <span className="text-xs font-normal text-foreground">Change Password</span>
+        <span className="text-xs font-normal text-primary">Change Password</span>
       </button>
       <button
         type="button"
         className="flex items-center border-b border-divider py-3 pl-4 pr-10 text-left"
       >
         <img src={face} className="mr-4 h-6 w-6" alt="" />
-        <span className="text-xs font-normal text-foreground">Setup Face ID</span>
+        <span className="text-xs font-normal text-primary">Setup Face ID</span>
       </button>
       <button
         type="button"
         className="flex items-center border-b border-divider py-3 pl-4 pr-10 text-left"
       >
         <img src={fing} className="mr-4 h-6 w-6" alt="" />
-        <span className="text-xs font-normal text-foreground">
+        <span className="text-xs font-normal text-primary">
           Setup Fingerprint ID
         </span>
       </button>
@@ -64,7 +64,7 @@ const ProfileModal = ({ onClose }) => {
         onClick={() => navigateAndClose("/")}
       >
         <img src={logout} className="mr-4 h-6 w-6" alt="" />
-        <span className="text-xs font-normal text-foreground">Logout</span>
+        <span className="text-xs font-normal text-primary">Logout</span>
       </button>
     </div>
   );

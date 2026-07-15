@@ -9,6 +9,7 @@ import PageHeading from "../PageHeading";
 import InputField from "../ui/InputField";
 import { languages, TIME_ZONES } from "../../utils/timeZones";
 import { useSelector } from "react-redux";
+import Button from "../ui/Button";
 
 const EditProfile = () => {
   const user =useSelector(state=>state.user)
@@ -39,9 +40,8 @@ const EditProfile = () => {
 
   return (
     <>
-      <PageHeading label="Edit Profile" />
-
-      <div className="grid md:grid-cols-[4fr_8fr] max-h-[calc(100dvh-40px)] mt-20 grid-cols-1 md:px-5 lg:px-24 place-items-center w-full">
+<p className='text-primary text-center pb-8 font-display text-display-lg'>Edit Profile</p>
+      <div className="grid lg:grid-cols-[4fr_8fr] lg:max-h-[calc(100dvh-40px)] grid-cols-1 place-items-center w-full">
         <div className="flex flex-col self-baseline gap-4 items-center">
           <div className="flex flex-col gap-2 items-center">
             <img
@@ -49,18 +49,15 @@ const EditProfile = () => {
               className="w-[240px] h-[240px] rounded-full"
               alt=""
             />
-            <span className="text-foreground font-medium text-xs text-center pb-6">
+            <span className="text-primary font-medium text-xs text-center pb-6">
               Recommeded image size
               <br />
               250x250
             </span>
           </div>
           <div className="buttons flex flex-col gap-4 w-9/12">
-            <button className="bg-primary text-white py-3 px-4 rounded-md flex items-center gap-2 justify-center text-xs font-normal">
-              <MdOutlineImage />
-              Change Picture
-            </button>
-            <button className="bg-white border-error border text-error py-3 px-4 rounded-md flex items-center gap-2 justify-center text-xs font-normal">
+            <Button label="Change Picture" variant="primary"/>
+            <button className="border-error hover:bg-error hover:text-inverse border text-error py-3 px-4 rounded-sm flex items-center gap-2 justify-center text-body-sm font-normal transition-colors ease-in-out">
               <FiTrash2 />
               Delete
             </button>
@@ -70,10 +67,10 @@ const EditProfile = () => {
         <div className="w-full xl:w-8/12 justify-self-start">
           <form
             onSubmit={handleSubmit}
-            className="flex edit_profile flex-col w-full gap-6 lg:gap-2"
+            className="flex edit_profile flex-col w-full gap-2 lg:gap-4"
           >
             <InputField
-              label="name"
+              label="Name"
               name="name"
               type="text"
               value={form.name}
@@ -119,12 +116,8 @@ const EditProfile = () => {
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full mt-6 py-4 px-8 rounded-lg bg-primary text-white"
-            >
-              Save Changes
-            </button>
+           
+            <Button variant="primary" label="Submit" classNames="mt-4"/>
           </form>
         </div>
       </div>
