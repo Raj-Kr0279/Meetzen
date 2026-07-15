@@ -30,7 +30,7 @@ const ShareDocModal = ({ modal, setModal }) => {
                     <input className='text-placeholder w-full border border-topSearch rounded-md py-2.5 px-8' placeholder='Search' type="text" name="search" id="search" />
                 </div>
                 <div className='py-2 px-4  inline-flex items-center gap-2 cursor-pointer'>
-                    <p className="text-foreground text-xs font-semibold">People with access</p>
+                    <p className="text-primary text-xs font-semibold">People with access</p>
                 </div>
                 <div className="contacts__wrap border-t grow-1 border-border gap-4 flex flex-col overflow-y-auto">
                     {contact}

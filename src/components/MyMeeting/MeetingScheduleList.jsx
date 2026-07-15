@@ -28,7 +28,7 @@ const MeetingScheduleList = () => {
                             onClick={decreaseMonth}
                         >{<AiOutlineLeft />}</button>
 
-                        <span className=" text-base text-foreground font-semibold text-center w-full">
+                        <span className=" text-base text-primary font-semibold text-center w-full">
                             {monthDate.toLocaleString("en-US", {
                                 month: "long",
                                 year: "numeric",
@@ -60,14 +60,14 @@ const MeetingScheduleList = () => {
                     <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
                 </div>
             </div>
-            <p className='text-foreground z-40 leading-[1.2] fixed top-[12px] twok:top-[20px] left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>All Meetings</p>
+            <p className='text-primary z-40 leading-[1.2] fixed top-[12px] twok:top-[20px] left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>All Meetings</p>
 
 
             <div className='w-full mt-12 px-10 flex flex-col'>
                 <div className=' bg-hover-bg mx-10 px-4 py-2 flex justify-end rounded-md mt-6 mb-4 items-center'>
                     <div className="flex items-center gap-3">
                         <label htmlFor="year" className='text-placeholder text-base font-normal'>Filter Year: </label>
-                        <select className='py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border' name="year" id="year">
+                        <select className='py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-sm border border-border' name="year" id="year">
                             <option value="all" >All</option>
                             <option value="2023">2023</option>
                             <option value="2022">2022</option>

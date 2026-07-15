@@ -18,7 +18,7 @@ const InputField = ({
   selectWrapperClasses,
   passStrength,
 }) => {
-  const base = `w-full border border-border rounded-md bg-surface px-4 py-3 text-foreground text-sm placeholder-placeholder focus:outline-none focus:ring-2 transition-all disabled:cursor-not-allowed disabled:opacity-60 focus:ring-primary/20 focus:border-primary`;
+  const base = `w-full border border-border rounded-md bg-surface px-4 py-3 text-primary text-sm placeholder-placeholder focus:outline-none focus:ring-2 transition-all disabled:cursor-not-allowed disabled:opacity-60 focus:ring-primary/20 focus:border-primary`;
 
   // Apply error styles directly in `base` to keep class handling simple.
   const inputBase = error
@@ -27,7 +27,7 @@ const InputField = ({
 
   return (
     <div className="">
-     {label !== ""&& <label className="font-normal pb-1 flex items-center text-foreground text-sm">
+     {label !== ""&& <label className="pb-1 flex items-center text-primary text-body-md whitespace-nowrap">
         {label}
       </label>}
 

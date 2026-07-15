@@ -20,7 +20,7 @@ const TopHeader = ({
       <div className="flex min-h-16 items-center gap-3 px-4 py-3 md:px-6">
         <button
           type="button"
-          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border text-foreground transition hover:bg-surface-hover md:hidden"
+          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border text-primary transition hover:bg-surface-hover md:hidden"
           onClick={() => setIsSidebarOpen(true)}
           aria-label="Open navigation menu"
         >
@@ -41,13 +41,13 @@ const TopHeader = ({
             <FiSearch className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-subtle" />
             <input
               type="text"
-              className="h-11 w-full rounded-lg border border-border bg-background py-2 pl-11 pr-12 text-sm text-foreground outline-none transition placeholder:text-placeholder focus:border-primary focus:ring-2 focus:ring-info-soft"
+              className="h-11 w-full rounded-lg border border-border bg-background py-2 pl-11 pr-12 text-sm text-primary outline-none transition placeholder:text-placeholder focus:border-primary focus:ring-2 focus:ring-info-soft"
               placeholder="Advanced search using filters"
             />
             <button
               type="button"
               onClick={() => toggleOverlay("filters")}
-              className="absolute right-2 top-1/2 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-subtle transition hover:bg-surface-hover hover:text-foreground"
+              className="absolute right-2 top-1/2 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-subtle transition hover:bg-surface-hover hover:text-primary"
               aria-label="Open filters"
               aria-expanded={activeOverlay === "filters"}
             >
@@ -73,7 +73,7 @@ const TopHeader = ({
           <button
             type="button"
             onClick={() => toggleOverlay("notifications")}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground transition hover:bg-surface-hover"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-primary transition hover:bg-surface-hover"
             aria-label="Open notifications"
             aria-expanded={activeOverlay === "notifications"}
           >
@@ -98,7 +98,7 @@ const TopHeader = ({
           >
             <img src={prof} className="h-10 w-10 rounded-full" alt="Profile" />
             <div className="ml-3 text-left">
-              <div className="text-sm font-medium text-foreground">{name}</div>
+              <div className="text-sm font-medium text-primary">{name}</div>
               <div className="text-xs text-subtle">{role}</div>
             </div>
             <FaAngleDown className="ml-3 text-subtle" />

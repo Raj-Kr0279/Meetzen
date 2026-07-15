@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import PageHeading from "../PageHeading";
 import { demoData } from "../../demoData/demoData";
 import Button from "../ui/Button";
+import MeetingFilter from "../ui/MeetingFilter";
 
 const CircularResolutionList = () => {
   // Keep one selected vote per resolution row, keyed by resolution id.
@@ -41,19 +42,19 @@ const CircularResolutionList = () => {
       <PageHeading label="Resolution By Circulation" />
       <div className="w-full flex flex-col ">
         {/* filters and search section  */}
-        <div className=" bg-hover-bg py-2 flex justify-between rounded-md items-center">
-          <h1 className="text-foreground font-medium text-display-lg">
+        <div className="bg-hover-bg lg:flex-row flex-col py-2 flex justify-between rounded-md items-center">
+          <h1 className="text-primary font-display pb-4 lg:pb-0 text-display-md">
             All resolutions By Circulation
           </h1>
-          <div className="flex items-end gap-3">
+          {/* <div className="flex items-end gap-3">
             <label
               htmlFor="year"
-              className="text-foreground text-base font-normal"
+              className="text-primary text-base font-normal"
             >
               Filter Committee:{" "}
             </label>
             <select
-              className="py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-md border border-border"
+              className="py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-md border border-border"
               name="committee"
               id="committee"
             >
@@ -62,14 +63,15 @@ const CircularResolutionList = () => {
               <option value="audit">Audit</option>
               <option value="src">SRC</option>
             </select>
-          </div>
+          </div> */}
+          <MeetingFilter isFilter />
         </div>
 
-        <div className="h-[70dvh] mt-2 w-full border-border border rounded-md overflow-y-scroll">
+        <div className="h-[65dvh] mt-2 flex flex-col gap-2 w-full overflow-y-scroll">
           {demoData.circularResolutonLists.map((resolutions) => (
             <div
               key={resolutions?.id}
-              className="flex relative lg:items-end flex-wrap justify-between p-4 border-b border-b-border"
+              className="flex relative lg:items-end flex-wrap justify-between bg-surface border border-border rounded-md p-4"
               onClick={() =>
                 navigate(`/home/circular-resolution-result/${resolutions?.id}`)
               }
@@ -82,13 +84,13 @@ const CircularResolutionList = () => {
                 <p className="text-sm text-primary leading-none font-semibold">
                   AUDIT COMMITTEE
                 </p>
-                <h1 className="text-foreground leading-none pt-1.5 font-medium text-xl">
+                <h1 className="text-primary leading-none pt-1.5 font-medium text-xl">
                   Stakeholders Relationship Committee
                 </h1>
                 <p className="text-sm py-1.5 font-medium text-subtle">
                   CR/Audit/001/Fy2023-2024
                 </p>
-                <p className="text-sm font-medium text-foreground">
+                <p className="text-sm font-medium text-primary">
                   Date:{" "}
                   <span className="text-primary text-sm font-medium pl-1">
                     03/04/2023

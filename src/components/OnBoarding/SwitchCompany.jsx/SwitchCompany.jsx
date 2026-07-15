@@ -58,7 +58,7 @@ const SwitchCompany = () => {
                 </div>
                 <div className="flex gap-1 flex-col items-start">
                   <p
-                    className={`${company?.companyId === selectedCompany?.companyId ? "" : "text-foreground"}  font-medium leading-none text-sm`}
+                    className={`${company?.companyId === selectedCompany?.companyId ? "" : "text-primary"}  font-medium leading-none text-sm`}
                   >
                     {company?.name}
                   </p>

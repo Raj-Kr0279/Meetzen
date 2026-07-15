@@ -25,7 +25,7 @@ const Chat = () => {
                 </div>
                 <div className="flex flex-col">
                     <div className="flex justify-between leading-none pb-1 items-center">
-                        <p className='text-foreground font-medium text-xs'>Brenda White</p>
+                        <p className='text-primary font-medium text-xs'>Brenda White</p>
                         <span className="text-light font-medium text-[.813rem]">12:00</span>
                     </div>
                     <span className='text-light leading-[1.2] text-xs text__content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa repellat suscipit optio ex, voluptates quos nihil sunt consequuntur voluptate?</span>
@@ -43,7 +43,7 @@ const Chat = () => {
             <div className="flex w-full max-h-[calc(100dvh-40px)] overflow-hidden px-4">
                 <div className='border-r basis-[300px] twok:basis-[450px] shrink-0 pr-2'>
                     <div className='flex items-center pt-4 pb-2 justify-between'>
-                        <h1 className='text-foreground font-semibold text-mediumHeading'>Chat</h1>
+                        <h1 className='text-primary font-semibold text-mediumHeading'>Chat</h1>
                         <button className="bg-primary text-xs text-white px-4 py-2 font-medium rounded-md flex items-center gap-2" onClick={()=>setAddMemberModal(!addMemberModal)}>Add<AiOutlinePlus className=" text-mediumSubheading" /></button>
 
                     </div>
@@ -65,7 +65,7 @@ const Chat = () => {
                             <img src={prof} className='w-full h-full rounded-full' alt="" />
                             <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                         </div>
-                        <span className='text-foreground text-lg font-medium'>Jamie Spencer</span>
+                        <span className='text-primary text-lg font-medium'>Jamie Spencer</span>
                     </div>
                     <div className="chat__area flex flex-col gap-5 h-[75vh] overflow-y-auto break-words py-6 px-8">
                         <div className='flex w-[65%] items-start mb-auto'>
@@ -74,7 +74,7 @@ const Chat = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-white font-normal text-base  text-foreground p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-white font-normal text-base  text-primary p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-xs text-placeholder font-normal'>08:15 PM</span>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ const Chat = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-white font-normal text-base  text-foreground p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-white font-normal text-base  text-primary p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-xs text-placeholder font-normal'>08:15 PM</span>
                             </div>
                         </div>
@@ -119,7 +119,7 @@ const Chat = () => {
                                 <div className="flex items-center gap-1 py-2 border-b border-profileModalBorder px-4"><img src={gallery} className='w-[16px] h-auto ' alt="" /><span className=' text-xs font-normal text-prof' >Photos & Videos</span></div>
                                 <div className="flex items-center gap-1 py-2 px-4"><img src={doc} className='w-[16px] h-auto ' alt="" /><span className=' text-xs font-normal text-prof' >Document</span></div>
                             </div>
-                            <input placeholder="Write your message here..." className='w-full border text-foreground border-topSearch rounded-md py-3 px-8' type="text" name="search" id="search" />
+                            <input placeholder="Write your message here..." className='w-full border text-primary border-topSearch rounded-md py-3 px-8' type="text" name="search" id="search" />
                         </div>
                     </div>
 

@@ -121,6 +121,7 @@ function App() {
             <Route path="support" element={<HelpAndSupport />} />
             <Route path="notifications" element={<Notifications />} />
             <Route path="chat" element={<Chat />} />
+            <Route path="edit-profile" element={<EditProfile />} />
           </Route>
 
           {/* <Route path="set-up" element={<SetUpLayout />}>
@@ -130,7 +131,7 @@ function App() {
             <Route path="timezone" element={<TimeZone />} />
           </Route> */}
 
-          <Route path="edit-profile" element={<EditProfile />} />
+          
           <Route path="submit-feedback" element={<SubmitFeedback />} />
           <Route path="view-member-profile" element={<ProfileLayout />} />
           {/* <Route path="add-company" element={<AddCompanies />} /> */}

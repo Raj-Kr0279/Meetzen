@@ -152,7 +152,7 @@ const AddCompanies = () => {
                     type="file"
                     accept="image/*"
                     onChange={handleLogoChange}
-                    className="block w-full text-sm text-foreground file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:bg-meetFilterBlueLight file:text-primary"
+                    className="block w-full text-sm text-primary file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:bg-meetFilterBlueLight file:text-primary"
                   />
 
                   {form.logo ? (
@@ -175,7 +175,7 @@ const AddCompanies = () => {
                 type="button"
                 onClick={() => navigate(-1)}
                 disabled={isSubmitting}
-                className="border border-border px-5 py-3 rounded-md text-foreground hover:bg-hover-bg transition"
+                className="border border-border px-5 py-3 rounded-md text-primary hover:bg-hover-bg transition"
               >
                 Cancel
               </button>

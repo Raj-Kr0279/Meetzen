@@ -79,6 +79,7 @@ export default {
 
         // ─── Caption / meta / mono — fixed, these are small and already tight ───
         caption: ["0.75rem", { lineHeight: "1.45", fontWeight: "500" }],
+        captionLight: ["0.75rem", { lineHeight: "1.4", fontWeight: "400" }],
         overline: ["0.6875rem", { lineHeight: "1.3", letterSpacing: "0.12em", fontWeight: "600" }],
         "mono-lg": ["clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem)", { lineHeight: "1.1", fontWeight: "500" }],
         "mono-md": ["0.8125rem", { lineHeight: "1.4", letterSpacing: "0.02em", fontWeight: "500" }],

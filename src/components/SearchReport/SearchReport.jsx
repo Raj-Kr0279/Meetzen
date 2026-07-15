@@ -18,7 +18,7 @@ const SearchReport = () => {
                     <div className="grid md:grid-cols-4 mb-6 gap-x-6 whitespace-nowrap">
                     <div className="flex flex-col gap-2">
                         <label htmlFor="" className="block">Search From</label>
-                        <select className='py-2.5 px-2.5 bg-white text-foreground text-base  rounded-sm border border-border' name="category" id="category">
+                        <select className='py-2.5 px-2.5 bg-white text-primary text-base  rounded-sm border border-border' name="category" id="category">
                             <option value="all">All</option>
                             <option value="agenda">Agenda</option>
                             <option value="final_minutes">Final Minutes</option>
@@ -27,7 +27,7 @@ const SearchReport = () => {
                     </div>
                     <div className="flex flex-col gap-2">
                         <label htmlFor="" className="block">Select Committee</label>
-                        <select className='py-2.5 px-2.5 bg-white text-foreground text-base  rounded-sm border border-border' name="committee" id="commitee">
+                        <select className='py-2.5 px-2.5 bg-white text-primary text-base  rounded-sm border border-border' name="committee" id="commitee">
                             <option value="board_committee">Board Committee</option>
                             <option value="audit">Audit</option>
                             <option value="src">SRC</option>

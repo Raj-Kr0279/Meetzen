@@ -12,7 +12,7 @@ const Members = () => {
             <div className='flex flex-col'>
                 <p className='text-graySecondary text-xs font-medium'>Chairman:</p>
                 <h5 className='text-black pb-1.5 font-semibold text-xs'>Board Meeting</h5>
-                <p className='text-foreground text-xs font-normal'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur quam eligendi placeat saepe corrupti facilis ab, esse modi natus.</p>
+                <p className='text-primary text-xs font-normal'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur quam eligendi placeat saepe corrupti facilis ab, esse modi natus.</p>
                 <span className='text-primary underline font-bold pt-3 cursor-pointer' onClick={()=>navigate("/view-member-profile")}>View profile</span>
             </div>
         </div>

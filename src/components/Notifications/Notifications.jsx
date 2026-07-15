@@ -16,7 +16,7 @@ const Notifications = () => {
                     <h1 className='text-primary text-display-md'>All Notifications</h1>
                     <div className="flex items-center gap-3">
                         {/* <label htmlFor="year" className='text-placeholder text-base font-normal'>Filter Year: </label>
-            <select className='py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border' name="year" id="year">
+            <select className='py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-sm border border-border' name="year" id="year">
               <option value="all" >All</option>
               <option value="2023">2023</option>
               <option value="2022">2022</option>
@@ -24,7 +24,7 @@ const Notifications = () => {
             </select> */}
 
                         <label htmlFor="year" className='text-placeholder text-base font-normal'>Filter Committee: </label>
-                        <select className='py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border' name="committee" id="committee">
+                        <select className='py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-sm border border-border' name="committee" id="committee">
                             <option value="all">All</option>
                             <option value="board_meetig">Board Meeting</option>
                             <option value="audit">Audit</option>

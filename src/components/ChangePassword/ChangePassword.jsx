@@ -110,7 +110,7 @@ const ChangePassword = () => {
             {passwordError}
           </p>
         }
-        <p className="text-xs pb-2 text-foreground font-medium mb-2 ">
+        <p className="text-xs pb-2 text-primary font-medium mb-2 ">
         Password should contain at least 8 characters, one uppercase letter, one
         lowercase letter, one number, and one special character
       </p>

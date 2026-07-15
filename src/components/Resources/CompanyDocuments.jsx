@@ -49,22 +49,22 @@ const CompanyDocuments = () => {
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200 ">
                     <tr>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">Compliance</td>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">12/03/2023</td>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">John Doe</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">Compliance</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">12/03/2023</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">John Doe</td>
                     </tr>
                     <tr>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">Compliance</td>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">12/03/2023</td>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">John Doe</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">Compliance</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">12/03/2023</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">John Doe</td>
                     </tr>
                     <tr>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">Compliance</td>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">12/03/2023</td>
-                        <td class="p-4 text-foreground text-sm font-medium whitespace-nowrap">John Doe</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">Board meeting document.xlsx</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">Compliance</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">12/03/2023</td>
+                        <td class="p-4 text-primary text-sm font-medium whitespace-nowrap">John Doe</td>
                     </tr>
                 </tbody>
             </table>

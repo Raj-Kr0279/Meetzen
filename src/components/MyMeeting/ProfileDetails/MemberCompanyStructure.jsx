@@ -12,7 +12,7 @@ const MemberCompanyStructure = () => {
     <div key={index} className='w-60 rounded-md border flex justify-center items-center flex-col bg-white p-4'>
       <img src={prof} className=' w-12 h-12 rounded-full' alt="" />
       <h1 className='text-memberCardHeader pb-2 text-xs font-semibold'>Madelyn Mango</h1>
-      <span className='w-full text-center bg-hover-bg text-foreground my-1 text-smallCaption font0-semibold p-1'>Chairman</span>
+      <span className='w-full text-center bg-hover-bg text-primary my-1 text-smallCaption font0-semibold p-1'>Chairman</span>
     </div>
   ))
   return (
@@ -28,8 +28,8 @@ const MemberCompanyStructure = () => {
         selectedFilter === "composition" ?
           <>
             <div className="flex flex-col mt-4 mb-6 gap-2">
-              <label htmlFor="year" className='text-foreground text-base font-semibold'>Committee Composition</label>
-              <select className='py-2.5 px-2.5 bg-white text-foreground text-base w-[19vw] rounded-sm border border-border' name="committee" id="committee">
+              <label htmlFor="year" className='text-primary text-base font-semibold'>Committee Composition</label>
+              <select className='py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-sm border border-border' name="committee" id="committee">
                 <option value="all">Audit Committee</option>
                 <option value="board_meetig">Board Meeting</option>
                 <option value="audit">Audit</option>
@@ -49,7 +49,7 @@ const MemberCompanyStructure = () => {
                 <div className='w-60 rounded-md border flex justify-center items-center flex-col bg-white p-4'>
                   <img src={prof} className=' w-12 h-12 rounded-full' alt="" />
                   <h1 className='text-memberCardHeader pb-2 text-xs font-semibold'>Madelyn Mango</h1>
-                  <span className='w-full text-center bg-hover-bg text-foreground my-1 text-smallCaption font0-semibold p-1'>Chairman</span>
+                  <span className='w-full text-center bg-hover-bg text-primary my-1 text-smallCaption font0-semibold p-1'>Chairman</span>
                   <p className='bg-[#D7D6FF] cursor-pointer text-compareHead px-3 py-1 rounded-full -translate-x-1/2 left-1/2 flex items-center gap-1 absolute -bottom-3' onClick={() => setCollapsed(!isCollapsed)}>2<FaAngleDown /></p>
                 </div>
               </div>

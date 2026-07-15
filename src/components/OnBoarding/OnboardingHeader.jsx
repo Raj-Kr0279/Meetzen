@@ -4,10 +4,10 @@ const OnboardingHeader = ({ heading, subHeading }) => {
   return (
     <div className="mb-8 font-bold">
       {!(heading === "") && (
-        <h1 className="text-primary text-2xl">{heading}</h1>
+        <h1 className="text-primary font-display text-display-lg">{heading}</h1>
       )}
       {!(subHeading === "") && (
-        <p className="text-muted text-xs font-light">
+        <p className="text-muted text-body-sm">
           {subHeading}
         </p>
       )}
