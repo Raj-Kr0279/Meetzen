@@ -10,7 +10,8 @@ const MeetingFilter = ({
   onCommitteeChange,
   isFilter,
   filters,
-  durationFilters
+  durationFilters,
+  heading
 }) => {
   const yearOptions = [
     { value: "all", label: "All" },
@@ -27,6 +28,8 @@ const MeetingFilter = ({
   ];
 
   return (
+    <>
+    <p className="text-primary font-display pb-4 lg:pb-0 text-display-md">{heading}</p>
     <div className=" flex justify-between rounded-md items-center w-full">
      {durationFilters && <div className="">
         <div className="font-normal rounded-full p-1 bg-surface flex items-center text-sm overflow-hidden border border-border whitespace-nowrap h-12 place-items-center">
@@ -68,6 +71,7 @@ const MeetingFilter = ({
         </div>
       )}
     </div>
+    </>
   );
 };
 

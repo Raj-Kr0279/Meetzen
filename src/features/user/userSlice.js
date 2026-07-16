@@ -1,28 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { userApi } from "./userApi";
 
-const initialState = {
-  name: "",
-  phone: "",
-  companyId: "",
-  bio: "",
-  userImage: "",
-  email: "",
-  language: "",
-  timezone: "",
-};
+const initialState = { token: null, user: null }
 
 const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    // Local-only reducer (optional). Prefer using the RTK Query mutation below.
     editUser: (state, action) => {
-      const {field, value} = action.payload;
-      state[field] = action.payload.value
+      const { field, value } = action.payload;
+      state[field] = value;
     },
-    setUserDetails: (state, action) => {
-        Object.assign(state, action.payload);
+    logout: () => {return initialState},
+    // Replace the slice state with the logged-in user object
+    setUserDetails: (state, action) => { 
+      state.user = action.payload.user;
+      state.token = action.payload.token;
     }
   },
   // extraReducers: (builder) => {
@@ -43,6 +36,6 @@ const userSlice = createSlice({
   // },
 });
 
-export const { editUser, setUserDetails } = userSlice.actions;
+export const { editUser, setUserDetails, logout } = userSlice.actions;
 export default userSlice.reducer;
 

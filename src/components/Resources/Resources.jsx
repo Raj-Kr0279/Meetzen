@@ -23,19 +23,20 @@ const Resources = () => {
       <PageHeading label="Resources" />
 
       <div className="w-full md:pe-10 flex flex-col">
-          <MeetingFilter
-            filters={resourceFilters}
-            durationFilters
-            isFilter={true}
-            selectedFilter={selectedFilter}
-            onFilterSelection={handleFilterSelection}
-          />
-
-        {selectedFilter === "my_docs" ? (
-          <MyDocuments />
-        ) : selectedFilter === "company_docs" ? (
-          <CompanyDocuments />
-        ) : null}
+        <MeetingFilter
+          filters={resourceFilters}
+          durationFilters
+          isFilter={true}
+          selectedFilter={selectedFilter}
+          onFilterSelection={handleFilterSelection}
+        />
+        <div className="mt-4">
+          {selectedFilter === "my_docs" ? (
+            <MyDocuments />
+          ) : selectedFilter === "company_docs" ? (
+            <CompanyDocuments />
+          ) : null}
+        </div>
       </div>
     </div>
   );

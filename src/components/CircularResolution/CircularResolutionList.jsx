@@ -42,36 +42,15 @@ const CircularResolutionList = () => {
       <PageHeading label="Resolution By Circulation" />
       <div className="w-full flex flex-col ">
         {/* filters and search section  */}
-        <div className="bg-hover-bg lg:flex-row flex-col py-2 flex justify-between rounded-md items-center">
-          <h1 className="text-primary font-display pb-4 lg:pb-0 text-display-md">
-            All resolutions By Circulation
-          </h1>
-          {/* <div className="flex items-end gap-3">
-            <label
-              htmlFor="year"
-              className="text-primary text-base font-normal"
-            >
-              Filter Committee:{" "}
-            </label>
-            <select
-              className="py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-md border border-border"
-              name="committee"
-              id="committee"
-            >
-              <option value="all">All</option>
-              <option value="board_meetig">Board Meeting</option>
-              <option value="audit">Audit</option>
-              <option value="src">SRC</option>
-            </select>
-          </div> */}
-          <MeetingFilter isFilter />
+        <div className="bg-hover-bg py-2 rounded-md md:items-end grid lg:grid-cols-[8fr_4fr]">
+          <MeetingFilter isFilter heading="All resolutions By Circulation" />
         </div>
 
         <div className="h-[65dvh] mt-2 flex flex-col gap-2 w-full overflow-y-scroll">
           {demoData.circularResolutonLists.map((resolutions) => (
             <div
               key={resolutions?.id}
-              className="flex relative lg:items-end flex-wrap justify-between bg-surface border border-border rounded-md p-4"
+              className="flex relative lg:items-end flex-wrap hover:border-secondary justify-between bg-surface border border-border rounded-md p-4"
               onClick={() =>
                 navigate(`/home/circular-resolution-result/${resolutions?.id}`)
               }
@@ -81,16 +60,16 @@ const CircularResolutionList = () => {
                   Pending 15 days left
                 </p>
               <div>
-                <p className="text-sm text-primary leading-none font-semibold">
+                <p className="text-body-sm text-secondary">
                   AUDIT COMMITTEE
                 </p>
-                <h1 className="text-primary leading-none pt-1.5 font-medium text-xl">
+                <h1 className=" pt-1.5 font-display text-display-sm">
                   Stakeholders Relationship Committee
                 </h1>
-                <p className="text-sm py-1.5 font-medium text-subtle">
+                <p className="text-body-sm py-1.5">
                   CR/Audit/001/Fy2023-2024
                 </p>
-                <p className="text-sm font-medium text-primary">
+                <p className="text-subtle text-captionLight">
                   Date:{" "}
                   <span className="text-primary text-sm font-medium pl-1">
                     03/04/2023
