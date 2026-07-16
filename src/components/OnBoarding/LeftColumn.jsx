@@ -6,10 +6,10 @@ const LeftColumn = () => {
     <div className='flex-1 flex justify-center items-center'>
       <div className='flex flex-col items-center justify-center'>
          <img src={meetzen} className='w-40 mx-auto' alt="" />
-         <h1 className=' text-meetzen-secondary text-4xl md:text-5xl font-bold font-moirai'>
-         MEET<span className='text-muted'>ZEN</span>
+         <h1 className=' text-primary text-4xl md:text-5xl font-bold'>
+         MEET<span className='text-secondary'>ZEN</span>
           </h1>
-         <p className='text-meetzen-textPrimary text-xs'> Conduct hassle free digital board Meetings</p>
+         <p className='text-subtle text-body-sm'> Conduct hassle free digital board Meetings</p>
       </div>
     </div>
   )

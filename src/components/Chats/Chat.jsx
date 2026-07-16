@@ -30,7 +30,7 @@ const Chat = () => {
                     </div>
                     <span className='text-light leading-[1.2] text-xs text__content'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa repellat suscipit optio ex, voluptates quos nihil sunt consequuntur voluptate?</span>
                 </div>
-                <div className="absolute right-2 bottom-0 w-4 h-4 rounded-full text-small bg-primary flex items-center justify-center text-white">2</div>
+                <div className="absolute right-2 bottom-0 w-4 h-4 rounded-full text-captionLight bg-primary flex items-center justify-center text-inverse">2</div>
             </div>
         </div>
     ));
@@ -40,7 +40,7 @@ const Chat = () => {
 
             {addMemberModal && <AddMemberModal setModal= {setAddMemberModal} setGrpModal= {setCreateGroupModal} modal={addMemberModal} />}
             {createGroupModal && <CreateGroupModal setGrpModal= {setCreateGroupModal} modal={createGroupModal} />}
-            <div className="flex w-full max-h-[calc(100dvh-40px)] overflow-hidden px-4">
+            <div className="flex w-full px-4">
                 <div className='border-r basis-[300px] twok:basis-[450px] shrink-0 pr-2'>
                     <div className='flex items-center pt-4 pb-2 justify-between'>
                         <h1 className='text-primary font-semibold text-mediumHeading'>Chat</h1>
@@ -74,8 +74,8 @@ const Chat = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-white font-normal text-base  text-primary p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
-                                <span className=' text-xs text-placeholder font-normal'>08:15 PM</span>
+                                <p className='bg-surface text-body-sm text-primary p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <span className=' text-captionLight text-subtle'>08:15 PM</span>
                             </div>
                         </div>
                         <div className='flex ml-auto w-[65%] flex-row-reverse items-start'>
@@ -84,7 +84,7 @@ const Chat = () => {
                                 <div className="absolute w-[.563rem] h-[.563rem] border border-white bg-success rounded-full right-0 bottom-0"></div>
                             </div>
                             <div className=' mx-4'>
-                                <p className='bg-primary text-white font-normal text-base p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
+                                <p className='bg-primary text-inverse text-body-sm p-4 rounded-lg '>Id ultricies quis ipsum eu nibh ullamcorper pharetra velit orci. Nulla nunc augue in sit. Nulla ultrices adipiscing turpis placerat in tempor sagittis tortor.</p>
                                 <span className=' text-xs text-placeholder flex justify-end pt-2 font-normal'>08:15 PM</span>
                             </div>
                         </div>

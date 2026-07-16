@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import PageHeading from "../PageHeading";
 import { demoData } from "../../demoData/demoData";
 import { formatDateTime } from "../../utils/dateFormatter";
+import Button from "../ui/Button";
+import MeetingFilter from "../ui/MeetingFilter";
 
 const BoardEvaluationList = () => {
   const navigate = useNavigate();
@@ -13,67 +15,29 @@ const BoardEvaluationList = () => {
     <>
       <PageHeading label="Evaluation & Service" />
       <div className="w-full md:pe-10 flex flex-col">
-        {/* filters and search section  */}
 
-        <div className=" bg-hover-bg px-4 py-4  flex justify-between rounded-md mb-4 items-center">
-          <h1 className="text-primary font-semibold text-2xl">
-            All Evaluations
-          </h1>
-          <div className="flex items-center gap-3">
-            <label
-              htmlFor="year"
-              className="text-placeholder text-base font-normal"
-            >
-              Filter Year:{" "}
-            </label>
-            <select
-              className="py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-sm border border-border"
-              name="year"
-              id="year"
-            >
-              <option value="all">All</option>
-              <option value="2023">2023</option>
-              <option value="2022">2022</option>
-              <option value="2021">2021</option>
-            </select>
-
-            <label
-              htmlFor="year"
-              className="text-placeholder text-base font-normal"
-            >
-              Filter Committee:{" "}
-            </label>
-            <select
-              className="py-2.5 px-2.5 bg-white text-primary text-base w-[19vw] rounded-sm border border-border"
-              name="committee"
-              id="committee"
-            >
-              <option value="all">All</option>
-              <option value="board_meetig">Board Meeting</option>
-              <option value="audit">Audit</option>
-              <option value="src">SRC</option>
-            </select>
-          </div>
+        <div className="bg-hover-bg py-2 rounded-md md:items-end grid lg:grid-cols-[8fr_4fr]">
+          <MeetingFilter isFilter heading="All Evaluations"/>
         </div>
-        <div className="h-[70dvh] mt-4 w-full border-border border rounded-md overflow-y-scroll">
+        <div className="h-[70dvh] flex flex-col mt-2 w-full gap-2 overflow-y-scroll">
           {demoData?.boardEvaluations?.map((evals) => 
-            <div key={evals.id} className="flex justify-between p-4 border-b">
+            <div key={evals.id} className="flex justify-between hover:border-secondary border border-border rounded-md bg-surface p-4">
               <div>
-                <p className=" text-pargraph text-primary leading-none font-normal pb-2">
+                <p className=" text-body-sm text-secondary">
                   {evals.committee}
                 </p>
-                <h1 className="text-primary leading-none pt-1 pb-2 font-semibold text-2xl">
+                <h1 className="pt-1 pb-2 font-display text-display-md">
                   {evals.documentName}
                 </h1>
-                <p className="text-base font-medium text-light">
+                <p className="text-body-md text-subtle">
                   Evaluation for:{" "}
-                  <span className="text-primary text-lg font-semibold pl-1">
+                  <span className="text-primary text-body-lg">
                     {evals.evaluationFor}
                   </span>
                 </p>
-                <p className="text-base font-medium text-light">
+                <p className="text-body-md text-subtle">
                   Due Date:{" "}
-                  <span className="text-primary text-lg font-semibold pl-1">
+                  <span className="text-primary text-body-sm pl-1">
                     {evals.dueDate}
                   </span>
                 </p>
@@ -92,14 +56,17 @@ const BoardEvaluationList = () => {
                     <BsClock className="mr-2" />
                     {evals.pendingDaysLeft}
                   </span>
-                  <button
+                  {/* <button
                     className="py-2 px-6 text-base font-medium bg-primary text-white rounded-[4px]"
                     onClick={() =>
                       navigate(`/home/board-evaluation-details/${evals.id}`)
                     }
                   >
                     Submit Feedback
-                  </button>
+                  </button> */}
+                  <Button variant="primary" label="Submit Feedback" classNames="py-1 text-body-sm" onClick={() =>
+                      navigate(`/home/board-evaluation-details/${evals.id}`)
+                    }/>
                 </div>
               </div>
             </div>

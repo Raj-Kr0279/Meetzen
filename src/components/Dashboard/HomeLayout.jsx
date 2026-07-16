@@ -95,7 +95,7 @@ const HomeLayout = () => {
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
           />
-          <main className="min-w-0 max-w-7xl min-h-0 flex-1 overflow-y-auto p-4 md:p-6">
+          <main className="min-w-0 max-w-7xl min-h-0 flex-1 overflow-y-auto px-4 py-2 md:px-6">
             <Suspense fallback={<p>loading....</p>}>
             <Outlet />
             </Suspense>

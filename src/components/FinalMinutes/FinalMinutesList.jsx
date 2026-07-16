@@ -18,12 +18,7 @@ const FinalMinutesList = () => {
       <div className="w-full md:pe-10 flex flex-col ">
         {/* filters and search section  */}
         <div className="bg-hover-bg py-2 rounded-md md:items-end mb-4 grid lg:grid-cols-[8fr_4fr]">
-          <div className="">
-          <h1 className="text-display-md whitespace-nowrap">
-            All Final Minutes
-          </h1>
-          </div>
-          <MeetingFilter durationFilters={false} isFilter={true}/>
+          <MeetingFilter isFilter heading="All Final Minutes"/>
         </div>
 
         <div className="h-[60dvh] flex flex-col gap-2 w-full overflow-y-scroll">

@@ -4,13 +4,19 @@ import prof from "../../assets/person_FILL0_wght300_GRAD0_opsz24.svg";
 import pass from "../../assets/password_FILL0_wght300_GRAD0_opsz24 1.svg";
 import face from "../../assets/Face ID Symbol.png";
 import fing from "../../assets/fingerprint_FILL0_wght200_GRAD200_opsz24 1.svg";
-import logout from "../../assets/logout_FILL0_wght300_GRAD0_opsz24.svg";
+import logoutIcon from "../../assets/logout_FILL0_wght300_GRAD0_opsz24.svg";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../../features/user/userSlice";
+import { removeCompany } from "../../features/company/companySlice";
 
 const ProfileModal = ({ onClose }) => {
   const navigate = useNavigate();
-
+const dispatch = useDispatch()
   const navigateAndClose = (path) => {
+    localStorage.removeItem("token");
+    dispatch(logout());
+    dispatch(removeCompany())
     navigate(path);
     onClose();
   };
@@ -63,7 +69,7 @@ const ProfileModal = ({ onClose }) => {
         className="flex items-center py-3 pl-4 pr-10 text-left"
         onClick={() => navigateAndClose("/")}
       >
-        <img src={logout} className="mr-4 h-6 w-6" alt="" />
+        <img src={logoutIcon} className="mr-4 h-6 w-6" alt="" />
         <span className="text-xs font-normal text-primary">Logout</span>
       </button>
     </div>

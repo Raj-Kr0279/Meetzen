@@ -27,24 +27,10 @@ const SubmitFeedback = () => {
     const stepsBarWidth = ((currentStep - 1) / 4) * 100 + '%';
     return (
         <>
-            <div className="flex fixed bg-white top-0 py-2 px-4 w-full justify-between items-center border-b">
-                <div className='flex items-center font-semibold text-primary' onClick={() => navigate("/dashboard")}>
-                    <MdArrowBackIosNew className=' text-2xlX font-normal' />
-                    <span className=' text-lg font-medium'>Back</span>
-                </div>
-                <div className='relative'>
-                    <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
-                    <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
-                </div>
-            </div>
-            <p className='text-primary fixed top-2 left-1/2 -translate-x-1/2 text-mediumSubheading font-semibold'>Draft Minutes</p>
-
-
-
-            <div className="w-full mb-8 px-10 mt-[40px] twok:mt-[60px] max-h-[calc(100dvh-40px)] flex flex-col h-screen overflow-y-scroll">
+            <div className="w-full mb-8 px-10 flex flex-col ">
                 {/* filters and search section  */}
 
-                <div className=' bg-hover-bg px-4 py-4  flex justify-between rounded-md mt-6 mb-4 items-center'>
+                <div className=' px-4 py-4  flex justify-between rounded-md mt-6 mb-4 items-center'>
                     <div className="">
                         <h1 className='text-primary font-semibold text-2xl pb-1.5'>132nd Meeting of Board Committee</h1>
                         <p className='text-primary text-lg font-semibold'>Document Name</p>

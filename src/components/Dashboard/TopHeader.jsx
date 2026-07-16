@@ -13,7 +13,7 @@ const TopHeader = ({
   setIsSidebarOpen,
 }) => {
   const navigate = useNavigate();
-  const{name,role}=useSelector(state=>state.user)
+  const {name, role} = useSelector(state=>state.user.user)
 
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-background backdrop-blur">

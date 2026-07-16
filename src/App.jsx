@@ -120,6 +120,7 @@ function App() {
             <Route path="meeting-schedules" element={<MeetingScheduleList />} />
             <Route path="support" element={<HelpAndSupport />} />
             <Route path="notifications" element={<Notifications />} />
+          <Route path="submit-feedback" element={<SubmitFeedback />} />
             <Route path="chat" element={<Chat />} />
             <Route path="edit-profile" element={<EditProfile />} />
           </Route>
@@ -132,7 +133,6 @@ function App() {
           </Route> */}
 
           
-          <Route path="submit-feedback" element={<SubmitFeedback />} />
           <Route path="view-member-profile" element={<ProfileLayout />} />
           {/* <Route path="add-company" element={<AddCompanies />} /> */}
 

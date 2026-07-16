@@ -10,6 +10,8 @@ export const userApi = createApi({
       // Example:
       // const token = getState().auth?.token;
       // if (token) headers.set('authorization', `Bearer ${token}`);
+     const token = getState().user?.user?.token;
+     if (token) headers.set('authorization', `Bearer ${token}`)
       return headers;
     },
   }),
@@ -24,7 +26,7 @@ export const userApi = createApi({
     }),
     login: builder.mutation({
       query: (formData) => ({
-        url: 'user/login',
+        url: 'auth/login',
         method: "POST",
         body: formData
       })
@@ -37,7 +39,7 @@ export const userApi = createApi({
         body: payload,
       }),
       invalidatesTags: ["User"],
-    }),
+    })
   }),
 });
 

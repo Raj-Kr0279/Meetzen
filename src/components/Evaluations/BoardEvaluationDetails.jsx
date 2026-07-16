@@ -7,6 +7,8 @@ import { Tooltip } from "react-tooltip";
 import { BiBarChartAlt2 } from "react-icons/bi";
 import { BsTriangleFill } from "react-icons/bs";
 import strategy from "../../assets/strategy_FILL0_wght300_GRAD0_opsz24.svg";
+import Accordion from "../ui/Accordion";
+import FeedbackQuestion from "../AboutCompany/FeedBackQuestions";
 function Icon({ id, open }) {
   return (
     <BsTriangleFill
@@ -17,9 +19,55 @@ function Icon({ id, open }) {
   );
 }
 const BoardEvaluationDetails = () => {
-  const [open, setOpen] = useState(0);
+const serverData = [
+  {
+    id: 1,
+    title: "Leadership",
+    icon: "leadership",
+    feedback: [
+      {
+        id: 11,
+        question:
+          "Neque, faucibus fames at et rhoncus pellentesque. Scelerisque commodo nunc tellus."
+      },
+      {
+        id: 12,
+        question:
+          "Tristique ac tincidunt velit netus ipsum rutrum id ut."
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Strategy Formulation",
+    icon: "strategy",
+    feedback: [
+      {
+        id: 21,
+        question:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      },
+      {
+        id: 22,
+        question:
+          "Inventore perspiciatis quidem consequuntur laudantium."
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Execution",
+    icon: "execution",
+    feedback: [
+      {
+        id: 31,
+        question:
+          "How effectively does the team execute strategic initiatives?"
+      }
+    ]
+  }
+];
 
-  const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(0);
   const steps = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]; // Define all the steps
@@ -29,12 +77,56 @@ const BoardEvaluationDetails = () => {
   };
 
   const stepsBarWidth = ((currentStep - 1) / 4) * 100 + "%";
+   const [open, setOpen] = useState(1);
+
+  const [responses, setResponses] = useState({});
+
+  const handleOpen = (id) => {
+    setOpen(open === id ? 0 : id);
+  };
+
+  const updateRating = (questionId, rating) => {
+    setResponses((prev) => ({
+      ...prev,
+      [questionId]: {
+        ...prev[questionId],
+        rating,
+      },
+    }));
+  };
+
+  const updateComment = (questionId, comment) => {
+    setResponses((prev) => ({
+      ...prev,
+      [questionId]: {
+        ...prev[questionId],
+        comment,
+      },
+    }));
+  };
+
+  const handleSubmit = () => {
+    console.log(responses);
+
+    /*
+    {
+      11:{
+        rating:4.5,
+        comment:"Good leader"
+      },
+      12:{
+        rating:3,
+        comment:"Need improvement"
+      }
+    }
+    */
+  };
   return (
     <>
       <div className="w-full md:pe-10 flex flex-col">
         {/* filters and search section  */}
 
-        <div className=" bg-surface  flex justify-between rounded-md mt-6 mb-4 items-center">
+        <div className="flex justify-between rounded-md mt-6 mb-4 items-center">
           <div className="">
             <p className=" text-pargraph text-primary leading-none font-normal pb-2">
               Director Evaluation | Board of Directors
@@ -60,230 +152,44 @@ const BoardEvaluationDetails = () => {
             <span>Form II</span>
           </div>
         </div>
-<div>
-        {/* <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
-          <AccordionHeader onClick={() => handleOpen(1)}>
-            <div className="flex items-center gap-1">
-              <BiBarChartAlt2 className="text-primary text-2xl" />
-              <h1 className="text-primary font-semibold text-2xl">
-                Leadership
-              </h1>
-            </div>
-          </AccordionHeader>
-          <AccordionBody>
-            <div className="mb-4">
-              <p className="text-primary font-normal text-base break-words">
-                1.{" "}
-                <span>
-                  Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
-                  commodo nunc tellus, elit semper tempus. Tristique ac
-                  tincidunt velit netus ipsum rutrum id ut.
-                </span>
-              </p>
-              <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
-                <div className="inline-block w-full items-center gap-3">
-                  <input
-                    type="range"
-                    min="0"
-                    max="5"
-                    step="0.5" // Step by 0.5
-                    value={currentStep}
-                    onChange={handleSliderChange}
-                    className="slider w-full my-anchor-element"
-                    data-tip={`Step: ${currentStep}`}
+        <div>
+          <div className="space-y-4">
+            {serverData.map((section) => (
+              <Accordion
+                key={section.id}
+                title={section.title}
+                icon={<BiBarChartAlt2 className="text-primary text-2xl" />}
+                isOpen={open === section.id}
+                onToggle={() => handleOpen(section.id)}
+              >
+                {section.feedback.map((item, index) => (
+                  <FeedbackQuestion
+                    key={item.id}
+                    index={index}
+                    question={item.question}
+                    value={responses[item.id]?.rating ?? 0}
+                    comment={responses[item.id]?.comment ?? ""}
+                    onRatingChange={(value) => updateRating(item.id, value)}
+                    onCommentChange={(value) => updateComment(item.id, value)}
                   />
-                  <div className="steps-bar flex w-full items-center -mt-2 gap-1">
-                    {steps.map((step) => (
-                      <div
-                        key={step}
-                        className="step-label w-full flex-col items-center flex justify-center"
-                      >
-                        <AiOutlineMinus className="rotate-90 text-small" />
-                        {step}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <p className="step-value w-20 h-10 border border-theme-color flex items-center justify-center text-primary font-extrabold text-mediumSubheading">
-                  {currentStep}
-                </p>
-              </div>
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="10"
-                placeholder="Add your comments..."
-                className="w-full shadow-textarea p-4 h-32 resize-none border border-profileModalBorder rounded-md mt-3"
-              ></textarea>
-            </div>
+                ))}
+              </Accordion>
+            ))}
 
-            <div className="mb-4">
-              <p className="text-primary font-normal text-base break-words">
-                2.{" "}
-                <span>
-                  Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
-                  commodo nunc tellus, elit semper tempus. Tristique ac
-                  tincidunt velit netus ipsum rutrum id ut.
-                </span>
-              </p>
-              <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
-                <div className="inline-block w-full items-center gap-3">
-                  <input
-                    type="range"
-                    min="0"
-                    max="5"
-                    step="0.5" // Step by 0.5
-                    value={currentStep}
-                    onChange={handleSliderChange}
-                    className="slider w-full my-anchor-element"
-                    data-tip={`Step: ${currentStep}`}
-                  />
-                  <div className="steps-bar flex w-full items-center -mt-2 gap-1">
-                    {steps.map((step) => (
-                      <div
-                        key={step}
-                        className="step-label w-full flex-col items-center flex justify-center"
-                      >
-                        <AiOutlineMinus className="rotate-90 text-small" />
-                        {step}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <p className="step-value w-20 h-10 border border-theme-color flex items-center justify-center text-primary font-extrabold text-mediumSubheading">
-                  {currentStep}
-                </p>
-              </div>
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="10"
-                placeholder="Add your comments..."
-                className="w-full shadow-textarea p-4 h-32 resize-none border border-profileModalBorder rounded-md mt-3"
-              ></textarea>
-            </div>
-          </AccordionBody>
-        </Accordion>
-        <Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
-          <AccordionHeader onClick={() => handleOpen(2)}>
-            <div className="flex items-center gap-1">
-              <img src={strategy} alt="" />
-              <h1 className="text-primary font-semibold text-2xl">
-                Strategy Formulation
-              </h1>
-            </div>
-          </AccordionHeader>
-          <AccordionBody>
-            <div className="mb-4">
-              <p className="text-primary font-normal text-base break-words">
-                1.{" "}
-                <span>
-                  Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
-                  commodo nunc tellus, elit semper tempus. Tristique ac
-                  tincidunt velit netus ipsum rutrum id ut.
-                </span>
-              </p>
-              <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
-                <div className="inline-block w-full items-center gap-3">
-                  <input
-                    type="range"
-                    min="0"
-                    max="5"
-                    step="0.5" // Step by 0.5
-                    value={currentStep}
-                    onChange={handleSliderChange}
-                    className="slider w-full my-anchor-element"
-                    data-tip={`Step: ${currentStep}`}
-                  />
-                  <div className="steps-bar flex w-full items-center -mt-2 gap-1">
-                    {steps.map((step) => (
-                      <div
-                        key={step}
-                        className="step-label w-full flex-col items-center flex justify-center"
-                      >
-                        <AiOutlineMinus className="rotate-90 text-small" />
-                        {step}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <p className="step-value w-20 h-10 border border-theme-color flex items-center justify-center text-primary font-extrabold text-mediumSubheading">
-                  {currentStep}
-                </p>
-              </div>
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="10"
-                placeholder="Add your comments..."
-                className="w-full shadow-textarea p-4 h-32 resize-none border border-profileModalBorder rounded-md mt-3"
-              ></textarea>
-            </div>
-
-            <div className="mb-4">
-              <p className="text-primary font-normal text-base break-words">
-                2.{" "}
-                <span>
-                  Neque, faucibus fames at et rhoncus pellentesque. Scelerisque
-                  commodo nunc tellus, elit semper tempus. Tristique ac
-                  tincidunt velit netus ipsum rutrum id ut.
-                </span>
-              </p>
-              <div className="slider-container pt-4 w-3/12 flex justify-start gap-4">
-                <div className="inline-block w-full items-center gap-3">
-                  <input
-                    type="range"
-                    min="0"
-                    max="5"
-                    step="0.5" // Step by 0.5
-                    value={currentStep}
-                    onChange={handleSliderChange}
-                    className="slider w-full my-anchor-element"
-                    data-tip={`Step: ${currentStep}`}
-                  />
-                  <div className="steps-bar flex w-full items-center -mt-2 gap-1">
-                    {steps.map((step) => (
-                      <div
-                        key={step}
-                        className="step-label w-full flex-col items-center flex justify-center"
-                      >
-                        <AiOutlineMinus className="rotate-90 text-small" />
-                        {step}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <p className="step-value w-20 h-10 border border-theme-color flex items-center justify-center text-primary font-extrabold text-mediumSubheading">
-                  {currentStep}
-                </p>
-              </div>
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="10"
-                placeholder="Add your comments..."
-                className="w-full shadow-textarea p-4 h-32 resize-none border border-profileModalBorder rounded-md mt-3"
-              ></textarea>
-            </div>
-          </AccordionBody>
-        </Accordion>
-        <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
-          <AccordionHeader onClick={() => handleOpen(3)}>
-            Another heading
-          </AccordionHeader>
-          <AccordionBody>pending...</AccordionBody>
-        </Accordion> */}
-      </div>
-      <button
-        className="py-4 mt-8 px-6 text-base flex mx-auto self-start font-medium bg-primary text-white rounded-[4px]"
-        onClick={() => navigate(`/home/board-evaluation-list`)}
-      >
-        Submit Feedback
-      </button>
+            <button
+              onClick={handleSubmit}
+              className="bg-blue-600 text-white px-6 py-3 rounded-md"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+        <button
+          className="py-4 mt-8 px-6 text-base flex mx-auto self-start font-medium bg-primary text-white rounded-[4px]"
+          onClick={() => navigate(`/home/board-evaluation-list`)}
+        >
+          Submit Feedback
+        </button>
       </div>
       <Tooltip
         opacity={1}

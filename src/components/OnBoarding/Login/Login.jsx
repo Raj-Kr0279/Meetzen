@@ -55,7 +55,12 @@ const dispatch = useDispatch()
     try {
     const result = await login({...form, companyId: selectedCompany?.companyId}).unwrap()
     console.log(result, "resulted")
-    dispatch(setUserDetails(result));
+
+    // Save token + user for RTK Query to attach Authorization header on future requests
+    // Adjust `result.token` below if your backend uses a different field name.
+    localStorage.setItem("token", result?.token);
+    dispatch(setUserDetails({ user: result.user, token: result.token ?? result.accessToken ?? result.data?.token }));
+
     navigate('/home/dashboard');
     } catch (error) {
       console.log(error)

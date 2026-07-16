@@ -8,6 +8,7 @@ import PageHeading from "../PageHeading";
 import { demoData } from "../../demoData/demoData";
 import { formatDateTime } from "../../utils/dateFormatter";
 import Button from "../ui/Button";
+import MeetingFilter from "../ui/MeetingFilter";
 const DraftMinutes = () => {
   const [submitDraftModal, setSubmitDraftModal] = useState(false);
   const [isSaveDraft, setSaveDraft] = useState(false);
@@ -26,8 +27,8 @@ const DraftMinutes = () => {
       {/* <PageHeading label="Draft Minutes" /> */}
       <div className="w-full flex flex-col">
         {/* filters and search section  */}
-        <div className="bg-hover-bg py-2 flex justify-between rounded-md items-center">
-          <h1 className="text-primary font-normal text-lg lg:text-2xl">
+        <div className="bg-hover-bg py-2 rounded-md md:items-end mb-4 grid lg:grid-cols-[8fr_4fr]">
+          {/* <h1 className="text-primary font-normal text-lg lg:text-2xl">
             All Draft Minutes
           </h1>
           <div className="flex items-baseline gap-3">
@@ -47,30 +48,31 @@ const DraftMinutes = () => {
               <option value="audit">Audit</option>
               <option value="src">SRC</option>
             </select>
-          </div>
+          </div> */}
+          <MeetingFilter heading="All Draft Minutes" isFilter/>
         </div>
 
-        <div className="h-[70dvh] w-full border-border border rounded-md overflow-y-scroll">
+        <div className="h-[70dvh] w-full flex flex-col gap-2 overflow-y-scroll">
           {demoData.draftMinutes.map((draft) => (
             <div
               key={draft.id}
-              className="flex justify-between p-4 border-b border-border"
+              className="flex justify-between p-4 border bg-surface hover:border-secondary rounded-md border-border"
             >
               <div>
-                <p className=" text-sm text-primary leading-none font-semibold">
+                <p className=" text-body-sm text-secondary">
                   {draft.committee}
                 </p>
-                <h1 className="text-primary leading-none pt-1 font-normal text-xl">
+                <h1 className="text-primary font-display text-display-sm">
                   {draft.documentTitle}
                 </h1>
                 {/* <p className="text-primary font-medium pt-1.5">Document Name</p> */}
-                <p className="text-sm font-medium mt-2 text-primary">
+                <p className="mt-2 text-captionLight text-subtle">
                   Date:{" "}
-                  <span className="text-primary font-medium pl-1">
+                  <span className="text-primary text-body-sm pl-1">
                     {formatDateTime(draft.createdAt)}
                   </span>
                 </p>
-                <p className="py-2 inline-flex mt-4 px-6 text-sm border border-border font-normal rounded-sm">
+                <p className="py-2 inline-flex mt-4 px-6 text-body-sm capitalize border border-border rounded-sm">
                   {draft.status}
                 </p>
               </div>

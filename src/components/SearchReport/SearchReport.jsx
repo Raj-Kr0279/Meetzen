@@ -9,12 +9,16 @@ const SearchReport = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const navigate = useNavigate()
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        console.log("submitted");
+    }
     return (
         <>
             <PageHeading label="Search Reports"/>
 
             <div className='w-full flex flex-col md:pe-10'>
-                <form >
+                <form onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-4 mb-6 gap-x-6 whitespace-nowrap">
                     <div className="flex flex-col gap-2">
                         <label htmlFor="" className="block">Search From</label>
@@ -56,7 +60,7 @@ const SearchReport = () => {
                             <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
                             <input className='text-placeholder w-full border text-xs border-topSearch rounded-sm py-2 px-8' placeholder='Advanced Search using filter' type="text" name="search" id="search" />
                         </div>
-                        <button className="text-white  bg-primary py-2 px-8 rounded-sm text-base font-medium">Search</button>
+                        <button type='submit' className="text-white  bg-primary py-2 px-8 rounded-sm text-base font-medium">Search</button>
                     </div>
                     </div>
                 </form>
