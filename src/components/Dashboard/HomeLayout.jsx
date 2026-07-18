@@ -6,12 +6,16 @@ import FilterModal from "./FilterModal";
 import NotificationModal from "./NotificationModal";
 import ProfileModal from "./ProfileModal";
 import MeetingModal from "./MeetingModal";
+import { useGetUserQuery } from "../../features/user/userApi";
+import { useDispatch } from "react-redux";
+import { getMe, setUserDetails } from "../../features/user/userSlice";
 
 const HomeLayout = () => {
   const [activeOverlay, setActiveOverlay] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
-
+  const {data, isSuccess} = useGetUserQuery()
+const dispatch = useDispatch()
   const toggleOverlay = (overlayName) => {
     setActiveOverlay((currentOverlay) =>
       currentOverlay === overlayName ? null : overlayName
@@ -51,6 +55,11 @@ const HomeLayout = () => {
       document.body.style.overflow = previousOverflow;
     };
   }, [activeOverlay, isSidebarOpen]);
+  useEffect(() => {
+  if (isSuccess && data) {
+    dispatch(getMe(data?.user));
+  }
+}, [isSuccess, data, dispatch]);
 
   return (
     <>
@@ -95,7 +104,7 @@ const HomeLayout = () => {
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
           />
-          <main className="min-w-0 max-w-7xl min-h-0 flex-1 overflow-y-auto px-4 py-2 md:px-6">
+          <main className="min-w-0 max-w-7xl min-h-0 flex-1 overflow-y-auto px-4 py-2 lg:px-6">
             <Suspense fallback={<p>loading....</p>}>
             <Outlet />
             </Suspense>

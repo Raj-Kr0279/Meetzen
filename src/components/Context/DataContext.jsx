@@ -167,7 +167,6 @@ export const DataProvider = ({ children }) => {
       .then((result) => {
         if (result.StatusFl) {
           if (window.location.pathname === "/user/edit-profile") {
-            console.log("details Updated");
           } else if (window.location.pathname !== "/user/edit-profile") {
             if (result.UserName !== "" && localStorage.getItem("token") !== null) {
               // toast.success("Logged in successfully")
@@ -530,7 +529,6 @@ export const DataProvider = ({ children }) => {
       headers: { token: token }
     })
       .then((response) => {
-        console.log(response, "docc");
         setMyDocs(response.data);
         setGlobalLoader(false);
       })
@@ -547,7 +545,6 @@ export const DataProvider = ({ children }) => {
       headers: { token: token }
     })
       .then((response) => {
-        console.log(response, "docc");
         setCompDocs(response.data);
         setGlobalLoader(false);
       })
@@ -563,7 +560,6 @@ export const DataProvider = ({ children }) => {
     axios.post(`${BASE_URL2}Resource/DeleteMyDocById?Id=${docID}`, {}, {
       headers: { token: token }
     }).then((response) => {
-      console.log(response, "docc");
       getMyDocsListApi()
       setGlobalLoader(false);
       toast.success("Deleted successfully");

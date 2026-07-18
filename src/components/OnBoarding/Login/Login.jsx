@@ -40,7 +40,6 @@ const dispatch = useDispatch()
     return e;
   };
   const handleChange = (e) => {
-    console.log(e, "check e")
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     setErrors(() => ({ ...errors, [e.target.name]: "" }));
   };
@@ -54,7 +53,6 @@ const dispatch = useDispatch()
     }
     try {
     const result = await login({...form, companyId: selectedCompany?.companyId}).unwrap()
-    console.log(result, "resulted")
 
     // Save token + user for RTK Query to attach Authorization header on future requests
     // Adjust `result.token` below if your backend uses a different field name.
@@ -69,7 +67,6 @@ const dispatch = useDispatch()
 
     // navigate('/home/dashboard');
   };
-  console.log(form, "formwa")
   const handleViewPassToggle = () => {
     setShowPassword(!showPassword);
   };

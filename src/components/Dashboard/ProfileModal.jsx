@@ -13,13 +13,16 @@ import { removeCompany } from "../../features/company/companySlice";
 const ProfileModal = ({ onClose }) => {
   const navigate = useNavigate();
 const dispatch = useDispatch()
-  const navigateAndClose = (path) => {
+  const navigateAndClose = () => {
     localStorage.removeItem("token");
     dispatch(logout());
     dispatch(removeCompany())
+  };
+  const handleClose = (path)=>{
     navigate(path);
     onClose();
-  };
+
+  }
 
   return (
     <div className="fixed right-4 top-20 z-50 flex w-[calc(100vw-2rem)] max-w-xs flex-col rounded-2xl bg-white shadow-lg md:right-6">
@@ -35,7 +38,7 @@ const dispatch = useDispatch()
       <button
         type="button"
         className="flex items-center border-b border-divider py-3 pl-4 pr-10 text-left"
-        onClick={() => navigateAndClose("/home/edit-profile")}
+        onClick={() => handleClose("/home/edit-profile")}
       >
         <img src={prof} className="mr-4 h-6 w-6" alt="" />
         <span className="text-xs font-normal text-primary">Profile Details</span>
@@ -43,7 +46,7 @@ const dispatch = useDispatch()
       <button
         type="button"
         className="flex items-center border-b border-divider py-3 pl-4 pr-10 text-left"
-        onClick={() => navigateAndClose("/change-password")}
+        onClick={() => handleClose("/home/change-password")}
       >
         <img src={pass} className="mr-4 h-6 w-6" alt="" />
         <span className="text-xs font-normal text-primary">Change Password</span>

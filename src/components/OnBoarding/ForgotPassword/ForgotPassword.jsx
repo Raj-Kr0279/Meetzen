@@ -32,7 +32,6 @@ const ForgotPassword = () => {
       return;
     }
 
-    console.log("email submitted", email);
     navigate("/otp-verify")
   };
   const handleChange = (e) => {

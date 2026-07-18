@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FiMenu, FiMessageSquare, FiSearch } from "react-icons/fi";
 import { AiOutlineBell } from "react-icons/ai";
 import { MdArrowBackIosNew, MdTune } from "react-icons/md";
 import { FaAngleDown } from "react-icons/fa";
 import prof from "../../assets/profileDummy.png";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const TopHeader = ({
   activeOverlay,
@@ -13,8 +13,9 @@ const TopHeader = ({
   setIsSidebarOpen,
 }) => {
   const navigate = useNavigate();
-  const {name, role} = useSelector(state=>state.user.user)
 
+
+const { name, role } = useSelector((state) => state.user.user || {});
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-background backdrop-blur">
       <div className="flex min-h-16 items-center gap-3 px-4 py-3 md:px-6">

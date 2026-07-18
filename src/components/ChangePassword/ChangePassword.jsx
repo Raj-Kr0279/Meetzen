@@ -45,12 +45,11 @@ const ChangePassword = () => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
   const handleViewPassToggle = (field) => {
-    console.log(field, "field");
     setShowPassword((prev) => ({ ...prev, [field]: !showPassword.field }));
+    console.log(showPassword, "showing")
   };
   const handleChangePassword = (e)=>{
     e.preventDefault()
-    console.log("clicked")
   }
   const isDisabled =
   !form.oldPassword ||
@@ -61,12 +60,9 @@ const ChangePassword = () => {
 
   return (
     <>
-      <OnboardingHeader
-        heading="Change Password"
-        subHeading="Change your password"
-      />
       
-      <form onSubmit={handleChangePassword} className="w-full">
+      <p className='text-primary text-center pb-8 font-display text-display-lg'>Change Password</p>
+      <form onSubmit={handleChangePassword} className=" max-w-3xl">
         <div className="flex flex-col gap-2 pb-4">
           <InputField
             type="password"

@@ -35,7 +35,6 @@ const CompanyRegistration = () => {
       .catch((error) => setInputError("Something went wrong, please try later"));
       setInputError("")
   };
-console.log(selectedCompany, "silly")
   
   const handleChange = (e) => {
     const value = e.target.value;

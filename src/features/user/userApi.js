@@ -10,7 +10,7 @@ export const userApi = createApi({
       // Example:
       // const token = getState().auth?.token;
       // if (token) headers.set('authorization', `Bearer ${token}`);
-     const token = getState().user?.user?.token;
+     const token = getState().user?.user?.token || localStorage.getItem("token")
      if (token) headers.set('authorization', `Bearer ${token}`)
       return headers;
     },
@@ -19,7 +19,7 @@ export const userApi = createApi({
   endpoints: (builder) => ({
     getUser: builder.query({
       query: () => ({
-        url: "getUserDetails",
+        url: "auth/getMe",
         method: "GET",
       }),
       providesTags: ["User"],

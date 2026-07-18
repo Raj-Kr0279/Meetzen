@@ -14,7 +14,7 @@ const Agenda = () => {
   return (
     <>
       <div className="flex flex-col gap-4 w-full">
-        <div className="rounded-md w-full border border-border p-4 bg-surface hover:border-secondary">
+        <div onClick={() => navigate("/home/agenda-pdf")} className="rounded-md w-full border border-border p-4 bg-surface hover:border-secondary">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full place-items-center">
             <div className="flex items-center gap-3 justify-self-start">
               <div className="bg-primary rounded-md text-2xl flex items-center justify-center w-10 h-10 text-white">
@@ -41,7 +41,7 @@ const Agenda = () => {
           <div className="mt-6 flex flex-col w-full gap-1 text-body-md">
             <div
               className="flex items-center w-full gap-2 cursor-pointer"
-              onClick={() => navigate("/agenda-pdf")}
+              
             >
               <div className="px-1.5 bg-hover-bg">1.1</div>
               <p className="">Anti Corruption Initiatives</p>
@@ -53,7 +53,7 @@ const Agenda = () => {
           </div>
         </div>
 
-       <div className="rounded-md w-full border border-border p-4 bg-surface hover:border-secondary">
+       <div onClick={() => navigate("/home/agenda-pdf")} className="rounded-md w-full border border-border p-4 bg-surface hover:border-secondary">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full place-items-center">
             <div className="flex items-center gap-3 justify-self-start">
               <div className="bg-primary rounded-md text-2xl flex items-center justify-center w-10 h-10 text-white">
@@ -80,7 +80,6 @@ const Agenda = () => {
           <div className="mt-6 flex flex-col w-full gap-1 text-body-md">
             <div
               className="flex items-center w-full gap-2 cursor-pointer"
-              onClick={() => navigate("/agenda-pdf")}
             >
               <div className="px-1.5 bg-hover-bg">1.1</div>
               <p className="">Anti Corruption Initiatives</p>
