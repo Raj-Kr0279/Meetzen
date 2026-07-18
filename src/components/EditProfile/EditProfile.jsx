@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import Button from "../ui/Button";
 
 const EditProfile = () => {
-  const user =useSelector(state=>state.user)
+  const user =useSelector((state) => state.user.user || {});
   const navigate = useNavigate();
   const [form, setForm] = useState({
     name: user.name,
@@ -29,7 +29,6 @@ const EditProfile = () => {
       [name]: value,
     }));
   };
-  console.log(form, "form");
 
   const handleSubmit = (e) => {
     e.preventDefault();

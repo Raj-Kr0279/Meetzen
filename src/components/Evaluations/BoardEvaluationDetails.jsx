@@ -106,7 +106,6 @@ const serverData = [
   };
 
   const handleSubmit = () => {
-    console.log(responses);
 
     /*
     {

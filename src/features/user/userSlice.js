@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { userApi } from "./userApi";
 
-const initialState = { token: null, user: null }
-
+const initialState = { token: localStorage.getItem("token"), user: null }
 const userSlice = createSlice({
   name: "user",
   initialState,
@@ -11,11 +10,15 @@ const userSlice = createSlice({
       const { field, value } = action.payload;
       state[field] = value;
     },
-    logout: () => {return initialState},
+    logout: () => { localStorage.removeItem("token"); return initialState},
     // Replace the slice state with the logged-in user object
     setUserDetails: (state, action) => { 
       state.user = action.payload.user;
       state.token = action.payload.token;
+      localStorage.setItem("token", action.payload.token)
+    },
+    getMe: (state, action)=>{
+      state.user = action.payload
     }
   },
   // extraReducers: (builder) => {
@@ -36,6 +39,6 @@ const userSlice = createSlice({
   // },
 });
 
-export const { editUser, setUserDetails, logout } = userSlice.actions;
+export const { editUser, setUserDetails, logout, getMe } = userSlice.actions;
 export default userSlice.reducer;
 

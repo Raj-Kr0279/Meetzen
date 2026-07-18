@@ -25,7 +25,6 @@ const MyDocuments = () => {
             const file = Array.from(e.target.files)
             setFiles(file);
 
-            console.log(file, "lljadljdjd")
         }
     }
     return (

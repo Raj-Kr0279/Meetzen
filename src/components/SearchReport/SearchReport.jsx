@@ -11,7 +11,6 @@ const SearchReport = () => {
     const navigate = useNavigate()
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log("submitted");
     }
     return (
         <>

@@ -9,17 +9,6 @@ const Disclosure = () => {
   const navigate = useNavigate();
   return (
     <>
-      {/* <div className="flex pt-4 pb-2 px-4 w-full justify-between items-center border-b">
-    <div className='flex items-center font-semibold text-primary cursor-pointer' onClick={() => navigate("/dashboard")}>
-        <MdArrowBackIosNew className=' text-2xlX font-normal' />
-        <span className=' text-lg font-medium'>Back</span>
-    </div>
-    <div className='relative'>
-        <AiOutlineSearch className='absolute text-placeholder top-1/2 left-2 -translate-y-1/2' />
-        <input className='text-placeholder border border-topSearch rounded-md py-1.5 px-8' placeholder='Search' type="text" name="search" id="search" />
-    </div>
-
-</div> */}
       <div className="bg-surface flex flex-col p-4 border-border border rounded-xl md:pe-10">
         <div className="flex justify-between items-center pb-4">
           <img src={logo} alt="" className="w-20 h-20" />

@@ -19,7 +19,6 @@ const ResetPassword = () => {
   const [passwordStrength, setPasswordStrength] = useState(0); // Password strength indicator
   const navigate = useNavigate();
   const handleViewPassToggle = (name) => {
-    console.log(name, "is it e");
     setShowPassword((prev) => ({ ...prev, [name]: !prev[name] }));
   };
 
@@ -28,7 +27,6 @@ const ResetPassword = () => {
     // Add your form submission logic here
   };
   const calculatePasswordStrength = (password) => {
-    console.log(password, "cclallall")
     const hasUppercase = /[A-Z]/.test(password);
     const hasLowercase = /[a-z]/.test(password);
     const hasNumbers = /[0-9]/.test(password);
@@ -49,7 +47,6 @@ const ResetPassword = () => {
     setForm((prev) => (
      tempForm = {...prev, [name]: value }
     ));
-    console.log(form, "faaaarm");
     if (tempForm.password === tempForm.confirmPassword)
       setError("");
     else  setError("Passwords do not match")

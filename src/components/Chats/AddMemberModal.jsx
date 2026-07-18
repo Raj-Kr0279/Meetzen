@@ -5,7 +5,6 @@ import { BsColumnsGap, BsPlusLg } from 'react-icons/bs'
 import { MdAdd } from 'react-icons/md'
 
 const AddMemberModal = ({ modal, setModal, setGrpModal }) => {
-  console.log(setGrpModal, "ljadf")
   const contact = Array.from(({ length: 20 }), (index) => (
     <div key={index} className="flex items-center p-2 justify-between w-full">
       <div className='flex items-center gap-1.5'>

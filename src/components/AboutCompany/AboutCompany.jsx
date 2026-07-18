@@ -36,7 +36,6 @@ const AboutCompany = () => {
                     </div>
                 </div>
  
-            {console.log(selectedFilter, "filtere")}
         </>
     )
 }

@@ -1,7 +1,6 @@
 import React from "react";
 
 const Button = ({ variant, disabled, label, isLoading, onClick, classNames }) => {
-  console.log(classNames, "clalfjladjflajsd");
   const baseClasses = `font-normal transition px-5 py-3 font-poppins rounded-xs`;
   const primaryClasses = "bg-primary border border-primary hover:bg-primary-hover text-white";
   const outlineClasses =
