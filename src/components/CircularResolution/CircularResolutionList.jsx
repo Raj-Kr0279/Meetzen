@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import PageHeading from "../PageHeading";
 import { demoData } from "../../demoData/demoData";
 import Button from "../ui/Button";
-import MeetingFilter from "../ui/MeetingFilter";
+import MeetingFilterForm from "../ui/MeetingFilterForm";
 
 const CircularResolutionList = () => {
   // Keep one selected vote per resolution row, keyed by resolution id.
@@ -43,7 +43,10 @@ const CircularResolutionList = () => {
       <div className="w-full flex flex-col ">
         {/* filters and search section  */}
         <div className="bg-hover-bg py-2 rounded-md md:items-end grid lg:grid-cols-[8fr_4fr]">
-          <MeetingFilter isFilter heading="All resolutions By Circulation" />
+          <MeetingFilterForm
+            heading="All resolutions By Circulation"
+            showYear={false}
+          />
         </div>
 
         <div className="h-[65dvh] mt-2 flex flex-col gap-2 w-full overflow-y-scroll">

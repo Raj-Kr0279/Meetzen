@@ -8,7 +8,7 @@ import PageHeading from "../PageHeading";
 import { demoData } from "../../demoData/demoData";
 import { formatDateTime } from "../../utils/dateFormatter";
 import Button from "../ui/Button";
-import MeetingFilter from "../ui/MeetingFilter";
+import MeetingFilterForm from "../ui/MeetingFilterForm";
 const DraftMinutes = () => {
   const [submitDraftModal, setSubmitDraftModal] = useState(false);
   const [isSaveDraft, setSaveDraft] = useState(false);
@@ -49,7 +49,7 @@ const DraftMinutes = () => {
               <option value="src">SRC</option>
             </select>
           </div> */}
-          <MeetingFilter heading="All Draft Minutes" isFilter/>
+          <MeetingFilterForm heading="All Draft Minutes" showYear={false} />
         </div>
 
         <div className="h-[70dvh] w-full flex flex-col gap-2 overflow-y-scroll">

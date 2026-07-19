@@ -63,15 +63,6 @@ const dispatch = useDispatch()
 
   return (
     <>
-      {activeOverlay ? (
-        <button
-          type="button"
-          className="fixed inset-0 z-40 bg-slate-950/55"
-          onClick={closeOverlay}
-          aria-label="Close dialog"
-        />
-      ) : null}
-
       {isSidebarOpen ? (
         <button
           type="button"

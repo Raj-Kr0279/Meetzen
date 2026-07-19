@@ -7,7 +7,7 @@ import PageHeading from "../PageHeading";
 import { demoData } from "../../demoData/demoData";
 import { formatDateTime } from "../../utils/dateFormatter";
 import Button from "../ui/Button";
-import MeetingFilter from "../ui/MeetingFilter";
+import MeetingFilterForm from "../ui/MeetingFilterForm";
 
 const BoardEvaluationList = () => {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const BoardEvaluationList = () => {
       <div className="w-full md:pe-10 flex flex-col">
 
         <div className="bg-hover-bg py-2 rounded-md md:items-end grid lg:grid-cols-[8fr_4fr]">
-          <MeetingFilter isFilter heading="All Evaluations"/>
+          <MeetingFilterForm heading="All Evaluations" showYear={false} />
         </div>
         <div className="h-[70dvh] flex flex-col mt-2 w-full gap-2 overflow-y-scroll">
           {demoData?.boardEvaluations?.map((evals) => 

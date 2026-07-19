@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import MyDocuments from "./MyDocuments";
 import CompanyDocuments from "./CompanyDocuments";
 import PageHeading from "../PageHeading";
-import MeetingFilter from "../ui/MeetingFilter";
+import FilterTabs from "../ui/FilterTabs";
+import MeetingFilterForm from "../ui/MeetingFilterForm";
 
 const Resources = () => {
   const navigate = useNavigate();
@@ -23,13 +24,14 @@ const Resources = () => {
       <PageHeading label="Resources" />
 
       <div className=" flex flex-col">
-        <MeetingFilter
-          filters={resourceFilters}
-          durationFilters
-          isFilter={true}
-          selectedFilter={selectedFilter}
-          onFilterSelection={handleFilterSelection}
-        />
+        <div className="flex flex-col lg:flex-row lg:justify-between rounded-md lg:items-center lg:w-full">
+          <FilterTabs
+            options={resourceFilters}
+            selectedValue={selectedFilter}
+            onSelect={handleFilterSelection}
+          />
+          <MeetingFilterForm showYear={false} />
+        </div>
         <div className="mt-4">
           {selectedFilter === "my_docs" ? (
             <MyDocuments />

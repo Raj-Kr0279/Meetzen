@@ -2,6 +2,7 @@ import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import cal from "../../assets/redCal.png";
 import { Link } from "react-router-dom";
+import Modal from "../ui/Modal";
 
 const MeetingModal = ({ onClose }) => {
     const meetinglist = Array.from({ length: 20 }, (_, index) => (
@@ -13,8 +14,11 @@ const MeetingModal = ({ onClose }) => {
 
 
   return (
-
-    <div className="fixed right-4 top-24 z-50 flex w-[19rem] flex-col rounded-2xl bg-calModalBg shadow-meetModal md:right-[12vw] md:top-[24%]">
+    <Modal
+      onClose={onClose}
+      title="Meeting summary"
+      panelClassName="absolute right-4 top-24 flex w-[19rem] flex-col rounded-2xl bg-calModalBg shadow-meetModal md:right-[12vw] md:top-[24%]"
+    >
      <button
         type="button"
         className="absolute right-4 top-4 text-primary"
@@ -37,7 +41,7 @@ const MeetingModal = ({ onClose }) => {
         <Link to={"/meeting-schedules"} onClick={onClose} className ="text-primary text-xs font-medium underline pt-2 text-center">View all</Link>
 
      </div>
-    </div>
+    </Modal>
 
   )
 }
