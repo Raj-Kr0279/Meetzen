@@ -22,7 +22,7 @@ const Resources = () => {
     <div>
       <PageHeading label="Resources" />
 
-      <div className="w-full md:pe-10 flex flex-col">
+      <div className=" flex flex-col">
         <MeetingFilter
           filters={resourceFilters}
           durationFilters

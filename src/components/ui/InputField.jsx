@@ -17,6 +17,7 @@ const InputField = ({
   options,
   selectWrapperClasses,
   passStrength,
+  className
 }) => {
   const base = `w-full border border-border rounded-md bg-surface px-4 py-3 text-primary text-sm placeholder-placeholder focus:outline-none focus:ring-2 transition-all disabled:cursor-not-allowed disabled:opacity-60 focus:ring-primary/20 focus:border-primary`;
 
@@ -27,7 +28,7 @@ const InputField = ({
 
   return (
     <div className="">
-     {label !== ""&& <label className="pb-1 flex items-center text-primary text-body-md whitespace-nowrap">
+     {label !== "" && <label className="pb-1 flex items-center text-primary text-body-md whitespace-nowrap">
         {label}
       </label>}
 
@@ -38,7 +39,7 @@ const InputField = ({
           onChange={onChange}
           placeholder={placeholder}
           rows={rows}
-          className={`${base} resize-none`}
+          className={`${base} resize-none ${className}`}
         />
       ) : type === "select" && options ? (
          <div className={`relative ${selectWrapperClasses}`}>

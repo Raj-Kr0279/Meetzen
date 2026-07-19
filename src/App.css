@@ -27,6 +27,15 @@
 .App-link {
   color: #61dafb;
 }
+/* .acc-body{
+max-height: 40px;
+  overflow:hidden;
+  transition: max-height 300ms ease;
+}
+.acc-body.active{
+max-height: 400px;
+  overflow:auto
+} */
 
 @keyframes App-logo-spin {
   from {
