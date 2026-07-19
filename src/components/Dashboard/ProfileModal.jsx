@@ -9,72 +9,74 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../../features/user/userSlice";
 import { removeCompany } from "../../features/company/companySlice";
+import { MdLogout, MdOutlinePassword } from "react-icons/md";
+import { FaRegUserCircle } from "react-icons/fa";
 
 const ProfileModal = ({ onClose }) => {
   const navigate = useNavigate();
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const navigateAndClose = () => {
     localStorage.removeItem("token");
     dispatch(logout());
-    dispatch(removeCompany())
+    dispatch(removeCompany());
+    navigate("/");
   };
-  const handleClose = (path)=>{
+  const handleClose = (path) => {
     navigate(path);
     onClose();
-
-  }
+  };
+  const links = [
+    { label: "Profile Details", icon: <FaRegUserCircle /> },
+    { label: "Change Password", icon: <MdOutlinePassword /> },
+    { label: "Logout", icon: <MdLogout /> },
+  ];
+  const clickLink = (label) => {
+    label === "Profile Details"
+      ? navigateAndClose("/home/edit-profile")
+      : label === "Change Password"
+        ? navigateAndClose("/home/change-password")
+        : label === "Logout"
+          ? handleClose("/")
+          : null;
+  };
 
   return (
-    <div className="fixed right-4 top-20 z-50 flex w-[calc(100vw-2rem)] max-w-xs flex-col rounded-2xl bg-white shadow-lg md:right-6">
+    <div className="absolute gap-2 px-4 py-2 right-4 top-20 z-50 max-w-xs flex-col rounded-md bg-white shadow-lg md:right-6">
       <button
         type="button"
-        className="absolute right-4 top-4 text-primary"
+        className="absolute right-2 top-2 text-primary"
         onClick={onClose}
         aria-label="Close profile menu"
       >
-        <AiFillCloseCircle className="text-2xl" />
+        <AiFillCloseCircle className="text-body-md text-error" />
       </button>
-
-      <button
+      <div className="mt-2 flex flex-col gap-2 pb-2">
+      {links.map((item) => (
+        <div key={item.label}
+          className="flex items-center gap-2 divide-accent border-b border-border cursor-pointer"
+          onClick={()=>clickLink(item.label)}
+        >
+          {item.icon}
+          <span className="text-body-sm text-primary">{item.label}</span>
+        </div>
+      ))}
+      </div>
+      {/* <button
         type="button"
-        className="flex items-center border-b border-divider py-3 pl-4 pr-10 text-left"
-        onClick={() => handleClose("/home/edit-profile")}
-      >
-        <img src={prof} className="mr-4 h-6 w-6" alt="" />
-        <span className="text-xs font-normal text-primary">Profile Details</span>
-      </button>
-      <button
-        type="button"
-        className="flex items-center border-b border-divider py-3 pl-4 pr-10 text-left"
-        onClick={() => handleClose("/home/change-password")}
-      >
-        <img src={pass} className="mr-4 h-6 w-6" alt="" />
-        <span className="text-xs font-normal text-primary">Change Password</span>
-      </button>
-      <button
-        type="button"
-        className="flex items-center border-b border-divider py-3 pl-4 pr-10 text-left"
+        className="flex items-center border-b border-border py-3 pl-4 pr-10 text-left"
       >
         <img src={face} className="mr-4 h-6 w-6" alt="" />
-        <span className="text-xs font-normal text-primary">Setup Face ID</span>
+        <span className="text-body-sm text-primary">Setup Face ID</span>
       </button>
       <button
         type="button"
-        className="flex items-center border-b border-divider py-3 pl-4 pr-10 text-left"
+        className="flex items-center border-b border-border py-3 pl-4 pr-10 text-left"
       >
         <img src={fing} className="mr-4 h-6 w-6" alt="" />
-        <span className="text-xs font-normal text-primary">
+        <span className="text-body-sm text-primary">
           Setup Fingerprint ID
         </span>
-      </button>
-      <button
-        type="button"
-        className="flex items-center py-3 pl-4 pr-10 text-left"
-        onClick={() => navigateAndClose("/")}
-      >
-        <img src={logoutIcon} className="mr-4 h-6 w-6" alt="" />
-        <span className="text-xs font-normal text-primary">Logout</span>
-      </button>
+      </button> */}
     </div>
   );
 };

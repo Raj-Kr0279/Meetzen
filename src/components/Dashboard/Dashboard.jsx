@@ -64,7 +64,7 @@ setNotifFilterValue(filter);
   };
 
   return (
-    <div className="grid dash__wrapper grid-cols-1 lg:grid-cols-[1.5fr_1fr] pb-20 gap-8">
+    <div className="grid dash__wrapper grid-cols-1 lg:grid-cols-[1.5fr_1fr] lg:gap-4">
       <div className="flex flex-col w-full">
         <div className="highlight__wrp md:min-h-120 overflow-hidden card">
             {/* <div className="font-normal flex items-center text-sm px-0 overflow-hidden border border-border rounded-md whitespace-nowrap h-12 place-items-center">
@@ -88,7 +88,7 @@ setNotifFilterValue(filter);
               </p>
             </div> */}
             <div className="flex justify-between items-center">
-            <MeetingFilter durationFilters={true} isFilter={false} filters={meetFilters} selectedFilter={selectedFilter} onFilterSelection={handleFilterSelection}/>
+            <MeetingFilter durationFilters filters={meetFilters} selectedFilter={selectedFilter} onFilterSelection={handleFilterSelection}/>
             <span
               onClick={() => {
                 setSelectedFilter("all");
@@ -105,16 +105,16 @@ setNotifFilterValue(filter);
                 ? meetings
                     .filter((item) => item.status === "upcoming")
                     .map((meeting) => (
-                      <MeetingCard meeting={meeting} id={meeting.id} />
+                      <MeetingCard key={meeting.id} meeting={meeting} id={meeting.id} />
                     ))
                 : selectedFilter === "recent"
                   ? meetings
                       .filter((item) => item.status === "recent")
                       .map((meeting) => (
-                        <MeetingCard meeting={meeting} id={meeting.id} />
+                        <MeetingCard key={meeting.id} meeting={meeting} id={meeting.id} />
                       ))
                   : meetings.map((meeting) => (
-                      <MeetingCard meeting={meeting} id={meeting.id} />
+                      <MeetingCard key={meeting.id} meeting={meeting} id={meeting.id} />
                     ))) : 
                     Array.from({length: 3},(_, index)=><MeetingCardSkeleton/>)}
           </div>

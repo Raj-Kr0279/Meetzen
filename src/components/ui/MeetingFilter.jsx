@@ -29,8 +29,8 @@ const MeetingFilter = ({
 
   return (
     <>
-    <p className="text-primary font-display pb-4 lg:pb-0 text-display-md">{heading}</p>
-    <div className=" flex justify-between rounded-md items-center w-full">
+    {heading && <p className="text-primary font-display pb-4 lg:pb-0 text-display-md">{heading}</p>}
+    <div className=" flex flex-col lg:flex-row lg:justify-between rounded-md lg:items-center lg:w-full">
      {durationFilters && <div className="">
         <div className="font-normal rounded-full p-1 bg-surface flex items-center text-sm overflow-hidden border border-border whitespace-nowrap h-12 place-items-center">
           {filters?.map((filter) => 
