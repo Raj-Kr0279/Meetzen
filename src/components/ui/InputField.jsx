@@ -12,11 +12,9 @@ const InputField = ({
   onChange,
   value,
   showPassword,
-  setShowPassword,
   handleViewPassToggle,
   options,
   selectWrapperClasses,
-  passStrength,
   className
 }) => {
   const base = `w-full border border-border rounded-md bg-surface px-4 py-3 text-primary text-sm placeholder-placeholder focus:outline-none focus:ring-2 transition-all disabled:cursor-not-allowed disabled:opacity-60 focus:ring-primary/20 focus:border-primary`;

@@ -17,7 +17,12 @@ const ACTIVITY_FILTERS = [
 const Dashboard = () => {
   const [notifFilterValue, setNotifFilterValue] = useState("notif");
   const [selectedFilter, setSelectedFilter] = useState("all");
-  const { data: meetings } = useGetMeetingsListQuery();
+  const {
+    data: meetings,
+    error,
+    isLoading,
+    refetch,
+  } = useGetMeetingsListQuery();
   const navigate = useNavigate();
 
   const visibleMeetings = meetings
@@ -48,6 +53,9 @@ const Dashboard = () => {
       <div className="flex flex-col w-full">
         <MeetingHighlights
           meetings={visibleMeetings}
+          isLoading={isLoading}
+          error={error}
+          onRetry={refetch}
           selectedFilter={selectedFilter}
           onFilterSelection={setSelectedFilter}
           onViewAll={handleMeetingsViewAll}

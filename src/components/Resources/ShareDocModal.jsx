@@ -1,10 +1,9 @@
 import React from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import prof from '../../assets/profileDummy.png'
-import { BsColumnsGap, BsPlusLg } from 'react-icons/bs'
 import { MdAdd } from 'react-icons/md'
 
-const ShareDocModal = ({ modal, setModal }) => {
+const ShareDocModal = ({ setModal }) => {
     const contact = Array.from(({ length: 20 }), (index) => (
         <div key={index} className="flex items-center p-2 justify-between w-full">
             <div className='flex items-center gap-1.5'>

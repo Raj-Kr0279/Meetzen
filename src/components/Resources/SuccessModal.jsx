@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react'
+import React from 'react'
 import done from '../../assets/done_FILL0_wght400_GRAD0_opsz48 (1) 1.svg'
 
 const SuccessModal = ({setModal}) => {

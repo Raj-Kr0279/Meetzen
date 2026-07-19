@@ -1,0 +1,48 @@
+:root {
+  --color-primary: #233b57;
+  --color-primary-hover: #1a2c42;
+  --color-secondary: #a87c3f;
+  --color-accent: #ae4e2c;
+
+  --color-background: #f6f4ee;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f1eee4;
+  --color-surface-hover: #e7e2d4;
+
+  --color-foreground: #1c2130;
+  --color-muted: #5b5a52;
+  --color-subtle: #8b8878;
+  --color-placeholder: #ada997;
+  --color-inverse: #ffffff;
+
+  --color-border: #e7e2d4;
+  --color-border-light: #efebe0;
+  --color-divider: #d8d2c0;
+
+  --color-success: #3e6b4e;
+  --color-warning: #b8862f;
+  --color-error: #ae4e2c;
+  --color-info: #233b57;
+
+  --color-success-bg: #eaf1ec;
+  --color-warning-bg: #fbf3e6;
+  --color-error-bg: #f8e9e2;
+  --color-info-bg: #e7ecf1;
+
+  --color-success-soft: #deeaE0;
+  --color-warning-soft: #f1e6d2;
+  --color-error-soft: #f5e1d6;
+  --color-info-soft: #dce4ec;
+
+  --color-overlay: rgba(28, 33, 48, 0.45);
+  --color-selected: #e3e9ef;
+  --color-hover: #f6f4ee;
+  --color-star: #d9a94a;
+
+  --font-sans: "Poppins", sans-serif;
+  --font-display: "Fraunces", serif;
+  --font-ui: "Inter", system-ui, sans-serif;
+  --font-alt: "Albert Sans", var(--font-ui);
+
+  --shadow-modal: 0 12px 32px rgba(28, 33, 48, 0.12);
+}
