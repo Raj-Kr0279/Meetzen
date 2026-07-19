@@ -1,16 +1,11 @@
 import React, { useState } from 'react'
-import { AiOutlineSearch } from 'react-icons/ai'
-import { MdArrowBackIosNew } from 'react-icons/md'
-import { useNavigate } from 'react-router-dom'
 import News from './News'
 import CompanyStructure from './CompanyStructure'
-import NewPage from '../OnBoarding/Login/Login'
 import CommitteeComposition from './CommitteeComposition'
 import PageHeading from '../PageHeading'
 import FilterTabs from '../ui/FilterTabs'
 
 const AboutCompany = () => {
-    const navigate = useNavigate()
     const [selectedFilter, setSelectedFilter] = useState('structure');
     const handleFilterSelection = (filter) => {
         setSelectedFilter(filter);
@@ -21,8 +16,6 @@ const AboutCompany = () => {
         {label: "Committee Composition", value: "composition"},
     ]
    
-
-
     return (
         <>
         <PageHeading label="About Company"/>

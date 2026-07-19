@@ -5,7 +5,7 @@ export const meetingApi = createApi({
     reducerPath: "meetingApi",
     baseQuery: fetchBaseQuery({
         baseUrl: baseUrl,
-        prepareHeaders: (headers, { getState }) => {
+        prepareHeaders: (headers) => {
             return headers
         }
     }),

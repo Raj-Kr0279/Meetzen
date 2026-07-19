@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import { AiOutlineSearch, AiOutlineShareAlt } from "react-icons/ai";
-import { BsFillTriangleFill, BsPlusLg, BsTrash } from "react-icons/bs";
-import { MdArrowBackIosNew } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 import MyDocuments from "./MyDocuments";
 import CompanyDocuments from "./CompanyDocuments";
 import PageHeading from "../PageHeading";
@@ -10,7 +6,6 @@ import FilterTabs from "../ui/FilterTabs";
 import MeetingFilterForm from "../ui/MeetingFilterForm";
 
 const Resources = () => {
-  const navigate = useNavigate();
   const [selectedFilter, setSelectedFilter] = useState("my_docs");
   const handleFilterSelection = (filter) => {
     setSelectedFilter(filter);

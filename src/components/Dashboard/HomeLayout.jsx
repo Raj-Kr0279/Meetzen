@@ -8,14 +8,14 @@ import ProfileModal from "./ProfileModal";
 import MeetingModal from "./MeetingModal";
 import { useGetUserQuery } from "../../features/user/userApi";
 import { useDispatch } from "react-redux";
-import { getMe, setUserDetails } from "../../features/user/userSlice";
+import { getMe } from "../../features/user/userSlice";
 
 const HomeLayout = () => {
   const [activeOverlay, setActiveOverlay] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
-  const {data, isSuccess} = useGetUserQuery()
-const dispatch = useDispatch()
+  const { data, isSuccess } = useGetUserQuery();
+  const dispatch = useDispatch();
   const toggleOverlay = (overlayName) => {
     setActiveOverlay((currentOverlay) =>
       currentOverlay === overlayName ? null : overlayName
@@ -55,11 +55,12 @@ const dispatch = useDispatch()
       document.body.style.overflow = previousOverflow;
     };
   }, [activeOverlay, isSidebarOpen]);
+
   useEffect(() => {
-  if (isSuccess && data) {
-    dispatch(getMe(data?.user));
-  }
-}, [isSuccess, data, dispatch]);
+    if (isSuccess && data) {
+      dispatch(getMe(data?.user));
+    }
+  }, [isSuccess, data, dispatch]);
 
   return (
     <>
@@ -88,7 +89,9 @@ const dispatch = useDispatch()
         {activeOverlay === "profile" ? (
           <ProfileModal onClose={closeOverlay} />
         ) : null}
-        {activeOverlay === "meeting" ? <MeetingModal onClose={closeOverlay} /> : null}
+        {activeOverlay === "meeting" ? (
+          <MeetingModal onClose={closeOverlay} />
+        ) : null}
 
         <div className="flex h-[calc(100dvh-78px)] min-h-0 overflow-hidden">
           <Sidebar
@@ -97,7 +100,7 @@ const dispatch = useDispatch()
           />
           <main className="min-w-0 max-w-7xl min-h-0 flex-1 overflow-y-auto px-4 py-2 lg:px-6">
             <Suspense fallback={<p>loading....</p>}>
-            <Outlet />
+              <Outlet />
             </Suspense>
           </main>
         </div>

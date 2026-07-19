@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Moirai+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import "./styles/tokens.css";
 
 @import "tailwindcss";
 @config "../tailwind.config.js";
@@ -9,9 +10,11 @@
   src: url(./assets/fonts/SFpro/SFPRODISPLAYREGULAR.OTF);
 } */
   html {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-sans);
     height: 100%;
     overflow: hidden;
+    background: var(--color-background);
+    color: var(--color-foreground);
   }
 #root{
   min-height: 100vh;
@@ -20,7 +23,7 @@
 ::-webkit-scrollbar {
   width: 0px;
   height: 100%;
-  background: #eaebf0;
+  background: var(--color-border-light);
 }
 
 ::-webkit-scrollbar-track {
@@ -31,7 +34,7 @@
   /* Customize the scrollbar thumb */
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #49556d;
+  background-color: var(--color-muted);
   /* Customize the scrollbar thumb */
 }
 textarea {
@@ -52,7 +55,7 @@ input[type="number"] {
   opacity: 0.5;
 }
 .otp__wrapper input:focus-within {
-  outline: 1px solid #49556d;
+  outline: 1px solid var(--color-muted);
 }
 .otp__wrapper > div {
   width: 100%;
@@ -65,7 +68,7 @@ input[type="number"] {
 
 .select-wrapper option {
   font-size: 0.875rem;
-  color: #49556d;
+  color: var(--color-muted);
   line-height: 1.4;
   font-weight: 400;
 }
@@ -89,7 +92,7 @@ input[type="number"] {
 /* Add styling for the active step */
 .step.active {
   font-weight: bold;
-  color: #007bff; /* Change the color to your desired active step color */
+  color: var(--color-primary); /* Change the color to your desired active step color */
 }
 .slider {
   appearance: auto;
@@ -100,7 +103,7 @@ input[type="number"] {
 }
 .ql-toolbar.ql-snow {
   width: 100%;
-  font-family: "Inter" !important;
+  font-family: var(--font-ui) !important;
 }
 .ql-container.ql-snow,
 .ql-toolbar.ql-snow {

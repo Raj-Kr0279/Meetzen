@@ -1,5 +1,6 @@
 import React from "react";
 import FilterTabs from "../ui/FilterTabs";
+import EmptyState from "../ui/EmptyState";
 
 const ActivityPanel = ({
   selectedFilter,
@@ -24,9 +25,7 @@ const ActivityPanel = ({
         </span>
       </div>
       <div className="flex flex-col overflow-scroll mt-2 grow-1 gap-3 chat__wrapper">
-        <div className="flex h-full items-center justify-center rounded-md border border-dashed border-border bg-hover-bg px-4 text-center text-sm text-subtle">
-          {emptyMessage}
-        </div>
+        <EmptyState title="No activity yet" message={emptyMessage} className="h-full" />
       </div>
     </div>
   );
