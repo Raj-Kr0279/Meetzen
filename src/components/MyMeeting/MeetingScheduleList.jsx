@@ -4,7 +4,7 @@ import { MdArrowBackIosNew } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import './MeetinsSchedule.css'
+import "./MeetingSchedule.css";
 
 const MeetingScheduleList = () => {
     const [startDate, setStartDate] = useState(new Date());

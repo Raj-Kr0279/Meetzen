@@ -1,24 +1,16 @@
 import React, { useState } from "react";
-import Sidebar from "../Sidebar/Sidebar";
-import {
-  AiOutlineCalendar,
-  AiOutlineClockCircle,
-  AiOutlineSearch,
-} from "react-icons/ai";
-import prof from "../../assets/profileDummy.png";
-import { FiUsers } from "react-icons/fi";
-import { RiMapPin2Line } from "react-icons/ri";
-import { FaAngleLeft } from "react-icons/fa";
-import { MdArrowBackIosNew } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import ViewMapModal from "./ViewMapModal";
 import PageHeading from "../PageHeading";
-import { demoData } from "../../demoData/demoData";
-import { formatDateTime } from "../../utils/dateFormatter";
 import MeetingCard from "../ui/MeetingCard";
-import MeetingFilter from "../ui/MeetingFilter";
+import FilterTabs from "../ui/FilterTabs";
+import MeetingFilterForm from "../ui/MeetingFilterForm";
 import { useGetMeetingsListQuery } from "../../features/meeting/meetingApi";
 import MeetingCardSkeleton from "../ui/MeetingCardSkeleton";
+import {
+  filterMeetings,
+  MEETING_STATUS_FILTERS,
+} from "../../features/meeting/selectors";
 
 const MyMeetingsList = () => {
   const navigate = useNavigate();
@@ -30,24 +22,14 @@ const MyMeetingsList = () => {
   const handleFilterSelection = (filter) => {
     setSelectedFilter(filter);
   };
-    const meetFilters = [
-    { label: "All", value: "all" },
-    { label: "Upcoming", value: "upcoming" },
-    { label: "Recent", value: "recent" },
-  ];
- const { data: meetings, error, isLoading } = useGetMeetingsListQuery();
-  const filteredMeetings = meetings?.filter((m) => {
-    const matchesStatus =
-      selectedFilter === "all" ? true : m.status === selectedFilter;
-
-    const meetingYear = new Date(m.startAt).getFullYear().toString();
-    const matchesYear = year === "all" ? true : meetingYear === year;
-
-    const matchesCommittee =
-      committee === "all" ? true : m.committeeCode === committee;
-
-    return matchesStatus && matchesYear && matchesCommittee;
-  });
+  const { data: meetings, isLoading } = useGetMeetingsListQuery();
+  const filteredMeetings = meetings
+    ? filterMeetings(meetings, {
+        status: selectedFilter,
+        year,
+        committee,
+      })
+    : [];
 
   return (
     <>
@@ -57,24 +39,29 @@ const MyMeetingsList = () => {
 
       <div className="w-full md:pe-10 flex flex-col">
         {/* filters and search section  */}
-        <MeetingFilter
-          selectedFilter={selectedFilter}
-          onFilterSelection={handleFilterSelection}
-          year={year}
-          durationFilters={true}
-          filters={meetFilters}
-          onYearChange={setYear}
-          committee={committee}
-          onCommitteeChange={setCommittee}
-        />
+        <div className="flex flex-col lg:flex-row lg:justify-between rounded-md lg:items-center lg:w-full">
+          <FilterTabs
+            options={MEETING_STATUS_FILTERS}
+            selectedValue={selectedFilter}
+            onSelect={handleFilterSelection}
+          />
+          <MeetingFilterForm
+            year={year}
+            onYearChange={setYear}
+            committee={committee}
+            onCommitteeChange={setCommittee}
+          />
+        </div>
 
         {/* meeting cards  */}
         <div className=" w-full overflow-scroll place-content-baseline h-200 mt-2 grid grid-cols-1 md:grid-cols-[repeat(auto-fit,_minmax(26.563rem,_1fr))] gap-2 place-items-center">
-          {isLoading ? Array.from({length: 6}, (_, index)=><MeetingCardSkeleton/>) : filteredMeetings?.map((meeting) => (
-            <MeetingCard key={meeting._id} meeting={meeting} />
-          ))
-          
-          }
+          {isLoading
+            ? Array.from({ length: 6 }, (_, index) => (
+                <MeetingCardSkeleton key={index} />
+              ))
+            : filteredMeetings.map((meeting) => (
+                <MeetingCard key={meeting._id} meeting={meeting} />
+              ))}
         </div>
       </div>
     </>

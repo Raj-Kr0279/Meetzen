@@ -1,6 +1,7 @@
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useLocation, useNavigate } from "react-router-dom";
+import Modal from "../ui/Modal";
 
 const NotificationModal = ({ onClose }) => {
   const navigate = useNavigate();
@@ -14,7 +15,11 @@ const NotificationModal = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed right-4 top-20 z-50 flex h-[24rem] w-[calc(100vw-2rem)] max-w-md flex-col gap-4 rounded-2xl bg-white p-4 shadow-lg md:right-6">
+    <Modal
+      onClose={onClose}
+      title="Notifications"
+      panelClassName="absolute right-4 top-20 flex h-[24rem] w-[calc(100vw-2rem)] max-w-md flex-col gap-4 rounded-2xl bg-white p-4 shadow-lg md:right-6"
+    >
       <button
         type="button"
         className="absolute right-4 top-4 text-primary"
@@ -73,7 +78,7 @@ const NotificationModal = ({ onClose }) => {
           </p>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 };
 

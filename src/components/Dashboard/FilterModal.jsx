@@ -1,10 +1,15 @@
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import "./Dashboard.css";
+import Modal from "../ui/Modal";
 
 const FilterModal = ({ onClose }) => {
     return (
-        <div className="fixed bottom-0 left-0 z-50 w-full rounded-t-2xl bg-white p-4 shadow-lg md:left-7 md:top-20 md:bottom-auto md:w-[48vw] md:rounded-2xl">
+      <Modal
+        onClose={onClose}
+        title="Filters"
+        panelClassName="absolute bottom-0 left-0 w-full rounded-t-2xl bg-white p-4 shadow-lg md:left-7 md:top-20 md:bottom-auto md:w-[48vw] md:rounded-2xl"
+      >
             <AiFillCloseCircle className='absolute right-4 top-4 cursor-pointer text-heading text-primary' onClick={onClose} />
             <div className="flex items-center pb-8 gap-4">
                 <h1 className=' text-primary pr-6 text-[1.8rem] font-bold'>Filters</h1>
@@ -86,7 +91,7 @@ const FilterModal = ({ onClose }) => {
                     </div>
                 </div>
             </div>
-        </div>
+      </Modal>
     )
 }
 

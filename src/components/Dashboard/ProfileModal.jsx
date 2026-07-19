@@ -11,6 +11,7 @@ import { logout } from "../../features/user/userSlice";
 import { removeCompany } from "../../features/company/companySlice";
 import { MdLogout, MdOutlinePassword } from "react-icons/md";
 import { FaRegUserCircle } from "react-icons/fa";
+import Modal from "../ui/Modal";
 
 const ProfileModal = ({ onClose }) => {
   const navigate = useNavigate();
@@ -41,7 +42,11 @@ const ProfileModal = ({ onClose }) => {
   };
 
   return (
-    <div className="absolute gap-2 px-4 py-2 right-4 top-20 z-50 max-w-xs flex-col rounded-md bg-white shadow-lg md:right-6">
+    <Modal
+      onClose={onClose}
+      title="Profile menu"
+      panelClassName="absolute right-4 top-20 max-w-xs rounded-md bg-white px-4 py-2 shadow-lg md:right-6"
+    >
       <button
         type="button"
         className="absolute right-2 top-2 text-primary"
@@ -77,7 +82,7 @@ const ProfileModal = ({ onClose }) => {
           Setup Fingerprint ID
         </span>
       </button> */}
-    </div>
+    </Modal>
   );
 };
 

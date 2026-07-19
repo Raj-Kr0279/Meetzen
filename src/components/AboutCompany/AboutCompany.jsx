@@ -7,7 +7,7 @@ import CompanyStructure from './CompanyStructure'
 import NewPage from '../OnBoarding/Login/Login'
 import CommitteeComposition from './CommitteeComposition'
 import PageHeading from '../PageHeading'
-import MeetingFilter from '../ui/MeetingFilter'
+import FilterTabs from '../ui/FilterTabs'
 
 const AboutCompany = () => {
     const navigate = useNavigate()
@@ -28,7 +28,7 @@ const AboutCompany = () => {
         <PageHeading label="About Company"/>
             <div className="md:pe-10 w-full flex flex-col">
                 <div className='w-full bg-hover-bg'>
-                    <MeetingFilter filters={aboutFilters} onFilterSelection={handleFilterSelection} selectedFilter={selectedFilter}/>
+                    <FilterTabs options={aboutFilters} onSelect={handleFilterSelection} selectedValue={selectedFilter}/>
 
                    <div className="mt-8">
                         {selectedFilter === "structure" ? <CompanyStructure/> : selectedFilter === "news" ? <News/> : selectedFilter === "composition" ? <CommitteeComposition/> :  null}
