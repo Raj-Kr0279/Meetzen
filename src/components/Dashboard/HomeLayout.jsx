@@ -4,7 +4,6 @@ import Sidebar from "../Sidebar/Sidebar";
 import TopHeader from "./TopHeader";
 import FilterModal from "./FilterModal";
 import NotificationModal from "./NotificationModal";
-import ProfileModal from "./ProfileModal";
 import MeetingModal from "./MeetingModal";
 import { useGetUserQuery } from "../../features/user/userApi";
 import { useDispatch } from "react-redux";
@@ -85,9 +84,6 @@ const HomeLayout = () => {
         ) : null}
         {activeOverlay === "filters" ? (
           <FilterModal onClose={closeOverlay} />
-        ) : null}
-        {activeOverlay === "profile" ? (
-          <ProfileModal onClose={closeOverlay} />
         ) : null}
         {activeOverlay === "meeting" ? (
           <MeetingModal onClose={closeOverlay} />

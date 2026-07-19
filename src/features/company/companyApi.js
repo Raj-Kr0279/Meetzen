@@ -4,7 +4,7 @@ export const companyApi = createApi({
     reducerPath: "companyApi",
     baseQuery: fetchBaseQuery({
         baseUrl,
-        prepareHeaders: (headers, { getState }) => {
+        prepareHeaders: (headers) => {
             return headers
         }
     }),

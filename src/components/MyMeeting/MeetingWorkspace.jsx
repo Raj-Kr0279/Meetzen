@@ -15,6 +15,7 @@ import Requests from "./Requests";
 import PageHeading from "../PageHeading";
 import MeetingFilter from "../ui/MeetingFilter";
 import InputField from "../ui/InputField";
+import Button from "../ui/Button";
 
 const MeetingDetails = () => {
   const [currentTab, setCurrentTab] = useState("Agenda");
@@ -69,19 +70,9 @@ setCurrentTab(item)
         </div>
         <div className=" md:justify-self-end">
           <div className="flex flex-wrap items-center gap-2">
-            <button
-              className="text-primary font-medium py-1.5 px-2.5 border border-theme-color rounded-md"
-              onClick={() => navigate("/home/board-book")}
-            >
-              View Board book
-            </button>
+            <Button variant="outline" label="View Board book" onClick={() => navigate("/home/board-book")}/>
             <div className="relative">
-              <button
-                className="text-primary font-medium py-1.5 px-2.5 border border-theme-color rounded-md"
-                onClick={handleAttendance}
-              >
-                Attendance
-              </button>
+            <Button variant="outline" label="Attendance" onClick={handleAttendance}/>
               {attendance && (
                 <div className="absolute whitespace-nowrap flex flex-col left-0 top-full mt-1 bg-white shadow-attendance rounded-sm">
                   <span className="text-prof py-1.5 px-3 hover:bg-hover-bg transition-all cursor-pointer text-base font-normal border-b">
@@ -116,12 +107,8 @@ setCurrentTab(item)
                 </div>
               )}
             </div>
-            <button
-              className="rounded-md basis-full md:basis-[unset] py-3 font-medium text-white mt-2 md:mt-0 md:py-1.5 px-2.5 bg-primary border border-theme-color"
-              onClick={() => navigate("/home/join-call")}
-            >
-              Join VC Call
-            </button>
+            <Button variant="primary" label="Join VC Call" onClick={() => navigate("/home/join-call")}/>
+
           </div>
           <p className="text-textGray text-base underline text-end pt-4 font-medium">
             Continue from last left
