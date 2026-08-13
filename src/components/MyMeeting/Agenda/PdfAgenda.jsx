@@ -21,9 +21,15 @@ import gallery from "../../../assets/photo_library.svg";
 import doc from "../../../assets/description.svg";
 import AttachModal from "./AnnextureModal";
 import AnnextureModal from "./AnnextureModal";
+import { Viewer, Worker } from "@react-pdf-viewer/core";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 const PdfAgenda = () => {
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const [attachModal, setAttachModal] = useState(false);
+
   const [annexModal, setAnnexModal] = useState(false);
   const [isChat, setChat] = useState(false);
   const navigate = useNavigate();
@@ -33,7 +39,7 @@ const PdfAgenda = () => {
         <AnnextureModal modal={annexModal} setModal={setAnnexModal} />
       )}
 
-      <div className="flex flex-col gap-4">
+      {/* <div className="flex flex-col gap-4">
         <div className="flex justify-between w-full gap-4 items-center">
           <div className="flex w-full border border-border rounded-md p-1 gap-2 ">
             <h3
@@ -493,7 +499,14 @@ const PdfAgenda = () => {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
+
+       <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+            <Viewer
+                fileUrl="/cv.pdf"
+                plugins={[defaultLayoutPluginInstance]}
+            />
+        </Worker>
     </>
   );
 };

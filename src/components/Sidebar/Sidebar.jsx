@@ -19,7 +19,7 @@ const navLinks = [
     icon: <MdOutlineDashboardCustomize className="text-lg" />,
   },
   {
-    label: "My Meetings List",
+    label: "My Meetings",
     link: "my-meetings-list",
     icon: <FiUsers className="text-lg" />,
   },
