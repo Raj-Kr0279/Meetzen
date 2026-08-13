@@ -33,10 +33,10 @@ export const userApi = createApi({
     }),
 
     editUser: builder.mutation({
-      query: (payload) => ({
-        url: "/api/user",
+      query: ({formData, id}) => ({
+        url: `/user/update-profile/${id}`,
         method: "PUT",
-        body: payload,
+        body: formData,
       }),
       invalidatesTags: ["User"],
     })

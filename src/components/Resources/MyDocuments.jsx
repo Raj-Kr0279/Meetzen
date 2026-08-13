@@ -34,7 +34,7 @@ const MyDocuments = () => {
       {successModal && (
         <SuccessModal modal={successModal} setModal={setSuccessModal} />
       )}
-          <div className="flex flex-col lg:flex-row gap-2">
+          <div className="flex flex-col w-full lg:flex-row gap-2">
             <div className="grow h-96 overflow-auto rounded-md border border-border">
               <table className="w-full table-auto border-collapse">
                 <thead className="sticky top-0 z-20 bg-primary text-inverse">

@@ -90,7 +90,7 @@ export const appRoutes = (
         <Route path="notifications" element={<NotificationsPage />} />
         <Route path="submit-feedback" element={<SubmitFeedbackPage />} />
         <Route path="chat" element={<ChatPage />} />
-        <Route path="edit-profile" element={<EditProfilePage />} />
+        <Route path="edit-profile/:id" element={<EditProfilePage />} />
       </Route>
     </Route>
     <Route path="view-member-profile" element={<ViewMemberProfilePage />} />

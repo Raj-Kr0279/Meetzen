@@ -21,7 +21,7 @@ const TopHeader = ({
   const dropdownRef = useRef(null);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
-  const { name, role } = useSelector((state) => state.user.user || {});
+  const { name, role, _id, userImage } = useSelector((state) => state.user.user || {});
 
   useEffect(() => {
     if (!isProfileOpen) return;
@@ -63,7 +63,7 @@ const TopHeader = ({
 
     switch (label) {
       case "Profile Details":
-        navigate("/home/edit-profile");
+        navigate(`/home/edit-profile/${_id}`);
         break;
 
       case "Change Password":
@@ -181,7 +181,7 @@ const TopHeader = ({
               aria-expanded={isProfileOpen}
             >
               <img
-                src={prof}
+                src={userImage}
                 className="h-10 w-10 rounded-full"
                 alt="Profile"
               />
